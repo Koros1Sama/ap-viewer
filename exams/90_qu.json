@@ -1,0 +1,976 @@
+[
+  {
+    "id": 1,
+    "text": "The GoF patterns are divided into three categories. Which category best describes a pattern's purpose if it is concerned with how classes and objects are composed to form larger structures?",
+    "options": [
+      "Creational",
+      "Behavioral",
+      "Architectural",
+      "Structural"
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "id": 2,
+    "text": "Which of the following is the primary \"intent\" of the Adapter pattern?",
+    "options": [
+      "To provide a simplified interface to a complex subsystem of classes.",
+      "To ensure a class has only one instance and provide a global access point.",
+      "To convert the interface of a class into another interface a client expects.",
+      "To attach additional responsibilities to an object dynamically."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 3,
+    "text": "In a system using the Facade pattern, the subsystem classes are typically:",
+    "options": [
+      "Tightly coupled to the Facade class.",
+      "Unaware of the Facade's existence.",
+      "Required to implement a specific ISubsystem interface.",
+      "Responsible for instantiating the Facade."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 4,
+    "text": "A key difference between the Facade and Adapter patterns is:",
+    "options": [
+      "Facade simplifies an interface while Adapter alters it.",
+      "Adapter simplifies an interface while Facade alters it.",
+      "Facade is a Creational pattern, while Adapter is a Structural pattern.",
+      "Facade works with multiple subsystem classes, while Adapter typically wraps a single object."
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "id": 5,
+    "text": "The slide mentions that \"a pattern is like a recipe\". What are the \"ingredients\" of this recipe?",
+    "options": [
+      "Specific lines of code.",
+      "UML diagrams.",
+      "Object-Oriented principles.",
+      "Algorithms and data structures."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 6,
+    "text": "Consider the Adapter implementation: class Adapter : Adaptee, ITarget. This is an example of a \"Class Adapter\". What is a major limitation of this approach in languages like Java or C#?",
+    "options": [
+      "It is slower than an \"Object Adapter\".",
+      "It cannot work if Adaptee is an interface.",
+      "It is not possible if Adaptee is a class, as C# and Java do not support multiple inheritance from classes.",
+      "It tightly couples the Client to the Adaptee."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 7,
+    "text": "Which of the following scenarios is the least suitable for applying the Facade pattern?",
+    "options": [
+      "A complex library for 3D rendering with hundreds of classes that you want to use for simple shape drawing.",
+      "A single, well-designed class with an incompatible method signature that you need to use in your system.",
+      "The startup process of an application that involves initializing the network, the database, and the UI.",
+      "A legacy system for processing insurance claims that requires multiple steps and interactions."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 8,
+    "text": "True or False: The purpose of the ITarget interface in the Adapter pattern is to define the original, incompatible interface of the Adaptee.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 9,
+    "text": "The concept of \"containing variation\" is a primary goal for which category of patterns?",
+    "options": [
+      "Structural",
+      "Behavioral",
+      "Creational",
+      "It is a goal for all pattern categories."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 10,
+    "text": "What is the main benefit a Client gains from using an Adapter?",
+    "options": [
+      "The Client can use a class with an incompatible interface without changing its own code.",
+      "The performance of the Adaptee's methods is significantly improved.",
+      "The Client is completely isolated from the Adaptee's implementation details.",
+      "The Adapter adds new functionalities that were not present in the Adaptee."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": 11,
+    "text": "Which of the following is NOT a direct participant in the Facade pattern's structure?",
+    "options": [
+      "Facade",
+      "Client",
+      "Subsystem classes",
+      "AbstractFactory"
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "id": 12,
+    "text": "The slide states: \"Bridge and Decorator used for relating implementation with abstraction\". This means they help in:",
+    "options": [
+      "Separating what an object does from how it does it.",
+      "Ensuring that an object's implementation is abstract.",
+      "Simplifying the way an object is created.",
+      "Hiding the implementation completely from the client."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": 13,
+    "text": "In the provided code example for the Adapter pattern, the Client interacts with the Adapter through a variable of type ITarget. This practice is known as:",
+    "options": [
+      "Programming to a concrete class.",
+      "Programming to an interface.",
+      "Type casting.",
+      "Dependency injection."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 14,
+    "text": "A developer wants to provide a simple way to perform a sequence of operations: \"Open Connection, Execute Query, Log Result, Close Connection\". This involves multiple classes from a data access library. Which pattern is the most appropriate choice?",
+    "options": [
+      "Adapter, to convert the library's connection object.",
+      "Singleton, to ensure only one connection is open.",
+      "Facade, to provide a single method that encapsulates the entire sequence.",
+      "Decorator, to add logging to the connection object."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 15,
+    "text": "True or False: The Facade pattern's main goal is to add new responsibilities to the subsystem classes.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 16,
+    "text": "What is the primary intent of the Decorator pattern?",
+    "options": [
+      "To control access to an object.",
+      "To attach additional responsibilities to an object dynamically.",
+      "To define a family of interchangeable algorithms.",
+      "To provide a simplified interface for a complex system."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 17,
+    "text": "In the Proxy pattern, which type of proxy is used to delay the creation of a resource-intensive object until it is actually needed?",
+    "options": [
+      "Remote Proxy",
+      "Protection Proxy",
+      "Virtual Proxy",
+      "Smart Proxy"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 18,
+    "text": "The relationship between the State and Strategy patterns is that:",
+    "options": [
+      "They are identical in both structure and intent.",
+      "They have similar structures, but Strategy's user is the Client, while State's user is the Context itself.",
+      "State is a structural pattern, while Strategy is a behavioral pattern.",
+      "Strategy allows behavior to change based on internal state, while State encapsulates interchangeable algorithms."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 19,
+    "text": "A key feature of the Decorator pattern is that decorators and the component they decorate share a common interface. This allows for:",
+    "options": [
+      "The client to treat decorated and undecorated objects uniformly.",
+      "The decorator to alter the private members of the component.",
+      "A reduction in the number of objects created.",
+      "The prevention of adding further responsibilities."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": 20,
+    "text": "Which of the following statements is true about the Proxy pattern?",
+    "options": [
+      "It always adds new, visible behavior to the object it represents.",
+      "Its interface is usually different from the real subject's interface.",
+      "It provides the same interface as the subject, allowing it to be a substitute.",
+      "It is primarily used to make two incompatible interfaces work together."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 21,
+    "text": "The \"Open/Closed Principle\" is most directly and clearly demonstrated by which of these patterns?",
+    "options": [
+      "Proxy",
+      "Decorator",
+      "Strategy",
+      "Facade"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 22,
+    "text": "In the Decorator pattern, a decorator object has two fundamental relationships: an \"is-a\" relationship and a \"has-a\" relationship. The \"has-a\" relationship refers to:",
+    "options": [
+      "The decorator inheriting from the component's class.",
+      "The decorator containing a reference to another object that conforms to the same component interface.",
+      "The decorator being a type of the client.",
+      "The decorator having a simplified interface."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 23,
+    "text": "You are designing a text editor. When the user presses \"Save\", the behavior should change depending on whether the document is in a \"Modified\" state or a \"Saved\" state. Which pattern is most suitable for managing this behavior?",
+    "options": [
+      "Strategy, where the client chooses to use a \"Save\" or \"NoSave\" algorithm.",
+      "State, where the document object transitions between ModifiedState and SavedState, altering its save behavior.",
+      "Decorator, to add the \"save\" functionality to the document.",
+      "Proxy, to control access to the file system."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 24,
+    "text": "Which of the following is NOT a primary role of the Proxy pattern?",
+    "options": [
+      "Controlling access to an object for security reasons.",
+      "Providing a local representative for an object in a different address space.",
+      "Aggregating multiple objects into a single, simplified interface.",
+      "Postponing the creation of an expensive object."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 25,
+    "text": "True or False: In the Strategy pattern, the Context object is typically responsible for selecting which ConcreteStrategy to use.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 26,
+    "text": "The ability to \"mix-and-match\" features, like adding a border and a watermark to a photo in any order, is a hallmark of which pattern?",
+    "options": [
+      "Proxy",
+      "Adapter",
+      "Decorator",
+      "State"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 27,
+    "text": "A Remote Proxy is responsible for:",
+    "options": [
+      "Checking if a user has the correct password before accessing an object.",
+      "Caching the results of an expensive operation.",
+      "Encapsulating the network details required to communicate with an object on another machine.",
+      "Adding a user interface to a command-line object."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 28,
+    "text": "In the State pattern, where is the logic for transitioning from one state to another typically located?",
+    "options": [
+      "Within the Client code.",
+      "Within the Context object's Request method.",
+      "Within the ConcreteState classes themselves.",
+      "Within a separate StateFactory class."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 29,
+    "text": "What is the main problem that the Decorator pattern solves, which cannot be easily solved by subclassing (inheritance)?",
+    "options": [
+      "It avoids the \"class explosion\" problem that occurs when you need to support many independent combinations of features.",
+      "It allows access to the private members of the original class.",
+      "It is faster at runtime than using inheritance.",
+      "It reduces the memory footprint of the objects."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": 30,
+    "text": "True or False: The main intent of the State pattern is to allow a client to choose an algorithm from a family of algorithms at runtime.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 31,
+    "text": "The Prototype pattern is classified under which category of GoF design patterns?",
+    "options": [
+      "Structural",
+      "Behavioral",
+      "Creational",
+      "Architectural"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 32,
+    "text": "What is the primary \"intent\" of the Prototype design pattern?",
+    "options": [
+      "To ensure a class only has one instance and provide a global point of access to it.",
+      "To specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.",
+      "To provide a surrogate or placeholder for another object to control access to it.",
+      "To define a family of algorithms, encapsulate each one, and make them interchangeable."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 33,
+    "text": "In the context of the Prototype pattern, what is the main purpose of a PrototypeManager?",
+    "options": [
+      "To enforce that all clones are deep copies.",
+      "To act as a registry or cache for pre-built prototype instances, which can be cloned on demand.",
+      "To define the Clone() method that all prototypes must implement.",
+      "To directly modify the properties of the prototype objects."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 34,
+    "text": "A developer uses MemberwiseClone() in C# to implement the Clone() method for an object that contains a list of strings. What is the potential issue with this approach?",
+    "options": [
+      "MemberwiseClone() is very slow and inefficient.",
+      "It will throw an exception because it cannot clone lists.",
+      "It performs a shallow copy, meaning both the original and the cloned object will share the same list instance.",
+      "It performs a deep copy, which uses too much memory."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 35,
+    "text": "The Prototype pattern is particularly useful when:",
+    "options": [
+      "The classes to be instantiated are specified at compile-time.",
+      "The cost of creating a new object using new is expensive.",
+      "You need to add responsibilities to an object dynamically.",
+      "You need to make two incompatible interfaces work together."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 36,
+    "text": "Which of the following statements about the Prototype pattern is false?",
+    "options": [
+      "The new, cloned object is an exact copy but permits modification.",
+      "Modifying the cloned object will always alter the original prototype.",
+      "It is a creational pattern used to control object generation.",
+      "It creates a new object by copying the properties of an existing one."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 37,
+    "text": "In the Python example (SocialMediaPost), copy.deepcopy() was used. Why was this necessary?",
+    "options": [
+      "Because the author and content are string primitives.",
+      "To ensure the clone() method runs faster.",
+      "Because the tags attribute is a list (a mutable reference type), and a deep copy is needed to create an independent copy of the list.",
+      "Python's clone() method requires deepcopy() by default."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 38,
+    "text": "True or False: The client of the Prototype pattern must always know the concrete class of the prototype it is cloning.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 39,
+    "text": "What is the role of the IPrototype interface in the pattern's design?",
+    "options": [
+      "It contains the actual data of the object to be cloned.",
+      "It provides a way for the PrototypeManager to delete objects.",
+      "It declares the cloning method, allowing the client to treat all cloneable objects uniformly.",
+      "It implements the cloning logic itself."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 40,
+    "text": "A \"shallow copy\" of an object means:",
+    "options": [
+      "Only a subset of the object's properties are copied.",
+      "The object's value-type fields are copied, but its reference-type fields are not copied; only the references are.",
+      "The entire object graph, including all referenced objects, is copied recursively.",
+      "The copy operation is guaranteed to be thread-safe."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 41,
+    "text": "Which of the following is NOT a participant in the core Prototype pattern?",
+    "options": [
+      "Prototype (the concrete class with cloning ability)",
+      "IPrototype (the interface with the Clone method)",
+      "Client (the object that requests a clone)",
+      "Director (the object that constructs the prototype)"
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "id": 42,
+    "text": "You have an application that needs to create various configurations of a Computer object (e.g., \"GamingPC\", \"OfficePC\"). Each configuration is complex to set up. The best approach using the Prototype pattern would be:",
+    "options": [
+      "Create a Computer prototype, clone it, and then set its properties every time.",
+      "Create and store pre-configured prototypes like \"GamingPC\" and \"OfficePC\" in a manager, then clone them when needed.",
+      "Create a separate factory class for each type of computer.",
+      "Use a single Computer class with a large constructor that takes all possible configuration options."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 43,
+    "text": "The main advantage of using Prototype over creating an object with the new keyword is:",
+    "options": [
+      "It is always more secure.",
+      "It can improve performance by avoiding the expensive cost of initial object creation.",
+      "It allows for changing the class of an object at runtime.",
+      "It simplifies the process of adding new behaviors to an object."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 44,
+    "text": "True or False: The Prototype pattern requires that all objects to be cloned must be serializable.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 45,
+    "text": "After cloning a prototype object that has been configured with a database connection, what is a critical consideration for the cloned object?",
+    "options": [
+      "The clone should ideally have its own independent database connection, which requires a deep copy or special handling.",
+      "The clone must reuse the exact same database connection as the original to save resources.",
+      "The database connection in the clone must be immediately closed.",
+      "The prototype pattern cannot be used with objects that have database connections."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": 46,
+    "text": "What is the primary purpose of a web service?",
+    "options": [
+      "To create dynamic and interactive user interfaces.",
+      "To enable interoperable machine-to-machine interaction over a network.",
+      "To store and manage data in a relational database.",
+      "To provide a secure environment for running client-side scripts."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 47,
+    "text": "A key feature of web services is being \"Self-Describing\". In a SOAP-based service, this is typically achieved using:",
+    "options": [
+      "JSON Schema",
+      "A README file",
+      "WSDL (Web Services Description Language)",
+      "UDDI (Universal Description, Discovery, and Integration)"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 48,
+    "text": "Which of the following statements best describes the difference between SOAP and REST?",
+    "options": [
+      "SOAP is a lightweight architectural style, while REST is a heavyweight protocol.",
+      "SOAP is a strict protocol that primarily uses XML, while REST is a more flexible architectural style that often uses JSON.",
+      "SOAP can only be used with the HTTP protocol, while REST can work over HTTP, SMTP, and FTP.",
+      "SOAP is designed for mobile apps, while REST is designed for enterprise systems."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 49,
+    "text": "In a RESTful architecture, which HTTP method is correctly used to request data from a specified resource without altering it?",
+    "options": [
+      "POST",
+      "PUT",
+      "DELETE",
+      "GET"
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "id": 50,
+    "text": "What does \"Loosely Coupled Architecture\" mean in the context of web services?",
+    "options": [
+      "The client and server must be written in the same programming language.",
+      "The client and server can evolve independently, as long as the agreed-upon interface is not broken.",
+      "The network connection between the client and server is unreliable.",
+      "The server and client code are compiled into a single executable file."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 51,
+    "text": "When calling a SOAP web service using a library like zeep in Python, what is the first critical piece of information the library needs to understand the service?",
+    "options": [
+      "The IP address of the server.",
+      "The URL of the WSDL file.",
+      "A JSON object describing the methods.",
+      "The username and password for the service."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 52,
+    "text": "Which technology is often described as a \"directory\" or \"phone book\" for web services, although its use has declined?",
+    "options": [
+      "WSDL",
+      "XML",
+      "UDDI",
+      "SOAP"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 53,
+    "text": "A developer is building a REST API with Flask. They use the following code: @app.route('/items', methods=['GET']). What does this code do?",
+    "options": [
+      "It defines a variable named items.",
+      "It maps the URL endpoint /items to a function that will handle HTTP GET requests.",
+      "It sends a GET request to the /items endpoint.",
+      "It creates a database table named items."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 54,
+    "text": "True or False: REST services are incapable of using XML; they must use JSON for all data exchange.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 55,
+    "text": "What is a significant advantage of using JSON over XML in RESTful services, especially for web and mobile clients?",
+    "options": [
+      "JSON is more secure than XML.",
+      "JSON is generally less verbose and easier to parse, leading to better performance.",
+      "Only JSON supports complex nested data structures.",
+      "JSON has built-in support for defining data types, unlike XML."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 56,
+    "text": "When a REST API responds to a successful request to create a new resource, what is the most appropriate HTTP status code it should return?",
+    "options": [
+      "200 OK",
+      "201 Created",
+      "404 Not Found",
+      "500 Internal Server Error"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 57,
+    "text": "Which of the following is NOT a core benefit of using web services?",
+    "options": [
+      "Exposing functionality of legacy systems.",
+      "Enabling interoperability between heterogeneous systems.",
+      "Guaranteeing faster application performance than a local, monolithic application.",
+      "Utilizing standardized, low-cost communication protocols."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 58,
+    "text": "In the provided Python code response = requests.get(url), the response object contains several pieces of information. What does response.status_code represent?",
+    "options": [
+      "The data returned by the server.",
+      "The time it took for the request to complete.",
+      "A numerical code indicating the outcome of the HTTP request (e.g., success, failure).",
+      "The number of bytes received from the server."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 59,
+    "text": "SOAP is considered more complex and \"heavyweight\" than REST primarily due to its:",
+    "options": [
+      "Reliance on the less-common UDP protocol.",
+      "Requirement for strict XML schemas and the overhead of the SOAP envelope structure.",
+      "Inability to handle binary data.",
+      "Lack of support from modern programming languages."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 60,
+    "text": "True or False: A single web service can offer both a SOAP and a REST interface to its functionality.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": 61,
+    "text": "What is the primary purpose of the `System.IO.Stream` class in the .NET Framework?",
+    "options": [
+      "To provide a universal, abstract representation of a sequence of bytes, unifying access to different I/O sources like files, memory, and networks.",
+      "To exclusively handle file operations such as creating, reading, and writing to disk.",
+      "To manage network socket connections and handle TCP/IP protocols.",
+      "To format objects into XML or binary representations for storage."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": 62,
+    "text": "You are writing an application that needs to read a configuration file. The file is small and contains human-readable text. Which class is the most convenient and appropriate for reading this file line by line?",
+    "options": [
+      "`FileStream`",
+      "`MemoryStream`",
+      "`StreamReader`",
+      "`BinaryReader`"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 63,
+    "text": "A developer needs to send a large object, representing a customer's entire order history, from a server to a client application, both of which are built using .NET. Efficiency and performance are the top priorities. Which serialization formatter is the best choice?",
+    "options": [
+      "`SoapFormatter`, because it produces human-readable XML.",
+      "`XmlSerializer`, because it is the most modern option.",
+      "`BinaryFormatter`, because it produces a compact and efficient binary stream.",
+      "No formatter is needed; the object can be written directly to the `NetworkStream`."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 64,
+    "text": "What is the key difference between a `FileStream` and a `NetworkStream` regarding the `CanSeek` property?",
+    "options": [
+      "Both have `CanSeek` as `true`.",
+      "`FileStream.CanSeek` is `true`, while `NetworkStream.CanSeek` is `false`.",
+      "`FileStream.CanSeek` is `false`, while `NetworkStream.CanSeek` is `true`.",
+      "Both have `CanSeek` as `false`."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 65,
+    "text": "What is the \"illusion of concurrency\" on a single-core CPU, as described in the lecture?",
+    "options": [
+      "The CPU having multiple physical cores to run tasks simultaneously.",
+      "The operating system rapidly switching between different threads/tasks every few milliseconds, making them appear to run at the same time.",
+      "The use of asynchronous methods which do not block the CPU.",
+      "The ability of a stream to read and write data simultaneously."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 66,
+    "text": "When reading a large file from the disk, why is it a bad practice to call a synchronous `Read()` method directly on the main UI thread?",
+    "options": [
+      "It can cause a `SecurityException`.",
+      "It is slower than calling it from a new thread.",
+      "It will block the UI thread, causing the application to become unresponsive or \"hang\".",
+      "It can corrupt the file being read."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 67,
+    "text": "What is the process of converting a stream of bytes back into a live object in memory called?",
+    "options": [
+      "Serialization",
+      "Encoding",
+      "Deserialization",
+      "Compilation"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 68,
+    "text": "To make a custom class `MyClass` eligible for serialization using `BinaryFormatter` or `SoapFormatter`, what must be done?",
+    "options": [
+      "The class must inherit from `System.IO.Stream`.",
+      "The class must have a parameterless constructor.",
+      "The class must be decorated with the `[Serializable()]` attribute.",
+      "All members of the class must be public."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 69,
+    "text": "What is the primary advantage of storing the number `1,000,000` as a binary `int` (4 bytes) versus its text representation \"1000000\" (7 bytes)?",
+    "options": [
+      "The text representation is easier for the computer to process.",
+      "The binary representation is human-readable.",
+      "The binary representation is more compact, saving storage space and network bandwidth.",
+      "The text representation is more secure."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 70,
+    "text": "What is the purpose of the `using` statement when working with streams (e.g., `using (FileStream fs = new FileStream(...)) { ... }`)?",
+    "options": [
+      "It ensures that the stream's `Close()` and `Dispose()` methods are automatically called, even if an exception occurs.",
+      "It imports the `System.IO` namespace.",
+      "It converts the stream from synchronous to asynchronous.",
+      "It locks the file to prevent access from other processes."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": 71,
+    "text": "You need to read the first 4 bytes of a binary file to check for a \"magic number\" signature, without moving the stream's current position. Which method is most suitable for this?",
+    "options": [
+      "`Stream.Read()`",
+      "`StreamReader.ReadLine()`",
+      "`StreamReader.Peek()`",
+      "This is not possible; reading always consumes the data."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 72,
+    "text": "The concept of \"Entropy\" in data refers to:",
+    "options": [
+      "The physical size of the file on disk.",
+      "The level of similarity and predictability in the data; low entropy means high compressibility.",
+      "The number of times a file has been accessed.",
+      "The encryption strength of the data."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 73,
+    "text": "Which of the following is NOT a valid `FileMode` for a `FileStream`?",
+    "options": [
+      "`Open`",
+      "`Create`",
+      "`Append`",
+      "`ReadWrite`"
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "id": 74,
+    "text": "When would you use a `BinaryReader` instead of a `StreamReader`?",
+    "options": [
+      "When reading a simple text file.",
+      "When the data in the stream represents primitive types (`int`, `double`, `bool`, etc.) in their compact binary form.",
+      "When you need to read an entire file into a single string.",
+      "When you need to support multiple text encodings."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 75,
+    "text": "What is the main drawback of using `SoapFormatter` or `BinaryFormatter` (deep serialization) compared to `XmlSerializer` (shallow serialization)?",
+    "options": [
+      "They are much slower.",
+      "They create formats that are tightly coupled to the .NET type system and are not easily interoperable with non-.NET platforms.",
+      "They cannot handle complex object graphs.",
+      "They do not support deserialization."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 76,
+    "text": "What combination of information uniquely defines a socket endpoint?",
+    "options": [
+      "IP Address and MAC Address",
+      "IP Address and Port Number",
+      "Hostname and Domain Name",
+      "Process ID and Thread ID"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 77,
+    "text": "In the client-server model, which party is typically responsible for initiating the communication?",
+    "options": [
+      "The server",
+      "The client",
+      "The network router",
+      "The operating system kernel"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 78,
+    "text": "Which transport layer protocol provides reliable, connection-oriented communication, guaranteeing data integrity and order?",
+    "options": [
+      "UDP",
+      "IP",
+      "TCP",
+      "HTTP"
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 79,
+    "text": "A developer is building a live video streaming application where speed is critical and the occasional loss of a frame is acceptable. Which protocol is the most suitable choice?",
+    "options": [
+      "TCP, because it guarantees no data is lost.",
+      "UDP, because its low latency is more important than guaranteed delivery.",
+      "TCP, because it ensures video frames arrive in the correct order.",
+      "UDP, because it is more secure for media streaming."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 80,
+    "text": "In .NET socket programming, what is the primary purpose of the `NetworkStream` class?",
+    "options": [
+      "To represent the physical network card.",
+      "To provide a stream-based interface for sending and receiving data over a TCP connection.",
+      "To listen for incoming UDP packets.",
+      "To resolve domain names into IP addresses."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 81,
+    "text": "Why is multithreading considered a key feature for server applications?",
+    "options": [
+      "To make the server code harder to read.",
+      "To allow the server to run on multiple computers simultaneously.",
+      "To prevent the main UI thread from freezing while waiting for blocking network operations like `Accept` or `Receive`.",
+      "To encrypt the communication between the client and server."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 82,
+    "text": "When a server is listening for TCP connections, what does the `AcceptSocket()` (or `Accept()`) method return?",
+    "options": [
+      "The data sent by the client.",
+      "A boolean value indicating if a client has connected.",
+      "A **new** socket object dedicated to communicating with the connecting client.",
+      "The IP address of the client."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 83,
+    "text": "In .NET, the `UdpClient`, `TcpClient`, and `TcpListener` classes are best described as:",
+    "options": [
+      "Low-level classes that provide maximum control over the socket.",
+      "High-level wrapper classes that simplify socket programming but are less flexible.",
+      "Obsolete classes that should no longer be used.",
+      "Classes used exclusively for asynchronous programming."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 84,
+    "text": "What happens when the `Receive()` method is called on a TCP socket and the client has properly closed the connection?",
+    "options": [
+      "It throws a `SocketException`.",
+      "It waits indefinitely for more data.",
+      "It returns `0`.",
+      "It returns `-1`."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 85,
+    "text": "What is the main problem with calling a blocking method like `tcpListener.AcceptSocket()` directly on an application's main (UI) thread?",
+    "options": [
+      "It will cause a security vulnerability.",
+      "It will make the application's user interface become unresponsive or \"hang\".",
+      "It will only work with UDP connections.",
+      "It will consume a large amount of network bandwidth."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 86,
+    "text": "The range of port numbers from 0 to 1023 are known as \"well-known ports\". Why should a developer of a custom server application typically avoid using them?",
+    "options": [
+      "Because they are slower than higher-numbered ports.",
+      "Because they are reserved for standard services (like HTTP, FTP) and often require administrator privileges.",
+      "Because they are dynamically assigned to clients and cannot be used by servers.",
+      "Because they do not support TCP connections."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 87,
+    "text": "What is the fundamental difference between a \"connection-oriented\" protocol (like TCP) and a \"connectionless\" protocol (like UDP)?",
+    "options": [
+      "TCP requires an IP address, while UDP does not.",
+      "TCP establishes a dedicated session (a \"handshake\") before data transfer, while UDP sends data without establishing a prior connection.",
+      "TCP is used for servers, while UDP is used for clients.",
+      "TCP sends data in large blocks, while UDP sends data one byte at a time."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 88,
+    "text": "In modern .NET development, what is the primary advantage of using asynchronous methods (`BeginAccept`/`EndAccept`) over creating a new `Thread` for each client?",
+    "options": [
+      "Asynchronous code is always easier to write and debug.",
+      "It allows a server to handle a very large number of concurrent connections with a small number of threads, improving scalability.",
+      "It is the only way to handle TCP connections.",
+      "It makes the connection more secure."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 89,
+    "text": "When a client attempts to connect to a server port that has no listening process, what is the most likely outcome?",
+    "options": [
+      "The client will connect successfully but will not receive any data.",
+      "The client's operating system will automatically start the server process.",
+      "The connection attempt will be actively refused, likely resulting in a `SocketException`.",
+      "The connection will wait indefinitely (timeout) without an error."
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "id": 90,
+    "text": "The purpose of the `Bind()` method in socket programming is to:",
+    "options": [
+      "Initiate a connection to a remote server.",
+      "Associate a socket with a specific local IP address and port number.",
+      "Send data to a remote host.",
+      "Close the socket and release all associated resources."
+    ],
+    "correctAnswer": 1
+  }
+]

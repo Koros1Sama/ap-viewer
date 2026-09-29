@@ -4,3 +4,5 @@ pdf/
 node_modules/
 scratch/
 *.zip
+
+.vercel

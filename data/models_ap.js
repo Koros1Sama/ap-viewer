@@ -9,7 +9,23 @@ window.TOC_MODELS.push({
   "id": "ap_theory_final",
   "kind": "نظري",
   "title_ar": "بنك أسئلة ونماذج البرمجة المتقدمة النهائي — د. بيداء لعلع",
-  "origin_ar": "تجميع شامل وتفاعلي لأسئلة ونماذج اختبار البرمجة المتقدمة النهائي (205 أسئلة مع تلميحات وتفسيرات تفصيلية)",
+  "origin_ar": "تجميع شامل لأسئلة ونماذج اختبار البرمجة المتقدمة النهائي وفق سلايدات ومقرر د. بيداء لعلع (205 أسئلة اختيار من متعدد مع التفسير العلمي الدقيق والتلميحات)",
+  "origin_url": "https://github.com/Koros1Sama/ap-viewer/tree/main/exams",
+  "origin_label": "مجلد النماذج على GitHub",
+  "origin_sources": [
+    {
+      "label": "ملف exam_questions_answers.pdf",
+      "url": "./exams/exam_questions_answers.pdf"
+    },
+    {
+      "label": "ملف 90_qu.json",
+      "url": "./exams/90_qu.json"
+    },
+    {
+      "label": "كود بنك النماذج المباشر (models_ap.js)",
+      "url": "https://github.com/Koros1Sama/ap-viewer/blob/main/data/models_ap.js"
+    }
+  ],
   "questions": [
     {
       "n": 1,
