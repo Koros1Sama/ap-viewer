@@ -1,5 +1,5 @@
 /* بيانات السلايدات — عارض مقرر البرمجة المتقدمة (نظري)
-   المدرس: د. بيداء لعلع — 8 وحدات (410 شريحة نظري)
+   المدرس: د. بيداء لعلع — وحدات المنهج L1 إلى L9 تشمل (L5 & L6) (410 شريحة نظري)
    معيار 100% SVG line-art · صفر إيموجيات
 */
 window.TOC_META = {
@@ -719,8 +719,8 @@ window.TOC_META = {
     {
       "id": "L5",
       "file": "3324_برمجة_متقدمة_Ch5.pptx",
-      "ar": "الوحدة 5: العمارة النظيفة، التزامن، والأنظمة الحديثة",
-      "en": "Clean Architecture, Concurrency, APIs & Microservices",
+      "ar": "الوحدة 5 و 6: العمارة النظيفة، التزامن، والأنظمة الحديثة",
+      "en": "L5 & L6: Clean Architecture, Concurrency, APIs & Microservices",
       "teacher": "د. بيداء لعلع",
       "slides": [
         {
@@ -1145,8 +1145,8 @@ window.TOC_META = {
     {
       "id": "L6",
       "file": "3376_AP_Lec7.pptx",
-      "ar": "الوحدة 6: هندسة الـ APIs وتكامل الأنظمة والخدمات السحابية",
-      "en": "API Architecture, Web Services & Security (REST, SOAP, GraphQL, gRPC, JWT)",
+      "ar": "الوحدة 7: هندسة الـ APIs وتكامل الأنظمة والخدمات السحابية",
+      "en": "L7: API Architecture, Web Services & Security (REST, SOAP, GraphQL, gRPC, JWT)",
       "teacher": "د. بيداء لعلع",
       "slides": [
         {
@@ -1327,8 +1327,8 @@ window.TOC_META = {
     {
       "id": "L7",
       "file": "3522_AP_Lec8.pptx",
-      "ar": "الوحدة 7: البرمجة غير المتزامنة وتعدد المسالك وإدارة الذاكرة",
-      "en": "Asynchronous Programming, Concurrency, Multithreading & Memory Management",
+      "ar": "الوحدة 8: البرمجة غير المتزامنة وتعدد المسالك وإدارة الذاكرة",
+      "en": "L8: Asynchronous Programming, Concurrency, Multithreading & Memory Management",
       "teacher": "د. بيداء لعلع",
       "slides": [
         {
@@ -1517,8 +1517,8 @@ window.TOC_META = {
     {
       "id": "L8",
       "file": "3523_AP_Lec9.pptx",
-      "ar": "الوحدة 8: النظم الموزعة، الخدمات المصغرة وتقنيات الذكاء الاصطناعي (RAG)",
-      "en": "Distributed Systems, Microservices, Webhooks & AI/RAG Architecture",
+      "ar": "الوحدة 9: النظم الموزعة، الخدمات المصغرة وتقنيات الذكاء الاصطناعي (RAG)",
+      "en": "L9: Distributed Systems, Microservices, Webhooks & AI/RAG Architecture",
       "teacher": "د. بيداء لعلع",
       "slides": [
         {

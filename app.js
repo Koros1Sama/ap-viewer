@@ -467,10 +467,10 @@
 <div class="ap-diff-card">
   <div class="ap-diff-title">${ICONS.info} تنبيه لطلابنا الذين حمّلوا المحتوى مسبقاً:</div>
   <div class="ap-diff-msg">
-    إذا لاحظت انخفاض نسبة التحميل من 100%، فهذا طبيعي ومبشر! لقد أضفنا المحاضرات الرسمية 6 و 7 و 8 (138 شريحة جديدة). <b>ملفاتك السابقة لم يمسسها أي تغيير وهي محفوظة في جهازك 100%</b>، وزر التحميل سيجلب فقط الشرائح الجديدة دون استهلاك بياناتك على الملفات المحفوظة.
+    إذا لاحظت انخفاض نسبة التحميل من 100%، فهذا طبيعي ومبشر! لقد أضفنا المحاضرات الرسمية L7 و L8 و L9 (علماً أن المحاضرة 5 تشمل 5 و 6 معاً) (138 شريحة جديدة). <b>ملفاتك السابقة لم يمسسها أي تغيير وهي محفوظة في جهازك 100%</b>، وزر التحميل سيجلب فقط الشرائح الجديدة دون استهلاك بياناتك على الملفات المحفوظة.
   </div>
   <button class="ap-btn pri" id="apDLNewPanel">
-    ${ICONS.download} تحميل المحاضرات المضافة حديثاً فقط (L6 و L7 و L8 — ${analysis.newMissing} شريحة)
+    ${ICONS.download} تحميل المحاضرات المضافة حديثاً فقط (L7 و L8 و L9 — ${analysis.newMissing} شريحة)
   </button>
 </div>`,
       );
@@ -480,7 +480,7 @@
         dlNewPanelBtn.onclick = async () => {
           setHTML(
             dlNewPanelBtn,
-            `${ICONS.clock} جارٍ تحميل المحاضرات 6 و 7 و 8…`,
+            `${ICONS.clock} جارٍ تحميل المحاضرات L7 و L8 و L9…`,
           );
           dlNewPanelBtn.className = "ap-btn pri off";
           await runBatchDownload(analysis.newSlideUrls, (cur, tot) => {
@@ -568,18 +568,18 @@
 <div class="ap-banner-header">
   <div class="ap-banner-title">
     ${ICONS.info}
-    <span>تحديث المنهج: تمت إضافة المحاضرات الرسمية 6 و 7 و 8</span>
+    <span>تحديث المنهج: تمت إضافة المحاضرات الرسمية L7 و L8 و L9 (تشمل L5 و L6 معاً)</span>
   </div>
   <button class="ap-banner-close" id="apDismissBanner" title="إغلاق هذا الإشعار">${ICONS.close}</button>
 </div>
 <div class="ap-banner-body">
   <b>تنويه لطلابنا الذين حمّلوا المحتوى للعمل أوفلاين مسبقاً:</b><br>
-  تم إلحاق المحاضرات الرسمية الثلاث المتبقية للمنهج كاملاً:
-  <span class="ap-banner-highlight">L6 (هندسة الـ APIs والخدمات السحابية)</span>
-  <span class="ap-banner-highlight">L7 (البرمجة غير المتزامنة وإدارة الذاكرة)</span>
-  <span class="ap-banner-highlight">L8 (الميكروسيرفس والنظم الموزعة و RAG)</span>
+  تم إلحاق المحاضرات الرسمية المتبقية للمنهج كاملاً (علماً أن المحاضرة 5 تشمل 5 و 6 معاً):
+  <span class="ap-banner-highlight">L7 (هندسة الـ APIs والخدمات السحابية)</span>
+  <span class="ap-banner-highlight">L8 (البرمجة غير المتزامنة وإدارة الذاكرة)</span>
+  <span class="ap-banner-highlight">L9 (الميكروسيرفس والنظم الموزعة و RAG)</span>
   بإجمالي <b>138 شريحة جديدة</b>.<br>
-  <b>جميع ما قمت بتحميله مسبقاً (الوحدات 1 إلى 5) محفوظ بأمان 100% في جهازك ولم يُحذف منه شيء</b>. سبب تغير النسبة من 100% إلى نحو 66% هو فقط إضافة هذه المحاضرات الجديدة لمجموع المقرر. يمكنك حفظ المحاضرات الجديدة بضغطة زر واحدة.
+  <b>جميع ما قمت بتحميله مسبقاً (الوحدات 1 إلى 5 و 6) محفوظ بأمان 100% في جهازك ولم يُحذف منه شيء</b>. سبب تغير النسبة من 100% إلى نحو 66% هو فقط إضافة هذه المحاضرات الجديدة لمجموع المقرر. يمكنك حفظ المحاضرات الجديدة بضغطة زر واحدة.
 </div>
 <div class="ap-banner-actions">
   <button class="ap-btn pri" id="apDLNewBanner">
@@ -650,7 +650,7 @@
       if (textSpan && !cta.querySelector(".cta-update-badge")) {
         const badge = document.createElement("span");
         badge.className = "cta-update-badge";
-        badge.textContent = "تحديث: توفر L6 - L8";
+        badge.textContent = "تحديث: توفر L7 - L9";
         textSpan.prepend(badge);
       }
     }

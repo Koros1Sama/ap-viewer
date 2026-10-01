@@ -7,7 +7,7 @@
      صور الشرائح = الكاش أولاً (كبيرة ومستقرة)
    ═══════════════════════════════════════════════════════ */
 const RUNTIME = "ap-runtime-v7";
-const CORE = "ap-core-v8";
+const CORE = "ap-core-v9";
 const CORE_ASSETS = [
   "./",
   "./index.html",
