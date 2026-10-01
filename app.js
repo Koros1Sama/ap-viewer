@@ -12,6 +12,7 @@
 (() => {
   if (!("serviceWorker" in navigator)) return;
 
+  const CORE = "ap-core-v10";
   const RUNTIME = "ap-runtime-v8";
   const isStandalone =
     matchMedia("(display-mode: standalone)").matches ||
@@ -83,6 +84,7 @@
       "index.html",
       "summary.html",
       "prompts.html",
+      "app.js",
       "manifest.json",
       "favicon.ico",
     ].forEach((u) => urls.add(u));
@@ -117,8 +119,9 @@
   async function countCached(list) {
     let done = 0;
     try {
-      const cache = await caches.open(RUNTIME);
-      for (const u of list) if (await cache.match(u)) done++;
+      for (const u of list) {
+        if (await caches.match(u, { ignoreSearch: true })) done++;
+      }
     } catch {}
     return done;
   }
@@ -145,13 +148,12 @@
     const newSlideUrls = [];
 
     try {
-      const cache = await caches.open(RUNTIME);
       for (const lec of meta.lectures) {
         const isNew = ["L6", "L7", "L8"].includes(lec.id);
         for (const sl of lec.slides || []) {
           const n = String(sl.n).padStart(3, "0");
           const u = `slides/${lec.id}/${lec.id}-S${n}.png`;
-          const isHit = !!(await cache.match(u));
+          const isHit = !!(await caches.match(u, { ignoreSearch: true }));
           if (isNew) {
             newTotal++;
             if (isHit) newCached++;
@@ -191,7 +193,7 @@
     const todo = [];
     for (const u of urls) {
       /* فحص حتمي: لا يتم طلب أو إعادة تحميل أي ملف موجود مسبقاً في الكاش */
-      if (!(await cache.match(u))) todo.push(u);
+      if (!(await caches.match(u, { ignoreSearch: true }))) todo.push(u);
     }
     if (todo.length === 0) {
       abortDL = null;

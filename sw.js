@@ -8,11 +8,14 @@
    ═══════════════════════════════════════════════════════ */
 const RUNTIME = "ap-runtime-v8";
 const CORE = "ap-core-v10";
+const CORE_PREFIX = "ap-core-";
+const RUNTIME_PREFIX = "ap-runtime-";
 const CORE_ASSETS = [
   "./",
   "./index.html",
   "./summary.html",
   "./prompts.html",
+  "./app.js",
   "./manifest.json",
   "./favicon.ico",
   "./data/config.js",
@@ -42,7 +45,7 @@ self.addEventListener("activate", (e) => {
 
       /* حماية ونقل كافة الشرائح والموارد المحملة من أي كاش رن تايم سابق لمنع ضياع أي ملف تم تحميله */
       for (const k of keys) {
-        if (k.startsWith("ap-runtime-") && k !== RUNTIME) {
+        if (k.startsWith(RUNTIME_PREFIX) && k !== RUNTIME) {
           try {
             const oldC = await caches.open(k);
             const oldReqs = await oldC.keys();
@@ -55,9 +58,9 @@ self.addEventListener("activate", (e) => {
         }
       }
 
-      /* تنظيف كاش القشرة القديم فقط (ap-core-*) مع الحظر التام لمس كاش الرن تايم الأساسي */
+      /* تنظيف كاش القشرة القديم فقط (ap-core-*) مع حظر مساس كاش الرن تايم الأساسي أو أي كاشات أخرى */
       for (const k of keys) {
-        if (k !== RUNTIME && k !== CORE && !k.startsWith("ap-runtime-")) {
+        if (k.startsWith(CORE_PREFIX) && k !== CORE) {
           try {
             await caches.delete(k);
           } catch {}
@@ -70,13 +73,13 @@ self.addEventListener("activate", (e) => {
 });
 
 async function networkFirst(req) {
-  const cache = await caches.open(RUNTIME);
+  const runtime = await caches.open(RUNTIME);
   try {
     const res = await fetch(req);
-    if (res && res.ok) cache.put(req, res.clone());
+    if (res && res.ok) runtime.put(req, res.clone());
     return res;
   } catch {
-    const cached = await cache.match(req, { ignoreSearch: true });
+    const cached = await caches.match(req, { ignoreSearch: true });
     if (cached) return cached;
     return new Response("أوفلاين — لا نسخة محفوظة", {
       status: 503,
@@ -86,20 +89,20 @@ async function networkFirst(req) {
 }
 
 async function cacheFirst(req) {
-  const cache = await caches.open(RUNTIME);
-  const cached = await cache.match(req);
+  const cached = await caches.match(req, { ignoreSearch: true });
   if (cached) return cached;
+  const runtime = await caches.open(RUNTIME);
   const res = await fetch(req);
-  if (res && res.ok) cache.put(req, res.clone());
+  if (res && res.ok) runtime.put(req, res.clone());
   return res;
 }
 
 async function staleWhileRevalidate(req) {
-  const cache = await caches.open(RUNTIME);
-  const cached = await cache.match(req);
+  const cached = await caches.match(req, { ignoreSearch: true });
+  const runtime = await caches.open(RUNTIME);
   const fresh = fetch(req)
     .then((res) => {
-      if (res && res.ok) cache.put(req, res.clone());
+      if (res && res.ok) runtime.put(req, res.clone());
       return res;
     })
     .catch(() => null);
@@ -124,19 +127,32 @@ self.addEventListener("fetch", (e) => {
   if (url.origin !== location.origin) return;
   const p = url.pathname;
 
-  /* سكربت العامل نفسه والمانيفست: شبكة مباشرة */
-  if (p.endsWith("/sw.js") || p.endsWith("/manifest.json")) return;
+  /* سكربت العامل نفسه: شبكة مباشرة دائماً لاكتشاف التحديثات فورياً */
+  if (p.endsWith("/sw.js")) return;
 
-  /* الصفحات والإعدادات: الشبكة أولاً — تغييرات النطاق تصل فوراً */
-  if (p === "/" || p.endsWith(".html") || p === "/data/config.js")
+  /* الصفحات والإعدادات وكود التطبيق: الشبكة أولاً — تغييرات النطاق تصل فوراً */
+  if (
+    p === "/" ||
+    p.endsWith("/") ||
+    p.endsWith(".html") ||
+    p.endsWith("/data/config.js") ||
+    p.endsWith("/app.js") ||
+    p.endsWith("/manifest.json") ||
+    p.endsWith("/favicon.ico")
+  ) {
     return e.respondWith(networkFirst(req));
+  }
 
-  /* الشرائح والأيقونات: الكاش أولاً (كبيرة وثابتة) */
-  if (p.startsWith("/slides/") || p.startsWith("/icons/"))
+  /* الشرائح والأيقونات: الكاش أولاً (كبيرة ومستقرة) */
+  if (p.includes("/slides/") || p.includes("/icons/")) {
     return e.respondWith(cacheFirst(req));
+  }
 
   /* ملفات البيانات: نسخة محفوظة فوراً + تحديث بالخلفية */
-  if (p.startsWith("/data/")) return e.respondWith(staleWhileRevalidate(req));
+  if (p.includes("/data/")) {
+    return e.respondWith(staleWhileRevalidate(req));
+  }
 
-  /* أي شيء آخر: شبكة عادية */
+  /* أي مورد محلي آخر: الشبكة أولاً */
+  return e.respondWith(networkFirst(req));
 });
