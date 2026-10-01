@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════
    بنك أسئلة ونماذج الاختبار النهائي — البرمجة المتقدمة
-   المدرس: د. بيداء لعلع — 205 أسئلة اختيار من متعدد تفاعلية
-   توزيع الوحدات: L1 (35س) · L2 (30س) · L3 (45س) · L4 (35س) · L5 (60س)
+   المدرس: د. بيداء لعلع — 325 سؤال اختيار من متعدد تفاعلية
+   توزيع الوحدات: L1 (35س) · L2 (30س) · L3 (45س) · L4 (35س) · L5 (60س) · L6 (40س) · L7 (40س) · L8 (40س)
    معيار الجودة: خيارات ثنائية اللغة (en/ar) + تفسير علمي دقيق + صفر إيموجيات
    ═══════════════════════════════════════════════════════════ */
 window.TOC_MODELS = window.TOC_MODELS || [];
@@ -6980,6 +6980,4086 @@ window.TOC_MODELS.push({
         }
       ],
       "tip": "وقفة امتحانية: الأسلوب القياسي لحقن التبعيات في .NET هو: Constructor Injection."
+    },
+    {
+      "n": 206,
+      "type": "mcq",
+      "ref": "L6-S002",
+      "q_ar": "ما هو التعريف الدقيق لمفهوم واجهة برمجة التطبيقات (API) وفق المعمارية البرمجية؟",
+      "q_en": "What is the precise definition of an Application Programming Interface (API) in software architecture?",
+      "opts": [
+        {
+          "ar": "قاعدة بيانات علائقية لتخزين جداول المستخدمين والصلاحيات فقط.",
+          "ok": false,
+          "why": "قواعد البيانات مخازن بيانات وليست واجهات تواصل وتكامل بين البرمجيات.",
+          "en": "A relational database used solely for storing user tables and permissions."
+        },
+        {
+          "ar": "عقد برمجي مجرد وآلية اتصال تتيح لنظامين برمجcontracts) محدد وموثق دون كشف التنفيذ الداخلي.",
+          "ok": true,
+          "why": "الـ API هو عقد ومترجم يحدد قواعد تبادل الرسائل والوظائف بين البرمجيات المستقلة.",
+          "en": "An abstract software contract and communication mechanism that allows two systems to interact via defined interfaces without exposing internal implementations."
+        },
+        {
+          "ar": "شاشة مستخدم رسومية مصممة للتحكم في الطابعات الملحقة بالحاسوب.",
+          "ok": false,
+          "why": "الـ API واجهة برمجية للأنظمة وليست واجهة مستخدم رسومية (GUI).",
+          "en": "A graphical user interface designed for managing computer peripheral printers."
+        },
+        {
+          "ar": "بروتوكول تشفير فيزيائي مدمج داخل كابلات الشبكة السلكية.",
+          "ok": false,
+          "why": "الـ API مفهوم برمجي في طبقة التطبيقات وليس عتاداً شبكياً.",
+          "en": "A physical encryption protocol embedded inside wired network cables."
+        }
+      ],
+      "tip": "وقفة امتحانية: الـ API هو عقد مجرد (Contract) يحدد: ما هي الطلبات المقبولة، ما هي المدخلات، وما هو شكل الاستجابة المتوقعة."
+    },
+    {
+      "n": 207,
+      "type": "mcq",
+      "ref": "L6-S002",
+      "q_ar": "كيف تمثل استعارة المطعم الشهيرة (العميل والنادل والمطبخ) دور الـ API في هندسة البرمجيات؟",
+      "q_en": "How does the restaurant metaphor (customer, waiter, kitchen) illustrate the role of an API in software engineering?",
+      "opts": [
+        {
+          "ar": "المطبخ يمثل العميل، والنادل يمثل قاعدة البيانات، والزبون يمثل واجهة الـ API.",
+          "ok": false,
+          "why": "الترتيب معكوس وغير صحيح.",
+          "en": "The kitchen represents the client, the waiter is the database, and customer is the API."
+        },
+        {
+          "ar": "الزبون يمثل العميل (Client)، والنادل يمثل الـ API الذي ينقل الطلبات ويعيد النتائج، والمطبخ يمثل النظام الخلفي (Backend).",
+          "ok": true,
+          "why": "النادل يعزل العميل عن فوضى وتعقيد المطبخ الداخلي، تماماً كما يعزل الـ API العميل عن تعقيد الخادم.",
+          "en": "The customer represents the Client, the waiter represents the API transmitting requests and returning results, and kitchen is the Backend."
+        },
+        {
+          "ar": "النادل يلغي الحاجة لوجود مطبخ تماماً في المطعم.",
+          "ok": false,
+          "why": "النادل مجرد وسيط، وبدونه أو بدون مطبخ لا توجد وجبة.",
+          "en": "The waiter completely eliminates the need for having a kitchen in the restaurant."
+        },
+        {
+          "ar": "العميل يدخل المطبخ بنفسه ويطبخ الطعام مباشرة دون أي وسيط.",
+          "ok": false,
+          "why": "هذا يناقض فكرة التغليف والعزل التي يوفرها النادل والـ API.",
+          "en": "The customer enters the kitchen directly and cooks food without any intermediary."
+        }
+      ],
+      "tip": "وقفة امتحانية: فائدة الـ API هي حماية النظام الخلفي وإخفاء تفاصيل المعالجة الداخلية وتوفير واجهة تفاعل قياسية وآمنة."
+    },
+    {
+      "n": 208,
+      "type": "mcq",
+      "ref": "L6-S002",
+      "q_ar": "هل يشترط في الأنظمة المتكاملة عبر واجهات الـ APIs أن تكون مكتوبة بنفس لغة البرمجة وتعمل على نفس نظام التشغيل؟",
+      "q_en": "Must systems integrating via APIs be written in the same programming language and run on the same operating system?",
+      "opts": [
+        {
+          "ar": "نعم، يشترط تطابق لغة البرمجة ونظام التشغيل في الطرفين بالكامل.",
+          "ok": false,
+          "why": "الـ API صُمم أساساً لكسر هذا القيد.",
+          "en": "Yes, identical programming languages and operating systems are strictly required."
+        },
+        {
+          "ar": "لا، فالـ APIs تعتمد على بروتوكولات قياسية وصيغ بيانات حيادية (مثل HTTP و JSON) مستقلة عن المنصة.",
+          "ok": true,
+          "why": "استقلالية المنصة (Platform Independence) هي إحدى أعظم ميزات الـ APIs الحديثة.",
+          "en": "No, because APIs rely on standard protocols and platform-neutral formats (like HTTP and JSON)."
+        },
+        {
+          "ar": "نعم، ولكن فقط إذا كان الخادم يعمل بنظام لينكس والعميل بنظام ويندوز.",
+          "ok": false,
+          "why": "البروتوكولات المحايدة تعمل عبر كافة أنظمة التشغيل بلا تمييز.",
+          "en": "Yes, but only if the server runs on Linux and the client runs on Windows."
+        },
+        {
+          "ar": "نعم، لأن البيانات لا يمكن نقلها شبكياً بين لغات برمجة مختلفة.",
+          "ok": false,
+          "why": "البيانات تنقل بتنسيقات قياسية يفهمها الجميع مثل JSON و XML و Protobuf.",
+          "en": "Yes, because data cannot be transmitted over networks between different languages."
+        }
+      ],
+      "tip": "وقفة امتحانية: واجهات الـ APIs تحقق Platform Independence؛ تطبيق بـ Flutter بلغة Dart يتحدث بسهولة مع خادم C# وقاعدة Oracle."
+    },
+    {
+      "n": 209,
+      "type": "mcq",
+      "ref": "L6-S003",
+      "q_ar": "في المعمارية الحديثة متعددة الطبقات (Modern Layered Architecture)، ما هو الدور المنوط بـ API Layer؟",
+      "q_en": "In modern layered architecture, what is the specific responsibility assigned to the API Layer?",
+      "opts": [
+        {
+          "ar": "تخزين البيانات الدائمة وكتابة استعلامات SQL المعقدة مباشرة.",
+          "ok": false,
+          "why": "هذه مسؤولية طبقة البنية التحتية (Infrastructure).",
+          "en": "Persisting permanent data and executing complex SQL queries directly."
+        },
+        {
+          "ar": "استقبال طلبات العملاء الخارجية، فحص صحة المدخلات الأولية، والتوثيق، ثم تفويض التنفيذ لطبقات الأعمال.",
+          "ok": true,
+          "why": "طبقة الـ API هي بوابة الدخول والمترجم وليست مكاناً لتنفيذ منطق الأعمال الجوهري.",
+          "en": "Receiving external client requests, validating initial inputs, authenticating, and dispatching execution to application layers."
+        },
+        {
+          "ar": "تحديد القواعد المحاسبية الجوهرية للشركة وسياسات التسعير.",
+          "ok": false,
+          "why": "مكان قواعد الأعمال الجوهرية هو طبقة المجال (Domain Layer).",
+          "en": "Defining core accounting rules and corporate pricing policies."
+        },
+        {
+          "ar": "إدارة بطاقات الشاشات والذاكرة العشوائية للخادم.",
+          "ok": false,
+          "why": "هذه وظيفة نظام التشغيل والعتاد.",
+          "en": "Managing display cards and RAM memory of the physical server."
+        }
+      ],
+      "tip": "وقفة امتحانية: قاعدة معمارية ذهبية: No Business Logic in API Layer (لا يُكتب منطق الأعمال أبداً في طبقة الـ API أو الـ Controllers)."
+    },
+    {
+      "n": 210,
+      "type": "mcq",
+      "ref": "L6-S004",
+      "q_ar": "لماذا تلجأ المتاجر الإلكترونية لاستخدام Payment APIs (مثل Stripe أو PayPal) بدلاً من معالجة وتخزين بطاقات الائتمان بنفسها؟",
+      "q_en": "Why do e-commerce stores integrate Payment APIs (like Stripe or PayPal) instead of processing and storing credit cards themselves?",
+      "opts": [
+        {
+          "ar": "لأن لغات البرمجة الحديثة لا تدعم قراءة الأرقام المكونة من 16 خانة.",
+          "ok": false,
+          "why": "لغات البرمجة تدعم كافة أنواع الأرقام والسلاسل.",
+          "en": "Because modern programming languages cannot read 16-digit numbers."
+        },
+        {
+          "ar": "للتهرب من التراخيص الأمنية المعقدة (معايير PCI-DSS) ونقل المخاطر القانونية والمالية لجهات مالية متخصصة ومؤمنة.",
+          "ok": true,
+          "why": "تخزين ومعالجة البطاقات يتطلب بنية أمنية بالغة الصرامة والتكلفة، والـ Payment API يفوض هذه المسؤولية للوسيط المالي.",
+          "en": "To bypass rigorous PCI-DSS security compliance and transfer legal/financial fraud risks to specialized, certified financial processors."
+        },
+        {
+          "ar": "لأن المتجر يريد إبطاء سرعة إتمام عمليات الشراء للعملاء.",
+          "ok": false,
+          "why": "المتاجر تسعى دائماً لتسريع وتسهيل الدفع.",
+          "en": "Because the store desires to slow down checkout completion speed."
+        },
+        {
+          "ar": "لأن البنوك تحظر على المتاجر البيع بالبطاقات الإلكترونية إطلاقاً.",
+          "ok": false,
+          "why": "البنوك توفر بوابات الدفع خصيصاً لتمكين التجارة الإلكترونية.",
+          "en": "Because banks prohibit e-commerce stores from accepting electronic cards altogether."
+        }
+      ],
+      "tip": "وقفة امتحانية: القيمة الهندسية لدمج الـ APIs: الأمان الصارم، تفويض الاختصاصات المعقدة، وتقليص تكلفة التشغيل ووقت الطرح في السوق."
+    },
+    {
+      "n": 211,
+      "type": "mcq",
+      "ref": "L6-S005",
+      "q_ar": "ما هو التصنيف الثلاثي لواجهات برمجة التطبيقات بناءً على نطاق الوصول والإتاحة المؤسسية؟",
+      "q_en": "What is the threefold classification of APIs based on accessibility and organizational scope?",
+      "opts": [
+        {
+          "ar": "واجهات سريعة، واجهات بطيئة، وواجهات متوسطة.",
+          "ok": false,
+          "why": "هذا تقييم أداء وليس تصنيف إتاحة ووصول.",
+          "en": "Fast APIs, slow APIs, and medium APIs."
+        },
+        {
+          "ar": "واجهات عامة (Public)، واجهات خاصة/داخلية (Private/Internal)، وواجهات الشركاء (Partner APIs).",
+          "ok": true,
+          "why": "هذا هو التصنيف الإداري والتنظيمي المعتمد في السلايدات لهندسة الواجهات.",
+          "en": "Public APIs, Private/Internal APIs, and Partner APIs."
+        },
+        {
+          "ar": "واجهات سطح المكتب، واجهات السيرفر، وواجهات الطابعات.",
+          "ok": false,
+          "why": "تصنيف عتادي خاطئ.",
+          "en": "Desktop APIs, server APIs, and printer APIs."
+        },
+        {
+          "ar": "واجهات نصية، واجهات رقمية، وواجهات كائنية.",
+          "ok": false,
+          "why": "تصنيف أنواع بيانات وليس واجهات.",
+          "en": "Textual APIs, numeric APIs, and object-oriented APIs."
+        }
+      ],
+      "tip": "وقفة امتحانية: تصنيف الـ APIs له بعدان: 1) حسب نطاق الإتاحة (Public, Private, Partner)، 2) حسب المعمارية (REST, SOAP, GraphQL, gRPC)."
+    },
+    {
+      "n": 212,
+      "type": "mcq",
+      "ref": "L6-S006",
+      "q_ar": "لماذا تفرض الواجهات العامة (Public APIs) استخدام مفاتيح الوصول (API Keys) وآليات تقييد الاستهلاك (Rate Limiting)؟",
+      "q_en": "Why do Public APIs enforce the use of API Keys and Rate Limiting mechanisms?",
+      "opts": [
+        {
+          "ar": "لتشفير اتصال الأسلاك النحاسية بين الخادم وجدار الحماية.",
+          "ok": false,
+          "why": "التشفير وظيفة TLS/HTTPS وليس مفاتيح API.",
+          "en": "To encrypt copper wire connections between server and firewall."
+        },
+        {
+          "ar": "لتتبع حجم استهلاك المطورين، فرض الفواتير، وحماية السيرفر من هجمات الإغراق وهدر الموارد (DDoS / Abuse).",
+          "ok": true,
+          "why": "الواجهات العامة مكشوفة للإنترنت، وبدون Rate Limiting ومفاتيح تتبع ينهار الخادم تحت وطأة الطلبات المتكررة.",
+          "en": "To track developer usage quotas, enforce monetization billing, and protect servers from resource exhaustion and DDoS abuse."
+        },
+        {
+          "ar": "لإجبار المطورين على كتابة الكود بنظام التشغيل ويندوز حصراً.",
+          "ok": false,
+          "why": "مفاتيح الـ API محايدة ولا علاقة لها بنظام التشغيل.",
+          "en": "To force developers to write code exclusively on Windows OS."
+        },
+        {
+          "ar": "لحذف حسابات المستخدمين الخاملين تلقائياً كل 10 دقائق.",
+          "ok": false,
+          "why": "الـ Rate Limiting يراقب معدل الطلبات في الثانية أو الدقيقة فقط.",
+          "en": "To delete inactive user accounts automatically every 10 minutes."
+        }
+      ],
+      "tip": "وقفة امتحانية: الـ Rate Limiting يحدد سقفاً أعلى للطلبات لكل مفتاح أو IP (مثال: 60 طلب في الدقيقة) ويرجع الكود 429 Too Many Requests."
+    },
+    {
+      "n": 213,
+      "type": "mcq",
+      "ref": "L6-S007",
+      "q_ar": "ما هي الفائدة المعمارية والأمنية الكبرى لاعتماد الواجهات الخاصة (Private / Internal APIs) داخل المؤسسات؟",
+      "q_en": "What is the major architectural and security benefit of adopting Private/Internal APIs within enterprises?",
+      "opts": [
+        {
+          "ar": "عدم تعريض نقاط النهاية وقواعد البيانات الحساسة للإنترنت المفتوح، وتقليص مساحة سطح الهجوم.",
+          "ok": true,
+          "why": "الواجهات الخاصة تعمل داخل الشبكة المعزولة للمؤسسة، مما يمنع وصول القراصنة المباشر إلى المنظومات الجوهرية.",
+          "en": "Shielding endpoints and sensitive databases from the public internet, thereby drastically reducing attack surface."
+        },
+        {
+          "ar": "إتاحة تحميل كافة بيانات العملاء للجمهور مجاناً دون قيود.",
+          "ok": false,
+          "why": "الواجهة الخاصة سرية ومحصورة بالأنظمة الداخلية.",
+          "en": "Making all customer data downloadable to the public freely without restriction."
+        },
+        {
+          "ar": "الاستغناء عن كلمات المرور في جميع حسابات الموظفين.",
+          "ok": false,
+          "why": "الأنظمة الداخلية تطبق مصادقة صارمة أيضاً.",
+          "en": "Eliminating passwords completely across all staff accounts."
+        },
+        {
+          "ar": "تسريع حركة مراوح التبريد في أجهزة السيرفرات السحابية.",
+          "ok": false,
+          "why": "مفهوم برمجي ومعماري وليس تحكماً ميكانيكياً.",
+          "en": "Accelerating cooling fan rotation speed in cloud servers."
+        }
+      ],
+      "tip": "وقفة امتحانية: Private APIs تسمح بتطوير وتغيير بنية قواعد البيانات الداخلية بحرية كاملة طالما أن عقد الواجهة الداخلية ثابت."
+    },
+    {
+      "n": 214,
+      "type": "mcq",
+      "ref": "L6-S008",
+      "q_ar": "بماذا تتميز واجهات الشركاء (Partner APIs) عن كل من الواجهات العامة والخاصة؟",
+      "q_en": "How do Partner APIs differ from both Public and Private APIs?",
+      "opts": [
+        {
+          "ar": "أنها مجانية ومفتوحة للعامة دون أي تسجيل أو موافقة مسبقة.",
+          "ok": false,
+          "why": "هذا تعريف الواجهات العامة (Public).",
+          "en": "They are free and publicly open without registration or prior approval."
+        },
+        {
+          "ar": "أنها مخصصة لجهات أعمال وشركاء محددين بموجب اتفاقيات وتصاريح رسمية (B2B)، مع معايير أمان وتشفير متبادل (mTLS).",
+          "ok": true,
+          "why": "واجهات الشركاء تجمع بين فتح التكامل التجاري للشركاء وضبط الأمان عبر عقود ومصادقة مشددة.",
+          "en": "They are designated for specific business partners under B2B agreements, enforcing strict mutual authentication (mTLS) and custom SLAs."
+        },
+        {
+          "ar": "أنها تعمل بدون كهرباء أو اتصال بالإنترنت.",
+          "ok": false,
+          "why": "مستحيل عملياً.",
+          "en": "They operate without electricity or network connectivity."
+        },
+        {
+          "ar": "أنها محصورة فقط داخل نفس الملف البرمجي للجهاز الشخصي للمبرمج.",
+          "ok": false,
+          "why": "واجهات الشركاء تربط بين شركات ومؤسسات متباعدة.",
+          "en": "They are restricted only inside the same code file on the developer's PC."
+        }
+      ],
+      "tip": "وقفة امتحانية: واجهات الشركاء (Partner APIs) هي عصب تكامل الأعمال B2B، مثل ربط شركات الشحن بمتاجر أمازون."
+    },
+    {
+      "n": 215,
+      "type": "mcq",
+      "ref": "L6-S009",
+      "q_ar": "من الناحية الأكاديمية والهندسية، هل يُعتبر REST بروتوكولاً رسمياً أم نمطاً معمارياً؟",
+      "q_en": "Academically and architecturally speaking, is REST considered a formal protocol or an architectural style?",
+      "opts": [
+        {
+          "ar": "بروتوكول صارم تم اعتماده من منظمة ISO بملف قياسي إلزامي.",
+          "ok": false,
+          "why": "REST ليس بروتوكولاً له مواصفات إلزامية مغلقة.",
+          "en": "A rigid protocol formally certified by ISO with mandatory specifications."
+        },
+        {
+          "ar": "نمط معماري (Architectural Style) ومجموعة إرشادات تصميمية صاغها روي فيلدينغ عام 2000 لاستثمار إمكانيات بروتوكول HTTP.",
+          "ok": true,
+          "why": "REST يمثل أسلوباً معمارياً يستند لمبادئ توجيهية، ولا يفرض قواعد نقل جديدة بل يعتمد على بنية الويب الأصلية.",
+          "en": "An architectural style and set of design constraints formulated by Roy Fielding in 2000 to leverage HTTP capabilities."
+        },
+        {
+          "ar": "لغة برمجة نصية مثل JavaScript و Python.",
+          "ok": false,
+          "why": "REST نمط تصميم وليس لغة برمجة.",
+          "en": "A scripting programming language like JavaScript or Python."
+        },
+        {
+          "ar": "خوارزمية لضغط وتشفير الملفات الصوتية.",
+          "ok": false,
+          "why": "لا علاقة له بالصوتيات.",
+          "en": "An algorithm for compressing and encrypting audio files."
+        }
+      ],
+      "tip": "وقفة امتحانية: فخ كلاسيكي في الاختبارات: هل REST بروتوكول؟ الجواب: خطأ؛ REST هو نمط معماري (Architectural Style) بينما SOAP هو بروتوكول (Protocol)."
+    },
+    {
+      "n": 216,
+      "type": "mcq",
+      "ref": "L6-S010",
+      "q_ar": "وفقاً لمبادئ معمارية REST، كيف يجب تسمية روابط الموارد (Resource URIs) بشكل نظيف ومعياري؟",
+      "q_en": "According to REST architectural principles, how should Resource URIs be cleanly and standardly named?",
+      "opts": [
+        {
+          "ar": "استخدام الأفعال الحركية الصريحة مثل `/getAllUsers` و `/deleteOrderById`.",
+          "ok": false,
+          "why": "استخدام الأفعال في الروابط أسلوب RPC ويخالف مبدأ التوجه نحو الموارد في REST.",
+          "en": "Using explicit action verbs like `/getAllUsers` and `/deleteOrderById`."
+        },
+        {
+          "ar": "استخدام الأسماء بصيغة الجمع لتمثيل الموارد (مثل `/api/users` و `/api/orders/15`) وترك تحديد العملية لفعل HTTP.",
+          "ok": true,
+          "why": "المبدأ الأول في REST: الموارد أسماء (Nouns)، والعمليات تحددها أفعال HTTP (GET, POST, PUT, DELETE).",
+          "en": "Using plural nouns to represent resources (e.g. `/api/users` and `/api/orders/15`), delegating actions to HTTP verbs."
+        },
+        {
+          "ar": "كتابة الروابط كاستعلامات SQL كاملة مثل `/SELECT * FROM Users`.",
+          "ok": false,
+          "why": "كارثة أمنية وتصميمية فادحة.",
+          "en": "Writing URIs as full SQL queries like `/SELECT * FROM Users`."
+        },
+        {
+          "ar": "تشفير الرابط برموز ثنائية سداسية عشرية غير قابلة للقراءة.",
+          "ok": false,
+          "why": "الروابط في REST يجب أن تكون واضحة وقابلة للقراءة للبشر والأنظمة.",
+          "en": "Encoding the URI into unreadable binary hexadecimal strings."
+        }
+      ],
+      "tip": "وقفة امتحانية: في REST: المورد اسم بصيغة الجمع `/products`، وفعل HTTP يحدد العملية: `GET /products` (جلب)، `POST /products` (إضافة)."
+    },
+    {
+      "n": 217,
+      "type": "mcq",
+      "ref": "L6-S010",
+      "q_ar": "ماذا يعني مبدأ انعدام الحالة (Statelessness) في معمارية REST وما فائدته الكبرى في التوسع السحابي؟",
+      "q_en": "What does the Statelessness principle mean in REST architecture, and what is its major cloud scalability benefit?",
+      "opts": [
+        {
+          "ar": "الخادم لا يحتفظ ببيانات جلسة العميل بين الطلبات؛ فكل طلب يحمل معه بيانات المصادقة والسياق كاملاً.",
+          "ok": true,
+          "why": "انعدام الحالة يلغي الحاجة لربط العميل بسيرفر معين، مما يسمح لموزع الأحمال (Load Balancer) بتوجيه أي طلب لأي خادم.",
+          "en": "The server retains no client session context between requests; each request contains complete authentication and execution context."
+        },
+        {
+          "ar": "حذف قاعدة البيانات بالكامل بمجرد خروج المستخدم من المتصفح.",
+          "ok": false,
+          "why": "قاعدة البيانات تحتفظ بالبيانات الدائمة؛ انعدام الحالة يخص جلسة الخادم (Session State).",
+          "en": "Deleting the database entirely once the user closes their browser."
+        },
+        {
+          "ar": "منع المستخدمين من إرسال أكثر من طلب واحد فقط في اليوم.",
+          "ok": false,
+          "why": "لا علاقة له بعدد الطلبات المسموحة.",
+          "en": "Preventing users from sending more than a single request per day."
+        },
+        {
+          "ar": "أن تطبيق العميل لا يمكنه عرض الصور أو الألوان.",
+          "ok": false,
+          "why": "غير صحيح على الإطلاق.",
+          "en": "That the client application cannot display images or colors."
+        }
+      ],
+      "tip": "وقفة امتحانية: انعدام الحالة (Statelessness) يمكن النظام من التوسع الأفقي (Horizontal Scaling) دون الحاجة لجلسات مثبتة (Sticky Sessions)."
+    },
+    {
+      "n": 218,
+      "type": "mcq",
+      "ref": "L6-S011",
+      "q_ar": "ما هي صيغة تمثيل ونقل البيانات الحصرية التي يعتمد عليها بروتوكول SOAP؟",
+      "q_en": "What is the exclusive data representation and transport format supported by the SOAP protocol?",
+      "opts": [
+        {
+          "ar": "صيغة JSON الخفيفة فقط.",
+          "ok": false,
+          "why": "SOAP لا يدعم JSON إطلاقاً.",
+          "en": "Lightweight JSON format only."
+        },
+        {
+          "ar": "صيغة XML حصراً، مع ملفات عقد WSDL ومخططات XSD للتحقق من هيكل الرسالة.",
+          "ok": true,
+          "why": "بروتوكول SOAP مقيد تاريخياً وهيكلياً بلغة الوسوم المتوسعة (XML).",
+          "en": "Exclusively XML format, governed by WSDL contract definitions and XSD schemas."
+        },
+        {
+          "ar": "ملفات PDF الثنائية.",
+          "ok": false,
+          "why": "PDF نسق وثائق وليس صيغة تبادل بيانات بروتوكولية.",
+          "en": "Binary PDF documents."
+        },
+        {
+          "ar": "لغة التجميع Assembly فقط.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Low-level Assembly code only."
+        }
+      ],
+      "tip": "وقفة امتحانية: SOAP = XML Only! إذا ذُكرت صيغة JSON في خيارات SOAP فالإجابة خاطئة فوراً."
+    },
+    {
+      "n": 219,
+      "type": "mcq",
+      "ref": "L6-S012",
+      "q_ar": "في أي السيناريوهات الواقعية المعاصرة لا يزال استخدام بروتوكول SOAP مفضلاً على REST؟",
+      "q_en": "In which modern real-world scenarios is using the SOAP protocol still preferred over REST?",
+      "opts": [
+        {
+          "ar": "تطبيقات الألعاب الجماعية السريعة على الهواتف الذكية.",
+          "ok": false,
+          "why": "الألعاب تحتاج لبروتوكولات خفيفة جداً مثل WebSockets أو UDP.",
+          "en": "High-speed multiplayer mobile gaming applications."
+        },
+        {
+          "ar": "المنظومات المصرفية والمالية شديدة التعقيد التي تتطلب معايير أمان الرسالة (WS-Security) وعمليات ACID الموزعة الصارمة.",
+          "ok": true,
+          "why": "SOAP يوفر معيار WS-Security لتشفير أجزاء محددة من الرسالة داخل نفق العبور المالي وضمان معاملات ACID المعقدة.",
+          "en": "Complex financial and enterprise banking systems demanding message-level security (WS-Security) and strict distributed ACID transactions."
+        },
+        {
+          "ar": "المدونات الشخصية ومواقع الطقس البسيطة.",
+          "ok": false,
+          "why": "REST هو الخيار البديهي والبسيط للمدونات والطقس.",
+          "en": "Personal blogs and simple weather websites."
+        },
+        {
+          "ar": "المواقع التي تستهدف متصفحات الويب الضعيفة وأجهزة إنترنت الأشياء.",
+          "ok": false,
+          "why": "SOAP ثقيل ويستهلك موارد معالجة وباندويث عالي.",
+          "en": "Websites targeting low-end browsers and IoT devices."
+        }
+      ],
+      "tip": "وقفة امتحانية: تفوق SOAP يقتصر على: 1) WS-Security (تشفير الرسالة نفسها)، 2) المعاملات المالية الموزعة، 3) العقود الصارمة (WSDL)."
+    },
+    {
+      "n": 220,
+      "type": "mcq",
+      "ref": "L6-S013",
+      "q_ar": "ما هي السمة الهندسية الفريدة التي تميز واجهات GraphQL مقارنة بنقاط نهاية REST المتعددة؟",
+      "q_en": "What unique architectural characteristic distinguishes GraphQL APIs compared to multiple REST endpoints?",
+      "opts": [
+        {
+          "ar": "تعتمد على نقطة نهاية واحدة موحدة (Single Endpoint عادة `/graphql`) وتتيح للعميل استعلام الحقول المطلوبة بدقة.",
+          "ok": true,
+          "why": "في GraphQL يرسل العميل استعلامه المخصص لنقطة نهاية وحيدة، فيرجع الخادم البيانات بالهيكل المطلوب تماماً.",
+          "en": "It operates via a single unified endpoint (typically `/graphql`), allowing the client to request precisely the exact fields needed."
+        },
+        {
+          "ar": "إنشاء رابط URL مستقل لكل حرف أبجدي يتم إرساله.",
+          "ok": false,
+          "why": "هذا تشويش هندسي لا وجود له.",
+          "en": "Creating a distinct URL endpoint for every individual alphabet letter."
+        },
+        {
+          "ar": "إلغاء لغة الاستعلامات وقراءة البيانات من شاشات الفيديو.",
+          "ok": false,
+          "why": "GraphQL هي لغة استعلام صريحة (Graph Query Language).",
+          "en": "Abolishing query languages and reading data off video displays."
+        },
+        {
+          "ar": "إجبار العميل على استقبال كافة جداول قاعدة البيانات دفعة واحدة.",
+          "ok": false,
+          "why": "GraphQL صُمم خصيصاً لمنع جلب البيانات الزائدة.",
+          "en": "Forcing the client to receive all database tables simultaneously in one payload."
+        }
+      ],
+      "tip": "وقفة امتحانية: في REST: عدة روابط لكل مورد (`/users`, `/posts`, `/comments`). في GraphQL: نقطة نهاية واحدة (`/graphql`) واستعلام يحدد المطلوب."
+    },
+    {
+      "n": 221,
+      "type": "mcq",
+      "ref": "L6-S014",
+      "q_ar": "ما هو المقصود بمشكلة الإفراط في جلب البيانات (Over-fetching) في معمارية REST، وكيف تحلها GraphQL؟",
+      "q_en": "What is meant by the Over-fetching problem in REST, and how does GraphQL solve it?",
+      "opts": [
+        {
+          "ar": "انقطاع الإنترنت أثناء تحميل الصفحة؛ وحلها بالاتصال السلكي.",
+          "ok": false,
+          "why": "المشكلة في حجم البيانات المرتجعة وليست في جودة الخط الفيزيائي.",
+          "en": "Internet disconnection during page load, solved by ethernet cable."
+        },
+        {
+          "ar": "إرجاع الخادم لكائن ضخم يحوي عشرات الحقول بينما التطبيق يحتاج حقلين فقط؛ وتحلها GraphQL بطلب الحقول المحددة فقط.",
+          "ok": true,
+          "why": "Over-fetching يهدر حزم البيانات وبطارية الهاتف؛ وفي GraphQL يحدد العميل في الاستعلام الحقول المطلوبة فقط فتصل وحدها.",
+          "en": "The server returning a bloated object with dozens of fields when the UI only needs two; GraphQL solves it by fetching only requested fields."
+        },
+        {
+          "ar": "طلب ملف غير موجود في السيرفر والرد بكود 404.",
+          "ok": false,
+          "why": "هذا خطأ مورد مفقود وليس Over-fetching.",
+          "en": "Requesting a nonexistent file and returning 404."
+        },
+        {
+          "ar": "إرسال 100 بريد إلكتروني في نفس اللحظة لنفس العميل.",
+          "ok": false,
+          "why": "إرسال البريد لا علاقة له بجلب بيانات الـ API.",
+          "en": "Dispatching 100 emails simultaneously to the same recipient."
+        }
+      ],
+      "tip": "وقفة امتحانية: Over-fetching = الخادم يعيد بيانات أكثر مما تحتاج. Under-fetching = الخادم يعيد بيانات غير كافية فتضطر لإرسال عدة طلبات."
+    },
+    {
+      "n": 222,
+      "type": "mcq",
+      "ref": "L6-S014",
+      "q_ar": "ما هو المقصود بمشكلة نقص جلب البيانات (Under-fetching) في واجهات REST التقليدية؟",
+      "q_en": "What is meant by the Under-fetching problem in traditional REST APIs?",
+      "opts": [
+        {
+          "ar": "إفراغ سلة المهملات على القرص الصلب بالخطأ.",
+          "ok": false,
+          "why": "لا علاقة له بنظام تشغيل المطور.",
+          "en": "Accidentally emptying the recycle bin on the hard drive."
+        },
+        {
+          "ar": "عدم كفاية نقطة نهاية واحدة لتلبية متطلبات الشاشة، مما يضطر العميل لإرسال طلبات متتالية متعددة (N+1 Requests) لربط البيانات.",
+          "ok": true,
+          "why": "في REST لعرض بيانات المستخدم مع مشترياته تحتاج لطلب `/users/1` ثم طلب `/orders?userId=1`، بينما GraphQL يدمجهما باستعلام واحد.",
+          "en": "A single endpoint failing to deliver enough data for a screen, forcing the client to fire multiple sequential HTTP requests (N+1 problem)."
+        },
+        {
+          "ar": "فشل الاتصال بقاعدة البيانات بسبب نقص سعة التخزين.",
+          "ok": false,
+          "why": "هذا عطل في الخادم وليس مشكلة Under-fetching المعمارية.",
+          "en": "Database connection failure triggered by storage exhaustion."
+        },
+        {
+          "ar": "تشفير كلمة المرور بخوارزمية ضعيفة.",
+          "ok": false,
+          "why": "قضية أمنية منفصلة.",
+          "en": "Hashing passwords using an outdated cipher."
+        }
+      ],
+      "tip": "وقفة امتحانية: GraphQL تقضي على مشكلتي Over-fetching و Under-fetching بضربة واحدة عبر مرونة لغة الاستعلام المخصصة."
+    },
+    {
+      "n": 223,
+      "type": "mcq",
+      "ref": "L6-S015",
+      "q_ar": "ما هي الركيزتان التقنيتان اللتان تمنحان إطار gRPC سرعته الفائقة وتفوقه على واجهات REST؟",
+      "q_en": "What are the two core technical pillars that grant gRPC its extreme performance over REST APIs?",
+      "opts": [
+        {
+          "ar": "استخدام نصوص HTML وبروتوكول FTP لنقل الرسائل.",
+          "ok": false,
+          "why": "بروتوكولات قديمة وبطيئة جداً.",
+          "en": "Utilizing HTML text and FTP protocol for message transfers."
+        },
+        {
+          "ar": "الترميز الثنائي المضغوط Protocol Buffers وبروتوكول النقل فائق السرعة HTTP/2 مع تعدد الإرسال (Multiplexing).",
+          "ok": true,
+          "why": "gRPC يدمج بين صيغة Protobuf الثنائية المضغوطة وبين قدرات HTTP/2 في تعدد القنوات والبث المتزامن باتجاهين.",
+          "en": "Compact binary serialization with Protocol Buffers combined with high-speed HTTP/2 transport and multiplexing."
+        },
+        {
+          "ar": "الاعتماد الحصري على لغة Visual Basic في البرمجة.",
+          "ok": false,
+          "why": "gRPC متعدد اللغات والمنصات ومطور من Google.",
+          "en": "Exclusive reliance on Visual Basic language."
+        },
+        {
+          "ar": "إلغاء المعالجات الحسابية في الخوادم السحابية.",
+          "ok": false,
+          "why": "مستحيل حاسوبياً.",
+          "en": "Bypassing arithmetic processors on cloud servers."
+        }
+      ],
+      "tip": "وقفة امتحانية: معادلة gRPC الذهبية: Protobuf (Binary Payload) + HTTP/2 (Multiplexing & Streaming) = سرعة أعلى بمعدل 7 إلى 10 أضعاف مقارنة بـ REST."
+    },
+    {
+      "n": 224,
+      "type": "mcq",
+      "ref": "L6-S016",
+      "q_ar": "أين يكمن مجال الاستخدام الأساسي والمثالي لتقنية gRPC في المعماريات الحديثة؟",
+      "q_en": "Where does the primary and ideal use case for gRPC lie in modern software architectures?",
+      "opts": [
+        {
+          "ar": "التواصل المباشر مع متصفحات الويب القديمة لعرض صفحات المقالات.",
+          "ok": false,
+          "why": "متصفحات الويب لا تدعم مزايا gRPC و HTTP/2 الكاملة بسهولة وتتطلب وسيط gRPC-Web.",
+          "en": "Direct communication with legacy web browsers rendering static article pages."
+        },
+        {
+          "ar": "الاتصال الداخلي فائق السرعة والتردد بين خوادم الخدمات المصغرة (Internal Microservices Communication) وأنظمة إنترنت الأشياء.",
+          "ok": true,
+          "why": "gRPC صُمم لشبكات الخدمات الخلفية (Backend-to-Backend) حيث الكفاءة والسرعة المنخفضة وزمن الاستجابة الحرج هو الأهم.",
+          "en": "High-throughput, ultra-low latency internal microservices communication and real-time IoT backend telemetry."
+        },
+        {
+          "ar": "إرسال رسائل التليجرام اليدوية للأصدقاء فقط.",
+          "ok": false,
+          "why": "استخدام تطبيقي لا يصف معمارية الأنظمة.",
+          "en": "Sending manual Telegram chat messages to friends only."
+        },
+        {
+          "ar": "حفظ ملفات الإكسل على الفلاش ميموري.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Storing Excel spreadsheets onto a USB flash drive."
+        }
+      ],
+      "tip": "وقفة امتحانية: النمط المعماري الشائع: REST أو GraphQL للواجهات الخارجية (Client-to-Backend)، و gRPC للتواصل الداخلي بين الميكروسيرفس (Service-to-Service)."
+    },
+    {
+      "n": 225,
+      "type": "mcq",
+      "ref": "L6-S017",
+      "q_ar": "في ملفات تعريف العقود الثنائية (`.proto`) الخاصة بـ gRPC، ما هي وظيفة الأرقام المكتوبة بعد علامة التساوي (مثل `string name = 2;`)؟",
+      "q_en": "In gRPC contract definition files (`.proto`), what is the purpose of the numbers following the equal sign (e.g. `string name = 2;`)?",
+      "opts": [
+        {
+          "ar": "إنها القيمة الافتراضية الابتدائية التي ستخزن في المتغير عند إنشائه.",
+          "ok": false,
+          "why": "هذا فخ شائع؛ فالأرقام ليست قيماً ابتدائية إطلاقاً.",
+          "en": "They denote the initial default value assigned to the variable upon creation."
+        },
+        {
+          "ar": "إنها معرّفات الحقول الثنائية (Field Tags / Numbers) المستخدمة لترميز وتمييز الحقل في التدفق الثنائي بدلاً من إرسال اسمه النصي.",
+          "ok": true,
+          "why": "الأرقام هي بطاقات تعريف ثنائية (Tags)؛ عند الإرسال يرسل الرقم 2 بدلاً من كلمة 'name'، مما يوفر مساحة النقل الشبكي بشكل هائل.",
+          "en": "They are binary Field Tags used to identify fields in the binary byte stream instead of sending literal string names."
+        },
+        {
+          "ar": "إنها عدد الثواني المسموح بها لقراءة هذا الحقل قبل انتهاء المهلة.",
+          "ok": false,
+          "why": "لا علاقة لها بزمن الاستجابة أو المهل (Timeouts).",
+          "en": "They specify the timeout duration in seconds allowed for reading this field."
+        },
+        {
+          "ar": "إنها أرقام أسطر الكود البرمجي في ملف C# النهائي.",
+          "ok": false,
+          "why": "أرقام الحقول هي مواصفات ترميز ثنائية مستقلة عن لغة البرمجة.",
+          "en": "They indicate line numbers in the generated C# source file."
+        }
+      ],
+      "tip": "وقفة امتحانية: فخ امتحاني خطير: `int32 id = 1;` الرقم 1 هنا هو Field Tag وليس القيمة الافتراضية؛ وتغيير هذا الرقم يكسر التوافق الثنائي."
+    },
+    {
+      "n": 226,
+      "type": "mcq",
+      "ref": "L6-S019",
+      "q_ar": "ما هو الفرق المعماري الدقيق بين أفعال HTTP الآمنة (Safe Methods) والأفعال عديمة التأثير التراكمي (Idempotent Methods)؟",
+      "q_en": "What is the precise architectural distinction between Safe HTTP Methods and Idempotent HTTP Methods?",
+      "opts": [
+        {
+          "ar": "الآمنة لا تتطلب اتصالاً بالشبكة، وعديمة التأثير تتطلب كابل ألياف ضوئية.",
+          "ok": false,
+          "why": "تفسير عتادي ساذج وغير علمي.",
+          "en": "Safe requires no network, while idempotent requires fiber optic cables."
+        },
+        {
+          "ar": "الفعل الآمن (Safe) لا يعدل حالة المورد على السيرفر (قراءة فقط مثل GET)، بينما الفعل عديم التأثير التراكمي (Idempotent) يمكن تنفيذه عدة مرات بنفس النتيجة المتبقية على السيرفر (مثل PUT و DELETE).",
+          "ok": true,
+          "why": "الآمن = قراءة بلا تعديل (Read-only). الـ Idempotent = تكرار الطلب N مرة يترك حالة الخادم مماثلة لتنفيذه مرة واحدة.",
+          "en": "Safe methods do not alter server resource state (read-only like GET), whereas Idempotent methods can be executed multiple times yielding the same final server state (like PUT and DELETE)."
+        },
+        {
+          "ar": "الفعل الآمن هو POST حصراً، والفعل عديم التأثير هو PATCH فقط.",
+          "ok": false,
+          "why": "POST ليس آمناً وليس Idempotent، و PATCH قد لا يكون Idempotent في بعض الحالات.",
+          "en": "Safe method is exclusively POST, and idempotent is PATCH only."
+        },
+        {
+          "ar": "كلا المصطلحين مترادفان تماماً ولا يوجد أي فرق علمي بينهما.",
+          "ok": false,
+          "why": "هناك فارق جوهري؛ فكل فعل آمن هو بالضرورة Idempotent، ولكن ليس كل فعل Idempotent آمناً (مثل DELETE يعدل الحالة لكنه Idempotent).",
+          "en": "Both terms are identical synonyms with no distinction."
+        }
+      ],
+      "tip": "وقفة امتحانية: احفظ هذا الجدول: GET (Safe + Idempotent)، PUT (Not Safe + Idempotent)، DELETE (Not Safe + Idempotent)، POST (Not Safe + Not Idempotent)."
+    },
+    {
+      "n": 227,
+      "type": "mcq",
+      "ref": "L6-S021",
+      "q_ar": "لماذا يُصنف فعل `POST` في معايير HTTP على أنه غير عديم التأثير التراكمي (Non-Idempotent)؟",
+      "q_en": "Why is the `POST` method categorized under HTTP standards as Non-Idempotent?",
+      "opts": [
+        {
+          "ar": "لأنه يحذف كافة الموارد من قاعدة البيانات في كل مرة يتم استدعاؤه.",
+          "ok": false,
+          "why": "الحذف وظيفة DELETE وليس POST.",
+          "en": "Because it wipes all resources from the database on every invocation."
+        },
+        {
+          "ar": "لأن تكرار إرسال نفس طلب `POST` عدة مرات يؤدي لإنشاء موارد جديدة متعددة مكررة وتغيير حالة الخادم في كل مرة.",
+          "ok": true,
+          "why": "إذا ضغط العميل 'شراء' 3 مرات بطلب POST، فسيتم إنشاء 3 طلبات شراء مختلفة وتخصم القيمة ثلاث مرات.",
+          "en": "Because executing the same `POST` request multiple times creates multiple duplicate resources and mutates server state each time."
+        },
+        {
+          "ar": "لأنه لا يقبل إرسال جسم طلب (Body) إطلاقاً.",
+          "ok": false,
+          "why": "POST يعتمد أساساً على وجود Request Body لنقل بيانات الكيان الجديد.",
+          "en": "Because it never accepts a request body."
+        },
+        {
+          "ar": "لأنه يعمل فقط في أيام العطلات الأسبوعية.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Because it only functions on weekends."
+        }
+      ],
+      "tip": "وقفة امتحانية: تكرار `POST /orders` ينشئ طلباً جديداً بكل ضغطة، لذا تتطلب أنظمة الدفع مفتاح عدم التكرار (Idempotency Key) لحمايتها."
+    },
+    {
+      "n": 228,
+      "type": "mcq",
+      "ref": "L6-S022",
+      "q_ar": "ما هو الفارق الدلالي والمعماري الدقيق بين استخدام فعلي `PUT` و `PATCH` لتحديث الموارد؟",
+      "q_en": "What is the precise semantic and architectural distinction between using `PUT` and `PATCH` for resource updates?",
+      "opts": [
+        {
+          "ar": "كلاهما متطابقان تماماً ويمكن استبدال أحدهما بالآخر بلا أي أثر جانبي.",
+          "ok": false,
+          "why": "هناك فارق جوهري في حجم ونوع التحديث.",
+          "en": "Both are identical and fully interchangeable with zero side effects."
+        },
+        {
+          "ar": "`PUT` مخصص للاستبدال والتحديث الكامل لكافة حقول المورد (Full Replacement)، بينما `PATCH` مخصص للتحديث الجزئي لبعض الحقول المحددة (Partial Update).",
+          "ok": true,
+          "why": "في PUT ترسل الكائن كاملاً، وما لا ترسله قد يعود لقيمته الافتراضية. في PATCH ترسل فقط الحقول المراد تغييرها (مثل تعديل البريد فقط).",
+          "en": "`PUT` is designated for full resource replacement, whereas `PATCH` is intended for partial updates of specific fields."
+        },
+        {
+          "ar": "`PUT` يستخدم فقط لقراءة البيانات، و `PATCH` يستخدم لحذف الجداول.",
+          "ok": false,
+          "why": "القراءة وظيفة GET والحذف وظيفة DELETE.",
+          "en": "`PUT` is for data reads only, and `PATCH` is for table dropping."
+        },
+        {
+          "ar": "`PATCH` مخصص لملفات الصور فقط و `PUT` للنصوص.",
+          "ok": false,
+          "why": "الأفعال تتعامل مع كافة صيغ البيانات بلا تخصيص لأنواع معينة.",
+          "en": "`PATCH` is strictly for image files while `PUT` is for strings."
+        }
+      ],
+      "tip": "وقفة امتحانية: سؤال مفضل: تعديل كلمة المرور أو تحديث اسم المستخدم فقط دون بقية البيانات يفضل هندسياً بـ PATCH، أما استبدال الملف الشخصي كاملاً فبـ PUT."
+    },
+    {
+      "n": 229,
+      "type": "mcq",
+      "ref": "L6-S024",
+      "q_ar": "عند نجاح معالجة طلب حذف مورد عبر `DELETE /api/users/42` دون إرجاع أي محتوى في جسم الاستجابة، ما هو كود الحالة القياسي الموصى به؟",
+      "q_en": "Upon successfully processing a resource deletion via `DELETE /api/users/42` with no response body returned, what is the recommended HTTP status code?",
+      "opts": [
+        {
+          "ar": "`404 Not Found` لأن المورد لم يعد موجوداً.",
+          "ok": false,
+          "why": "كود 404 خطأ عميل، بينما العملية تمت بنجاح هنا.",
+          "en": "`404 Not Found` because the resource is no longer there."
+        },
+        {
+          "ar": "`204 No Content`، والذي يعني نجاح المعالجة وعدم وجود محتوى لإرجاعه في جسم الرد.",
+          "ok": true,
+          "why": "الكود 204 هو الاستجابة القياسية في معايير REST لعمليات الحذف الناجحة التي لا تعيد بيانات.",
+          "en": "`204 No Content`, indicating successful execution with an empty response payload."
+        },
+        {
+          "ar": "`500 Internal Server Error`.",
+          "ok": false,
+          "why": "كود 500 يعني انهياراً بالخادم.",
+          "en": "`500 Internal Server Error`."
+        },
+        {
+          "ar": "`301 Moved Permanently`.",
+          "ok": false,
+          "why": "كود إعادة توجيه مسار وليس نجاح حذف.",
+          "en": "`301 Moved Permanently`."
+        }
+      ],
+      "tip": "وقفة امتحانية: أكواد نجاح REST الشهيرة: `200 OK` (جلب أو تعديل مع بيانات)، `201 Created` (إنشاء عنصر)، `204 No Content` (حذف ناجح بلا بيانات)."
+    },
+    {
+      "n": 230,
+      "type": "mcq",
+      "ref": "L6-S025",
+      "q_ar": "إلى أي فئة تنتمي أكواد استجابة HTTP التي تبدأ بالرقم 4 (4xx)، وماذا تعني عموماً؟",
+      "q_en": "To which category do HTTP status codes starting with 4 (4xx) belong, and what do they generally indicate?",
+      "opts": [
+        {
+          "ar": "استجابات إعلامية تجريبية (Informational).",
+          "ok": false,
+          "why": "الاستجابات الإعلامية هي 1xx.",
+          "en": "Informational responses (1xx)."
+        },
+        {
+          "ar": "أخطاء من جانب العميل (Client Errors) مثل إدخال بيانات غير صالحة أو غياب التصاريح.",
+          "ok": true,
+          "why": "فئة 4xx تدل دائماً على أن الخلل صادر من جهة الطالب (العميل).",
+          "en": "Client Errors, indicating invalid input parameters, authentication missing, or forbidden operations."
+        },
+        {
+          "ar": "أخطاء انهيار داخلية بالخادم (Server Errors).",
+          "ok": false,
+          "why": "انهيار الخادم يندرج تحت فئة 5xx.",
+          "en": "Internal server crash errors (5xx)."
+        },
+        {
+          "ar": "عمليات إعادة توجيه إلى عناوين أخرى (Redirection).",
+          "ok": false,
+          "why": "إعادة التوجيه تندرج تحت 3xx.",
+          "en": "Redirection operations (3xx)."
+        }
+      ],
+      "tip": "وقفة امتحانية: احفظ نطاقات HTTP: `1xx` إعلامية، `2xx` نجاح، `3xx` إعادة توجيه، `4xx` خطأ عميل، `5xx` خطأ خادم."
+    },
+    {
+      "n": 231,
+      "type": "mcq",
+      "ref": "L6-S026",
+      "q_ar": "ما هو الفارق الجوهري والامتحاني الدقيق بين الكودين `401 Unauthorized` و `403 Forbidden`؟",
+      "q_en": "What is the crucial and exact distinction between status codes `401 Unauthorized` and `403 Forbidden`?",
+      "opts": [
+        {
+          "ar": "كلاهما يعني نفس المعنى تماماً ويتم رميهما عشوائياً.",
+          "ok": false,
+          "why": "هناك فارق قانوني ومعماري صارم بينهما.",
+          "en": "Both carry identical semantics and are thrown randomly."
+        },
+        {
+          "ar": "`401` يعني فشل أو غياب المصادقة (من أنت؟ لم تقدم توكن صالح)، بينما `403` يعني أن هوية المستخدم معروفة وموثقة ولكنه لا يملك الصلاحية للوصول لهذا المورد المحدد.",
+          "ok": true,
+          "why": "401 يخص الـ Authentication (إثبات الهوية)، بينما 403 يخص الـ Authorization (امتلاك الصلاحية).",
+          "en": "`401` signifies authentication failure (who are you? invalid or missing token), whereas `403` indicates the user identity is known but lacks required authorization."
+        },
+        {
+          "ar": "`401` يظهر فقط عند انقطاع الكهرباء، و `403` عند حذف السيرفر.",
+          "ok": false,
+          "why": "أوصاف خيالية غير صحيحة.",
+          "en": "`401` appears on power outage, and `403` on server deletion."
+        },
+        {
+          "ar": "`401` كود خاص بالخادم و `403` كود خاص بقواعد البيانات.",
+          "ok": false,
+          "why": "كلاهما كودا HTTP قياسيان لطبقة الويب.",
+          "en": "`401` is for web servers and `403` is for databases."
+        }
+      ],
+      "tip": "وقفة امتحانية: 401 = Who are you? (Authentication Error). 403 = You cannot enter here! (Authorization Error)."
+    },
+    {
+      "n": 232,
+      "type": "mcq",
+      "ref": "L6-S026",
+      "q_ar": "متى يجب على الـ API إرجاع كود الاستجابة `429 Too Many Requests`؟",
+      "q_en": "When should an API return the HTTP status code `429 Too Many Requests`?",
+      "opts": [
+        {
+          "ar": "عندما يقوم العميل بتسجيل الخروج من الحساب طواعية.",
+          "ok": false,
+          "why": "تسجيل الخروج يعيد 200 أو 204.",
+          "en": "When a client voluntarily logs out of their account."
+        },
+        {
+          "ar": "عندما يتجاوز العميل السقف المسموح به من الطلبات خلال فترة زمنية محددة تطبيقاً لسياسة Rate Limiting.",
+          "ok": true,
+          "why": "كود 429 هو المعيار الدولي لإشعار العميل بأنه استهلك حصته المسموحة (Rate Limit Exceeded) ويجب عليه الانتظار.",
+          "en": "When a client exceeds their permitted request rate quota over a defined duration per Rate Limiting policy."
+        },
+        {
+          "ar": "عندما ينسى المستخدم كلمة المرور الخاصة به.",
+          "ok": false,
+          "why": "نسيان كلمة المرور يتم التعامل معه بواجهات الاسترجاع.",
+          "en": "When a user forgets their account password."
+        },
+        {
+          "ar": "عند نجاح تحميل ملف مضغوط بحجم أكبر من 1 جيجابايت.",
+          "ok": false,
+          "why": "تحميل الملفات الناجح يعيد 200 OK.",
+          "en": "Upon successful download of a zip archive larger than 1GB."
+        }
+      ],
+      "tip": "وقفة امتحانية: كود 429 يرتبط مباشرة بميزة Rate Limiting ويرافقه عادة ترويسة `Retry-After: 60` بالثواني."
+    },
+    {
+      "n": 233,
+      "type": "mcq",
+      "ref": "L6-S027",
+      "q_ar": "وفق معيار RFC 7807 (Problem Details)، لماذا يُعد إرجاع تفاصيل الخطأ الداخلي (مثل Stack Trace واستعلامات SQL) للعميل في بيئة الإنتاج ممارسة معمارية خطيرة؟",
+      "q_en": "Under RFC 7807 (Problem Details), why is returning internal error stack traces and SQL queries to clients in production a dangerous architectural flaw?",
+      "opts": [
+        {
+          "ar": "لأن المتصفح سيقوم بإيقاف تشغيل الشاشة تلقائياً.",
+          "ok": false,
+          "why": "المتصفح يعرض النصوص ولا يتحكم بالشاشة فيزيائياً.",
+          "en": "Because the browser will automatically shut down the display."
+        },
+        {
+          "ar": "لأنه يسرب أسرار البنية التحتية وأسماء الجداول والثغرات للمهاجمين، مما يسهل اختراق الخادم.",
+          "ok": true,
+          "why": "تسريب تفاصيل الخطأ (Information Disclosure) ثغرة أمنية شهيرة؛ ويجب إرجاع رسالة خطأ قياسية موحدة وتسجيل التفاصيل في السجلات الداخلية (Logs).",
+          "en": "Because it leaks internal infrastructure schemas, table structures, and potential exploits to attackers, facilitating intrusion."
+        },
+        {
+          "ar": "لأن نصوص الخطأ الطويلة تزيد من فاتورة استهلاك الكهرباء الشهرية.",
+          "ok": false,
+          "why": "سبب غير علمي وهزلي.",
+          "en": "Because lengthy error messages inflate monthly electric utility bills."
+        },
+        {
+          "ar": "لأن لغات البرمجة تمنع كتابة الكلمات الإنجليزية في ردود الأخطاء.",
+          "ok": false,
+          "why": "لغات البرمجة تدعم كافة اللغات.",
+          "en": "Because programming languages prohibit English text in error responses."
+        }
+      ],
+      "tip": "وقفة امتحانية: في Production: أرجع Problem Details مع كود 500 ورقم تتبع (Correlation ID) واحجب تفاصيل الـ Stack Trace داخل السيرفر."
+    },
+    {
+      "n": 234,
+      "type": "mcq",
+      "ref": "L6-S028",
+      "q_ar": "ما هي ثغرة BOLA (Broken Object Level Authorization) المعروفة أيضاً بـ IDOR، وكيف تحدث في الـ APIs؟",
+      "q_en": "What is the Broken Object Level Authorization (BOLA/IDOR) vulnerability, and how does it manifest in APIs?",
+      "opts": [
+        {
+          "ar": "انهيار السيرفر بسبب ارتفاع درجة حرارة المعالج المركزي.",
+          "ok": false,
+          "why": "خلل فيزيائي عتادي وليس ثغرة برمجية منطقية.",
+          "en": "Server crash caused by excessive CPU temperature."
+        },
+        {
+          "ar": "تمكن مستخدم مسجل وموثق من الوصول لبيانات مستخدم آخر بمجرد تغيير معرف المورد في الرابط (مثل طلب `/documents/99`) لغياب فحص الملكية.",
+          "ok": true,
+          "why": "تحدث BOLA عندما يتحقق السيرفر من هوية المستخدم لكنه ينسى التحقق مما إذا كان هذا المستخدم يملك هذا المورد المحدد فعلاً أم لا.",
+          "en": "An authenticated user accessing another user's private data simply by altering resource IDs in the URI (e.g. `/documents/99`) due to missing ownership checks."
+        },
+        {
+          "ar": "نسيان المبرمج لكتابة الفاصلة المنقوطة في نهاية سطر الكود.",
+          "ok": false,
+          "why": "خطأ ترجمة برمجي (Syntax Error) يمنع التشغيل أصلاً.",
+          "en": "A developer forgetting a semicolon at the end of a code statement."
+        },
+        {
+          "ar": "تثبيت برنامج مضاد فيروسات مجاني على السيرفر.",
+          "ok": false,
+          "why": "لا علاقة له بهذه الثغرة المعمارية.",
+          "en": "Installing free antivirus software on the host server."
+        }
+      ],
+      "tip": "وقفة امتحانية: BOLA هي التهديد الأمني رقم 1 في قائمة OWASP API Security Top 10؛ والحل دائماً: التحقق من ملكية المورد للمستخدم المسجل."
+    },
+    {
+      "n": 235,
+      "type": "mcq",
+      "ref": "L6-S030",
+      "q_ar": "ما هو التمييز الأكاديمي الحاسم بين عمليتي التحقق من الهوية (Authentication) والتحقق من الصلاحيات (Authorization)؟",
+      "q_en": "What is the definitive academic distinction between Authentication and Authorization?",
+      "opts": [
+        {
+          "ar": "المصادقة والترخيص عمليتان مترادفتان تماماً بلا أي تمييز.",
+          "ok": false,
+          "why": "هناك فارق جوهري بين الهوية والصلاحية.",
+          "en": "Authentication and authorization are completely identical concepts."
+        },
+        {
+          "ar": "المصادقة (AuthN) تجيب على سؤال 'من أنت؟'، بينما التفويض (AuthZ) يجيب على سؤال 'ما الذي يُسمح لك بالقيام به؟'.",
+          "ok": true,
+          "why": "AuthN تثبت هوية المستخدم (تسجيل الدخول)، و AuthZ تحدد صلاحياته والأفعال المسموحة له بناءً على أدواره (Roles).",
+          "en": "Authentication (AuthN) answers 'Who are you?', while Authorization (AuthZ) answers 'What are you permitted to do?'."
+        },
+        {
+          "ar": "المصادقة تتم في قواعد البيانات فقط، والتفويض يتم في المتصفح حصراً.",
+          "ok": false,
+          "why": "كلاهما وظيفتان يتم تنسيقهما في طبقة الخادم الخلفية.",
+          "en": "Authentication occurs strictly in databases, while authorization is solely in browsers."
+        },
+        {
+          "ar": "المصادقة تخص المطورين فقط، والتفويض يخص الزوار العاديين.",
+          "ok": false,
+          "why": "تنطبق المفاهيم على كل مستخدم للنظام.",
+          "en": "Authentication applies to developers, and authorization to guest users."
+        }
+      ],
+      "tip": "وقفة امتحانية: المصادقة (AuthN) تسبق التفويض (AuthZ) دائماً في مسار معالجة الطلبات البرمجية."
+    },
+    {
+      "n": 236,
+      "type": "mcq",
+      "ref": "L6-S032",
+      "q_ar": "لماذا يُعد استخدام خوارزميات التجزئة السريعة (مثل MD5 أو SHA-256 المجردة) غير آمن لتخزين كلمات مرور المستخدمين؟",
+      "q_en": "Why is using fast hashing algorithms (like MD5 or plain SHA-256) considered insecure for storing user passwords?",
+      "opts": [
+        {
+          "ar": "لأنها بطيئة للغاية وتستهلك ساعات طويلة لتشفير كلمة واحدة.",
+          "ok": false,
+          "why": "العكس هو الصحيح؛ فسرعتها الفائقة هي العيب القاتل.",
+          "en": "Because they are excessively slow, consuming hours to hash one word."
+        },
+        {
+          "ar": "لأن سرعتها الفائقة تتيح للمهاجمين تجربة مليارات الكلمات في الثانية باستخدام بطاقات GPU وجداول Rainbow Tables، ولذا يجب استخدام خوارزميات بطيئة مع ملح مثل BCrypt أو Argon2.",
+          "ok": true,
+          "why": "خوارزميات كلمات المرور (BCrypt/Argon2) تعتمد عمداً على معامل جهد (Work Factor) وملح (Salt) لعرقلة هجمات القوة الغاشمة.",
+          "en": "Because their computational speed allows attackers to guess billions of hashes per second using GPUs and rainbow tables; adaptive algorithms with salt like BCrypt or Argon2 are required."
+        },
+        {
+          "ar": "لأنها لا تقبل الرموز الخاصة مثل علامة @.",
+          "ok": false,
+          "why": "تتعامل خوارزميات التجزئة مع أي بايتات نصية.",
+          "en": "Because they reject special characters like @ symbols."
+        },
+        {
+          "ar": "لأنها تسمح للمستخدم بتغيير كلمة مروره متى شاء.",
+          "ok": false,
+          "why": "تغيير كلمة المرور ميزة مطلوبة ولا ترتبط بضعف الخوارزمية.",
+          "en": "Because they allow users to change passwords whenever desired."
+        }
+      ],
+      "tip": "وقفة امتحانية: لتخزين كلمات المرور بأمان: استخدم Salt عشوائي فريد لكل مستخدم وخوارزمية بطيئة عمداً ومكلفة حسابياً مثل BCrypt أو Argon2id."
+    },
+    {
+      "n": 237,
+      "type": "mcq",
+      "ref": "L6-S033",
+      "q_ar": "ما هي الأجزاء الثلاثة المكونة لرمز الـ JWT (JSON Web Token)، وكيف يتم الفصل بينها نصياً؟",
+      "q_en": "What are the three core components comprising a JSON Web Token (JWT), and how are they delimited?",
+      "opts": [
+        {
+          "ar": "الترويسة (Header)، الحمولة (Payload)، والتوقيع (Signature)، ويفصل بينها بنقاط (`.`).",
+          "ok": true,
+          "why": "هيكل الـ JWT المعياري يتكون من: `Header.Payload.Signature` وكل جزء مشفر بـ Base64Url.",
+          "en": "Header, Payload, and Signature, delimited by periods (`.`)."
+        },
+        {
+          "ar": "اسم المستخدم، كلمة المرور، ورقم الهاتف، ويفصل بينها بفواصل (`,`).",
+          "ok": false,
+          "why": "الـ JWT هيكل رمزي مشفر وموقع رقمياً وليس بيانات حساب مسطحة.",
+          "en": "Username, password, and phone number, delimited by commas."
+        },
+        {
+          "ar": "طبقة العميل، طبقة السيرفر، وطبقة قاعدة البيانات، ويفصل بينها بشرطات (`-`).",
+          "ok": false,
+          "why": "هذه طبقات معمارية وليست أجزاء توكن.",
+          "en": "Client layer, server layer, and database layer, delimited by dashes."
+        },
+        {
+          "ar": "ملف الـ HTML، ملف الـ CSS، وملف الـ JS.",
+          "ok": false,
+          "why": "ملفات واجهات وليست أجزاء رمز أمان.",
+          "en": "HTML file, CSS file, and JS file."
+        }
+      ],
+      "tip": "وقفة امتحانية: توكن JWT = `Header.Payload.Signature`؛ الترويسة تحدد الخوارزمية، الحمولة تحوي الادعاءات (Claims)، والتوقيع يضمن عدم التلاعب."
+    },
+    {
+      "n": 238,
+      "type": "mcq",
+      "ref": "L6-S033",
+      "q_ar": "هل تعتبر البيانات المخزنة داخل الـ Payload في توكن JWT سرية ومشفرة بحيث لا يمكن لأي شخص فكها وقراءتها؟",
+      "q_en": "Are data fields stored inside a JWT Payload encrypted and secret such that nobody can decode and read them?",
+      "opts": [
+        {
+          "ar": "نعم، هي مشفرة بتشفير عسكري يستحيل فكه إطلاقاً حتى لو تم اعتراض التوكن.",
+          "ok": false,
+          "why": "الـ JWT مشفر بـ Base64Url وهو ترميز وليس تشفيراً، وأي شخص يمكنه فك قراءته.",
+          "en": "Yes, they are encrypted with military-grade ciphers impossible to decode."
+        },
+        {
+          "ar": "لا، فالـ Payload مرمّز فقط بصيغة Base64Url ويمكن لأي طرف قراءة محتواه، ولكن التوقيع (Signature) يمنع التلاعب بالبيانات دون كشفه.",
+          "ok": true,
+          "why": "فخ كلاسيكي: JWT يضمن سلامة البيانات (Integrity) وعدم تزويرها، ولكنه لا يخفيها؛ لذا يمنع منعاً باتاً تخزين كلمات المرور أو أسرار حساسة داخله.",
+          "en": "No, because the payload is merely Base64Url-encoded and readable by anyone; however, the Signature prevents tampering without detection."
+        },
+        {
+          "ar": "نعم، ولكن فقط إذا كان حجم التوكن أقل من 100 حرف.",
+          "ok": false,
+          "why": "حجم التوكن لا يغير من كونه ترميزاً مفتوحاً.",
+          "en": "Yes, but only if token length is under 100 characters."
+        },
+        {
+          "ar": "لا، لأن التوكن يحذف نفسه بعد ثانية واحدة من الإرسال.",
+          "ok": false,
+          "why": "مدة الصلاحية تحددها مطالبة exp وتكون بالدقائق أو الساعات.",
+          "en": "No, because the token self-destructs after one second."
+        }
+      ],
+      "tip": "وقفة امتحانية: فخ متكرر: هل JWT مشفر؟ الجواب: لا! هو موقع (Signed) وليس مشفراً (Not Encrypted)؛ لا تضع أسراراً داخل الـ Claims أبداً."
+    },
+    {
+      "n": 239,
+      "type": "mcq",
+      "ref": "L6-S034",
+      "q_ar": "ما هو الدور الجوهري لإطار العمل OAuth 2.0 في بنية تطبيقات الويب والـ APIs الحديثة؟",
+      "q_en": "What is the core role of the OAuth 2.0 framework in modern web and API architectures?",
+      "opts": [
+        {
+          "ar": "بروتوكول لنقل الملفات الصوتية بين الهواتف الذكية بالبلوتوث.",
+          "ok": false,
+          "why": "لا علاقة له بالبلوتوث أو الملفات الصوتية.",
+          "en": "A protocol for transferring audio files over Bluetooth."
+        },
+        {
+          "ar": "إطار تفويض (Delegation Framework) يتيح لتطبيق طرف ثالث الوصول لموارد المستخدم لدى مزود خدمة (مثل Google) دون مشاركة كلمة المرور.",
+          "ok": true,
+          "why": "OAuth 2.0 يحل معضلة مشاركة كلمات المرور، ويتيح تفويض صلاحيات محددة عبر رموز وصول (Access Tokens).",
+          "en": "A delegation authorization framework enabling third-party apps to access user resources on a service provider (like Google) without sharing passwords."
+        },
+        {
+          "ar": "قاعدة بيانات علائقية لحفظ ملفات الفيديو بدقة 4K.",
+          "ok": false,
+          "why": "OAuth معيار تفويض أمني وليس قاعدة بيانات.",
+          "en": "A relational database for storing 4K video files."
+        },
+        {
+          "ar": "نظام تشغيل مخصص للسيارات ذاتية القيادة.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "An operating system dedicated to autonomous vehicles."
+        }
+      ],
+      "tip": "وقفة امتحانية: OAuth 2.0 هو إطار تفويض (Authorization/Delegation)؛ أركانه: Resource Owner (المستخدم)، Client (التطبيق)، Auth Server، Resource Server (الـ API)."
+    },
+    {
+      "n": 240,
+      "type": "mcq",
+      "ref": "L6-S034",
+      "q_ar": "في معمارية OAuth 2.0 و JWT، ما هي الفائدة المعمارية لامتلاك رمز تحديث (Refresh Token) بجانب رمز الوصول (Access Token)؟",
+      "q_en": "In OAuth 2.0 and JWT architectures, what is the architectural benefit of having a Refresh Token alongside an Access Token?",
+      "opts": [
+        {
+          "ar": "رمز الوصول قصير الأجل (15 دقيقة) لتقليل نافذة الخطر إذا سُرق، ورمز التحديث طويل الأجل ومخزن بأمان لتجديد رمز الوصول دون إعادة تسجيل الدخول.",
+          "ok": true,
+          "why": "Access Token قصير العمر يقلل خطر السرقة؛ وعند انتهائه يستخدم العميل Refresh Token للحصول على توكن جديد دون إزعاج المستخدم.",
+          "en": "Access tokens are short-lived (e.g. 15 mins) to minimize exposure windows if compromised, while Refresh tokens are long-lived and securely stored to obtain new access tokens."
+        },
+        {
+          "ar": "رمز التحديث يقوم بمسح محتويات القرص الصلب عند السرقة.",
+          "ok": false,
+          "why": "ليس برنامج تدمير ذاتي.",
+          "en": "Refresh token wipes the hard drive clean upon theft."
+        },
+        {
+          "ar": "رمز التحديث يستخدم لتغيير اسم المستخدم في السيرفر تلقائياً.",
+          "ok": false,
+          "why": "وظيفته تجديد جلسة التوثيق فقط.",
+          "en": "Refresh token automatically alters the username on server."
+        },
+        {
+          "ar": "كلا الرمزين يملكان نفس العمر ونفس الصلاحية تماماً ولا فائدة من الفصل.",
+          "ok": false,
+          "why": "الفصل بينهما هو ركيزة الأمان المعاصرة في الويب والجوال.",
+          "en": "Both tokens share identical lifespan and purpose with no difference."
+        }
+      ],
+      "tip": "وقفة امتحانية: ثنائية التوكن: Access Token = قصير العمر (15 دقيقة) سريع الاستخدام. Refresh Token = طويل العمر يُخزن بأمان لتجديد الجلسة."
+    },
+    {
+      "n": 241,
+      "type": "mcq",
+      "ref": "L6-S036",
+      "q_ar": "ما هي آلية CORS (Cross-Origin Resource Sharing) ولماذا يفرضها المتصفح على طلبات الـ APIs؟",
+      "q_en": "What is CORS (Cross-Origin Resource Sharing), and why do web browsers enforce it on API calls?",
+      "opts": [
+        {
+          "ar": "بروتوكول لزيادة سرعة الإنترنت في خطوط الهواتف المنزلية.",
+          "ok": false,
+          "why": "لا علاقة له بسرعة الاتصال الفيزيائي.",
+          "en": "A protocol for increasing internet speed in home phone lines."
+        },
+        {
+          "ar": "آلية أمنية مدمجة بالمتصفح تمنع صفحات الويب من نطاق معين (Origin A) من إرسال طلبات وقراءة بيانات من نطاق خادم مختلف (Origin B) إلا إذا سمح الخادم بذلك صراحة عبر ترويسات خاصة.",
+          "ok": true,
+          "why": "CORS تحمي المستخدم من قيام مواقع خبيثة بإرسال طلبات سرية بحساباته المسجلة (Same-Origin Policy protection).",
+          "en": "A browser security mechanism preventing web apps on one origin from making unauthorized API requests to a different origin unless explicitly permitted via server headers."
+        },
+        {
+          "ar": "نظام لضغط الصور تلقائياً قبل حفظها في المتصفح.",
+          "ok": false,
+          "why": "CORS قضية أمان وصلاحيات نطاقات وليست ضغط صور.",
+          "en": "A system for automatically compressing images prior to browser caching."
+        },
+        {
+          "ar": "أداة لترجمة صفحات الويب للغة العربية تلقائياً.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "An automated web page translation tool."
+        }
+      ],
+      "tip": "وقفة امتحانية: CORS أمان يفرضه المتصفح؛ لحل خطأ CORS يجب تكوين `UseCors` في خادم ASP.NET Core وتحديد الأصول المسموحة (Allowed Origins)."
+    },
+    {
+      "n": 242,
+      "type": "mcq",
+      "ref": "L6-S037",
+      "q_ar": "ما هو الأسلوب الأكثر شيوعاً ووضوحاً لإدارة إصدارات الـ APIs (API Versioning) لضمان عدم كسر التطبيقات القديمة للعملاء؟",
+      "q_en": "What is the most widely adopted and transparent approach for API Versioning to prevent breaking legacy client applications?",
+      "opts": [
+        {
+          "ar": "تضمين رقم الإصدار في مسار الرابط صراحة (URI Path Versioning) مثل `/api/v1/orders` و `/api/v2/orders`.",
+          "ok": true,
+          "why": "إدراج الإصدار في المسار هو الأسلوب الأكثر بساطة ووضوحاً واستقراراً وتوثيقاً في منصات التطوير العالمية.",
+          "en": "Explicitly embedding version numbers inside the URI path (e.g. `/api/v1/orders` and `/api/v2/orders`)."
+        },
+        {
+          "ar": "حذف الإصدار القديم فجأة في منتصف الليل دون أي تنبيه للمستخدمين.",
+          "ok": false,
+          "why": "ممارسة كارثية تؤدي لانهيار تطبيقات العملاء فوراً.",
+          "en": "Abruptly deleting the old version at midnight without warning."
+        },
+        {
+          "ar": "إلزام جميع المبرمجين في العالم بإعادة كتابة تطبيقاتهم في نفس اليوم.",
+          "ok": false,
+          "why": "مستحيل تطبيقياً.",
+          "en": "Mandating all developers worldwide to rewrite their apps on the same day."
+        },
+        {
+          "ar": "تغيير أسماء قواعد البيانات كل أسبوعين.",
+          "ok": false,
+          "why": "لا علاقة له بإدارة إصدارات الواجهات.",
+          "en": "Renaming databases biweekly."
+        }
+      ],
+      "tip": "وقفة امتحانية: أساليب API Versioning: 1) URI Path (`/v1/`), 2) Query Parameter (`?api-version=1`), 3) Header Versioning (`Accept: v1`)."
+    },
+    {
+      "n": 243,
+      "type": "mcq",
+      "ref": "L6-S038",
+      "q_ar": "ما هي الفائدة المعمارية لأداة Swagger (OpenAPI) المدمجة افتراضياً في مشاريع ASP.NET Core Web API؟",
+      "q_en": "What is the architectural benefit of Swagger (OpenAPI) natively integrated into ASP.NET Core Web API projects?",
+      "opts": [
+        {
+          "ar": "إجراء عمليات النسخ الاحتياطي لقواعد البيانات السحابية تلقائياً.",
+          "ok": false,
+          "why": "النسخ الاحتياطي وظيفة خوادم قواعد البيانات.",
+          "en": "Automating cloud database backups."
+        },
+        {
+          "ar": "توليد وثائق تفاعلية قياسية (Interactive Documentation) تتيح للمطورين استكشاف واختبار نقاط النهاية مباشرة من المتصفح.",
+          "ok": true,
+          "why": "Swagger يقرأ كود الـ Controllers وينشئ ملف عقد OpenAPI وواجهة تفاعلية لتجربة الـ APIs دون الحاجة لأدوات خارجية.",
+          "en": "Generating standardized interactive documentation allowing developers to discover, inspect, and test endpoints directly from the browser."
+        },
+        {
+          "ar": "تسريع حركة مؤشر الفأرة على شاشة الحاسوب.",
+          "ok": false,
+          "why": "غير صحيح وهزلي.",
+          "en": "Accelerating mouse cursor speed."
+        },
+        {
+          "ar": "حظر كافة عناوين IP التابعة للدول المجاورة.",
+          "ok": false,
+          "why": "هذه وظيفة جدران الحماية (WAF / Geo-blocking).",
+          "en": "Blocking all IP addresses originating from neighboring nations."
+        }
+      ],
+      "tip": "وقفة امتحانية: في ASP.NET Core: حزمة Swashbuckle تُنشئ مواصفات OpenAPI وواجهة Swagger UI تلقائياً من توصيفات الدوال والوسوم."
+    },
+    {
+      "n": 244,
+      "type": "mcq",
+      "ref": "L6-S040",
+      "q_ar": "في دورة حياة التحقق من توكن JWT في السيرفر عند كل طلب محمي، كيف يتأكد الخادم من صحة التوكن دون الحاجة لطلب قاعدة البيانات في كل مرة؟",
+      "q_en": "In the server JWT validation lifecycle for protected requests, how does the server verify token authenticity without querying the database each time?",
+      "opts": [
+        {
+          "ar": "بالاتصال بمقر شركة مايكروسوفت للتأكد من هوية صاحب التوكن.",
+          "ok": false,
+          "why": "الخادم يمتلك المفتاح محلياً ولا يتصل بجهات خارجية.",
+          "en": "By contacting Microsoft headquarters to confirm identity."
+        },
+        {
+          "ar": "بإعادة حساب التوقيع الرقمي (Signature) رياضياً باستخدام المفتاح السري (Secret Key) المخزن في الخادم ومقارنته بالتوقيع المرفق في التوكن.",
+          "ok": true,
+          "why": "هذه هي قوة الـ JWT؛ فالتحقق من صحة التوقيع هو عملية تشفير رياضية تتم في الذاكرة بالمللي ثانية دون استعلام قاعدة البيانات.",
+          "en": "By mathematically recalculating the signature using the server's private Secret Key and comparing it with the token signature in-memory."
+        },
+        {
+          "ar": "عن طريق سؤال المستخدم شفوياً عن كلمة سره في كل طلب.",
+          "ok": false,
+          "why": "التواصل آلي عبر ترويسة Authorization.",
+          "en": "By verbally asking the user for their password on every request."
+        },
+        {
+          "ar": "بفحص بصمة إصبع المستخدم عبر كابل الإنترنت.",
+          "ok": false,
+          "why": "مستحيل تقنياً.",
+          "en": "By scanning user fingerprint through network cables."
+        }
+      ],
+      "tip": "وقفة امتحانية: سرعة وكفاءة JWT: التحقق من التوقيع (Cryptographic Signature Verification) عملية رياضية بحتة لا تتطلب استعلام قاعدة بيانات."
+    },
+    {
+      "n": 245,
+      "type": "mcq",
+      "ref": "L6-S042",
+      "q_ar": "ما هو الاسم القياسي للترويسة (HTTP Header) التي يجب أن يرسلها العميل لتمرير رمز الـ JWT للوصول لنقطة نهاية محمية؟",
+      "q_en": "What is the standard HTTP Header name a client must send to transmit a JWT token to access a protected endpoint?",
+      "opts": [
+        {
+          "ar": "`Content-Type: application/jwt`",
+          "ok": false,
+          "why": "هذه ترويسة نوع المحتوى وليست تفويضاً أمنياً.",
+          "en": "`Content-Type: application/jwt`"
+        },
+        {
+          "ar": "`Authorization: Bearer <token>`",
+          "ok": true,
+          "why": "هذا هو المعيار العالمي لنقل رموز التفويض؛ حيث يُسبق التوكن بكلمة Bearer مفصولة بمسافة داخل ترويسة Authorization.",
+          "en": "`Authorization: Bearer <token>`"
+        },
+        {
+          "ar": "`Password: <token>`",
+          "ok": false,
+          "why": "لا توجد ترويسة قياسية بهذا الاسم لكلمات المرور.",
+          "en": "`Password: <token>`"
+        },
+        {
+          "ar": "`Accept-Language: ar-SA`",
+          "ok": false,
+          "why": "ترويسة تفضيل لغة العرض وليس لها علاقة بالأمان.",
+          "en": "`Accept-Language: ar-SA`"
+        }
+      ],
+      "tip": "وقفة امتحانية: احفظ الصيغة المعيارية عن ظهر قلب: `Authorization: Bearer <token>`؛ أي خطأ في الكلمة أو المسافة يرفض الخادم الطلب بكود 401."
+    },
+    {
+      "n": 246,
+      "type": "mcq",
+      "ref": "L7-S003",
+      "q_ar": "ما هي المشكلة الجوهرية للبرمجة المتزامنة المعيقة (Synchronous Blocking Execution) في خوادم الويب؟",
+      "q_en": "What is the core problem of Synchronous Blocking Execution in web servers?",
+      "opts": [
+        {
+          "ar": "أنها تستهلك حبراً زائداً عند طباعة التقارير الورقية.",
+          "ok": false,
+          "why": "لا علاقة له بالطابعات الورقية.",
+          "en": "It consumes extra ink when printing paper reports."
+        },
+        {
+          "ar": "أن المسلك (Thread) يظل محجوزاً ومجمداً في حالة انتظار خامد أثناء عمليات الإدخال والإخراج، مما يؤدي لاستنزاف مسالك الخادم (Thread Starvation) وتوقف استقبال طلبات العملاء.",
+          "ok": true,
+          "why": "في الكود المتزامن، انتظار قاعدة البيانات أو الشبكة يجمد المسلك بالكامل دون أي عمل فعلي للمعالج، فتنفد مسالك السيرفر سريعاً.",
+          "en": "The thread remains blocked and idle waiting for I/O operations, leading to thread pool starvation and inability to accept new client requests."
+        },
+        {
+          "ar": "أنها تمنع نظام التشغيل من الاتصال بالشاشات الرسومية.",
+          "ok": false,
+          "why": "المشكلة في استنزاف مسالك المعالجة وليس في بطاقات العرض.",
+          "en": "It prevents the operating system from connecting to graphics monitors."
+        },
+        {
+          "ar": "أنها تقوم بحذف الملفات تلقائياً عند انتهاء الدالة.",
+          "ok": false,
+          "why": "غير صحيح برمجياً.",
+          "en": "It automatically wipes files upon function completion."
+        }
+      ],
+      "tip": "وقفة امتحانية: Synchronous I/O يجمد المسلك (Blocks Thread)؛ مما يسبب اختناق خوادم الويب تحت الحمل العالي وتوقف النظام عن الاستجابة."
+    },
+    {
+      "n": 247,
+      "type": "mcq",
+      "ref": "L7-S004",
+      "q_ar": "كيف تحل البرمجة غير المتزامنة (Asynchronous Execution) مشكلة استنزاف المسالك في منصة .NET Core؟",
+      "q_en": "How does Asynchronous Execution solve the thread exhaustion problem in .NET Core?",
+      "opts": [
+        {
+          "ar": "عبر شراء معالجات فيزيائية إضافية تلقائياً من الإنترنت.",
+          "ok": false,
+          "why": "الحل معماري برمجي وليس شراء عتاد فيزيائي تلقائي.",
+          "en": "By purchasing additional physical CPUs automatically online."
+        },
+        {
+          "ar": "بتحرير المسلك فوراً ليعود إلى حوض المسالك (ThreadPool) لخدمة طلبات أخرى أثناء انتظار عمليات I/O، واستئناف التنفيذ على مسلك متاح فور وصول الإشعار باكتمال العملية.",
+          "ok": true,
+          "why": "بدلاً من تجميد المسلك أثناء القراءة من قاعدة البيانات، يُعاد المسلك ليخدم مستخدماً آخر، مما يتيح لخادم واحد خدمة عشرات آلاف الطلبات.",
+          "en": "By immediately releasing the thread back to the ThreadPool to serve other requests during I/O waits, resuming on an available thread when notified of completion."
+        },
+        {
+          "ar": "بإلغاء كافة عمليات القراءة والكتابة في القرص وقواعد البيانات نهائياً.",
+          "ok": false,
+          "why": "التطبيقات تحتاج حتماً لقراءة وكتابة البيانات.",
+          "en": "By completely eliminating disk and database reads and writes."
+        },
+        {
+          "ar": "بتحويل كافة العمليات إلى حلقات تكرارية لانهائية لا تتوقف أبداً.",
+          "ok": false,
+          "why": "هذا يؤدي لتجميد المعالج بنسبة 100%.",
+          "en": "By converting all operations into infinite unyielding loops."
+        }
+      ],
+      "tip": "وقفة امتحانية: فكرة الـ Async: لا يوجد مسلك ينتظر (No Thread is Blocked)؛ تحرير المسلك لحوض ThreadPool هو سر القابلية الهائلة للتوسع (Scalability)."
+    },
+    {
+      "n": 248,
+      "type": "mcq",
+      "ref": "L7-S005",
+      "q_ar": "ما هو الفرق المعماري الدقيق بين العمليات المرتبطة بالإدخال والإخراج (I/O-Bound) والعمليات المرتبطة بالمعالج (CPU-Bound)؟",
+      "q_en": "What is the exact architectural distinction between I/O-Bound and CPU-Bound operations?",
+      "opts": [
+        {
+          "ar": "العمليات I/O-Bound تستهلك كهرباء أقل من العمليات CPU-Bound.",
+          "ok": false,
+          "why": "التمييز يتعلق بطبيعة مورد الانتظار وليس بفواتير الطاقة.",
+          "en": "I/O-Bound operations consume less electricity than CPU-Bound ones."
+        },
+        {
+          "ar": "I/O-Bound تنتظر عتاداً خارجياً (شبكة، قاعدة بيانات، قرص) ولا تحتاج لمسلك معالج أثناء الانتظار، بينما CPU-Bound تتطلب حسابات ومعالجة مكثفة في مسالك المعالج (مثل التشفير وضغط الصور).",
+          "ok": true,
+          "why": "عمليات I/O تنتظر انتهاء وسائط النقل (ولا تحتاج لمسلك إضافي)، بينما عمليات CPU تحتاج لقوة معالجة وحسابات رياضية مستمرة.",
+          "en": "I/O-Bound waits on external hardware (network, DB, disk) needing no CPU thread during wait, whereas CPU-Bound requires heavy processing on CPU threads (e.g. cryptography, image filtering)."
+        },
+        {
+          "ar": "I/O-Bound تحدث فقط في الهواتف، و CPU-Bound في السيرفرات فقط.",
+          "ok": false,
+          "why": "كلا النوعين موجود في كافة البيئات الحاسوبية.",
+          "en": "I/O-Bound occurs only in smartphones, and CPU-Bound only on servers."
+        },
+        {
+          "ar": "I/O-Bound تعتمد على لغة C فقط، و CPU-Bound على C#.",
+          "ok": false,
+          "why": "طبيعة فيزيائية وبرمجية مستقلة عن لغة البرمجة.",
+          "en": "I/O-Bound relies on C only, and CPU-Bound on C#."
+        }
+      ],
+      "tip": "وقفة امتحانية: مهم جداً: مع I/O-Bound استخدم `async/await` مباشرة بدون `Task.Run`، أما مع CPU-Bound فتحتاج لـ `Task.Run` لنقل الحسابات لمسلك خلفي."
+    },
+    {
+      "n": 249,
+      "type": "mcq",
+      "ref": "L7-S007",
+      "q_ar": "ماذا يفعل المترجم (C# Compiler) خلف الكواليس عندما تقوم بوسم دالة بالكلمة المفتاحية `async` واستخدام `await`؟",
+      "q_en": "What does the C# Compiler generate behind the scenes when a method is marked with `async` and uses `await`?",
+      "opts": [
+        {
+          "ar": "يقوم بإنشاء سيرفر سحابي جديد على منصة Azure.",
+          "ok": false,
+          "why": "المترجم يترجم كوداً محلياً ولا يطلق خوادم سحابية.",
+          "en": "It deploys a new cloud server on Azure platform."
+        },
+        {
+          "ar": "يقوم بتحويل الدالة إلى آلة حالة معقدة (State Machine) تعتمد على الواجهة `IAsyncStateMachine` لتقسيم الدالة واستئناف التنفيذ بعد انتهاء المهمة.",
+          "ok": true,
+          "why": "الـ Compiler يولد بنية State Machine تتابع تقدم التنفيذ عند كل نقطة await دون الحاجة لتجميد المسلك.",
+          "en": "It transforms the method into an underlying State Machine implementing `IAsyncStateMachine` to pause and resume execution seamlessly."
+        },
+        {
+          "ar": "يقوم بحذف كافة متغيرات الدالة ونقلها لملف نصي على سطح المكتب.",
+          "ok": false,
+          "why": "غير صحيح على الإطلاق.",
+          "en": "It wipes all method variables and stores them into a desktop text file."
+        },
+        {
+          "ar": "يقوم بتحويل لغة C# إلى لغة Python تلقائياً.",
+          "ok": false,
+          "why": "الكود يبقى C# ضمن منصة .NET CLR.",
+          "en": "It automatically converts C# code to Python."
+        }
+      ],
+      "tip": "وقفة امتحانية: الكلمتان `async` و `await` هما سكر تركيبي (Syntactic Sugar)؛ والمترجم يحولهما إلى State Machine متقنة تُدار عبر الـ CLR."
+    },
+    {
+      "n": 250,
+      "type": "mcq",
+      "ref": "L7-S007",
+      "q_ar": "ما هي أنواع الإرجاع الثلاثة المعتمدة لدوال `async` في C#، ولماذا يُحظر بشدة استخدام `async void` إلا في معالجات الأحداث الرسومية؟",
+      "q_en": "What are the three supported return types for async methods in C#, and why is `async void` strictly discouraged except in UI event handlers?",
+      "opts": [
+        {
+          "ar": "الأنواع هي `int`, `string`, `bool`؛ واستخدام void يسبب مسح الذاكرة العشوائية بالكامل.",
+          "ok": false,
+          "why": "أنواع الدوال غير المتزامنة هي Task ومشتقاتها.",
+          "en": "Types are `int`, `string`, `bool`; void wipes RAM."
+        },
+        {
+          "ar": "الأنواع هي `Task`, `Task<T>`, `ValueTask<T>`؛ ويُحظر `async void` لأنه أسلوب أطلق وانسى (Fire-and-Forget) لا يمكن انتظاره وتؤدي استثناءاته لانهيار البرنامج فوراً.",
+          "ok": true,
+          "why": "الدالة `async void` لا تعيد كائن Task لمتابعته، وإذا حدث بداخلها Exception لا يمكن التقاطه بـ catch فينهار التطبيق بالكامل.",
+          "en": "Types are `Task`, `Task<T>`, and `ValueTask<T>`; `async void` is forbidden because it is fire-and-forget, cannot be awaited, and unhandled exceptions crash the process."
+        },
+        {
+          "ar": "الأنواع هي `List`, `Array`, `Queue`؛ والـ void ممنوع لأن C# لا تدعم الدوال الخالية.",
+          "ok": false,
+          "why": "هذه مجموعات بيانات وليست أنواع مهام غير متزامنة.",
+          "en": "Types are `List`, `Array`, `Queue`; void is unsupported."
+        },
+        {
+          "ar": "لا يوجد أي فرق إطلاقاً بين `async Task` و `async void` وكلاهما متطابقان تماماً.",
+          "ok": false,
+          "why": "فارق أمني ووظيفي قاتل في استقرار النظم.",
+          "en": "There is zero difference; both are completely identical."
+        }
+      ],
+      "tip": "وقفة امتحانية: قاعدة امتحانية ذهبية: 'Avoid `async void`!'؛ استخدم دائماً `async Task` أو `async Task<T>`، والاستثناء الوحيد المسموح به هو UI Event Handlers."
+    },
+    {
+      "n": 251,
+      "type": "mcq",
+      "ref": "L7-S008",
+      "q_ar": "متى يكون استخدام `Task.Run()` ممارسة معمارية صحيحة وموصى بها في C#؟",
+      "q_en": "When is using `Task.Run()` considered a proper and recommended architectural practice in C#?",
+      "opts": [
+        {
+          "ar": "عند قراءة ملف من القرص أو استدعاء قاعدة بيانات أو طلب HTTP خارجي.",
+          "ok": false,
+          "why": "هذه عمليات I/O وتملك دوال async أصيلة ولا تحتاج لـ Task.Run (استخدام Task.Run هنا مضيعة لمسلك).",
+          "en": "When reading a file, querying a database, or making an HTTP call."
+        },
+        {
+          "ar": "عند وجود عمل حسابي مكثف يستهلك المعالج (CPU-Bound Work) مثل معالجة الصور أو خوارزميات التشفير المعقدة، لنقله إلى مسلك خلفي والحفاظ على استجابة واجهة المستخدم.",
+          "ok": true,
+          "why": "وظيفة Task.Run الحقيقية هي تفويض العمليات الحسابية الشاقة لمسلك من حوض ThreadPool لمنع تجميد خيط التطبيق الأساسي.",
+          "en": "When executing heavy compute-intensive tasks (CPU-Bound work) like image rendering or encryption to offload them to a background ThreadPool thread."
+        },
+        {
+          "ar": "لتشغيل الموسيقى أثناء تحميل الصفحة.",
+          "ok": false,
+          "why": "لا علاقة له بهذه الأغراض التافهة.",
+          "en": "To play background music while page loads."
+        },
+        {
+          "ar": "لكتابة استعلامات SQL بداخل المتصفح.",
+          "ok": false,
+          "why": "المتصفح لا يشغل C# Task.Run مباشرة.",
+          "en": "To write raw SQL queries inside web browsers."
+        }
+      ],
+      "tip": "وقفة امتحانية: قاعدة: لا تغلف عمليات I/O بـ `Task.Run`! بل استخدم `Task.Run` حصراً للمهام الحسابية المعقدة (CPU-Bound)."
+    },
+    {
+      "n": 252,
+      "type": "mcq",
+      "ref": "L7-S009",
+      "q_ar": "إذا كان لدينا مهمتان غير متزامنتين (المهمة A تستغرق ثانيتين، والمهمة B تستغرق 3 ثوانٍ)، ما الفارق الزمني بين التنفيذ المتتالي والتنفيذ المتزامن عبر `Task.WhenAll`؟",
+      "q_en": "Given two async tasks (Task A takes 2s, Task B takes 3s), what is the execution time difference between sequential await and concurrent execution via `Task.WhenAll`?",
+      "opts": [
+        {
+          "ar": "كلاهما يستغرق 10 ثوانٍ دائماً بسبب تكلفة الشبكة.",
+          "ok": false,
+          "why": "الحساب الرياضي خاطئ تماماً.",
+          "en": "Both will always take 10 seconds due to network overhead."
+        },
+        {
+          "ar": "التنفيذ المتتالي (`await A; await B;`) يستغرق مجموع الوقتين (5 ثوانٍ)، بينما التنفيذ المتزامن بـ `Task.WhenAll` يستغرق وقت المهمة الأطول فقط (حوالي 3 ثوانٍ).",
+          "ok": true,
+          "why": "في WhenAll تنطلق المهمتان معاً في نفس الوقت بالتوازي، لذا يكون الزمن الكلي هو زمن أطولهما استغراقاً: max(2, 3) = 3s.",
+          "en": "Sequential execution takes the sum of both (5 seconds), whereas concurrent execution via `Task.WhenAll` takes approximately the maximum of both (about 3 seconds)."
+        },
+        {
+          "ar": "التنفيذ المتزامن يستغرق ثانية واحدة فقط لأن المعالج يسرع الوقت فيزيائياً.",
+          "ok": false,
+          "why": "المعالج لا يمكنه إنهاء عملية تستغرق 3 ثوانٍ في ثانية واحدة.",
+          "en": "Concurrent execution takes only 1 second because the CPU speeds up physical time."
+        },
+        {
+          "ar": "التنفيذ المتتالي أسرع دائماً بمقدار الضعف من التنفيذ المتزامن.",
+          "ok": false,
+          "why": "التتالي يجمع الأوقات وبالتالي هو الأبطأ دائماً في المهام المستقلة.",
+          "en": "Sequential execution is always twice as fast as concurrent execution."
+        }
+      ],
+      "tip": "وقفة امتحانية: حساب زمني امتحاني: المهام المستقلة المتتالية = الجمع (2 + 3 = 5s). المهام عبر `Task.WhenAll` = الأطول (max(2, 3) = 3s)."
+    },
+    {
+      "n": 253,
+      "type": "mcq",
+      "ref": "L7-S010",
+      "q_ar": "ما هي الحالات النهائية الثلاث المحتملة لدورة حياة كائن الـ `Task` في .NET؟",
+      "q_en": "What are the three terminal lifecycle states of a `Task` object in .NET?",
+      "opts": [
+        {
+          "ar": "التحميل (Loading)، التجميد (Freezing)، والتخزين (Archived).",
+          "ok": false,
+          "why": "هذه ليست حالات معتمدة لـ TaskStatus في .NET.",
+          "en": "Loading, Freezing, and Archived."
+        },
+        {
+          "ar": "اكتمل بنجاح (`RanToCompletion`)، تعطل بخطأ (`Faulted`)، أو تم إلغاؤه (`Canceled`).",
+          "ok": true,
+          "why": "هذه هي الحالات الثلاث النهائية لخاصية TaskStatus التي تعبر عن ختام تنفيذ المهمة.",
+          "en": "Completed successfully (`RanToCompletion`), failed with error (`Faulted`), or aborted (`Canceled`)."
+        },
+        {
+          "ar": "محذوف (Deleted)، مكرر (Duplicated)، ومطبوع (Printed).",
+          "ok": false,
+          "why": "أوصاف مستندات وليست حالات برمجة مهام.",
+          "en": "Deleted, Duplicated, and Printed."
+        },
+        {
+          "ar": "كائن Task لا ينتهي أبداً ويظل في الذاكرة للأبد.",
+          "ok": false,
+          "why": "كل مهمة تنتهي حتماً بإحدى الحالات النهائية.",
+          "en": "A Task never finishes and stays in memory forever."
+        }
+      ],
+      "tip": "وقفة امتحانية: الحالات الثلاث لاكتمال الـ Task: `RanToCompletion` (نجاح)، `Faulted` (فشل وحمل استثناء)، `Canceled` (إلغاء عبر CancellationToken)."
+    },
+    {
+      "n": 254,
+      "type": "mcq",
+      "ref": "L7-S013",
+      "q_ar": "ما هو الفارق الوظيفي الجوهري بين استدعاء `Task.WhenAll` واستدعاء `Task.WhenAny`؟",
+      "q_en": "What is the core functional difference between invoking `Task.WhenAll` and `Task.WhenAny`?",
+      "opts": [
+        {
+          "ar": "كلاهما ينتظران اكتمال كافة المهام بدون أي فارق.",
+          "ok": false,
+          "why": "WhenAny يختلف جذرياً في سلوك الانتظار.",
+          "en": "Both wait for all tasks to complete with zero difference."
+        },
+        {
+          "ar": "`Task.WhenAll` ينتظر اكتمال جميع المهام في المصفوفة، بينما `Task.WhenAny` يعود فور اكتمال أول مهمة تنهي عملها من بين المجموعة.",
+          "ok": true,
+          "why": "WhenAny مثالية لحالات تحديد المهلة (Timeouts) أو اختيار الخادم الأسرع استجابة بين خوادم مكررة.",
+          "en": "`Task.WhenAll` waits for every task in the collection to complete, while `Task.WhenAny` returns as soon as any single task finishes."
+        },
+        {
+          "ar": "`Task.WhenAll` مخصصة للعمليات الحسابية فقط و `Task.WhenAny` للرسائل النصية.",
+          "ok": false,
+          "why": "كلاهما يتعامل مع أي كائنات Task من أي نوع.",
+          "en": "`Task.WhenAll` is for arithmetic only and `Task.WhenAny` is for strings."
+        },
+        {
+          "ar": "`Task.WhenAny` تقوم بحذف جميع المهام المتبقية تلقائياً من الذاكرة فوراً.",
+          "ok": false,
+          "why": "WhenAny لا تلغي المهام الأخرى تلقائياً؛ بل يجب على المبرمج إلغاؤها صراحة باستخدام CancellationToken.",
+          "en": "`Task.WhenAny` automatically cancels and removes remaining tasks from memory."
+        }
+      ],
+      "tip": "وقفة امتحانية: متى تستخدم `Task.WhenAny`؟ 1) عند تطبيق Timeout (مهمة العملية ضد `Task.Delay`)، 2) الاستعلام عن أسرع خادم من بين عدة خوادم بديلة."
+    },
+    {
+      "n": 255,
+      "type": "mcq",
+      "ref": "L7-S014",
+      "q_ar": "ما هو التمييز الأكاديمي الحاسم بين مفهوم التزامن (Concurrency) ومفهوم التوازي (Parallelism)؟",
+      "q_en": "What is the decisive academic distinction between Concurrency and Parallelism?",
+      "opts": [
+        {
+          "ar": "التزامن والتوازي كلمتان مترادفتان تماماً لنفس المعنى الفيزيائي.",
+          "ok": false,
+          "why": "هناك فارق هندسي وفيزيائي كبير صاغه روب بايك.",
+          "en": "Concurrency and Parallelism are exact identical synonyms."
+        },
+        {
+          "ar": "التزامن (Concurrency) هو إدارة والتعامل مع عدة مهام في نفس الفترة الزمنية (بالمناوبة وتداخل التنفيذ)، بينما التوازي (Parallelism) هو تنفيذ عدة مهام حرفياً في نفس اللحظة الفيزيائية على أنوية معالج متعددة.",
+          "ok": true,
+          "why": "التزامن هيكلة معمارية (Dealing with lots of things at once)، والتوازي تنفيذ عتادي متزامن (Doing lots of things at once).",
+          "en": "Concurrency is dealing with multiple tasks at once (interleaving and structuring), while Parallelism is literally executing multiple tasks simultaneously on multiple CPU cores."
+        },
+        {
+          "ar": "التزامن يتطلب معالجاً يحتوي على 64 نواة، بينما التوازي يعمل على معالج أحادي النواة قديم.",
+          "ok": false,
+          "why": "العكس؛ التوازي يستحيل تحقيقه فيزيائياً على معالج أحادي النواة.",
+          "en": "Concurrency requires a 64-core CPU, while parallelism runs on single-core CPUs."
+        },
+        {
+          "ar": "التزامن خاص بالشبكات والتوازي خاص بالطابعات.",
+          "ok": false,
+          "why": "غير صحيح إطلاقاً.",
+          "en": "Concurrency is for networks, and parallelism is for printers."
+        }
+      ],
+      "tip": "وقفة امتحانية: مقولة روب بايك الشهيرة: 'Concurrency is about dealing with lots of things at once. Parallelism is about doing lots of things at once.' (التوازي يتطلب أنوية متعددة حتماً)."
+    },
+    {
+      "n": 256,
+      "type": "mcq",
+      "ref": "L7-S016",
+      "q_ar": "لماذا يُعتبر إنشاء مسالك يدوية صريحة عبر `new Thread()` ممارسة مكلفة وغير محبذة في التطبيقات الحديثة؟",
+      "q_en": "Why is manually spawning explicit threads via `new Thread()` considered expensive and discouraged in modern applications?",
+      "opts": [
+        {
+          "ar": "لأن كل مسلك صريح يحجز حوالي 1 ميجابايت من الذاكرة لـ Stack الخاص به، ويتطلب تكلفة باهظة في تبديل السياق (Context Switching) وإدارة نظام التشغيل.",
+          "ok": true,
+          "why": "إنشاء Thread يستهلك موارد تشغيل وذاكرة ضخمة؛ ولذا توفر .NET حوض ThreadPool لإعادة تدوير المسالك بكفاءة.",
+          "en": "Because each explicit thread allocates ~1MB of memory for its call stack and incurs high OS context-switching overhead."
+        },
+        {
+          "ar": "لأن نظام التشغيل ويندوز لا يسمح بإنشاء أكثر من 3 مسالك فقط.",
+          "ok": false,
+          "why": "ويندوز يدعم آلاف المسالك لكن بتكلفة أداء عالية.",
+          "en": "Because Windows allows creating only 3 threads maximum."
+        },
+        {
+          "ar": "لأن المسالك اليدوية لا يمكنها قراءة الأرقام الصحيحة.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Because manual threads cannot read integers."
+        },
+        {
+          "ar": "لأن لغة C# ألغت دعم الكلمة المفتاحية Thread في كافة إصداراتها.",
+          "ok": false,
+          "why": "فئة Thread ما زالت موجودة لأغراض تاريخية وعتادية خاصة.",
+          "en": "Because C# dropped the Thread class entirely from all versions."
+        }
+      ],
+      "tip": "وقفة امتحانية: تكلفة المسلك اليدوي: 1MB Stack Memory + استهلاك وقت لإنشائه؛ البديل الحديث المعتمد: ThreadPool أو `Task.Run`."
+    },
+    {
+      "n": 257,
+      "type": "mcq",
+      "ref": "L7-S017",
+      "q_ar": "ما هي الفكرة المعمارية التي يقوم عليها حوض المسالك (ThreadPool) في بيئة تشغيل .NET؟",
+      "q_en": "What is the architectural concept underpinning the ThreadPool in the .NET runtime?",
+      "opts": [
+        {
+          "ar": "مجموعة من المسالك العاملة المسبقة الإنشاء والتي يُعاد استخدامها وتدويرها لتنفيذ المهام، مما يمنع تكلفة إنشاء وحذف المسالك باستمرار.",
+          "ok": true,
+          "why": "الـ ThreadPool يدير طابور مهام ومسلك ينهي مهمة يستلم أخرى فوراً دون تدميره وإعادة إنشائه.",
+          "en": "A pool of pre-allocated worker threads that are reused across tasks, eliminating the continuous creation and destruction overhead."
+        },
+        {
+          "ar": "تخزين المسالك في ملف نصي على القرص الصلب لحين إعادة تشغيل الحاسوب.",
+          "ok": false,
+          "why": "المسالك كائنات حية في الذاكرة ومعالجات النظام.",
+          "en": "Persisting threads to a text file until next computer reboot."
+        },
+        {
+          "ar": "إيقاف عمل كافة المسالك عند وصول عدد المستخدمين إلى 10.",
+          "ok": false,
+          "why": "الـ ThreadPool يتوسع وينكمش ديناميكياً حسب الحاجة.",
+          "en": "Shutting down all threads when user count reaches 10."
+        },
+        {
+          "ar": "أداة لتشغيل ألعاب الفيديو بدقة عالية.",
+          "ok": false,
+          "why": "لا علاقة له بالألعاب.",
+          "en": "A utility for running high-resolution games."
+        }
+      ],
+      "tip": "وقفة امتحانية: ThreadPool يعتمد على خوارزمية سرقة العمل (Work-Stealing Algorithm) لتوزيع الأحمال بالتساوي بين أنوية المعالج."
+    },
+    {
+      "n": 258,
+      "type": "mcq",
+      "ref": "L7-S019",
+      "q_ar": "متى يُعد استخدام `Parallel.For` أو `Parallel.ForEach` خياراً معمارياً أمثل في C#؟",
+      "q_en": "When is using `Parallel.For` or `Parallel.ForEach` the optimal architectural choice in C#?",
+      "opts": [
+        {
+          "ar": "في الحلقات التكرارية التي ترسل طلبات HTTP للشبكة وتنتظر الرد.",
+          "ok": false,
+          "why": "عمليات الشبكة غير متزامنة (Async I/O)، واستخدام Parallel.For معها يجمد مسالك المعالج.",
+          "en": "In loops dispatching HTTP network requests and awaiting responses."
+        },
+        {
+          "ar": "في الحلقات التكرارية الحسابية المكثفة لمعالجة البيانات (CPU-Bound Data Parallelism) حيث تكون كل دورة مستقلة تماماً عن الأخرى.",
+          "ok": true,
+          "why": "مكتبة TPL في Parallel.For تقسم البيانات تلقائياً على أنوية المعالج لاستغلال طاقة العتاد في الحسابات المستقلة.",
+          "en": "In heavy compute-intensive loops (CPU-Bound Data Parallelism) where each iteration is completely independent of others."
+        },
+        {
+          "ar": "في العمليات التي تعدل نفس المتغير المشترك بدون أي قفل حماية.",
+          "ok": false,
+          "why": "هذا يؤدي لكارثة Race Condition فوراً.",
+          "en": "In iterations modifying the same shared state without synchronization."
+        },
+        {
+          "ar": "لقراءة ملف واحد حرفاً بحرف من القرص الصلب.",
+          "ok": false,
+          "why": "القراءة التسلسلية من ملف واحد لا تستفيد من التوازي.",
+          "en": "For reading a single file character-by-character from disk."
+        }
+      ],
+      "tip": "وقفة امتحانية: استخدم `Parallel.For` لحلقات الحسابات المكثفة المستقلة (Data Parallelism)، ولا تستخدمها لعمليات الانتظار الشبكي (Async I/O)."
+    },
+    {
+      "n": 259,
+      "type": "mcq",
+      "ref": "L7-S023",
+      "q_ar": "لماذا تؤدي العملية البسيطة `count++` إلى حدوث ظاهرة سباق (Race Condition) عند تنفيذها بالتزامن من عدة مسالك؟",
+      "q_en": "Why does the simple statement `count++` trigger a Race Condition when executed concurrently across multiple threads?",
+      "opts": [
+        {
+          "ar": "لأن لغة C# تمنع زيادة الأرقام بأكثر من واحد.",
+          "ok": false,
+          "why": "C# تدعم العمليات الحسابية بشكل كامل.",
+          "en": "Because C# prohibits incrementing numbers by more than one."
+        },
+        {
+          "ar": "لأن `count++` ليست عملية ذرية (Not Atomic)؛ بل تترجم إلى 3 خطوات منفصلة في المعالج: 1) قراءة القيمة من الذاكرة، 2) زيادة القيمة في السجل، 3) كتابة القيمة في الذاكرة، ويمكن للمسالك التداخل بينها.",
+          "ok": true,
+          "why": "إذا قرأ مسلكان القيمة 5 في نفس اللحظة، فكلاهما سيزيدها إلى 6 ويكتب 6، فتضيع إحدى الزيادات (Lost Update).",
+          "en": "Because `count++` is not atomic; it translates into 3 distinct CPU steps (Read, Modify, Write), allowing threads to interleave and overwrite results."
+        },
+        {
+          "ar": "لأن نظام التشغيل يغلق الملف عند زيادة الرقم.",
+          "ok": false,
+          "why": "العملية تحدث في الذاكرة RAM ولا علاقة لها بالملفات.",
+          "en": "Because the OS closes the file when numbers increase."
+        },
+        {
+          "ar": "لأن المتغير الرقمي يستهلك الذاكرة العشوائية بالكامل.",
+          "ok": false,
+          "why": "المتغير int يحجز 4 بايت فقط.",
+          "en": "Because numeric variables deplete the entire RAM."
+        }
+      ],
+      "tip": "وقفة امتحانية: سؤال مفضل: هل `count++` عملية ذرية (Atomic)؟ الإجابة: لا! بل تتكون من: Read -> Modify -> Write؛ مما يسبب Lost Updates."
+    },
+    {
+      "n": 260,
+      "type": "mcq",
+      "ref": "L7-S024",
+      "q_ar": "كيف تعمل كتلة الحماية `lock` في C# خلف الكواليس عند ترجمتها بواسطة المترجم؟",
+      "q_en": "How does the `lock` statement in C# operate behind the scenes when compiled?",
+      "opts": [
+        {
+          "ar": "تقوم بفصل كابل الشبكة حتى ينهي المسلك عمله.",
+          "ok": false,
+          "why": "لا علاقة له بالشبكة الفيزيائية.",
+          "en": "It disconnects the network cable until the thread finishes."
+        },
+        {
+          "ar": "تترجم إلى استدعاء `Monitor.Enter` للحصول على القفل، مع وضع الكود داخل كتلة `try...finally` لضمان استدعاء `Monitor.Exit` لتحرير القفل حتى لو حدث استثناء.",
+          "ok": true,
+          "why": "الـ lock هو مجرد غلاف حماية تركيبي (Syntactic Sugar) لـ Monitor مع كتلة try-finally لضمان عدم بقاء القفل محجوزاً للأبد.",
+          "en": "It compiles to `Monitor.Enter` wrapped in a `try...finally` block, ensuring `Monitor.Exit` is guaranteed to release the lock even on exceptions."
+        },
+        {
+          "ar": "تقوم بإيقاف تشغيل المعالج بالكامل لمدة ثانية واحدة.",
+          "ok": false,
+          "why": "القفل يعيق المسالك المتنافسة على نفس الكائن فقط.",
+          "en": "It completely halts the processor for one second."
+        },
+        {
+          "ar": "تحذف المتغير من الذاكرة وتعيد تعريفه من جديد.",
+          "ok": false,
+          "why": "غير صحيح برمجياً.",
+          "en": "It deletes the variable from memory and recreates it."
+        }
+      ],
+      "tip": "وقفة امتحانية: `lock(obj)` تترجم حرفياً إلى: `Monitor.Enter(obj, ref lockTaken)` داخل كتلة `try` وتحريرها بـ `Monitor.Exit(obj)` داخل `finally`."
+    },
+    {
+      "n": 261,
+      "type": "mcq",
+      "ref": "L7-S024",
+      "q_ar": "ما هي الممارسة البرمجية القياسية الآمنة لكائن القفل في جملة `lock`، وما الذي يجب تجنبه تماماً؟",
+      "q_en": "What is the standard thread-safe practice for the lock object in a `lock` statement, and what must be strictly avoided?",
+      "opts": [
+        {
+          "ar": "استخدام كائن خاص للقراءة فقط مثل `private readonly object _lock = new object();`، وتجنب القفل على `this` أو `typeof(MyClass)` أو السلاسل النصية.",
+          "ok": true,
+          "why": "القفل على `this` أو السلاسل النصية أو الأنواع العامة مكشوف لأي كود خارجي وقد يسبب Deadlocks عامة على مستوى التطبيق.",
+          "en": "Using a dedicated private instance like `private readonly object _lock = new object();`, avoiding locks on `this`, `typeof(T)`, or string literals."
+        },
+        {
+          "ar": "استخدام نصوص مشتركة عامة مثل `lock(\"my_secret_lock\")` في كل مكان.",
+          "ok": false,
+          "why": "كارثة أمنية وتصميمية؛ لأن السلاسل النصية مدمجة في الـ String Interning pool مما يسبب deadlocks عشوائية.",
+          "en": "Using shared string literals like `lock(\"my_secret_lock\")` everywhere."
+        },
+        {
+          "ar": "القفل على المتغير الرقمي `lock(count)` بعد تحويله لـ int.",
+          "ok": false,
+          "why": "لا يمكن القفل على أنواع القيمة (Value Types) في C# لأنها تتطلب كائناً مرجعياً.",
+          "en": "Locking on value types like `lock(count)`."
+        },
+        {
+          "ar": "تمرير قيمة `null` ككائن قفل في `lock(null)`.",
+          "ok": false,
+          "why": "تمرير null يرمي استثناء `ArgumentNullException` فوراً.",
+          "en": "Passing `null` as the lock object."
+        }
+      ],
+      "tip": "وقفة امتحانية: سؤال كلاسيكي: لماذا يحظر `lock(this)` و `lock(\"str\")`؟ لأنها كائنات مكشوفة عامة، ويجب دائماً تعريف: `private readonly object _lock = new object();`."
+    },
+    {
+      "n": 262,
+      "type": "mcq",
+      "ref": "L7-S025",
+      "q_ar": "لماذا يُعتبر استخدام فئة `Interlocked` (مثل `Interlocked.Increment(ref count)`) أفضل وأسرع بكثير من استخدام `lock` للعمليات الحسابية البسيطة؟",
+      "q_en": "Why is using the `Interlocked` class (like `Interlocked.Increment(ref count)`) significantly better and faster than `lock` for simple arithmetic operations?",
+      "opts": [
+        {
+          "ar": "لأنها تعتمد على تعليمات ذرية مدعومة عتادياً من المعالج المركزي (CPU Hardware Instructions) دون تجميد المسالك أو تكلفة تبديل السياق.",
+          "ok": true,
+          "why": "فئة Interlocked تستخدم تعليمات عتادية ذرية مباشرة (مثل CMPXCHG / LOCK INC)، مما يجعلها أسرع بعشرات المرات من حجز ومراقبة Monitor.",
+          "en": "Because it relies on CPU hardware-level atomic instructions without blocking threads or incurring OS context-switching overhead."
+        },
+        {
+          "ar": "لأنها تقوم بمسح كافة الأخطاء البرمجية من المشروع تلقائياً.",
+          "ok": false,
+          "why": "Interlocked فئة تزامن ذرية وليست أداة تصحيح أخطاء.",
+          "en": "Because it automatically erases all bugs from the project."
+        },
+        {
+          "ar": "لأنها لا تحتاج لكتابة أي كود برمجي.",
+          "ok": false,
+          "why": "تتطلب استدعاء دوالها الصريحة.",
+          "en": "Because it requires writing zero lines of code."
+        },
+        {
+          "ar": "لأن `lock` محظور رسمياً في إصدارات .NET الحديثة.",
+          "ok": false,
+          "why": "الـ lock مدعوم وشائع في العمليات المتعددة الأسطر.",
+          "en": "Because `lock` is officially deprecated in modern .NET."
+        }
+      ],
+      "tip": "وقفة امتحانية: للأرقام والعدادات البسيطة: `Interlocked.Increment`, `Interlocked.Decrement`, `Interlocked.CompareExchange` هي الخيار الأمثل فائق السرعة."
+    },
+    {
+      "n": 263,
+      "type": "mcq",
+      "ref": "L7-S026",
+      "q_ar": "لماذا يفضل استخدام مجموعات التزامن الجاهزة (مثل `ConcurrentDictionary<TKey, TValue>`) بدلاً من حماية `Dictionary` التقليدي بقفل يدوي `lock`؟",
+      "q_en": "Why is using thread-safe collections (like `ConcurrentDictionary<TKey, TValue>`) preferred over protecting a standard `Dictionary` with manual `lock`?",
+      "opts": [
+        {
+          "ar": "لأن المجموعات المتزامنة تطبق أقفالاً دقيقة ومجزأة (Fine-Grained Bucket Locking) وخوارزميات بلا أقفال لعمليات القراءة، مما يتيح وصول مئات المسالك دون تنافس واختناق.",
+          "ok": true,
+          "why": "القفل اليدوي على Dictionary يجمد القاموس بالكامل لكل قراءة وكتابة، بينما ConcurrentDictionary يقفل فقط السلة (Bucket) المعنية ويتيح قراءة متزامنة فائقة السرعة.",
+          "en": "Because concurrent collections utilize fine-grained bucket-level locking and lock-free reads, enabling massive concurrent access without bottlenecks."
+        },
+        {
+          "ar": "لأن القاموس العادي لا يقبل سوى 5 عناصر كحد أقصى.",
+          "ok": false,
+          "why": "القاموس العادي يستوعب ملايين العناصر.",
+          "en": "Because standard dictionaries only hold up to 5 items."
+        },
+        {
+          "ar": "لأن المجموعات المتزامنة تحول البيانات إلى صور ورسومات بيانية.",
+          "ok": false,
+          "why": "هي هياكل بيانات بحتة.",
+          "en": "Because concurrent collections convert data into charts."
+        },
+        {
+          "ar": "لأن C# تحذف القاموس العادي تلقائياً بعد دقيقة واحدة.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Because C# automatically garbage-collects regular dictionaries after one minute."
+        }
+      ],
+      "tip": "وقفة امتحانية: مجموعات `System.Collections.Concurrent` (`ConcurrentDictionary`, `ConcurrentQueue`, `ConcurrentBag`) صممت لتحقيق أقصى كفاءة أداء متعدد المسالك."
+    },
+    {
+      "n": 264,
+      "type": "mcq",
+      "ref": "L7-S027",
+      "q_ar": "ما هو التعريف الدقيق لحالة الجمود المميت (Deadlock) في البيئات متعددة المسالك؟",
+      "q_en": "What is the precise definition of a Deadlock in multithreaded environments?",
+      "opts": [
+        {
+          "ar": "نفاد الحبر في الطابعة أثناء طباعة الفاتورة.",
+          "ok": false,
+          "why": "عطل عتادي لا علاقة له بالبرمجة.",
+          "en": "Printer running out of ink."
+        },
+        {
+          "ar": "حالة انتظار دائري متبادل يتجمد فيها مسلكان أو أكثر إلى الأبد، حيث يحتفظ المسلك الأول بقفل المورد A وينتظر قفل B، بينما يحتفظ المسلك الثاني بـ B وينتظر A.",
+          "ok": true,
+          "why": "هذا هو نموذج الانتظار الدائري (Circular Wait) الشهير للجمود المميت حيث لا يستطيع أي طرف الاستمرار أو التراجع.",
+          "en": "A circular wait condition where two or more threads freeze permanently: Thread 1 holds Lock A waiting for B, while Thread 2 holds Lock B waiting for A."
+        },
+        {
+          "ar": "إغلاق شاشة الحاسوب المحمول عند دخول وضع السبات.",
+          "ok": false,
+          "why": "وظيفة إدارة طاقة في نظام التشغيل.",
+          "en": "Laptop screen turning off during sleep mode."
+        },
+        {
+          "ar": "تحميل ملف مضغوط بسرعة عالية.",
+          "ok": false,
+          "why": "لا علاقة له بالجمود.",
+          "en": "High-speed download of a zip archive."
+        }
+      ],
+      "tip": "وقفة امتحانية: شروط كوفمان للـ Deadlock: أهمها الانتظار الدائري (Circular Wait)؛ ولتفاديه: اتبع دائماً ترتيباً موحداً وصارماً للحصول على الأقفال (Lock Ordering)."
+    },
+    {
+      "n": 265,
+      "type": "mcq",
+      "ref": "L7-S030",
+      "q_ar": "لماذا يُعتبر استدعاء عمليات الشبكة أو قراءة قواعد البيانات بداخل كتلة `lock` ممارسة معمارية بالغة السوء والخطورة؟",
+      "q_en": "Why is invoking network calls or database queries inside a `lock` block considered an atrocious architectural anti-pattern?",
+      "opts": [
+        {
+          "ar": "لأن عمليات I/O بطيئة وغير متوقعة في زمن استجابتها، مما يبقي القفل محجوزاً لفترة طويلة ويجمد كافة المسالك الأخرى المتنافسة ويشل النظام بالكامل.",
+          "ok": true,
+          "why": "القاعدة الذهبية: احتفظ بالقفل لأقصر مدة ممكنة في الذاكرة RAM، وإياك أن تستدعي I/O أو Thread.Sleep داخل lock.",
+          "en": "Because I/O is slow and nondeterministic, holding the lock for extensive periods, starving other waiting threads and crippling system throughput."
+        },
+        {
+          "ar": "لأن المترجم يقوم بحذف كود الشبكة فوراً عند الترجمة.",
+          "ok": false,
+          "why": "المترجم يسمح بكتابته لكنه يسبب كارثة أداء عند التشغيل.",
+          "en": "Because the compiler automatically removes network code during compilation."
+        },
+        {
+          "ar": "لأن قواعد البيانات لا يمكنها استقبال الاتصالات من لغة C#.",
+          "ok": false,
+          "why": "C# تتصل بكافة أنواع قواعد البيانات.",
+          "en": "Because databases cannot accept connections from C#."
+        },
+        {
+          "ar": "لأن المعالج يقوم برمي استثناء فوري ويغلق التطبيق بمجرد اكتشاف اسم قاعدة البيانات.",
+          "ok": false,
+          "why": "لا يرمي استثناء، بل يتجمد النظام في انتظار فك القفل.",
+          "en": "Because CPU throws an instant exception upon detecting database names."
+        }
+      ],
+      "tip": "وقفة امتحانية: قاعدة امتحانية حاسمة: 'Never do I/O or long-running work inside a lock!' (حافظ على نطاق القفل بالغا الصغر وفي الذاكرة فقط)."
+    },
+    {
+      "n": 266,
+      "type": "mcq",
+      "ref": "L7-S031",
+      "q_ar": "ما هو خطر الوقوع في مصيدة (Sync-over-Async) عند استخدام استدعاءات معيقة مثل `.Result` أو `.Wait()` على مهمة غير متزامنة؟",
+      "q_en": "What is the danger of falling into the Sync-over-Async pitfall by calling blocking members like `.Result` or `.Wait()` on an async Task?",
+      "opts": [
+        {
+          "ar": "انخفاض دقة ألوان الشاشة في المتصفح.",
+          "ok": false,
+          "why": "لا علاقة له بالرسوميات.",
+          "en": "Reduced monitor color accuracy in web browsers."
+        },
+        {
+          "ar": "تجميد المسلك الحالي وإجباره على الانتظار، مما يؤدي لاستنزاف مسالك الخادم السريع، وحدوث جمود مميت (Deadlock) في التطبيقات التي تمتلك SynchronizationContext.",
+          "ok": true,
+          "why": "الـ Sync-over-Async يحرم السيرفر من ميزة تحرير المسالك، ويسبب deadlocks مشهورة عندما يحاول كود await العودة لمسلك مجمد بواسطة .Result.",
+          "en": "Blocking the calling thread synchronously, triggering thread starvation and causing classic deadlocks in applications with a SynchronizationContext."
+        },
+        {
+          "ar": "تحويل المتغيرات النصية إلى أرقام عشرية سالبة.",
+          "ok": false,
+          "why": "غير صحيح برمجياً.",
+          "en": "Converting string variables into negative decimal numbers."
+        },
+        {
+          "ar": "لا يوجد أي خطر؛ فاستدعاء `.Result` هو الطريقة المفضلة دائماً بدلاً من `await`.",
+          "ok": false,
+          "why": "استدعاء `.Result` ممارسة خطيرة ويجب تجنبها دائماً واستبدالها بـ `await`.",
+          "en": "There is zero danger; calling `.Result` is always preferred over `await`."
+        }
+      ],
+      "tip": "وقفة امتحانية: احفظ الشعار الهندسي المعتمد: 'Async all the way down!'؛ تجنب تماماً `.Result` و `.Wait()`، واستخدم دائماً `await` لمنع الـ Deadlocks."
+    },
+    {
+      "n": 267,
+      "type": "mcq",
+      "ref": "L7-S034",
+      "q_ar": "ما هو الفارق المعماري الجوهري بين ذاكرة الـ Stack وذاكرة الـ Heap في إدارة الذاكرة في منصة .NET؟",
+      "q_en": "What is the core architectural difference between Stack and Heap in .NET memory management?",
+      "opts": [
+        {
+          "ar": "الـ Stack خاص بالملفات الكبيرة، والـ Heap خاص بالأكواد البرمجية فقط.",
+          "ok": false,
+          "why": "الـ Stack للبيانات المحلية والـ Heap للكائنات المرجعية.",
+          "en": "Stack is for large files, Heap is for code only."
+        },
+        {
+          "ar": "الـ Stack ذاكرة صغيرة وفائقة السرعة ومنظمة بنمط (LIFO) خاصة بكل مسلك وتُحرر تلقائياً بانتهاء الدالة، بينما الـ Heap ذاكرة واسعة مشتركة تديرها منصة .NET وتخزن الكائنات المرجعية ويقوم جامع القمامة (GC) بتنظيفها.",
+          "ok": true,
+          "why": "الـ Stack يخزن المتغيرات المحلية ومؤشرات الكائنات وسريع جداً، بينما الـ Heap تخزن الكائنات الحية وتتطلب جامع قمامة لتتبعها وتنظيفها.",
+          "en": "Stack is small, ultra-fast, LIFO memory per thread cleaned automatically on scope exit, while Heap is a shared pool storing reference objects cleaned by the Garbage Collector."
+        },
+        {
+          "ar": "الـ Stack يعمل على بطاقات الرسوميات GPU فقط والـ Heap في القرص الصلب.",
+          "ok": false,
+          "why": "كلاهما جزء من ذاكرة الوصول العشوائي RAM الرئيسية للجهاز.",
+          "en": "Stack runs on GPU and Heap on hard drive."
+        },
+        {
+          "ar": "كلا الذاكرتين متطابقتان تماماً ولا يوجد أي تفريق بينهما في بيئة التشغيل.",
+          "ok": false,
+          "why": "الفارق بينهما هو أساس إدارة الذاكرة والأداء في كافة لغات البرمجة.",
+          "en": "Both memory structures are identical with no distinction in the runtime."
+        }
+      ],
+      "tip": "وقفة امتحانية: Stack = سريع، خاص بالمسلك، LIFO، تحرير تلقائي (Deallocated on scope exit). Heap = كبير، مشترك، كائنات الفئات، ينظفه جامع القمامة (GC)."
+    },
+    {
+      "n": 268,
+      "type": "mcq",
+      "ref": "L7-S035",
+      "q_ar": "أي من الأنواع التالية يُعد نوع قيمة (Value Type) يُخزن في الـ Stack مباشرة، وأيها يُعد نوعاً مرجعياً (Reference Type) يُخزن كائنه في الـ Heap؟",
+      "q_en": "Which of the following constitutes a Value Type stored inline on the Stack, versus a Reference Type whose object resides on the Heap?",
+      "opts": [
+        {
+          "ar": "الـ `struct` و `int` و `bool` هي أنواع قيمة (Value Types)، بينما الـ `class` و `string` و `array` هي أنواع مرجعية (Reference Types).",
+          "ok": true,
+          "why": "هذا هو التقسيم الأساسي الثنائي في C#؛ حيث ترث أنواع القيمة من `System.ValueType` وتخزن قيمتها مباشرة، بينما الأنواع المرجعية تخزن مؤشراً في الـ Stack والكائن في الـ Heap.",
+          "en": "`struct`, `int`, and `bool` are Value Types, whereas `class`, `string`, and `array` are Reference Types."
+        },
+        {
+          "ar": "الـ `string` هو نوع قيمة يخزن في الـ Stack فقط.",
+          "ok": false,
+          "why": "فخ كلاسيكي: الـ `string` هو كائن مرجعي (Reference Type) يقع في الـ Heap رغم تعامله شبه الثابت.",
+          "en": "`string` is a value type residing on the Stack only."
+        },
+        {
+          "ar": "كافة المتغيرات في C# هي أنواع قيمة ولا وجود للأنواع المرجعية.",
+          "ok": false,
+          "why": "C# لغة كائنية تعتمد أساساً على المراجع والكائنات.",
+          "en": "All variables in C# are value types with no reference types existing."
+        },
+        {
+          "ar": "المصفوفات `arrays` تخزن دائماً في الـ Stack بالكامل مهما كان حجمها.",
+          "ok": false,
+          "why": "المصفوفات في C# كائنات مرجعية توضع دائماً في الـ Heap.",
+          "en": "Arrays are always stored entirely on the Stack regardless of size."
+        }
+      ],
+      "tip": "وقفة امتحانية: فخ شهير جداً: هل `string` نوع قيمة أم مرجعي؟ الـ `string` هو نوع مرجعي (Reference Type) يقع في الـ Heap ولكنه غير قابل للتعديل (Immutable)."
+    },
+    {
+      "n": 269,
+      "type": "mcq",
+      "ref": "L7-S036",
+      "q_ar": "ما هي عمليتا التغليف (Boxing) وفك التغليف (Unboxing) في C#، وما هو أثرهما السلبي على الأداء؟",
+      "q_en": "What are Boxing and Unboxing operations in C#, and what is their negative performance impact?",
+      "opts": [
+        {
+          "ar": "ضغط وفك ضغط ملفات ZIP؛ وأثرها استهلاك القرص الصلب.",
+          "ok": false,
+          "why": "Boxing مصطلح لإدارة الذاكرة وتحويل الأنواع وليس ضغط ملفات.",
+          "en": "Compressing and decompressing ZIP files affecting hard drive space."
+        },
+        {
+          "ar": "التغليف (Boxing) هو تحويل نوع قيمة (Value Type) إلى كائن مرجعي (`object`) في الـ Heap، وفك التغليف (Unboxing) هو استخراج القيمة مجدداً؛ وتكرارهما يولد حجوزات ذاكرة مكلفة ويزيد عبء جامع القمامة.",
+          "ok": true,
+          "why": "عند عمل Boxing يتم تخصيص مساحة جديدة في الـ Heap ونسخ القيمة، مما يسبب ضغطاً هائلاً على الذاكرة وجامع القمامة (GC Pressure).",
+          "en": "Boxing converts a Value Type into a Heap `object` reference, and Unboxing extracts it back; frequent occurrences incur heap allocations and heavy GC pressure."
+        },
+        {
+          "ar": "تشفير وفك تشفير بطاقات الائتمان بالإنترنت.",
+          "ok": false,
+          "why": "لا علاقة له بالتشفير المالي.",
+          "en": "Encrypting and decrypting credit cards."
+        },
+        {
+          "ar": "حماية الكود من القرصنة والاختراق الخارجي.",
+          "ok": false,
+          "why": "ليس آلية أمان أو تعمية كود (Obfuscation).",
+          "en": "Protecting code from reverse engineering."
+        }
+      ],
+      "tip": "وقفة امتحانية: استخدام Generics (مثل `List<int>`) يمنع حدوث الـ Boxing والـ Unboxing مقارنة بـ `ArrayList` القديمة، مما يرفع الأداء ويقلل حجز الذاكرة."
+    },
+    {
+      "n": 270,
+      "type": "mcq",
+      "ref": "L7-S037",
+      "q_ar": "كيف تعمل خوارزمية تمييز وكنس الذاكرة (Mark and Sweep) التي يعتمد عليها جامع القمامة (Garbage Collector) في .NET؟",
+      "q_en": "How does the Mark and Sweep algorithm employed by the .NET Garbage Collector operate?",
+      "opts": [
+        {
+          "ar": "تقوم بحذف كافة الملفات التي مر على إنشائها أكثر من شهر.",
+          "ok": false,
+          "why": "الـ GC يدير كائنات الذاكرة RAM الحية وليس ملفات القرص.",
+          "en": "It deletes all files created more than a month ago."
+        },
+        {
+          "ar": "المرحلة الأولى (Mark): فحص الجذور (GC Roots) وتمييز الكائنات الحية التي يمكن الوصول إليها؛ والمرحلة الثانية (Sweep): تحرير وحذف الكائنات غير المميزة وضغط الذاكرة الحية المتبقية (Compact).",
+          "ok": true,
+          "why": "يبدأ الـ GC من الجذور (المتغيرات المحلية، المسجلات، الكائنات الاستاتيكية) ويحدد كل ما هو متصل بها، ثم يمسح ما تبقى ويضغط الذاكرة لمنع التجزؤ.",
+          "en": "Mark phase inspects GC Roots to flag reachable live objects; Sweep phase reclaims unflagged dead objects and compacts remaining memory."
+        },
+        {
+          "ar": "فصل الطاقة الكهربائية عن مسالك المعالج الخاملة.",
+          "ok": false,
+          "why": "وظيفة عتادية لنظام التشغيل.",
+          "en": "Disconnecting electric power from idle CPU threads."
+        },
+        {
+          "ar": "إرسال تقرير خطأ لشركة مايكروسوفت كل 5 دقائق.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Dispatching error crash reports to Microsoft every 5 minutes."
+        }
+      ],
+      "tip": "وقفة امتحانية: مراحل جامع القمامة في .NET: 1) Mark (تمييز الكائنات الحية من الجذور)، 2) Sweep (كنس وحذف الكائنات الميتة)، 3) Compact (ضغط الذاكرة لمنع التجزئة)."
+    },
+    {
+      "n": 271,
+      "type": "mcq",
+      "ref": "L7-S038",
+      "q_ar": "ما هي الفرضية التوليدية (Generational Hypothesis) التي يقوم عليها تقسيم الـ Heap إلى ثلاثة أجيال (Gen 0, Gen 1, Gen 2) في جامع القمامة؟",
+      "q_en": "What is the Generational Hypothesis behind dividing the Heap into three generations (Gen 0, Gen 1, Gen 2) in .NET GC?",
+      "opts": [
+        {
+          "ar": "أن البرامج القديمة تعمل أسرع من البرامج الحديثة.",
+          "ok": false,
+          "why": "فرضية البرمجة التوليدية تتعلق بعمر الكائنات البرمجية في الذاكرة.",
+          "en": "That older software runs faster than modern software."
+        },
+        {
+          "ar": "أن معظم الكائنات التي يتم إنشاؤها تكون قصيرة الأجل وتموت سريعاً جداً (مثل المتغيرات المحلية)، بينما الكائنات التي تنجو من عدة دورات تنظيف من المرجح أن تبقى حية لفترة أطول.",
+          "ok": true,
+          "why": "وفق هذه الفرضية: Gen 0 تفحص بشكل متكرر وسريع وفوري، والكائنات الصامدة تترقى إلى Gen 1 ثم Gen 2 التي نادراً ما يتم فحصها (Full GC) لكون فحصها مكلفاً.",
+          "en": "Most created objects are extremely short-lived and die quickly (like local variables), whereas objects surviving multiple collection sweeps tend to live much longer."
+        },
+        {
+          "ar": "أن الذاكرة العشوائية يجب تقسيمها لثلاث قطع فيزيائية متساوية في اللوحة الأم.",
+          "ok": false,
+          "why": "التقسيم منطقي برمجي في الـ Heap وليس فيزيائياً في اللوحة الأم.",
+          "en": "That RAM must be partitioned into three physical chunks on the motherboard."
+        },
+        {
+          "ar": "أن أجهزة الجيل الأول لا يمكنها تشغيل لغة C#.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "That first-generation computers cannot run C#."
+        }
+      ],
+      "tip": "وقفة امتحانية: أجيال GC: `Gen 0` (كائنات حديثة جداً، تنظيف فوري متكرر ورخيص)، `Gen 1` (عازل وسيط)، `Gen 2` (كائنات معمرة مثل Singletons، تنظيف نادر ومكلف)."
+    },
+    {
+      "n": 272,
+      "type": "mcq",
+      "ref": "L7-S038",
+      "q_ar": "ما هو حوض الكائنات الكبيرة (Large Object Heap - LOH)، وما هو الحد الحجمي الأدنى لانتقال الكائن إليه مباشرة؟",
+      "q_en": "What is the Large Object Heap (LOH), and what is the minimum byte threshold for an object to be allocated directly onto it?",
+      "opts": [
+        {
+          "ar": "كائن بحجم 10 بايت فقط.",
+          "ok": false,
+          "why": "هذا حجم كائن ضئيل جداً يوضع في Gen 0.",
+          "en": "An object of only 10 bytes."
+        },
+        {
+          "ar": "الكائنات التي يبلغ حجمها 85,000 بايت (حوالي 85 كيلوبايت) فأكثر، وتوضع مباشرة في الـ LOH وتُعامل كجزء من الجيل الثاني (Gen 2) ولا يتم ضغطها افتراضياً لتفادي تكلفة النسخ الباهظة.",
+          "ok": true,
+          "why": "الكائنات الكبيرة (مثل المصفوفات الضخمة والصور) إذا وضعت في Gen 0 فسترهق الذاكرة بنسخها المستمر، لذا تذهب فوراً للـ LOH التابع لـ Gen 2.",
+          "en": "Objects sized 85,000 bytes (~85KB) or greater, allocated directly into LOH, treated as Gen 2, and not compacted by default to avoid huge memory copy overhead."
+        },
+        {
+          "ar": "كائن بحجم 100 جيجابايت فقط.",
+          "ok": false,
+          "why": "حجم يفوق الذاكرة العادية.",
+          "en": "An object of 100 Gigabytes only."
+        },
+        {
+          "ar": "الـ LOH مخصص فقط لنصوص كلمات المرور السرية.",
+          "ok": false,
+          "why": "الـ LOH يعتمد على الحجم بالبايت فقط بغض النظر عن محتوى الكائن.",
+          "en": "LOH is strictly reserved for secret password strings."
+        }
+      ],
+      "tip": "وقفة امتحانية: رقم امتحاني محفوظ: عتبة الـ Large Object Heap هي: 85,000 بايت؛ والكائنات فيه تعامل كـ Gen 2 مباشرة لتجنب كلفة ترحيلها."
+    },
+    {
+      "n": 273,
+      "type": "mcq",
+      "ref": "L7-S039",
+      "q_ar": "ما هو الفارق الحاسم بين الموارد المُدارة (Managed Resources) والموارد غير المُدارة (Unmanaged Resources)؟",
+      "q_en": "What is the critical distinction between Managed Resources and Unmanaged Resources?",
+      "opts": [
+        {
+          "ar": "الموارد المدارة هي الكائنات المحجوزة في ذاكرة الـ CLR ويتكفل جامع القمامة بتنظيفها، بينما الموارد غير المدارة هي موارد خارجية تابعة لنظام التشغيل (مثل مقابض الملفات واتصالات الشبكة وقواعد البيانات) ولا يستطيع جامع القمامة إغلاقها تلقائياً.",
+          "ok": true,
+          "why": "الـ GC يرى الذاكرة فقط، ولكنه لا يعلم متى يجب إغلاق مقبض ملف في ويندوز أو إغلاق اتصال شبكي، ولذا تقع مسؤولية إغلاقها على المطور.",
+          "en": "Managed resources are CLR heap objects reclaimed automatically by GC, whereas Unmanaged resources are OS-level handles (file handles, network sockets, DB connections) that GC cannot automatically release."
+        },
+        {
+          "ar": "الموارد المدارة مكتوبة بـ C++ والموارد غير المدارة بـ C#.",
+          "ok": false,
+          "why": "التصنيف حسب بيئة إدارة الذاكرة وليس حسب لغة البرمجة فقط.",
+          "en": "Managed are written in C++ and unmanaged in C#."
+        },
+        {
+          "ar": "الموارد المدارة مجانية والموارد غير المدارة تتطلب اشتراكاً مالياً شهرياً.",
+          "ok": false,
+          "why": "لا علاقة له بالرسوم والاشتراكات المالية.",
+          "en": "Managed are free while unmanaged require monthly paid subscriptions."
+        },
+        {
+          "ar": "كافة موارد الحاسوب بدون استثناء هي موارد غير مدارة.",
+          "ok": false,
+          "why": "معظم كائنات C# العادية في الـ Heap هي موارد مدارة بالكامل.",
+          "en": "All computing resources without exception are unmanaged."
+        }
+      ],
+      "tip": "وقفة امتحانية: الموارد غير المدارة (File handles, DB Connections, Sockets) تتطلب تحريراً صريحاً وفورياً عبر واجهة `IDisposable`."
+    },
+    {
+      "n": 274,
+      "type": "mcq",
+      "ref": "L7-S040",
+      "q_ar": "ما هي الوظيفة الهندسية لواجهة `IDisposable` ودالة `Dispose()` في C#، وكيف تضمن كتلة `using` استدعاءها؟",
+      "q_en": "What is the architectural purpose of `IDisposable` and `Dispose()` in C#, and how does the `using` block guarantee its invocation?",
+      "opts": [
+        {
+          "ar": "تحرير الموارد غير المدارة فورياً وحتمياً، وتقوم كتلة `using` بترجمتها إلى `try...finally` لضمان تنفيذ `Dispose()` حتى لو رمى الكود استثناءً خطيراً.",
+          "ok": true,
+          "why": "واجهة IDisposable تمنح المطور آلية تحرير حتمي وسريع للمقابض دون انتظار دورة الـ GC، والـ using يضمن استدعاء Dispose في كتلة finally.",
+          "en": "Deterministically releasing unmanaged resources immediately; `using` compiles into a `try...finally` ensuring `Dispose()` executes even if exceptions are thrown."
+        },
+        {
+          "ar": "إخفاء شاشة التطبيق عن أعين المتطفلين.",
+          "ok": false,
+          "why": "وظيفة أمنية شاشات ولا علاقة لها بواجهة IDisposable.",
+          "en": "Hiding the application screen from onlookers."
+        },
+        {
+          "ar": "إلغاء تثبيت نظام التشغيل بالكامل عند انتهاء البرنامج.",
+          "ok": false,
+          "why": "غير صحيح على الإطلاق.",
+          "en": "Uninstalling the operating system upon program completion."
+        },
+        {
+          "ar": "تحويل الكود إلى ملف تنفيذي سريع التشغيل.",
+          "ok": false,
+          "why": "وظيفة المترجم Linker وليس واجهة تنظيف الموارد.",
+          "en": "Compiling code into a fast executable binary."
+        }
+      ],
+      "tip": "وقفة امتحانية: جملة `using (var res = new Resource())` تترجم دائماً إلى: `try { ... } finally { res.Dispose(); }` لضمان عدم تسريب المقابض."
+    },
+    {
+      "n": 275,
+      "type": "mcq",
+      "ref": "L7-S041",
+      "q_ar": "كيف يمكن أن يحدث تسريب للذاكرة (Memory Leak) في بيئة لغة مدارة مثل C# رغم وجود جامع القمامة (GC)؟",
+      "q_en": "How can a Memory Leak occur in a managed runtime environment like C# despite the presence of a Garbage Collector?",
+      "opts": [
+        {
+          "ar": "انقطاع التيار الكهربائي فجأة أثناء المعالجة.",
+          "ok": false,
+          "why": "انقطاع الكهرباء يفرغ الذاكرة RAM تماماً.",
+          "en": "Sudden electric power cutoff during execution."
+        },
+        {
+          "ar": "عندما تظل هناك مراجع حية تشير إلى الكائنات (مثل اشتراك في الأحداث `Events` دون إلغاء الاشتراك، أو تخزين في قوائم ساكنة `static` دائمة)، مما يجعل الـ GC يعتبرها كائنات حية ويرفض تحريرها.",
+          "ok": true,
+          "why": "الـ GC يحرر فقط الكائنات التي انقطعت كافة مراجعها؛ فإذا نسيت إلغاء الاشتراك في حدث كائن ناشر طويل العمر، يظل الكائن المشترك محبوساً في الذاكرة للأبد.",
+          "en": "When lingering live references point to objects (e.g. unhooked event subscriptions or static collection caches), causing the GC to treat them as reachable roots and never collect them."
+        },
+        {
+          "ar": "تسريب الذاكرة مستحيل تماماً في بيئة C# ولا يمكن حدوثه إطلاقاً.",
+          "ok": false,
+          "why": "تسريب الذاكرة في C# واقعي وشائع ويحدث عبر المراجع المنسية والمقابض غير المغلقة.",
+          "en": "Memory leaks are 100% impossible in C# environments."
+        },
+        {
+          "ar": "عندما ينسى المبرمج إغلاق علامات التنصيص في الكود.",
+          "ok": false,
+          "why": "خطأ ترجمة يمنع بناء البرنامج أصلاً.",
+          "en": "When a developer forgets to close quotation marks."
+        }
+      ],
+      "tip": "وقفة امتحانية: أكثر أسباب تسريب الذاكرة في C#: 1) عدم إلغاء الاشتراك في الأحداث (Event Handlers)، 2) المراجع الساكنة المعمرة (`static List/Dictionary`)."
+    },
+    {
+      "n": 276,
+      "type": "mcq",
+      "ref": "L7-S042",
+      "q_ar": "ما هي الكارثة المعمارية التي تحدث عند إنشاء كائن جديد من `HttpClient` مع كل طلب عبر `using (var client = new HttpClient())` في خوادم الويب؟",
+      "q_en": "What architectural catastrophe occurs when creating a new `HttpClient` instance per request via `using (var client = new HttpClient())` in web servers?",
+      "opts": [
+        {
+          "ar": "مسح أسماء المجلدات في نظام التشغيل.",
+          "ok": false,
+          "why": "لا علاقة له بنظام الملفات.",
+          "en": "Erasing operating system directory names."
+        },
+        {
+          "ar": "استنزاف منافذ السوكيت في نظام التشغيل (Socket Exhaustion)، لأن منافذ TCP التحتية لا تُغلق فوراً بل تظل في حالة `TIME_WAIT` لعدة دقائق حتى بعد استدعاء Dispose.",
+          "ok": true,
+          "why": "رغم التخلص من كائن C#، فإن نظام التشغيل يثبت منفذ TCP في حالة TIME_WAIT لمدة تصل لدقيقتين، مما يؤدي لنفاد المنافذ المتاحة وانهيار السيرفر.",
+          "en": "Socket Exhaustion, because underlying OS TCP sockets do not close immediately upon disposal but linger in `TIME_WAIT` state for minutes, depleting available ports."
+        },
+        {
+          "ar": "تضاعف سرعة المعالج المركزي 100 مرة.",
+          "ok": false,
+          "why": "غير صحيح وهزلي.",
+          "en": "CPU clock speed doubling 100x."
+        },
+        {
+          "ar": "تشفير قاعدة البيانات وطلب فدية مالية.",
+          "ok": false,
+          "why": "هذا سلوك برمجيات فدية خبيثة وليس سلوك HttpClient.",
+          "en": "Encrypting the database and demanding ransom."
+        }
+      ],
+      "tip": "وقفة امتحانية: سؤال شهير: خطأ إنشاء `new HttpClient()` مع كل طلب يسبب `Socket Exhaustion`؛ والحل المعياري هو استخدام `IHttpClientFactory` أو مشاركة كائن Singleton."
+    },
+    {
+      "n": 277,
+      "type": "mcq",
+      "ref": "L7-S045",
+      "q_ar": "كيف يساعد استخدام الهياكل الحديثة مثل `Span<T>` و `ReadOnlySpan<T>` في تحسين أداء الذاكرة في C#؟",
+      "q_en": "How does using modern types like `Span<T>` and `ReadOnlySpan<T>` improve memory performance in C#?",
+      "opts": [
+        {
+          "ar": "بحذف البيانات فوراً من القرص الصلب لتوفير المساحة.",
+          "ok": false,
+          "why": "Span يعمل في الذاكرة RAM وليس مسح أقراص.",
+          "en": "By wiping data off the hard drive to free space."
+        },
+        {
+          "ar": "بإتاحة تقطيع واقتطاع أجزاء من النصوص والمصفوفات دون نسخ أو حجز أي ذاكرة إضافية في الـ Heap (Zero Memory Allocation)، والتعامل المباشر مع شريحة الذاكرة الأصلية.",
+          "ok": true,
+          "why": "دوال مثل `Substring` القديمة تنشئ كائناً جديداً في الـ Heap في كل مرة؛ بينما `Span` يمثل مجرد مؤشر وطول لنافذة على الذاكرة الموجودة بلا أي حجز إضافي.",
+          "en": "By enabling zero-allocation slicing and inspection of contiguous memory buffers without copying or allocating new Heap objects."
+        },
+        {
+          "ar": "بإجبار نظام التشغيل على مضاعفة سعة الـ RAM مجاناً.",
+          "ok": false,
+          "why": "الـ RAM سعة فيزيائية ثابتة.",
+          "en": "By forcing the OS to double physical RAM capacity for free."
+        },
+        {
+          "ar": "بإلغاء لغة C# واستبدالها بلغة الآلة فوراً.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "By bypassing C# in favor of raw machine code."
+        }
+      ],
+      "tip": "وقفة امتحانية: `Span<T>` يمثل ثورة الأداء في .NET الحديثة: اقتطاع الذاكرة والنصوص دون أي حجز في الـ Heap (Zero-allocation Memory Slicing)."
+    },
+    {
+      "n": 278,
+      "type": "mcq",
+      "ref": "L7-S044",
+      "q_ar": "ما هو الخطر الفادح لأسلوب المهمة المتجاهلة (Fire-and-Forget Task) دون استخدام `await` في خوادم الويب؟",
+      "q_en": "What is the critical risk of Fire-and-Forget tasks executed without `await` in web servers?",
+      "opts": [
+        {
+          "ar": "إذا رمت المهمة استثناءً (Exception)، فلن يتم التقاطه وسيدفن بصمت أو يتسبب في انهيار التطبيق، فضلاً عن عدم ضمان اكتمالها قبل موت سياق الطلب.",
+          "ok": true,
+          "why": "إطلاق المهمة دون انتظار يجعل الخادم ينهي استجابة HTTP ويعيد تدوير الموارد بينما المهمة لا تزال تعمل، وإذا فشلت فلن يدري أحد بالخطأ.",
+          "en": "If the task throws an exception, it goes unobserved or terminates the process, with no guarantee of completion before the request context is destroyed."
+        },
+        {
+          "ar": "أن الطلب سيتحول تلقائياً إلى رسالة نصية SMS.",
+          "ok": false,
+          "why": "لا علاقة له بخدمات الرسائل الهاتفية.",
+          "en": "The request automatically transforms into an SMS message."
+        },
+        {
+          "ar": "أن المتصفح سيقوم بإعادة تشغيل جهاز المستخدم فوراً.",
+          "ok": false,
+          "why": "المتصفح لا يملك صلاحية إعادة تشغيل العتاد.",
+          "en": "The browser forcefully reboots the client machine."
+        },
+        {
+          "ar": "لا يوجد أي خطر؛ فالمهمة تنفذ دائماً بنجاح 100%.",
+          "ok": false,
+          "why": "الأخطاء في الشبكات والخوادم حتمية والتعامل مع الاستثناءات إلزامي.",
+          "en": "There is zero risk; tasks always execute 100% successfully."
+        }
+      ],
+      "tip": "وقفة امتحانية: فخ Fire-and-Forget: إطلاق المهمة بدون `await` يبتلع الأخطاء؛ والحل للعمليات الخلفية الطويلة هو استخدام `BackgroundService` أو Hangfire."
+    },
+    {
+      "n": 279,
+      "type": "mcq",
+      "ref": "L7-S022",
+      "q_ar": "ما هو التعريف الدقيق لمصطلح 'أمان المسالك' (Thread Safety) في برمجة المنظومات المتزامنة؟",
+      "q_en": "What is the precise definition of 'Thread Safety' in concurrent systems programming?",
+      "opts": [
+        {
+          "ar": "قفل الحاسوب بكلمة مرور معقدة لمنع المتطفلين من لمس لوحة المفاتيح.",
+          "ok": false,
+          "why": "أمان فيزيائي للأجهزة وليس أمان مسالك كود.",
+          "en": "Locking the PC with a password to prevent keyboard tampering."
+        },
+        {
+          "ar": "خاصية في الكود البرمجي أو هيكل البيانات تضمن عمله بشكل صحيح وخلوه من أخطاء التسابق أو تلف البيانات عند استدعائه في وقت واحد من مسالك متعددة دون الحاجة لتنسيق خارجي.",
+          "ok": true,
+          "why": "الكود الآمن مسالكياً (Thread-Safe) يمكن لعدة مسالك تنفيذه في نفس اللحظة بأمان تام ودون الوصول لبيانات مشوهة.",
+          "en": "A property of code or data structures guaranteeing correct execution and absence of race conditions or corruption when invoked concurrently by multiple threads."
+        },
+        {
+          "ar": "منع تشغيل أكثر من دالة واحدة في اليوم في نظام التشغيل.",
+          "ok": false,
+          "why": "تفسير غير منطقي.",
+          "en": "Restricting the OS to running one function per day."
+        },
+        {
+          "ar": "تشفير جميع النصوص باللغة الصينية القديمة.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Encrypting all strings into ancient Chinese."
+        }
+      ],
+      "tip": "وقفة امتحانية: لتحقيق Thread Safety: استخدم البيانات غير القابلة للتعديل (Immutable State)، أو آليات التزامن (lock, Interlocked, Concurrent Collections)."
+    },
+    {
+      "n": 280,
+      "type": "mcq",
+      "ref": "L7-S029",
+      "q_ar": "ما هي القاعدة المعمارية الذهبية الأولى لتجنب حدوث الجمود المميت (Deadlock) عند الحاجة لحجز أكثر من قفل واحد؟",
+      "q_en": "What is the primary golden architectural rule to prevent Deadlocks when acquiring multiple locks?",
+      "opts": [
+        {
+          "ar": "حجز الأقفال بترتيب عشوائي في كل مسلك لاختبار ذكاء المعالج.",
+          "ok": false,
+          "why": "الترتيب العشوائي هو السبب المباشر لحدوث الـ Deadlocks.",
+          "en": "Acquiring locks in randomized order across threads."
+        },
+        {
+          "ar": "الالتزام الصارم بترتيب موحد ومتسق عالمياً للحصول على الأقفال (Consistent Lock Ordering) عبر كافة مسالك الكود في المشروع.",
+          "ok": true,
+          "why": "إذا اتفقت كافة المسالك على حجز القفل 1 أولاً ثم القفل 2 دائماً، يستحيل حدوث انتظار دائري (Circular Wait) ويختفي الـ Deadlock نهائياً.",
+          "en": "Strict adherence to a globally consistent lock acquisition order across all threads in the entire project codebase."
+        },
+        {
+          "ar": "إلغاء كافة قواعد البيانات واستخدام الورق والقلم.",
+          "ok": false,
+          "why": "حل هزلي وغير تقني.",
+          "en": "Discarding databases in favor of pen and paper."
+        },
+        {
+          "ar": "حذف حزمة .NET وتثبيت نظام أندرويد.",
+          "ok": false,
+          "why": "لا علاقة له بحل معضلة التزامن.",
+          "en": "Removing .NET and installing Android."
+        }
+      ],
+      "tip": "وقفة امتحانية: قاعدة كوفمان للوقاية من Deadlock: 'Always acquire locks in the exact same order!' (إذا كان Lock A ثم Lock B، فليكن ذلك في كافة الدوال بلا شذوذ)."
+    },
+    {
+      "n": 281,
+      "type": "mcq",
+      "ref": "L7-S032",
+      "q_ar": "ما هي الميزة الكبرى لاستخدام مكتبة القنوات (`System.Threading.Channels`) في نمط المنتج والمستهلك (Producer-Consumer) مقارنة بالأقفال اليدوية؟",
+      "q_en": "What is the primary advantage of using `System.Threading.Channels` in Producer-Consumer architectures over manual locks?",
+      "opts": [
+        {
+          "ar": "أنها توفر طابور بيانات فائق الأداء غير معياري ومتزامن تماماً (Async-friendly) يدعم التراجع بالضغط (Backpressure) دون تجميد المسالك أو استهلاك الذاكرة في انتظار العناصر.",
+          "ok": true,
+          "why": "قنوات Channels مبنية من الأساس لتدعم `await channel.Reader.ReadAsync()`، فلا يجمد المسلك المستهلك إذا كان الطابور فارغاً بل ينتظر بطريقة غير معيقة نهائياً.",
+          "en": "It delivers high-throughput, async-native Producer-Consumer queues with built-in backpressure without blocking threads or spinning memory."
+        },
+        {
+          "ar": "أنها تتيح مشاهدة القنوات الفضائية المشفرة مجاناً في تطبيق C#.",
+          "ok": false,
+          "why": "Channels هيكل برمجي لنقل البيانات بين المسالك وليس قنوات تلفزيونية.",
+          "en": "It decodes encrypted satellite TV channels inside C#."
+        },
+        {
+          "ar": "أنها تحظر إضافة أكثر من 3 عناصر في الشهر.",
+          "ok": false,
+          "why": "القنوات تتحمل ملايين الرسائل في الثانية.",
+          "en": "It limits data insertion to 3 items per month."
+        },
+        {
+          "ar": "أنها تعمل فقط بلغة PHP.",
+          "ok": false,
+          "why": "مكتبة قياسية مطورة في نواة .NET Core.",
+          "en": "It works exclusively in PHP."
+        }
+      ],
+      "tip": "وقفة امتحانية: للمهندسين المتقدمين: `System.Threading.Channels` هي البديل المعاصر الأمثل لـ `BlockingCollection` لتمرير الرسائل بين المسالك بأسلوب async نظيف."
+    },
+    {
+      "n": 282,
+      "type": "mcq",
+      "ref": "L7-S036",
+      "q_ar": "في الكود التالي: `object obj = 42; int x = (int)obj;`، ما هي العمليتان اللتان حدثتا على التوالي؟",
+      "q_en": "In the code: `object obj = 42; int x = (int)obj;`, what two operations occurred sequentially?",
+      "opts": [
+        {
+          "ar": "تشفير ثم فك تشفير.",
+          "ok": false,
+          "why": "هذه عمليات إدارة ذاكرة وأنواع وليست تشفيراً رياضياً.",
+          "en": "Encryption followed by decryption."
+        },
+        {
+          "ar": "السطر الأول أجرى عملية تغليف (Boxing)، والسطر الثاني أجرى عملية فك تغليف (Unboxing).",
+          "ok": true,
+          "why": "إسناد int إلى object يتطلب نقل القيمة لـ Heap وتغليفها (Boxing)، والتحويل الصريح العكسي يستخرج القيمة (Unboxing).",
+          "en": "First line performed Boxing, and second line performed Unboxing."
+        },
+        {
+          "ar": "حذف القيمة 42 من الذاكرة تماماً.",
+          "ok": false,
+          "why": "القيمة خزنت واسترجعت ولم تحذف.",
+          "en": "Erasing 42 entirely from memory."
+        },
+        {
+          "ar": "إنشاء جدول جديد في قاعدة البيانات.",
+          "ok": false,
+          "why": "كود ذاكرة محلي لا يتصل بقواعد بيانات.",
+          "en": "Creating a new database table."
+        }
+      ],
+      "tip": "وقفة امتحانية: فحص الكود: تحويل Value Type إلى Reference Type = Boxing (يحدث حجز في Heap). تحويل Reference Type إلى Value Type = Unboxing."
+    },
+    {
+      "n": 283,
+      "type": "mcq",
+      "ref": "L7-S040",
+      "q_ar": "ما هو الفرق بين استخدام دالة `Dispose()` التابعة لـ `IDisposable` واستدعاء المصفي النهائي (Finalizer / Destructor) في C#؟",
+      "q_en": "What is the difference between invoking `Dispose()` via `IDisposable` versus the Finalizer (`~MyClass()`) in C#?",
+      "opts": [
+        {
+          "ar": "`Dispose()` يتم استدعاؤه فورياً وبشكل محدد وحتمي (Deterministic) بواسطة المبرمج أو كتلة `using`، بينما الـ Finalizer يستدعيه جامع القمامة في وقت مجهول وغير حتمي (Non-deterministic) مما يسبب تأخير تحرير الموارد وتكلفة تنظيف مضاعفة.",
+          "ok": true,
+          "why": "الـ Finalizer آلية أمان أخيرة بطيئة تجبر الكائن على النجاة لدورة GC ثانية في طابور الـ Finalization Queue، ولذا ينصح بالاعتماد على Dispose واستدعاء `GC.SuppressFinalize(this)`.",
+          "en": "`Dispose()` is invoked deterministically and immediately by the developer via `using`, whereas the Finalizer is invoked non-deterministically by GC later, delaying cleanup and incurring double collection cost."
+        },
+        {
+          "ar": "المصفي النهائي يعمل أسرع من Dispose بمليون مرة.",
+          "ok": false,
+          "why": "المصفي النهائي أبطأ بكثير ويؤخر تحرير الذاكرة لدورة إضافية.",
+          "en": "Finalizers run a million times faster than Dispose."
+        },
+        {
+          "ar": "`Dispose()` مخصص فقط للمتغيرات النصية، والمصفي للأرقام.",
+          "ok": false,
+          "why": "لا علاقة له بنوع البيانات النصية أو الرقمية.",
+          "en": "`Dispose()` is for strings only and finalizer for numbers."
+        },
+        {
+          "ar": "كلاهما متطابقان تماماً ويستدعيان في نفس الميكروثانية.",
+          "ok": false,
+          "why": "فارق جوهري بين التحرير الحتمي والفوري والتحرير غير الحتمي المتأخر.",
+          "en": "Both are completely identical and execute simultaneously."
+        }
+      ],
+      "tip": "وقفة امتحانية: Deterministic vs Non-Deterministic: `Dispose()` = تحرير حتمي وفوري للموارد. Finalizer = تحرير غير حتمي يتأخر حتى زيارة جامع القمامة."
+    },
+    {
+      "n": 284,
+      "type": "mcq",
+      "ref": "L7-S045",
+      "q_ar": "لماذا يُفضل استخدام `StringBuilder` بدلاً من دمج النصوص المتكرر بعلامة `+` داخل الحلقات التكرارية الضخمة؟",
+      "q_en": "Why is using `StringBuilder` preferred over repeated string concatenation with `+` inside massive loops?",
+      "opts": [
+        {
+          "ar": "لأن النصوص في C# غير قابلة للتعديل (Immutable)، فدمج النصوص في كل دورة حلقة ينشئ كائناً نصياً جديداً كاملاً في الـ Heap، بينما `StringBuilder` يمتلك ذاكرة عازلة داخلية قابلة للتعديل دون حجز نصوص متكررة.",
+          "ok": true,
+          "why": "حلقة بـ 10,000 دورة دمج بـ `+` تنشئ 10,000 كائن نصي مهمل في الـ Heap، بينما StringBuilder يعدل نفس الذاكرة العازلة بكفاءة قصوى.",
+          "en": "Because C# strings are immutable; concatenating in loops allocates a brand-new string on the Heap on every iteration, whereas `StringBuilder` modifies an internal buffer in-place without allocations."
+        },
+        {
+          "ar": "لأن علامة `+` مخصصة لجمع الأعداد فقط وتفشل في معالجة الحروف.",
+          "ok": false,
+          "why": "علامة `+` تدعم دمج النصوص في C# لكنها غير كفؤة في التكرار الضخم.",
+          "en": "Because `+` only works on numbers and fails on characters."
+        },
+        {
+          "ar": "لأن `StringBuilder` يقوم بترجمة الكلمات للغة الفرنسية تلقائياً.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Because StringBuilder translates text to French."
+        },
+        {
+          "ar": "لأن نصوص `StringBuilder` لا تستهلك أي مساحة في الذاكرة إطلاقاً.",
+          "ok": false,
+          "why": "تستهلك مساحة الذاكرة العازلة المخصصة لها فقط دون فائض مهدر.",
+          "en": "Because StringBuilder consumes zero memory."
+        }
+      ],
+      "tip": "وقفة امتحانية: مبدأ لا ينسى: Strings are Immutable (النصوص ثابتة لا تتغير)؛ أي تعديل ينشئ نسخة جديدة، ولتجنب إرهاق الـ Heap استخدم `StringBuilder`."
+    },
+    {
+      "n": 285,
+      "type": "mcq",
+      "ref": "L7-S012",
+      "q_ar": "عند تنفيذ عدة مهام عبر `Task.WhenAll` وحدثت استثناءات (Exceptions) في أكثر من مهمة في نفس الوقت، كيف يتعامل كائن الـ Task مع هذه الأخطاء؟",
+      "q_en": "When executing multiple tasks via `Task.WhenAll` and multiple tasks throw exceptions concurrently, how does the resulting Task handle these errors?",
+      "opts": [
+        {
+          "ar": "يقوم بحذف كافة الأخطاء وتجاهلها تماماً واعتبار العملية ناجحة.",
+          "ok": false,
+          "why": "لا يمكن تجاهل الأخطاء البرمجية في مهام TPL.",
+          "en": "It silently ignores all exceptions and considers it successful."
+        },
+        {
+          "ar": "يقوم بجمع كافة الاستثناءات المرتكبة من المهام الفاشلة وتغليفها داخل استثناء مجمع واحد من نوع `AggregateException`، بحيث يمكن الوصول إليها جميعاً عبر خاصية `InnerExceptions`.",
+          "ok": true,
+          "why": "ميزة WhenAll أنه لا يكتفي بالتقاط أول خطأ فقط، بل يحفظ كافة استثناءات المهام الفاشلة في مصفوفة InnerExceptions داخل AggregateException.",
+          "en": "It aggregates all thrown exceptions into a single `AggregateException`, accessible via its `InnerExceptions` collection."
+        },
+        {
+          "ar": "يقوم بإيقاف تشغيل الخادم الفيزيائي فصلاً للأمان.",
+          "ok": false,
+          "why": "هذا استثناء برمجي يعالج في الكود ولا يغلق الخادم فيزيائياً.",
+          "en": "It powers off the physical server for safety."
+        },
+        {
+          "ar": "يقوم بإعادة تشغيل البرنامج من السطر رقم 1.",
+          "ok": false,
+          "why": "مسار الاستثناء يتبع قواعد try-catch العادية.",
+          "en": "It restarts the application from line 1."
+        }
+      ],
+      "tip": "وقفة امتحانية: في مهام TPL: استثناءات المهام المتعددة تُجمع دائماً داخل: `AggregateException`؛ ويتم فحصها بواسطة حلقة تكرارية على `ex.InnerExceptions`."
+    },
+    {
+      "n": 286,
+      "type": "mcq",
+      "ref": "L8-S005",
+      "q_ar": "ما هو التعريف المعماري الدقيق لمفهوم خطاف الويب (Webhook) مقارنة بالـ API التقليدي؟",
+      "q_en": "What is the precise architectural definition of a Webhook compared to a traditional API?",
+      "opts": [
+        {
+          "ar": "بروتوكول لتوصيل الأسلاك الكهربائية في لوحة الأم للخادم.",
+          "ok": false,
+          "why": "مفهوم برمجي شبكي في طبقة التطبيقات وليس عتاداً كهربائياً.",
+          "en": "A protocol for connecting physical power lines on the motherboard."
+        },
+        {
+          "ar": "نقطة نهاية HTTP (Callback) يقوم الخادم الخارجي بالاتصال بها وإرسال البيانات إليها فور وقوع حدث معين (Push Model)، بدلاً من قيام العميل بالاستعلام المتكرر (Polling).",
+          "ok": true,
+          "why": "الـ Webhook هو واجهة برمجة عكسية (Reverse API)؛ فبدلاً من أن تسأل الخادم هل هناك جديد، الخادم هو من يرسل لك إشعاراً فور وقوع الحدث.",
+          "en": "An HTTP endpoint (Callback) invoked by an external server to push data immediately when an event occurs (Push Model), replacing repetitive client polling."
+        },
+        {
+          "ar": "برنامج لحفظ لقطات الشاشة كملفات صور على القرص الصلب.",
+          "ok": false,
+          "why": "لا علاقة له بالتقاط الصور.",
+          "en": "A utility for saving screenshots to the hard drive."
+        },
+        {
+          "ar": "قاعدة بيانات تقوم بحذف البيانات بعد 3 ثوانٍ من وصولها.",
+          "ok": false,
+          "why": "الـ Webhook آلية اتصال شبكي وليس نظام قاعدة بيانات مؤقتة.",
+          "en": "A database that wipes records 3 seconds after arrival."
+        }
+      ],
+      "tip": "وقفة امتحانية: فكرة الـ Webhook الجوهرية: Event-Driven Push (الدفع المعتمد على الأحداث) بدلاً من استنزاف الشبكة بالاستعلام الدوري (Polling)."
+    },
+    {
+      "n": 287,
+      "type": "mcq",
+      "ref": "L8-S006",
+      "q_ar": "في نقطة نهاية Webhook مبنية بـ ASP.NET Core لاستقبال رسائل واتساب، ما هو نوع فعل HTTP المستخدم لاستقبال البيانات من شركة Meta؟",
+      "q_en": "In an ASP.NET Core Webhook endpoint designed to receive WhatsApp messages, which HTTP verb is used to accept data payloads from Meta?",
+      "opts": [
+        {
+          "ar": "فعل `GET` فقط.",
+          "ok": false,
+          "why": "فعل GET يستخدم عادة في خطوة التحقق الأولية (Webhook Verification Challenge) فقط وليس لنقل حمولات الرسائل.",
+          "en": "`GET` verb only."
+        },
+        {
+          "ar": "فعل `POST`، حيث ترسل Meta حمولة الرسالة ككائن JSON في جسم الطلب (Request Body).",
+          "ok": true,
+          "why": "الأحداث وإشعارات الرسائل ترسل دائماً عبر HTTP POST لأنها تحمل بيانات الحدث في الـ Body.",
+          "en": "`POST` verb, where Meta transmits the message payload formatted as JSON inside the request body."
+        },
+        {
+          "ar": "فعل `DELETE` لحذف الرسالة من هاتف المستخدم.",
+          "ok": false,
+          "why": "الخادم يستقبل رسالة جديدة ولا يحذف شيئاً من هاتف العميل.",
+          "en": "`DELETE` verb to wipe messages off the client phone."
+        },
+        {
+          "ar": "فعل `TRACE` المخصص لشبكات الاتصال القديمة.",
+          "ok": false,
+          "why": "TRACE فعل تشخيصي ونادراً ما يستخدم ومحمي أمنياً.",
+          "en": "`TRACE` verb for legacy diagnostics."
+        }
+      ],
+      "tip": "وقفة امتحانية: في Webhook واتساب: `GET` للتحقق من ملكية الـ URL أول مرة (Verification Token)، و `POST` لاستقبال كافة الرسائل والأحداث الحية."
+    },
+    {
+      "n": 288,
+      "type": "mcq",
+      "ref": "L8-S007",
+      "q_ar": "كيف يتأكد خادم الـ Webhook من أن طلب الـ POST الوارد قادم فعلاً من شركة موثوقة (مثل Meta أو Stripe) وليس من قراصنة ينتحلون صفتهم؟",
+      "q_en": "How does a Webhook server verify that an incoming POST request genuinely originates from a trusted provider (like Meta or Stripe) and not an attacker?",
+      "opts": [
+        {
+          "ar": "عن طريق التحقق من التوقيع الرقمي للترويسة (مثل `X-Hub-Signature-256`) المحسوب باستخدام مفتاح سري مشترك (App Secret) وخوارزمية HMAC-SHA256.",
+          "ok": true,
+          "why": "المزود يشفر جسم الطلب بالمفتاح السري المشترك ويرسله في الترويسة، ويقوم السيرفر بإعادة حسابه للتأكد من مصدر الرسالة وسلامتها.",
+          "en": "By verifying the cryptographic signature header (e.g. `X-Hub-Signature-256`) computed using a shared App Secret and HMAC-SHA256."
+        },
+        {
+          "ar": "بالاتصال هاتفياً بالدعم الفني لشركة Meta عند كل طلب.",
+          "ok": false,
+          "why": "حل مستحيل برمجياً وعملياً.",
+          "en": "By telephoning Meta customer support on every request."
+        },
+        {
+          "ar": "بالتأكد من أن الرسالة تحتوي على كلمة 'مرحباً' في البداية.",
+          "ok": false,
+          "why": "النصوص لا تثبت هوية المصدر أمنياً.",
+          "en": "By checking if the message begins with 'Hello'."
+        },
+        {
+          "ar": "عبر تغيير رقم منفذ السيرفر في كل ثانية.",
+          "ok": false,
+          "why": "غير صحيح ويعطل عمل خوادم الويب.",
+          "en": "By altering server port numbers every second."
+        }
+      ],
+      "tip": "وقفة امتحانية: أمان الـ Webhook يعتمد حتماً على التحقق من توقيع HMAC المرفق في الـ Header لمنع هجمات التزييف (Spoofing) والتلاعب بالبيانات."
+    },
+    {
+      "n": 289,
+      "type": "mcq",
+      "ref": "L8-S008",
+      "q_ar": "ما هو التشبيه الواقعي الدقيق الذي يوضح الفارق المعماري بين الـ API والـ Webhook؟",
+      "q_en": "What is the exact real-world analogy illustrating the architectural difference between an API and a Webhook?",
+      "opts": [
+        {
+          "ar": "الـ API والـ Webhook متطابقان تماماً مثل لونين لنفس القلم.",
+          "ok": false,
+          "why": "هناك فارق جذري في اتجاه تدفق المبادرة.",
+          "en": "API and Webhook are identical like two colors of the same pen."
+        },
+        {
+          "ar": "الـ API مثل ذهابك لصندوق البريد كل 5 دقائق لتتفحص هل وصلت رسالة (Polling)، بينما الـ Webhook مثل وصول ساعي البريد ورنين جرس بابك فور وصول الرسالة (Push Notification).",
+          "ok": true,
+          "why": "استعارة دقيقة: Polling يهدر وقتك بالذهاب المتكرر، بينما Webhook يدفع الإشعار إليك فور وقوع الحدث دون أي هدر.",
+          "en": "API is like walking to your mailbox every 5 minutes to check for mail (Polling), while Webhook is like the courier ringing your doorbell the instant a letter arrives (Push)."
+        },
+        {
+          "ar": "الـ API مخصص للقطارات والـ Webhook للطائرات.",
+          "ok": false,
+          "why": "تشبيه هزلي وغير تقني.",
+          "en": "API is for trains and Webhook for airplanes."
+        },
+        {
+          "ar": "الـ API يعمل في النهار فقط والـ Webhook في الليل.",
+          "ok": false,
+          "why": "كلاهما يعملان على مدار الساعة 24/7.",
+          "en": "API operates in daytime only and Webhook at night."
+        }
+      ],
+      "tip": "وقفة امتحانية: المقارنة الكلاسيكية: API = نموذج السحب والطلب الدوري (Pull / Polling). Webhook = نموذج الدفع الفوري المبني على الحدث (Event Push)."
+    },
+    {
+      "n": 290,
+      "type": "mcq",
+      "ref": "L8-S010",
+      "q_ar": "لماذا تفشل البرمجة التقليدية القائمة على مطابقة الكلمات المفتاحية (`if text.Contains(...)`) في بناء روبوتات خدمة عملاء ذكية؟",
+      "q_en": "Why does traditional keyword-matching programming (`if text.Contains(...)`) fail in building intelligent customer service bots?",
+      "opts": [
+        {
+          "ar": "لأن الحواسيب لا تستطيع حفظ أكثر من 10 كلمات في الذاكرة.",
+          "ok": false,
+          "why": "الحواسيب تحفظ مليارات الكلمات بسهولة.",
+          "en": "Because computers cannot store more than 10 words in RAM."
+        },
+        {
+          "ar": "بسبب مرونة وتنوع اللغة الطبيعية، تعدد المترادفات، الأخطاء الإملائية، وتغير صياغات السؤال وسياقه؛ مما يجعل تغطية كافة الاحتمالات بجمل `if` أمراً مستحيلاً هندسياً.",
+          "ok": true,
+          "why": "العميل قد يقول: 'كم حق التلفون؟' أو 'سعره كام؟' أو 'تكلفة الشراء' مع أخطاء إملائية وسياقات مختلفة، فينهار منطق `if-else` الهش.",
+          "en": "Due to natural language complexity, rich synonyms, typos, and nuanced phrasing; making rule-based `if` branching impossible to maintain."
+        },
+        {
+          "ar": "لأن لغة C# تمنع استخدام جمل `if` في تطبيقات الويب.",
+          "ok": false,
+          "why": "جمل `if` أساسية في كافة لغات البرمجة.",
+          "en": "Because C# bans `if` statements in web apps."
+        },
+        {
+          "ar": "لأن واتساب يحظر إرسال الرسائل التي تحتوي على كلمات عربية.",
+          "ok": false,
+          "why": "واتساب يدعم كافة لغات العالم.",
+          "en": "Because WhatsApp prohibits Arabic text."
+        }
+      ],
+      "tip": "وقفة امتحانية: عيوب الأنظمة القائمة على القواعد (Rule-Based Systems): الهشاشة (Brittleness)، الفشل أمام المترادفات والأخطاء الإملائية، واستحالة التوسع."
+    },
+    {
+      "n": 291,
+      "type": "mcq",
+      "ref": "L8-S011",
+      "q_ar": "لماذا تعجز النماذج اللغوية العامة سابقة التدريب (مثل ChatGPT أو Claude) عن الإجابة الصحيحة على استفسارات شركة محددة دون تزويدها ببيانات إضافية؟",
+      "q_en": "Why do off-the-shelf pretrained Foundation LLMs (like ChatGPT or Claude) fail to accurately answer specific enterprise inquiries without augmentation?",
+      "opts": [
+        {
+          "ar": "لأن النماذج اللغوية لا تعرف قواعد اللغة العربية.",
+          "ok": false,
+          "why": "النماذج الحديثة تتقن اللغة العربية بكفاءة عالية.",
+          "en": "Because LLMs lack knowledge of Arabic grammar."
+        },
+        {
+          "ar": "لأنها تدربت على بيانات الإنترنت العامة فقط، ولا تمتلك أي معرفة ببيانات الشركة الخاصة (الأسعار الحالية، المخزون الحي، سياسات الإرجاع الداخلية)، مما يجعلها تؤلف إجابات كاذبة (Hallucination).",
+          "ok": true,
+          "why": "النماذج العامة لا تملك وصولاً لقواعد بيانات الشركة الخاصة، وإذا سُئلت عن سعر داخلي ستولد سعراً وهمياً (هلوسة).",
+          "en": "Because they were trained solely on public internet corpora and lack private enterprise knowledge (live inventory, prices, internal policies), triggering Hallucinations."
+        },
+        {
+          "ar": "لأن شركة OpenAI تحظر الإجابة على الأسئلة التجارية.",
+          "ok": false,
+          "why": "النماذج صممت خصيصاً لمساعدة الشركات والأنشطة التجارية.",
+          "en": "Because OpenAI blocks commercial queries."
+        },
+        {
+          "ar": "لأن بطاقات الشاشة في السيرفر تتوقف عن العمل عند استقبال أسئلة عن المتاجر.",
+          "ok": false,
+          "why": "غير صحيح إطلاقاً.",
+          "en": "Because server GPUs halt on e-commerce questions."
+        }
+      ],
+      "tip": "وقفة امتحانية: معضلة الـ LLM المجرد: نقص المعرفة المؤسسية الخاصة (Knowledge Gap) + الهلوسة (Hallucination) عند التخمين."
+    },
+    {
+      "n": 292,
+      "type": "mcq",
+      "ref": "L8-S012",
+      "q_ar": "لماذا يُعتبر نمط الـ RAG خياراً معمارياً متفوقاً جداً على إعادة تدريب أو ضبط النموذج اللغوي (Fine-Tuning) لبيانات الشركة المتغيرة باستمرار؟",
+      "q_en": "Why is the RAG pattern considered architecturally far superior to retraining or Fine-Tuning an LLM for continuously changing enterprise data?",
+      "opts": [
+        {
+          "ar": "لأن إعادة التدريب رخيصة جداً وتستغرق 3 ثوانٍ فقط.",
+          "ok": false,
+          "why": "إعادة التدريب والضبط باهظة التكلفة وتستغرق أياماً وأسابيع وتتطلب عتاداً ضخماً.",
+          "en": "Because retraining is ultra-cheap taking only 3 seconds."
+        },
+        {
+          "ar": "لأن RAG يتيح تحديث البيانات فورياً بالمللي ثانية دون أي كلفة تدريب، ويمنع الهلوسة عبر تقييد الإجابة بالسياق المسترجع مع توثيق المصادر بدقة.",
+          "ok": true,
+          "why": "إذا تغير سعر منتج، يكفي تعديل سجله في قاعدة المعرفة ليقرأه RAG فوراً، بينما Fine-Tuning يتطلب دورة تدريب جديدة بالكامل ولا يضمن استرجاع الأرقام بدقة.",
+          "en": "Because RAG enables instantaneous, zero-training updates to knowledge, suppresses hallucinations by grounding responses on retrieved context, and provides verifiable citations."
+        },
+        {
+          "ar": "لأن الـ Fine-Tuning مخصص لبرمجة الطابعات فقط.",
+          "ok": false,
+          "why": "Fine-Tuning تقنية تعلم آلي لتعديل أوزان النماذج اللغوية.",
+          "en": "Because Fine-Tuning is exclusively for printers."
+        },
+        {
+          "ar": "لأن RAG يلغي الحاجة لاستخدام نماذج الذكاء الاصطناعي نهائياً.",
+          "ok": false,
+          "why": "RAG يستخدم الـ LLM في الخطوة الأخيرة لتوليد الصياغة.",
+          "en": "Because RAG eliminates LLMs completely."
+        }
+      ],
+      "tip": "وقفة امتحانية: مقارنة حاسمة: Fine-Tuning = تعديل أسلوب الكلام وسلوك النموذج (Style/Form). RAG = تزويد النموذج بالمعلومات والحقائق الدقيقة المحدثة (Facts/Knowledge)."
+    },
+    {
+      "n": 293,
+      "type": "mcq",
+      "ref": "L8-S013",
+      "q_ar": "ما هي الخطوات الثلاث الأساسية التي تتكون منها معمارية التوليد المعزز بالاسترجاع (RAG - Retrieval-Augmented Generation)؟",
+      "q_en": "What are the three fundamental stages comprising the Retrieval-Augmented Generation (RAG) architecture?",
+      "opts": [
+        {
+          "ar": "التثبيت (Install)، الفحص (Scan)، والتنسيق (Format).",
+          "ok": false,
+          "why": "مصطلحات صيانة قرص صلب وليست مراحل RAG.",
+          "en": "Install, Scan, and Format."
+        },
+        {
+          "ar": "1) الاسترجاع (Retrieval) للفقرات ذات الصلة من قاعدة المعرفة، 2) التعزيز (Augmentation) لطلب المستخدم بدمج السياق، 3) التوليد (Generation) للإجابة بواسطة النموذج اللغوي.",
+          "ok": true,
+          "why": "هذا هو التفسير الحرفي للاختصار R-A-G ومسار تدفق بياناته المعماري المعتمد.",
+          "en": "1) Retrieval of relevant context chunks from knowledge base, 2) Augmentation of the user prompt with context, 3) Generation of the grounded response via LLM."
+        },
+        {
+          "ar": "التشفير (Encrypt)، فك التشفير (Decrypt)، والحذف (Delete).",
+          "ok": false,
+          "why": "عمليات أمن بيانات.",
+          "en": "Encrypt, Decrypt, and Delete."
+        },
+        {
+          "ar": "التحميل (Download)، الضغط (Compress)، والرفع (Upload).",
+          "ok": false,
+          "why": "عمليات نقل ملفات عادية.",
+          "en": "Download, Compress, and Upload."
+        }
+      ],
+      "tip": "وقفة امتحانية: احفظ أركان RAG الثلاثة: 1) Retrieval (البحث الدلالي عن النصوص)، 2) Augmentation (حشو السياق في الـ Prompt)، 3) Generation (صياغة الإجابة بـ LLM)."
+    },
+    {
+      "n": 294,
+      "type": "mcq",
+      "ref": "L8-S016",
+      "q_ar": "ما هي عملية التقطيع (Chunking) في معمارية RAG ولماذا تُعد خطوة إلزامية لمعالجة مستندات الشركة؟",
+      "q_en": "What is the Chunking process in RAG architecture, and why is it a mandatory preprocessing step for enterprise documents?",
+      "opts": [
+        {
+          "ar": "تقطيع الكابلات التالفة في مركز البيانات واستبدالها.",
+          "ok": false,
+          "why": "معنى لغوي فيزيائي خاطئ تماماً.",
+          "en": "Cutting damaged cables in the datacenter."
+        },
+        {
+          "ar": "تقسيم المستندات والكتيبات الضخمة إلى فقرات نصية صغيرة ومترابطة دلالياً (مثل 200 إلى 500 رمز مع تداخل جزئي)، لتجاوز قيود نافذة السياق ولرفع دقة البحث واسترجاع المعلومات المفيدة حصراً.",
+          "ok": true,
+          "why": "تضمين مستند كامل من 100 صفحة في الـ Prompt يرهق الذاكرة ويهدر التكلفة ويشتت انتباه النموذج؛ والتقطيع يسترجع فقط الفقرة المحددة التي تجيب على السؤال.",
+          "en": "Splitting massive documents into smaller, semantically coherent passages (e.g. 200-500 tokens with overlap) to fit LLM context limits and maximize vector retrieval precision."
+        },
+        {
+          "ar": "حذف كافة الأرقام وعلامات الترقيم من النصوص.",
+          "ok": false,
+          "why": "الأرقام والترقيم عناصر حاسمة في دقة المعنى.",
+          "en": "Stripping all numbers and punctuation marks from text."
+        },
+        {
+          "ar": "تحويل ملفات PDF إلى ملفات صوتية بصيغة MP3.",
+          "ok": false,
+          "why": "عملية تحويل صوتي وليست تقطيع نصوص RAG.",
+          "en": "Converting PDF manuals into MP3 audio tracks."
+        }
+      ],
+      "tip": "وقفة امتحانية: استراتيجية التقطيع (Chunking Strategy): تعتمد على حجم الفقرة (Chunk Size) ومقدار التداخل بينها (Chunk Overlap) للحفاظ على السياق اللغوي متصلاً."
+    },
+    {
+      "n": 295,
+      "type": "mcq",
+      "ref": "L8-S018",
+      "q_ar": "ما هو التضمين الشعاعي (Vector Embedding) وما هي السمة الرياضية الفريدة التي يقدمها للنصوص؟",
+      "q_en": "What is a Vector Embedding, and what unique mathematical property does it impart to text?",
+      "opts": [
+        {
+          "ar": "حفظ النص كملف صورة نقطية بالأبيض والأسود.",
+          "ok": false,
+          "why": "التضمين متجهات رياضية رقمية وليس صوراً.",
+          "en": "Saving text as a monochrome bitmap image."
+        },
+        {
+          "ar": "تمثيل رياضي مكثف يحول الكلمات والفقرات إلى متجهات أرقام حقيقية (مثل 1536 بعداً)، بحيث تتوضع النصوص المتشابهة في المعنى بالقرب من بعضها البعض في الفضاء الرياضي متعدد الأبعاد.",
+          "ok": true,
+          "why": "التضمين يعكس المعنى الدلالي؛ فالعبارتان 'سياسة الاسترجاع' و 'شروط استرداد الأموال' ستكونان متقاربتين رياضياً جداً رغم اختلاف كلماتهما تماماً.",
+          "en": "A dense mathematical representation mapping text into high-dimensional real vectors (e.g. 1536 dimensions) where semantically similar texts cluster closely together in vector space."
+        },
+        {
+          "ar": "حساب عدد الحروف الأبجدية في الصفحة وقسمتها على 2.",
+          "ok": false,
+          "why": "إحصاء بسيط وليس تضميناً شعاعياً عميقاً.",
+          "en": "Counting total alphabets on the page and dividing by 2."
+        },
+        {
+          "ar": "تشفير النص بحيث لا يمكن استرجاعه للأبد.",
+          "ok": false,
+          "why": "الغرض هو البحث الدلالي وليس التعمية المطلقة.",
+          "en": "One-way hashing so text is lost permanently."
+        }
+      ],
+      "tip": "وقفة امتحانية: التضمين الشعاعي (Vector Embedding) ينقل البحث من المطابقة الحرفية (Keyword Search) إلى المطابقة الدلالية والفكرية (Semantic Search)."
+    },
+    {
+      "n": 296,
+      "type": "mcq",
+      "ref": "L8-S020",
+      "q_ar": "ما هو المقياس الرياضي الأكثر شيوعاً في قواعد البيانات الشعاعية (Vector Databases) لقياس التشابه الدلالي بين متجه استفسار المستخدم ومتجهات المستندات؟",
+      "q_en": "What is the most widely adopted mathematical metric in Vector Databases to measure semantic similarity between a user query vector and document vectors?",
+      "opts": [
+        {
+          "ar": "حاصل جمع أرقام الهواتف المحمولة للعملاء.",
+          "ok": false,
+          "why": "لا علاقة له بالرياضيات الشعاعية.",
+          "en": "Sum of customer mobile phone numbers."
+        },
+        {
+          "ar": "تشابه جيب التمام (Cosine Similarity)، والذي يقيس زاوية الاتجاه بين المتجهين في الفضاء الشعاعي بغض النظر عن طولهما.",
+          "ok": true,
+          "why": "Cosine Similarity يقيس جيب تمام الزاوية بين المتجهين؛ فإذا كانت الزاوية 0 (جيب التمام = 1) فالمعنى متطابق دلالياً تماماً.",
+          "en": "Cosine Similarity, measuring the cosine of the angle between two high-dimensional vectors regardless of their magnitude."
+        },
+        {
+          "ar": "طرح التاريخ الميلادي من التاريخ الهجري.",
+          "ok": false,
+          "why": "حساب تواريخ وليس قياس متجهات.",
+          "en": "Subtracting Gregorian dates from Hijri dates."
+        },
+        {
+          "ar": "التحقق من عدد مرات ورود حرف الألف في الاستعلام.",
+          "ok": false,
+          "why": "هذا إحصاء حروف تقليدي.",
+          "en": "Counting occurrences of the letter 'A'."
+        }
+      ],
+      "tip": "وقفة امتحانية: مقاييس التشابه في Vector Databases: 1) Cosine Similarity (الأكثر انتشاراً)، 2) Dot Product، 3) Euclidean Distance (L2)."
+    },
+    {
+      "n": 297,
+      "type": "mcq",
+      "ref": "L8-S023",
+      "q_ar": "كيف يضمن التوجيه المنهجي الدقيق (Prompt Engineering) حماية روبوت الدعم الفني من تأليف إجابات خاطئة؟",
+      "q_en": "How does rigorous Prompt Engineering safeguard customer support bots from hallucinating false answers?",
+      "opts": [
+        {
+          "ar": "بأمر النموذج في النظام التوجيهي (System Prompt): 'أجب حصرياً وبدقة من السياق المرفق فقط؛ وإذا لم تجد الإجابة صراحة فيه، فقل بأدب: أنا لا أعلم ذلك ولا تؤلف من عندك'.",
+          "ok": true,
+          "why": "وضع قيود صارمة وتحديد سلوك العجز الصريح (Fallback) يقيد انتباه النموذج ويمنعه من اللجوء لمعلوماته العامة غير الموثقة.",
+          "en": "By strictly instructing the LLM in the System Prompt: 'Answer strictly using only the provided context; if the answer is not present, politely respond that you do not know and never fabricate'."
+        },
+        {
+          "ar": "بإلغاء اتصال الإنترنت عن خادم الـ API تماماً.",
+          "ok": false,
+          "why": "الروبوت يحتاج الاتصال لاستدعاء النموذج وإرسال الرد للعميل.",
+          "en": "By completely disconnecting the server from the internet."
+        },
+        {
+          "ar": "بإجبار النموذج على كتابة الرد بلغة برمجية فقط.",
+          "ok": false,
+          "why": "العميل يريد رداً بشرياً طبيعياً وليس كوداً.",
+          "en": "By forcing the bot to respond only in code."
+        },
+        {
+          "ar": "بتقليص عدد ساعات عمل الموظفين في الشركة.",
+          "ok": false,
+          "why": "قرار إداري لا علاقة له بهندسة الأوامر الذكية.",
+          "en": "By cutting staff working hours."
+        }
+      ],
+      "tip": "وقفة امتحانية: قاعدة الـ Grounded AI: تقييد النموذج بالنصوص المسترجعة (Grounding on Context) مع توجيه صريح بالاعتراف بعدم المعرفة عند غياب الإجابة."
+    },
+    {
+      "n": 298,
+      "type": "mcq",
+      "ref": "L8-S027",
+      "q_ar": "ما هو العيب المعماري الأكبر للأنظمة الموحدة الضخمة (Monolithic Architecture) عندما ينمو حجم النظام وتتعدد أقسامه؟",
+      "q_en": "What is the primary architectural drawback of Monolithic Architecture as systems expand in size and scope?",
+      "opts": [
+        {
+          "ar": "أنها مجانية ومتاحة للجميع بدون ترخيص.",
+          "ok": false,
+          "why": "طبيعة المعمارية لا ترتبط بنوع الترخيص.",
+          "en": "They are free and open without licensing."
+        },
+        {
+          "ar": "نقطة الفشل الواحدة (Single Point of Failure)، شدة الترابط (Tight Coupling)، وصعوبة التوسع المستقل؛ فحيث يؤدي خطأ في جزء بسيط لانهيار التطبيق بالكامل وتتطلب أي ترقية إعادة نشر المنظومة برمتها.",
+          "ok": true,
+          "why": "في النظام الموحد، إذا تعطل كود الفواتير أو الذكاء الاصطناعي قد ينهار السيرفر بالكامل ويتوقف المتجر بالكامل عن البيع.",
+          "en": "Single Point of Failure, tight coupling, and scaling bottlenecks: an error in one component crashes the whole app, and minor updates mandate full redeployments."
+        },
+        {
+          "ar": "أنها لا تعمل إلا على شاشات الهواتف فقط.",
+          "ok": false,
+          "why": "الأنظمة الموحدة تعمل على كافة أنواع الأجهزة والخوادم.",
+          "en": "They run exclusively on smartphone screens."
+        },
+        {
+          "ar": "أنها تمنع المطورين من استخدام لوحة المفاتيح أثناء كتابة الكود.",
+          "ok": false,
+          "why": "غير صحيح وهزلي.",
+          "en": "They forbid developers from typing on keyboards."
+        }
+      ],
+      "tip": "وقفة امتحانية: عيوب المونوليث (Monolith): 1) Single Point of Failure، 2) Deploy All or Nothing، 3) صعوبة تبني تقنيات متعددة (Technology Lock-in)."
+    },
+    {
+      "n": 299,
+      "type": "mcq",
+      "ref": "L8-S028",
+      "q_ar": "ما هو المبدأ الجوهري لمعمارية الخدمات المصغرة (Microservices Architecture)؟",
+      "q_en": "What is the core foundational principle of Microservices Architecture?",
+      "opts": [
+        {
+          "ar": "كتابة المشروع بالكامل في ملف نصي واحد لا يتجاوز 10 أسطر.",
+          "ok": false,
+          "why": "هذا تشويه للبرمجة.",
+          "en": "Writing the entire project in a single 10-line text file."
+        },
+        {
+          "ar": "تفكيك النظام إلى مجموعة من الخدمات الصغيرة والمستقلة، المنظمة حول نطاقات أعمال محددة، وقابلة للنشر والتوسع والتطوير بشكل معزول ومستقل.",
+          "ok": true,
+          "why": "كل خدمة مصغرة تملك كودها وقاعدتها وتعمل كمنظومة قائمة بذاتها، وتتواصل مع الخدمات الأخرى عبر شبكة بروتوكولات قياسية.",
+          "en": "Decomposing the system into a suite of small, autonomous services organized around business domains, independently deployable and scalable."
+        },
+        {
+          "ar": "إلزام جميع المبرمجين باستخدام نفس الحاسوب المحمول.",
+          "ok": false,
+          "why": "لا علاقة له بالأجهزة الشخصية للمطورين.",
+          "en": "Forcing all developers to share a single laptop."
+        },
+        {
+          "ar": "حظر استخدام قواعد البيانات نهائياً في كافة الخدمات.",
+          "ok": false,
+          "why": "الخدمات المصغرة تعتمد على قواعد بيانات خاصة بكل خدمة.",
+          "en": "Completely prohibiting databases across all services."
+        }
+      ],
+      "tip": "وقفة امتحانية: سمات الخدمات المصغرة: 1) Loose Coupling (تفكيك الترابط)، 2) Independent Deployability (استقلالية النشر)، 3) Domain-Driven Organization."
+    },
+    {
+      "n": 300,
+      "type": "mcq",
+      "ref": "L8-S030",
+      "q_ar": "ما هو الخطر المعماري الفادح للاعتماد الحصري على الاتصال المتزامن (مثل HTTP/REST المباشر) بين كافة الخدمات المصغرة؟",
+      "q_en": "What is the severe architectural hazard of relying exclusively on Synchronous communication (like direct HTTP/REST) between microservices?",
+      "opts": [
+        {
+          "ar": "خطر الانهيار التسلسلي المتعاقب (Cascading Failures) وسلسلة تأخير الاستجابة (Latency Chain)، حيث يؤدي بطء أو تعطل خدمة فرعية إلى تجميد وتوقف كافة الخدمات السابقة التي تنتظرها.",
+          "ok": true,
+          "why": "إذا اتصلت الخدمة A بالخدمة B التي تتصل بـ C، فإن تعطل C يعطل B ويجمد A، مما يحول الميكروسيرفس إلى نظام موحد موزع فاشل (Distributed Monolith).",
+          "en": "Cascading Failures and compounding Latency Chains, where slowness or downtime in a downstream service freezes and crashes all upstream callers awaiting responses."
+        },
+        {
+          "ar": "انخفاض سرعة دوران مروحة تبريد السيرفر.",
+          "ok": false,
+          "why": "أثر عتادي غير منطقي.",
+          "en": "Decreased datacenter fan rotation speed."
+        },
+        {
+          "ar": "تغير ألوان أيقونات الموقع الإلكتروني تلقائياً.",
+          "ok": false,
+          "why": "لا علاقة له بالواجهات الرسومية.",
+          "en": "Automatic mutation of website icon colors."
+        },
+        {
+          "ar": "توقف لغة C# عن دعم الأرقام الزوجية.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "C# dropping support for even numbers."
+        }
+      ],
+      "tip": "وقفة امتحانية: الاتصال المتزامن المباشر (Sync HTTP) بين الخدمات يخلق ترابطاً وثيقاً وانهياراً تسلسلياً (Cascading Failure)؛ والحل المعماري هو: Event-Driven Async."
+    },
+    {
+      "n": 301,
+      "type": "mcq",
+      "ref": "L8-S034",
+      "q_ar": "ما هو الدور المعماري لوسيط الرسائل (Message Broker مثل RabbitMQ أو Apache Kafka) في الأنظمة الموزعة؟",
+      "q_en": "What is the architectural role of a Message Broker (like RabbitMQ or Apache Kafka) in distributed systems?",
+      "opts": [
+        {
+          "ar": "يعمل كوسيط غير متزامن ومخزن مؤقت للرسائل والأحداث، مما يفكك الترابط بين المنتج (Producer) والمستهلك (Consumer) ويضمن وصول الرسائل حتى لو كانت الخدمة المستقبلة متوقفة مؤقتاً.",
+          "ok": true,
+          "why": "المنتج يرمي الرسالة في طابور RabbitMQ وينصرف فوراً، ويتولى الوسيط حفظها وإيصالها للمستهلكين عند جاهزيتهم، مما يحقق استقراراً ومرونة فائقة.",
+          "en": "Acts as an asynchronous intermediary and buffer for events, decoupling Producers from Consumers and guaranteeing message delivery even during consumer downtime."
+        },
+        {
+          "ar": "طباعة الرسائل الورقية وإرسالها بالبريد العادي للزبائن.",
+          "ok": false,
+          "why": "وظيفة مكتبية تقليدية وليست وسيط رسائل رقمي.",
+          "en": "Printing hardcopy letters and mailing them to clients."
+        },
+        {
+          "ar": "حذف الرسائل تلقائياً لمنع قراءتها نهائياً.",
+          "ok": false,
+          "why": "الوسيط يحافظ على الرسائل ويضمن عدم ضياعها.",
+          "en": "Deleting messages immediately to prevent reads."
+        },
+        {
+          "ar": "تسريع ألعاب الفيديو على أجهزة البلايستيشن.",
+          "ok": false,
+          "why": "لا علاقة له بأجهزة الألعاب المنزلية.",
+          "en": "Accelerating video game framerates."
+        }
+      ],
+      "tip": "وقفة امتحانية: ميزات Message Broker: 1) Decoupling (تفكيك الاعتمادية)، 2) Temporal Decoupling (العمل دون اشتراط عمل الطرفين في نفس اللحظة)، 3) Buffering."
+    },
+    {
+      "n": 302,
+      "type": "mcq",
+      "ref": "L8-S036",
+      "q_ar": "كيف يساعد وسيط الرسائل (Message Queue) في حماية الخدمات الخلفية من الانهيار أثناء طفرات الطلب المفاجئة (Traffic Spikes)؟",
+      "q_en": "How does a Message Queue protect downstream services from crashing during sudden traffic spikes (Load Leveling)?",
+      "opts": [
+        {
+          "ar": "يقوم بحذف 90% من طلبات العملاء فوراً دون معالجتها.",
+          "ok": false,
+          "why": "حذف طلبات الشراء كارثة تجارية ومالية.",
+          "en": "By arbitrarily dropping 90% of user requests."
+        },
+        {
+          "ar": "يعمل كخزان عازل (Buffer / Load Leveling)؛ يستوعب الطوفان الهائل من الرسائل الواردة في الطابور، ويسمح للخدمات باستهلاكها ومعالجتها بوتيرة ثابتة ومستقرة تناسب قدرتها القصوى.",
+          "ok": true,
+          "why": "نمط تسوية الأحمال (Load Leveling): الطابور يمتص الصدمة، والسيرفر يعالج 50 طلباً في الثانية بهدوء بدلاً من استقبال 5000 طلب دفعة واحدة فينهار المعالج.",
+          "en": "Acts as a buffer (Load Leveling); absorbing traffic surges into queues, enabling downstream services to process items at a steady, sustainable rate matching their capacity."
+        },
+        {
+          "ar": "يقوم برفع سرعة المعالج المركزي إلى درجات حرارة خطيرة.",
+          "ok": false,
+          "why": "الوسيط ينظم التدفق البرمجي ولا يتدخل في كسر سرعة العتاد فيزيائياً.",
+          "en": "By overclocking the CPU to dangerous thermal levels."
+        },
+        {
+          "ar": "يغلق المتجر في وجه المشترين حتى ينتهي الشهر.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "By shutting down the store for the rest of the month."
+        }
+      ],
+      "tip": "وقفة امتحانية: مصطلح امتحاني معتمد: 'Queue-Based Load Leveling'؛ امتصاص صدمات المرور الشبكي المفاجئة لحماية الخدمات من الاختناق."
+    },
+    {
+      "n": 303,
+      "type": "mcq",
+      "ref": "L8-S039",
+      "q_ar": "ما هو نمط إعادة المحاولة مع التراجع الأسي والعشوائية (Retry Pattern with Exponential Backoff and Jitter)، ولماذا يُعد إلزامياً في النظم الموزعة؟",
+      "q_en": "What is the Retry Pattern with Exponential Backoff and Jitter, and why is it mandatory in distributed systems?",
+      "opts": [
+        {
+          "ar": "إعادة إرسال الطلب الفاشل ملايين المرات في نفس الميكروثانية دون أي توقف.",
+          "ok": false,
+          "why": "هذا هجوم حجب خدمة ذاتي (Self-DDoS) يدمر الخادم المنهك تماماً.",
+          "en": "Resending failed requests millions of times in the same microsecond."
+        },
+        {
+          "ar": "إعادة محاولة تنفيذ الطلبات التي فشلت بأخطاء عابرة (Transient Errors) بعد فترات انتظار متضاعفة (مثل 1 ثانية، ثم 2، ثم 4) مع إضافة ضوضاء زمنية عشوائية (Jitter) لتفادي اصطدام كافة العملاء بالسيرفر في نفس اللحظة.",
+          "ok": true,
+          "why": "التراجع الأسي يمنح السيرفر وقتاً للتعافي، والـ Jitter يبعثر محاولات آلاف العملاء لمنع مشكلة قطيع الثيران الهائج (Thundering Herd Problem).",
+          "en": "Retrying transient network failures after exponentially doubling delays (1s, 2s, 4s) enriched with random Jitter to prevent concurrent client stampedes on recovering servers."
+        },
+        {
+          "ar": "إلغاء الطلب وتحويله إلى ملف PDF يُرسل بالفاكس.",
+          "ok": false,
+          "why": "لا علاقة له بأنماط مرونة الشبكات.",
+          "en": "Converting failed calls into faxed PDF documents."
+        },
+        {
+          "ar": "إعادة تشغيل راوتر الشركة كلما حدث خطأ 404.",
+          "ok": false,
+          "why": "أخطاء 404 تعني مورد مفقود وإعادة تشغيل الراوتر لا يحلها.",
+          "en": "Rebooting the office router on every 404."
+        }
+      ],
+      "tip": "وقفة امتحانية: التراجع الأسي (Exponential Backoff) = مضاعفة وقت الانتظار. العشوائية (Jitter) = كسر التزامن لمنع هجوم الثيران الهائجة (Thundering Herd)."
+    },
+    {
+      "n": 304,
+      "type": "mcq",
+      "ref": "L8-S040",
+      "q_ar": "ما هي الحالات الثلاث التي يديرها نمط قاطع الدائرة (Circuit Breaker Pattern)، وما وظيفة كل حالة؟",
+      "q_en": "What are the three operational states managed by the Circuit Breaker Pattern, and what is the role of each?",
+      "opts": [
+        {
+          "ar": "التحميل (Loading)، التنزيل (Downloading)، والانتظار (Idle).",
+          "ok": false,
+          "why": "حالات شبكات عادية وليست قاطع دائرة.",
+          "en": "Loading, Downloading, and Idle."
+        },
+        {
+          "ar": "1) مغلق (Closed): الحالة الطبيعية وتمر الطلبات، 2) مفتوح (Open): عند تجاوز نسبة الفشل عتبة محددة، فيتم قطع الاتصال وتفشل الطلبات فوراً دون إجهاد السيرفر، 3) نصف مفتوح (Half-Open): اختبار السيرفر بعد مهلة ببضعة طلبات تجريبية للتحقق من تعافيه.",
+          "ok": true,
+          "why": "قاطع الدائرة يمنع النظام من إهدار الموارد على خدمة منهارة (Fail Fast)، ويسمح لها بالتعافي ثم يفحصها تدريجياً في حالة Half-Open.",
+          "en": "1) Closed: normal state with traffic flowing, 2) Open: trips after failure thresholds to fail-fast without calling failing service, 3) Half-Open: sends trial probes to check recovery."
+        },
+        {
+          "ar": "النهار، الليل، وفترة الغروب.",
+          "ok": false,
+          "why": "أوقات زمنية طبيعية لا علاقة لها بالهندسة.",
+          "en": "Daytime, Nighttime, and Twilight."
+        },
+        {
+          "ar": "حفظ، تعديل، وحذف.",
+          "ok": false,
+          "why": "عمليات CRUD في قواعد البيانات.",
+          "en": "Create, Read, Update, Delete."
+        }
+      ],
+      "tip": "وقفة امتحانية: حالات Circuit Breaker الثلاث: `Closed` (طبيعي يمرر)، `Open` (منهار يقطع فوراً Fail-Fast)، `Half-Open` (فحص تجريبي للتعافي)."
+    },
+    {
+      "n": 305,
+      "type": "mcq",
+      "ref": "L8-S042",
+      "q_ar": "في المعماريات الموزعة غير المتزامنة، لماذا يُعتبر استخدام مفتاح عدم التكرار (Idempotency Key) أمراً مصيرياً لسلامة البيانات المالية؟",
+      "q_en": "In distributed asynchronous architectures, why is using an Idempotency Key crucial for financial data integrity?",
+      "opts": [
+        {
+          "ar": "لأن إعادة محاولات الشبكة (Retries) وتكرار تسليم الرسائل (At-least-once Delivery) قد يؤدي لتكرار خصم المبلغ مرتين إذا لم يكتشف الخادم أن هذا الطلب عولج مسبقاً بنفس المفتاح.",
+          "ok": true,
+          "why": "إذا انقطع الاتصال لحظة إتمام الدفع، يعيد النظام إرسال الطلب؛ ومفتاح Idempotency يضمن أن الخادم يتعرف على الطلب المكرر ويعيد النتيجة السابقة دون سحب رصيد ثانٍ.",
+          "en": "Because network retries and 'At-least-once delivery' can trigger duplicate billing charges unless the server recognizes the unique key and avoids reprocessing."
+        },
+        {
+          "ar": "لأن البنوك ترفض استقبال المبالغ المالية التي تنتهي برقم صفر.",
+          "ok": false,
+          "why": "تفسير خاطئ وهزلي.",
+          "en": "Because banks reject amounts ending with zero."
+        },
+        {
+          "ar": "لتشفير أسماء العملات باللغة اللاتينية القديمة.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "To translate currency codes into Latin."
+        },
+        {
+          "ar": "لحذف حساب العميل فور إتمام أول عملية شراء.",
+          "ok": false,
+          "why": "غير منطقي تجارياً.",
+          "en": "To delete client accounts after the first checkout."
+        }
+      ],
+      "tip": "وقفة امتحانية: في الأنظمة الموزعة: ضمان التسليم يكون على الأقل مرة واحدة (At-least-once delivery)؛ ولتفادي تكرار المعاملات يجب تطبيق: Idempotency Key."
+    },
+    {
+      "n": 306,
+      "type": "mcq",
+      "ref": "L8-S044",
+      "q_ar": "عند استقبال طلب Webhook من جهة خارجية تفرض مهلة رد سريعة (مثل Meta تشترط رداً خلال 3 ثوانٍ) بينما تستغرق معالجة الذكاء الاصطناعي 10 ثوانٍ، ما هو النمط المعماري الصحيح لحل هذه المعضلة؟",
+      "q_en": "When a Webhook provider enforces a strict 3-second timeout (like Meta) while AI processing takes 10 seconds, what is the proper architectural pattern to resolve this?",
+      "opts": [
+        {
+          "ar": "إلغاء الذكاء الاصطناعي نهائياً والرد برسالة ثابتة دائماً.",
+          "ok": false,
+          "why": "هذا إلغاء للمتطلب الوظيفي للنظام الذكي.",
+          "en": "Abolishing AI entirely and always returning a static string."
+        },
+        {
+          "ar": "نمط الرد الفوري والمعالجة الخلفية (Background Worker / Immediate Acknowledgment): يعيد الكنترولر استجابة `200 OK` فوراً للمزود خلال 50 مللي ثانية بعد وضع الرسالة في طابور خلفي، ويتكفل عامل خلفي (`IHostedService`) بمعالجة الذكاء الاصطناعي والرد على العميل عبر WhatsApp API لاحقاً.",
+          "ok": true,
+          "why": "المزود يحتاج فقط للتأكد من استلام الرسالة بنجاح؛ لذا نرد بـ 200 OK سريعاً وننقل المعالجة الثقيلة لطابور وخادم خلفي.",
+          "en": "Immediate Acknowledgment & Background Worker: the controller immediately returns `200 OK` in <50ms upon enqueuing the job, while a background worker (`IHostedService`) processes AI and responds via WhatsApp API asynchronously."
+        },
+        {
+          "ar": "إجبار Meta على الانتظار حتى لو استغرقت المعالجة 5 دقائق.",
+          "ok": false,
+          "why": "Meta ستعتبر الطلب ساقطاً بالمهلة (Timeout) وتعيد إرساله مراراً وتغلق الـ Webhook.",
+          "en": "Forcing Meta to wait even if processing takes 5 minutes."
+        },
+        {
+          "ar": "إيقاف تشغيل خادم ASP.NET Core وإعادة تشغيله يدوياً.",
+          "ok": false,
+          "why": "لا يحل مشكلة المهلة بل يفاقمها.",
+          "en": "Manually rebooting the ASP.NET Core server."
+        }
+      ],
+      "tip": "وقفة امتحانية: قاعدة الـ Webhook الذهبية: 'Acknowledge immediately, process asynchronously!' (أرجع 200 OK فوراً، ونفذ الذكاء الاصطناعي في Background Worker)."
+    },
+    {
+      "n": 307,
+      "type": "mcq",
+      "ref": "L8-S046",
+      "q_ar": "لماذا يحظر نمط 'قاعدة بيانات لكل خدمة' (Database-per-Service) في معمارية الميكروسيرفس مشاركة قاعدة بيانات واحدة بين عدة خدمات مختلفة؟",
+      "q_en": "Why does the 'Database-per-Service' pattern in microservices strictly forbid sharing a single central database across multiple distinct services?",
+      "opts": [
+        {
+          "ar": "لأن مشاركة قاعدة البيانات تخلق ترابطاً خفياً وثيقاً (Hidden Tight Coupling)؛ فأي تعديل في جدول يكسر الخدمات الأخرى، فضلاً عن تعارض الأقفال وتعطيل استقلالية النشر والتوسع لكل خدمة.",
+          "ok": true,
+          "why": "مشاركة قاعدة البيانات تنقض جوهر الميكروسيرفس؛ والنمط الصحيح هو تغليف بيانات كل خدمة في مخزنها الخاص والاتصال عبر الـ APIs فقط.",
+          "en": "Because sharing a database creates hidden tight coupling; altering schema breaks other services, causes lock contention, and destroys independent deployability."
+        },
+        {
+          "ar": "لأن خوادم قواعد البيانات لا تقبل سوى اتصال من برنامج واحد فقط في العالم.",
+          "ok": false,
+          "why": "قواعد البيانات تدعم آلاف الاتصالات المتزامنة.",
+          "en": "Because databases accept only one single connection worldwide."
+        },
+        {
+          "ar": "لأن لغات البرمجة تمنع استخدام الجداول في المشاريع الكبيرة.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Because programming languages ban tables in enterprise systems."
+        },
+        {
+          "ar": "لأن أسعار قواعد البيانات تصبح مجانية إذا قمت بإنشاء 10 قواعد منفصلة.",
+          "ok": false,
+          "why": "قضية تسعير غير واقعية ولا ترتبط بالمبدأ المعماري.",
+          "en": "Because databases become free if you create 10 separate ones."
+        }
+      ],
+      "tip": "وقفة امتحانية: مبدأ صارم: Database-per-Service! لا تشارك قاعدة البيانات مباشرة بين خدمتين مصغرتين؛ التواصل يتم حصراً عبر APIs أو Message Broker."
+    },
+    {
+      "n": 308,
+      "type": "mcq",
+      "ref": "L8-S048",
+      "q_ar": "ما هي المسؤوليات المركزية الموكلة لبوابة واجهة البرمجة (API Gateway Pattern) في معمارية الخدمات المصغرة؟",
+      "q_en": "What are the centralized cross-cutting responsibilities delegated to the API Gateway Pattern in microservices architectures?",
+      "opts": [
+        {
+          "ar": "تعتبر نقطة الدخول الموحدة للعملاء الخارجيين، وتتكفل بالتوجيه (Routing)، المصادقة (Authentication)، إنهاء التشفير (SSL Termination)، تقييد الاستهلاك (Rate Limiting)، وتجميع الاستجابات.",
+          "ok": true,
+          "why": "بوابة الـ API تعزل العملاء عن تعقيد شبكة الميكروسيرفس الداخلية وتجمع المهام المشتركة (Cross-Cutting Concerns) في مدخل واحد آمن.",
+          "en": "Acts as the single unified entry point handling reverse-proxy routing, authentication, SSL termination, rate limiting, and request aggregation."
+        },
+        {
+          "ar": "إدارة بطاقات الحضور والانصراف للموظفين في مكتب الشركة.",
+          "ok": false,
+          "why": "وظيفة شؤون موظفين مكتبية.",
+          "en": "Managing employee biometric attendance cards."
+        },
+        {
+          "ar": "حفظ ملفات الفيديو بدقة 8K على أشرطة مغناطيسية قديمة.",
+          "ok": false,
+          "why": "لا علاقة له ببوابات الويب المعمارية.",
+          "en": "Archiving 8K video files onto legacy magnetic tapes."
+        },
+        {
+          "ar": "إلغاء الحاجة لوجود خدمات مصغرة واستبدالها بنظام حاسبة بسيط.",
+          "ok": false,
+          "why": "البوابة توجه الطلبات للخدمات المصغرة ولا تلغيها.",
+          "en": "Replacing microservices with a simple calculator."
+        }
+      ],
+      "tip": "وقفة امتحانية: وظائف API Gateway: 1) Single Entry Point، 2) Reverse Proxy Routing، 3) Security & Auth، 4) Rate Limiting & SSL Termination."
+    },
+    {
+      "n": 309,
+      "type": "mcq",
+      "ref": "L8-S050",
+      "q_ar": "في المعمارية الشاملة لنظام المتجر الذكي المتكامل عبر واتساب، ما هو المسار التسلسلي الصحيح الذي تسلكه رسالة العميل منذ إرسالها وحتى وصول الرد؟",
+      "q_en": "In the end-to-end architecture of the WhatsApp Smart Store system, what is the correct sequence of events from customer message to final response?",
+      "opts": [
+        {
+          "ar": "العميل يرسل في واتساب -> Meta تدفع الحدث لخادم Webhook عبر POST -> الخادم يضع المهمة في طابور RabbitMQ ويرد بـ 200 OK -> خدمة الذكاء الاصطناعي تسترجع المعرفة الدلالية من Vector DB وترسلها لـ LLM -> خدمة الإشعارات ترسل الرد النهائي لهاتف العميل عبر WhatsApp API.",
+          "ok": true,
+          "why": "هذا هو المسار المعماري المكتمل الذي يدمج: Webhook + Message Queue + Vector DB + LLM + External WhatsApp API في منظومة موزعة فائقة المرونة.",
+          "en": "Client sends in WhatsApp -> Meta pushes POST to Webhook -> Webhook enqueues to RabbitMQ and replies 200 OK -> AI Worker queries Vector DB and calls LLM -> Notification service sends final answer via WhatsApp API."
+        },
+        {
+          "ar": "العميل يتصل بقاعدة البيانات مباشرة بدون إنترنت ويكتب الرد بنفسه.",
+          "ok": false,
+          "why": "مستحيل أمنياً ومعمارياً.",
+          "en": "Client connects to DB directly offline and types their own answer."
+        },
+        {
+          "ar": "المسار يبدأ من طباعة الرسالة على ورق ثم فحصها بجهاز السكانر.",
+          "ok": false,
+          "why": "مسار يدوي بطيء وغير برمجي.",
+          "en": "Starts with printing the text on paper then scanning it."
+        },
+        {
+          "ar": "الرسالة تذهب إلى شركة جوجل أولاً ثم تتحول إلى ملف PDF محذوف.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Message goes to Google first then converts to a deleted PDF."
+        }
+      ],
+      "tip": "وقفة امتحانية: ملخص الوحدة التاسعة والأخيرة: تكامل النظم الحديثة = Webhooks + Microservices + RabbitMQ Event-Driven + RAG Vector Search + LLM Generation."
+    },
+    {
+      "n": 310,
+      "type": "mcq",
+      "ref": "L8-S014",
+      "q_ar": "كيف يساهم تقديم السياق المسترجع (Retrieved Context) في القضاء على ظاهرة الهلوسة (Hallucination) لدى النموذج اللغوي؟",
+      "q_en": "How does providing retrieved context eliminate hallucination in LLMs?",
+      "opts": [
+        {
+          "ar": "بإلغاء ذاكرة الحاسوب بالكامل وتحويله إلى آلة كاتبة.",
+          "ok": false,
+          "why": "لا علاقة له بالعتاد والآلات الكاتبة.",
+          "en": "By wiping computer memory into a typewriter."
+        },
+        {
+          "ar": "بتحويل مهمة النموذج من 'التخمين والتأليف بناءً على الذاكرة العامة' إلى 'استخراج وتلخيص وصياغة الإجابة من الحقائق الموثقة المقدمة له صراحة في السؤال'.",
+          "ok": true,
+          "why": "عندما تزود النموذج بالفقرة الصحيحة وتأمره بالالتزام بها، تصبح مهمته قراءة استيعابية وصياغة لغوية بدلاً من استدعاء تخميني مجهول.",
+          "en": "By shifting the LLM task from 'open-ended guessing' to 'grounded reading comprehension, extraction, and synthesis based solely on supplied facts'."
+        },
+        {
+          "ar": "بإجبار النموذج على قراءة الأخبار الرياضية يومياً.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "By forcing the bot to read sports news daily."
+        },
+        {
+          "ar": "النموذج اللغوي لا يمكن تقليل هلوساته بأي وسيلة علمية.",
+          "ok": false,
+          "why": "RAG أثبت علمياً وهندسياً قدرته الفائقة على تقليص الهلوسة بنسب تتجاوز 95%.",
+          "en": "LLM hallucinations can never be mitigated by any scientific means."
+        }
+      ],
+      "tip": "وقفة امتحانية: جوهر RAG: تحويل عمل الـ LLM من 'Closed-Book Exam' (اختبار كتاب مغلق وتخمين) إلى 'Open-Book Exam' (اختبار كتاب مفتوح يستند لحقائق مؤكدة)."
+    },
+    {
+      "n": 311,
+      "type": "mcq",
+      "ref": "L8-S015",
+      "q_ar": "ما هي الفائدة من تطبيق التداخل الجزئي بين المقاطع (Chunk Overlap) أثناء تقطيع المستندات في RAG؟",
+      "q_en": "What is the benefit of applying Chunk Overlap when segmenting documents in RAG?",
+      "opts": [
+        {
+          "ar": "مضاعفة حجم ملف قاعدة البيانات دون أي فائدة تذكر.",
+          "ok": false,
+          "why": "التداخل له هدف دلالي دقيق وليس إهدار مساحة.",
+          "en": "Doubling database file size for no useful reason."
+        },
+        {
+          "ar": "منع انقطاع المعنى وسياق الجمل عند حدود التقطيع، وضمان عدم فصل الكلمات المترابطة أو الضمائر عن مراجعها بين فقرتين متجاورتين.",
+          "ok": true,
+          "why": "إذا انتهى المقطع الأول في منتصف فكرة وبدأ الثاني بباقيها، يفقد المتجه معناه؛ والتداخل يضمن احتواء كل مقطع على سياق كافٍ لفهمه.",
+          "en": "Preventing semantic loss across chunk boundaries, ensuring contextual coherence and connected reasoning across adjacent passages."
+        },
+        {
+          "ar": "تسريع سرعة دوران القرص الصلب الميكانيكي.",
+          "ok": false,
+          "why": "لا علاقة له بميكانيكا الأقراص.",
+          "en": "Accelerating hard drive spindle speed."
+        },
+        {
+          "ar": "إجبار النموذج على ترجمة الفقرة للغة الإسبانية.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Forcing translation to Spanish."
+        }
+      ],
+      "tip": "وقفة امتحانية: الـ Chunk Overlap (مثال: 50 رمز تداخل بين مقطعين) ضروري جداً للحفاظ على سلامة السياق ومنع بتر الجمل في المنتصف."
+    },
+    {
+      "n": 312,
+      "type": "mcq",
+      "ref": "L8-S019",
+      "q_ar": "ما الذي يميز قواعد البيانات الشعاعية (Vector Databases مثل Qdrant أو Milvus) عن قواعد البيانات العلائقية التقليدية (SQL)؟",
+      "q_en": "What distinguishes Vector Databases (like Qdrant or Milvus) from traditional Relational SQL databases?",
+      "opts": [
+        {
+          "ar": "أنها مصممة خصيصاً لفهرسة والبحث عالي السرعة في فضاء المتجهات عالية الأبعاد باستخدام خوارزميات الجار الأقرب (Approximate Nearest Neighbor - ANN) بدلاً من مطابقة النصوص الحرفية وجداول B-Tree.",
+          "ok": true,
+          "why": "جداول SQL تفهرس قيماً أحادية البعد (أرقام، نصوص)؛ بينما Vector DB تفهرس متجهات ذات 1536 بعداً وتجري عمليات بحث هندسي فوري.",
+          "en": "Engineered specifically for indexing and searching high-dimensional vector spaces using Approximate Nearest Neighbor (ANN) algorithms rather than literal B-Trees."
+        },
+        {
+          "ar": "أنها مجانية فقط للطلاب وتكلف ملايين الدولارات للموظفين.",
+          "ok": false,
+          "why": "قواعد البيانات مفتوحة المصدر ومتاحة للاستخدام.",
+          "en": "Free for students and millions for employees."
+        },
+        {
+          "ar": "أنها لا تعمل إلا عند وجود شبكة واي فاي فقط.",
+          "ok": false,
+          "why": "تعمل محلياً أو سحابياً عبر أي اتصال شبكي.",
+          "en": "Operates only over WiFi networks."
+        },
+        {
+          "ar": "أنها تحظر تخزين النصوص بالكامل وتخزن الأرقام فقط.",
+          "ok": false,
+          "why": "تخزن المتجهات مصحوبة بالنصوص الأصلية والبيانات الوصفية (Metadata).",
+          "en": "Bans text entirely, storing numbers only."
+        }
+      ],
+      "tip": "وقفة امتحانية: خوارزمية البحث في Vector Databases: خوارزميات الجار الأقرب التقريبي (ANN - Approximate Nearest Neighbor) مثل HNSW."
+    },
+    {
+      "n": 313,
+      "type": "mcq",
+      "ref": "L8-S035",
+      "q_ar": "في معمارية النشر والاشتراك (Publish-Subscribe Pattern)، ما هي العلاقة بين ناشر الحدث والمشتركين فيه؟",
+      "q_en": "In the Publish-Subscribe (Pub/Sub) pattern, what is the coupling relationship between event publishers and subscribers?",
+      "opts": [
+        {
+          "ar": "الناشر يجب أن يعرف العناوين الدقيقة وأسماء الخوادم لكافة المشتركين مسبقاً.",
+          "ok": false,
+          "why": "هذا ترابط وثيق يخالف مبدأ Pub/Sub.",
+          "en": "The publisher must explicitly know all subscriber IP addresses."
+        },
+        {
+          "ar": "انعدام تام للترابط (Zero Coupling)؛ فالناشر ينشر الحدث إلى وسيط الرسائل (Topic) دون أن يدري من سيستمع إليه، ويمكن إضافة مشتركين جدد في أي وقت دون تعديل سطر واحد في كود الناشر.",
+          "ok": true,
+          "why": "نمط Pub/Sub يحقق أقصى درجات المرونة؛ خدمة الطلبات تنشر `OrderCreated`، وتستمع لها خدمات الشحن والمخزون والإشعارات باستقلالية تامة.",
+          "en": "Complete decoupling; the publisher emits events to a Topic oblivious to consumers, allowing new subscribers to hook in anytime with zero code modifications to the publisher."
+        },
+        {
+          "ar": "الناشر يتحكم في حذف وإيقاف برامج المشتركين قسراً.",
+          "ok": false,
+          "why": "المشتركون خدمات مستقلة بذاتها.",
+          "en": "Publisher forcefully terminates subscriber processes."
+        },
+        {
+          "ar": "المشترك هو من يكتب الكود البرمجي للناشر.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Subscriber authors publisher source code."
+        }
+      ],
+      "tip": "وقفة امتحانية: مبدأ الـ Pub/Sub: Open-Closed Principle على مستوى العمارة الموزعة؛ إضافة مشتركين جدد (مثل خدمة الولاء) دون لمس كود الناشر."
+    },
+    {
+      "n": 314,
+      "type": "mcq",
+      "ref": "L8-S038",
+      "q_ar": "ما هي الفلسفة الهندسية الحديثة في التعامل مع الأعطال في النظم البرمجية الموزعة (Design for Failure)؟",
+      "q_en": "What is the modern software philosophy regarding errors in distributed systems (Design for Failure)?",
+      "opts": [
+        {
+          "ar": "افتراض أن الشبكات والعتاد لن يتعطل أبداً وكتابة الكود دون أي معالجة للأخطاء.",
+          "ok": false,
+          "why": "أكبر وهم معماري؛ فالشبكات تفشل باستمرار وتتعطل الخوادم حتماً.",
+          "en": "Assuming networks and hardware never fail, writing zero error handling."
+        },
+        {
+          "ar": "التسليم بأن الأعطال وانقطاعات الشبكة وبطء الخدمات الخارجية أمر حتمي لا مفر منه، وبناء النظام بآليات مرونة ومقاومة (Resilience) تتيح له النجاة ومواصلة العمل رغم فشل بعض أجزائه.",
+          "ok": true,
+          "why": "في الحوسبة السحابية: كل شيء يتعطل في وقت ما (Everything fails all the time)؛ والتصميم الناجح يمتلك Fallbacks و Retries و Circuit Breakers.",
+          "en": "Accepting that network drops, timeouts, and failures are inevitable, engineering the system with resilience patterns (Retries, Circuit Breakers, Fallbacks) to survive degraded states."
+        },
+        {
+          "ar": "إلغاء توزيع الأنظمة والعودة لحواسيب السبعينات العملاقة.",
+          "ok": false,
+          "why": "غير واقعي ولا يلبي متطلبات التوسع العالمية.",
+          "en": "Reverting back to 1970s mainframe architectures."
+        },
+        {
+          "ar": "إيقاف السيرفر ومسح قاعدة البيانات عند أول رسالة خطأ.",
+          "ok": false,
+          "why": "سلوك كارثي مدمر.",
+          "en": "Shutting down the server and deleting the database on the first error."
+        }
+      ],
+      "tip": "وقفة امتحانية: مقولة فيرنر فوجلز (CTO Amazon): 'Everything fails, all the time'؛ التصميم المقاوم للفشل (Resilient Design) هو جوهر الأنظمة الموزعة."
+    },
+    {
+      "n": 315,
+      "type": "mcq",
+      "ref": "L8-S047",
+      "q_ar": "كيف يساعد نمط تجميع الطلبات في بوابة الـ API (API Gateway Request Aggregation) في تحسين أداء تطبيقات الهواتف الذكية؟",
+      "q_en": "How does Request Aggregation in the API Gateway improve mobile application performance?",
+      "opts": [
+        {
+          "ar": "بشحن بطارية الهاتف لاسلكياً عبر إشارات الواي فاي.",
+          "ok": false,
+          "why": "مستحيل تقنياً.",
+          "en": "Wirelessly recharging phone batteries via WiFi signals."
+        },
+        {
+          "ar": "بتلقي طلب واحد من تطبيق الموبايل، والقيام داخلياً باستدعاء عدة خدمات مصغرة بالتوازي عبر شبكة السيرفرات السريعة، ثم دمج كافة النتائج في استجابة واحدة مجمعة وإعادتها للهاتف بطلب شبكي واحد.",
+          "ok": true,
+          "why": "شبكات الجوال ذات زمن تأخير عالي (High Latency)؛ فبدلاً من أن يرسل الهاتف 5 طلبات منفصلة عبر 4G، يرسل طلباً واحداً للبوابة وتتولى هي جمع البيانات في شبكتها الداخلية السريعة.",
+          "en": "Accepting a single call from mobile, invoking multiple microservices in parallel over high-speed datacenter backplanes, aggregating results, and returning a unified response in a single roundtrip."
+        },
+        {
+          "ar": "بحذف كافة صور المنتجات لتقليل حجم الرد.",
+          "ok": false,
+          "why": "التجميع ينظم بنية البيانات ولا يحذف الميزات المطلوبة.",
+          "en": "Deleting all product images to shrink payloads."
+        },
+        {
+          "ar": "بإجبار المستخدم على مشاهدة إعلان تجاري لمدة 30 ثانية.",
+          "ok": false,
+          "why": "لا علاقة له بالنمط المعماري.",
+          "en": "Forcing users to watch a 30-second advertisement."
+        }
+      ],
+      "tip": "وقفة امتحانية: ميزة الـ Request Aggregation في API Gateway: تقليص الاتصالات الخارجية للهاتف (Mobile Roundtrips) من N اتصالات إلى اتصال واحد مجمع."
+    },
+    {
+      "n": 316,
+      "type": "mcq",
+      "ref": "L8-S031",
+      "q_ar": "متى يكون استخدام الاتصال المتزامن (Synchronous HTTP / gRPC) بين الخدمات المصغرة مبرراً هندسياً وصحيحاً؟",
+      "q_en": "When is using Synchronous communication (HTTP / gRPC) between microservices architecturally justified and appropriate?",
+      "opts": [
+        {
+          "ar": "في استعلامات القراءة الفورية الحرجة (Real-Time Read Queries) حيث يحتاج المتصل للبيانات فوراً قبل أن يتمكن من مواصلة عمله (مثل التحقق اللحظي من صلاحية المستخدم أو رصيد حسابه).",
+          "ok": true,
+          "why": "إذا كانت العملية قراءة فورية سريعة بلا آثار جانبية ويحتاجها العميل لإكمال الشاشة، يكون الاتصال المتزامن عبر gRPC أو HTTP هو الخيار الطبيعي والمنطقي.",
+          "en": "In critical real-time read queries where the caller strictly requires immediate data to proceed (such as instantaneous token validation or balance checks)."
+        },
+        {
+          "ar": "في إرسال رسائل البريد الإلكتروني الدعائية الأسبوعية لمليون عميل.",
+          "ok": false,
+          "why": "إرسال الإيميلات عملية خلفية غير متزامنة يجب أن تمر عبر طابور رسائل.",
+          "en": "Dispatching weekly promotional marketing emails to one million clients."
+        },
+        {
+          "ar": "في معالجة وتصدير ملفات الفيديو الضخمة.",
+          "ok": false,
+          "why": "معالجة الفيديو تتطلب طوابير وعمالاً خلفيين وليس اتصالات متزامنة.",
+          "en": "Processing and exporting massive video renders."
+        },
+        {
+          "ar": "في كافة العمليات بدون استثناء وبلا أي حاجة للطوابير إطلاقاً.",
+          "ok": false,
+          "why": "الاعتماد الحصري على التزامن يدمر الأنظمة الموزعة.",
+          "en": "In every single operation without exception, discarding queues."
+        }
+      ],
+      "tip": "وقفة امتحانية: قاعدة التمييز: العمليات التفاعلية الفورية (Read queries) = متزامن (Sync HTTP/gRPC). العمليات الحركية ومعالجة الأعمال (Commands/Writes) = غير متزامن (Async Events/Broker)."
+    },
+    {
+      "n": 317,
+      "type": "mcq",
+      "ref": "L8-S021",
+      "q_ar": "في خطوة التوليد (Generation) ضمن منظومة RAG، ما هي المدخلات التي تُرسل فعلياً في طلب الـ API إلى النموذج اللغوي (LLM)؟",
+      "q_en": "In the Generation step of a RAG pipeline, what inputs are explicitly transmitted in the API payload to the LLM?",
+      "opts": [
+        {
+          "ar": "سؤال المستخدم الأصلي فقط دون أي إضافات.",
+          "ok": false,
+          "why": "إرسال السؤال وحده هو النموذج العادي الذي يسبب الهلوسة.",
+          "en": "The original user question alone with zero additions."
+        },
+        {
+          "ar": "حزمة مجمعة متكاملة تضم: 1) رسالة النظام التوجيهية (System Prompt)، 2) الفقرات المعرفية المسترجعة من قاعدة المتجهات (Retrieved Context Chunks)، 3) سؤال المستخدم الحالي.",
+          "ok": true,
+          "why": "هذا هو جوهر التعزيز (Augmentation)؛ حشو السياق المسترجع مع تعليمات الأمان وسؤال المستخدم في طلب واحد متكامل للنموذج.",
+          "en": "An assembled composite payload containing: 1) System Instructions, 2) Retrieved Context Chunks from the vector store, 3) The user's specific inquiry."
+        },
+        {
+          "ar": "كافة ملفات القرص الصلب لنظام التشغيل C:\\.",
+          "ok": false,
+          "why": "مستحيل تقنياً ويتجاوز حدود أي نافذة سياق.",
+          "en": "The entirety of system hard drive C:\\."
+        },
+        {
+          "ar": "كلمات مرور المشرفين وقاعدة بيانات المستخدمين كاملة.",
+          "ok": false,
+          "why": "كارثة أمنية فادحة.",
+          "en": "Admin passwords and the entire user table."
+        }
+      ],
+      "tip": "وقفة امتحانية: مكونات الـ Prompt المعزز في RAG: `Prompt = System Instructions + Retrieved Context Chunks + User Question`."
+    },
+    {
+      "n": 318,
+      "type": "mcq",
+      "ref": "L8-S041",
+      "q_ar": "كيف يضمن وسيط الرسائل الموزع مثل RabbitMQ عدم ضياع الرسائل في حال تعطل أو إعادة تشغيل الخادم الخادم فجأة (Message Durability)؟",
+      "q_en": "How does a distributed message broker like RabbitMQ guarantee message durability in the event of sudden server crashes or reboots?",
+      "opts": [
+        {
+          "ar": "عن طريق توصيف الطابور بأنه دائم (`Durable = true`) وتوصيف الرسائل بأنها مستمرة (`Persistent`)، مما يجبر الوسيط على كتابتها وتثبيتها على القرص الصلب الدائم قبل تأكيد استلامها.",
+          "ok": true,
+          "why": "إذا كانت الرسائل في الذاكرة فقط تضيع مع انقطاع الكهرباء؛ وتفعيل خاصية Durability يكتبها في القرص ويضمن نجاة الطابور والرسائل بعد إعادة التشغيل.",
+          "en": "By declaring queues as `Durable` and marking message delivery mode as `Persistent`, forcing the broker to commit messages to non-volatile disk storage."
+        },
+        {
+          "ar": "بالاتصال بمكتب البريد السريع لتوصيل الرسائل يدوياً.",
+          "ok": false,
+          "why": "حل هزلي وغير برمجي.",
+          "en": "By phoning courier delivery services."
+        },
+        {
+          "ar": "عبر طباعة الرسائل في ملف Word على سطح المكتب.",
+          "ok": false,
+          "why": "لا علاقة له بوسائط الرسائل البرمجية.",
+          "en": "By saving messages to a Word doc on Desktop."
+        },
+        {
+          "ar": "الرسائل في RabbitMQ لا يمكن أن تنجو إطلاقاً وتضيع دائماً مع أي عطل.",
+          "ok": false,
+          "why": "RabbitMQ صمم خصيصاً لضمان موثوقية وثبات الرسائل (Reliability).",
+          "en": "Messages in RabbitMQ can never survive and are always lost."
+        }
+      ],
+      "tip": "وقفة امتحانية: مفاهيم موثوقية الرسائل في RabbitMQ: 1) Queue Durability (بقاء الطابور)، 2) Message Persistence (حفظ الرسالة بالقرص)، 3) Consumer Acknowledgments (ACK)."
+    },
+    {
+      "n": 319,
+      "type": "mcq",
+      "ref": "L8-S043",
+      "q_ar": "ما الذي يحدث إذا فشل خادم الـ Webhook الخاص بك في إرجاع كود `200 OK` لشركة Meta خلال المهلة المحددة (مثلاً خلال 5 ثوانٍ)؟",
+      "q_en": "What happens if your Webhook server fails to return a `200 OK` status to Meta within the defined timeout (e.g. within 5 seconds)?",
+      "opts": [
+        {
+          "ar": "ستعتبر Meta الطلب فاشلاً وستقوم بإعادة إرسال نفس الرسالة مراراً وتكراراً (Retries)، مما يضاعف الحمل على خادمك وقد ينتهي الأمر بحظر الـ Webhook مؤقتاً.",
+          "ok": true,
+          "why": "المزودات تعتبر عدم الرد السريع دليلاً على سقوط السيرفر، فتعيد المحاولة فوراً؛ وإذا تكرر الفشل يتم إيقاف وتجميد حساب الـ Webhook بالكامل.",
+          "en": "Meta marks the delivery as failed and retries sending the same event repeatedly, amplifying server load and potentially leading to webhook disabling."
+        },
+        {
+          "ar": "ستقوم شركة Meta بدفع تعويض مالي لمتجرك عن كل ثانية تأخير.",
+          "ok": false,
+          "why": "العطل صادر من خادمك أنت وليس من شركة Meta.",
+          "en": "Meta pays financial compensation for every delayed second."
+        },
+        {
+          "ar": "سيتم حذف حسابات كافة عملاء الواتساب في العالم.",
+          "ok": false,
+          "why": "مستحيل وغير منطقي.",
+          "en": "All WhatsApp accounts globally are deleted."
+        },
+        {
+          "ar": "الرسالة ستتحول تلقائياً إلى مقطع فيديو على يوتيوب.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "The message automatically converts to a YouTube video."
+        }
+      ],
+      "tip": "وقفة امتحانية: فخ تأخير الـ Webhook: أي تأخير في الرد يطلق موجة إعادة محاولات مكررة (Retry Storm) من المزود الخارجي تزيد من اختناق السيرفر."
+    },
+    {
+      "n": 320,
+      "type": "mcq",
+      "ref": "L8-S033",
+      "q_ar": "ما هو الفارق المعماري الجوهري بين نمط الاتصال القائم على الأحداث (Event-Driven) والنمط القائم على الأوامر المباشرة (Command-Driven)؟",
+      "q_en": "What is the core architectural difference between Event-Driven and Command-Driven communication?",
+      "opts": [
+        {
+          "ar": "الأمر (Command) يعبر عن نية وإلزام بتنفيذ فعل محدد في المستقبل وله مستلم وحيد متوقع منه الرد (مثل `CreateInvoice`)، بينما الحدث (Event) يعبر عن حقيقة تاريخية وقعت في الماضي ولا يمكن تغييرها وتُبث للمهتمين (مثل `OrderPlaced`).",
+          "ok": true,
+          "why": "الأمر يطلب فعلاً ومرتبط بمستلم محدد، بينما الحدث يعلن حقيقة وقعت بالفعل (Past Tense) ويترك لكل خدمة حرية التصرف وفق مصلحتها.",
+          "en": "A Command expresses intent targeting a single recipient expected to act (e.g. `CreateInvoice`), whereas an Event states an immutable historical fact broadcast to interested listeners (e.g. `OrderPlaced`)."
+        },
+        {
+          "ar": "الأحداث تحدث في الصباح فقط والأوامر في المساء.",
+          "ok": false,
+          "why": "تصنيف زمني لا وجود له في هندسة البرمجيات.",
+          "en": "Events happen in mornings, commands in evenings."
+        },
+        {
+          "ar": "كلاهما مترادفان ويعبران عن نفس الشيء تماماً في كافة اللغات.",
+          "ok": false,
+          "why": "هناك فارق دلالي ومعماري كبير يدرسه مهندسو النظم.",
+          "en": "Both are identical synonyms across all languages."
+        },
+        {
+          "ar": "الأوامر مخصصة لنظام لينكس والأحداث لنظام ويندوز.",
+          "ok": false,
+          "why": "مفاهيم معمارية عامة مستقلة عن نظام التشغيل.",
+          "en": "Commands for Linux, events for Windows."
+        }
+      ],
+      "tip": "وقفة امتحانية: قاعدة التسمية: الأوامر صيغة أمر إلزامي (`ProcessPayment`)، والأحداث صيغة ماضي تقريرية غير قابلة للتغيير (`PaymentProcessed`)."
+    },
+    {
+      "n": 321,
+      "type": "mcq",
+      "ref": "L8-S045",
+      "q_ar": "كيف يتم التعامل مع المعاملات الموزعة التي تتطلب التناسق عبر عدة خدمات مصغرة دون استخدام قفل قاعدة البيانات ثنائي الطور (2PC) المعيق؟",
+      "q_en": "How are distributed transactions coordinated across multiple microservices without using blocking Two-Phase Commit (2PC)?",
+      "opts": [
+        {
+          "ar": "بحذف قاعدة البيانات عند حدوث أي خطأ والبدء من الصفر.",
+          "ok": false,
+          "why": "تدمير للبيانات.",
+          "en": "By dropping the database on any error."
+        },
+        {
+          "ar": "عبر نمط الساجا (Saga Pattern)، وهو سلسلة من المعاملات المحلية المستقلة في كل خدمة، تُنسق عبر الأحداث مع تنفيذ معاملات تعويضية (Compensating Transactions) للتراجع عن الخطوات السابقة في حال فشل أي خطوة لاحقة.",
+          "ok": true,
+          "why": "نمط Saga يستبدل أقفال ACID الموزعة البطيئة بنظام المعاملات التعويضية (مثل: إذا فشل الدفع، تنطلق معاملة تعويضية لإلغاء حجز المقعد).",
+          "en": "Via the Saga Pattern: a sequence of local transactions coordinated via events, using Compensating Transactions to roll back previous steps if a subsequent step fails."
+        },
+        {
+          "ar": "بإجبار المطورين على تصحيح المعاملات يدوياً بالهاتف كل دقيقة.",
+          "ok": false,
+          "why": "حل غير برمجي ومستحيل في المشاريع الكبرى.",
+          "en": "By forcing developers to manually fix records by phone."
+        },
+        {
+          "ar": "المعاملات الموزعة مستحيلة تماماً ولا يمكن تنفيذها في المعماريات الحديثة.",
+          "ok": false,
+          "why": "نمط Saga ينفذ المعاملات الموزعة في كبرى الشركات العالمية مثل Netflix و Uber.",
+          "en": "Distributed transactions are strictly impossible in modern systems."
+        }
+      ],
+      "tip": "وقفة امتحانية: في الميكروسيرفس: بديل المعاملات الموزعة التقليدية هو نمط الساجا (`Saga Pattern`) بالاعتماد على المعاملات التعويضية (Compensating Transactions)."
+    },
+    {
+      "n": 322,
+      "type": "mcq",
+      "ref": "L8-S017",
+      "q_ar": "إذا كان لدينا نموذجان لإنتاج التضمينات، الأول ينتج متجهات بـ 384 بعداً والثاني بـ 1536 بعداً، ما هو الأثر المعماري لهذا الاختلاف؟",
+      "q_en": "If two embedding models produce vectors of 384 and 1536 dimensions respectively, what is the architectural impact of this difference?",
+      "opts": [
+        {
+          "ar": "الأبعاد الأكبر (1536) قادرة على تمثيل تفاصيل دلالية أعمق وأكثر تعقيداً ولكنها تستهلك ذاكرة أكبر وزمن معالجة أطول في قاعدة البيانات، بينما 384 بعداً أسرع وأقل استهلاكاً للمساحة.",
+          "ok": true,
+          "why": "حجم البعد الشعاعي (Dimensions) يوازن بين دقة التمييز الدلالي وبين تكلفة الذاكرة وسرعة البحث في قاعدة البيانات الشعاعية.",
+          "en": "Higher dimensions (1536) capture richer semantic nuances but require more memory and indexing computation, whereas lower dimensions (384) are faster and lighter."
+        },
+        {
+          "ar": "النموذج ذو 384 بعداً لا يدعم سوى الأرقام من 1 إلى 10 فقط.",
+          "ok": false,
+          "why": "الأبعاد أعداد حقيقية عائمة (Floats) تمثل فضاءً هندسياً كاملاً.",
+          "en": "384-dimensional models only support numbers 1 to 10."
+        },
+        {
+          "ar": "كلاهما متطابقان تماماً في استهلاك الذاكرة وسرعة البحث بدون أي فارق.",
+          "ok": false,
+          "why": "متجه 1536 عنصراً يستهلك 4 أضعاف الذاكرة والحسابات مقارنة بـ 384.",
+          "en": "Both consume identical memory and compute."
+        },
+        {
+          "ar": "النموذج ذو 1536 بعداً يعمل بدون كهرباء.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "1536-dimensional models operate without electricity."
+        }
+      ],
+      "tip": "وقفة امتحانية: في Vector DB: تطابق الأبعاد إلزامي؛ يستحيل مقارنة متجه من 384 بعداً مع متجه من 1536 بعداً في نفس جدول البحث الشعاعي."
+    },
+    {
+      "n": 323,
+      "type": "mcq",
+      "ref": "L8-S028",
+      "q_ar": "ما المقصود بخاصية تعدد اللغات والتقنيات (Polyglot Architecture) التي تتيحها معمارية الخدمات المصغرة؟",
+      "q_en": "What is meant by the 'Polyglot Architecture' enabled by Microservices Architecture?",
+      "opts": [
+        {
+          "ar": "إجبار كافة الخدمات في المؤسسة على الكتابة بلغة برمجية واحدة قديمة فقط.",
+          "ok": false,
+          "why": "هذا أحادي التقنية (Monoglot) وليس متعددها.",
+          "en": "Forcing all services across the enterprise into a single legacy language."
+        },
+        {
+          "ar": "حرية اختيار لغة البرمجة وقاعدة البيانات والتقنية الأنسب لكل خدمة مصغرة بشكل مستقل (مثل كتابة خدمة الحسابات بـ C# مع SQL Server، وخدمة الذكاء الاصطناعي بـ Python مع Qdrant)، طالما أن التواصل بينها يتم عبر عقود قياسية موحدة.",
+          "ok": true,
+          "why": "في الميكروسيرفس، تختار الأداة الأفضل للمهمة (Right tool for the job)؛ فالبايثون متفوق في الذكاء الاصطناعي و C# متفوق في الخدمات المؤسسية فائقة السرعة.",
+          "en": "The freedom to select the most appropriate language and database for each microservice independently (e.g. C# for core finance, Python for AI), communicating via standard contracts."
+        },
+        {
+          "ar": "ترجمة كافة التعليقات في الكود البرمجي إلى 20 لغة بشرية مختلفة.",
+          "ok": false,
+          "why": "تعدد التقنيات يخص لغات البرمجة وأطر العمل وليس تعليقات الكود.",
+          "en": "Translating all code comments into 20 human languages."
+        },
+        {
+          "ar": "منع استخدام الإنترنت في بيئة التطوير.",
+          "ok": false,
+          "why": "غير صحيح.",
+          "en": "Banning internet inside development environments."
+        }
+      ],
+      "tip": "وقفة امتحانية: ميزة Polyglot: التحرر من الانغلاق التقني (No Technology Lock-in)؛ كل فريق يختار اللغة وقاعدة البيانات المثالية لخدمته."
+    },
+    {
+      "n": 324,
+      "type": "mcq",
+      "ref": "L8-S047",
+      "q_ar": "لماذا يُعتبر إنهاء التشفير (SSL/TLS Termination) عند بوابة الـ API Gateway ممارسة معمارية شائعة ونافعة؟",
+      "q_en": "Why is SSL/TLS Termination at the API Gateway a widely adopted and beneficial architectural practice?",
+      "opts": [
+        {
+          "ar": "لأنها تفك تشفير HTTPS في المدخل المركزي الخارجي، وتسمح بالاتصال الداخلي السريع بين الخدمات المصغرة داخل الشبكة الخاصة المعزولة دون تكرار عبء التشفير وفك التشفير في كل قفزة داخلية.",
+          "ok": true,
+          "why": "عمليات فك تشفير SSL تستهلك طاقة معالجة؛ وتركيزها في البوابة يوفر على الخدمات الداخلية المعالجة ويتيح إدارة شهادات الأمان في مكان واحد.",
+          "en": "Because it decrypts HTTPS at the outer boundary, allowing internal communication inside the private VPC without repeating heavy cryptographic handshake overhead at every internal hop."
+        },
+        {
+          "ar": "لأنها تحذف شهادة الأمان وتجعل الموقع غير آمن نهائياً.",
+          "ok": false,
+          "why": "الاتصال مع العميل الخارجي يظل مشفراً بأعلى درجات الأمان HTTPS.",
+          "en": "Because it strips security certificates leaving sites insecure."
+        },
+        {
+          "ar": "لأنها تمنع المستخدمين من كتابة كلمات المرور.",
+          "ok": false,
+          "why": "لا علاقة له بنماذج الإدخال.",
+          "en": "Because it prevents users from typing passwords."
+        },
+        {
+          "ar": "لأن شهادات الأمان تعمل على المتصفحات فقط ولا يمكن تثبيتها على السيرفرات.",
+          "ok": false,
+          "why": "شهادات SSL تثبت أساساً على الخوادم والبوابات.",
+          "en": "Because SSL certificates operate on browsers only."
+        }
+      ],
+      "tip": "وقفة امتحانية: مهام API Gateway: `SSL Termination` يريح الخدمات الداخلية من كلفة المعالجة التشفيرية ويوحد إدارة الشهادات وتجديدها في نقطة واحدة."
+    },
+    {
+      "n": 325,
+      "type": "mcq",
+      "ref": "L8-S050",
+      "q_ar": "ما هي الخلاصة الهندسية الكبرى التي يخرج بها مهندس البرمجيات المتقدم عند ربط معمارية الخدمات المصغرة بتقنيات الذكاء الاصطناعي (AI Engineering)؟",
+      "q_en": "What is the ultimate engineering takeaway when integrating Microservices Architecture with AI Engineering?",
+      "opts": [
+        {
+          "ar": "أن الذكاء الاصطناعي أداة سحرية تعمل وحدها بدون الحاجة لأي هندسة برمجيات أو معمارية نظيفة.",
+          "ok": false,
+          "why": "وهم شائع؛ فالذكاء الاصطناعي بدون معمارية قوية وطوابير ومرونة ينهار فوراً في بيئة الإنتاج.",
+          "en": "That AI is magic that operates alone needing zero software engineering or clean architecture."
+        },
+        {
+          "ar": "أن نماذج الذكاء الاصطناعي هي مجرد خدمات برمجية متخصصة (Specialized Services) داخل المعمارية العامة للنظام، تكتمل قيمتها الحقيقية فقط عند تكاملها مع مبادئ التصميم النظيفة، خطافات الويب، طوابير الرسائل، وإدارة الفشل لضمان الموثوقية والأداء والاستدامة.",
+          "ok": true,
+          "why": "الـ AI وحده لا يصنع تطبيقاً مؤسسياً؛ بل يندمج كخدمة مصغرة ذكية داخل منظومة تعتمد على Webhooks و Message Queues و Resilient Patterns و Clean Architecture.",
+          "en": "That AI models are specialized services within the broader system, whose true value is realized only when seamlessly integrated with clean design, Webhooks, Message Brokers, and resilience patterns."
+        },
+        {
+          "ar": "أن لغات البرمجة سيتم الاستغناء عنها بالكامل في العام القادم.",
+          "ok": false,
+          "why": "الأنظمة المؤسسية تزداد تعقيداً واعتماداً على المهندسين المتمكنين من المعمارية.",
+          "en": "That programming languages will be completely discarded next year."
+        },
+        {
+          "ar": "أن قواعد البيانات التقليدية العلائقية اختفت ولم يعد لها أي وجود في العالم.",
+          "ok": false,
+          "why": "قواعد البيانات العلائقية تظل عصب العمليات المالية والمعاملات الدقيقة.",
+          "en": "That relational databases have vanished and no longer exist."
+        }
+      ],
+      "tip": "وقفة امتحانية: مسك ختام المقرر: البرمجة المتقدمة تجمع بين الأنماط (Patterns) ومبادئ SOLID، العمارة النظيفة (Clean Architecture)، والأنظمة الموزعة مع الذكاء الاصطناعي المتين."
     }
   ]
 });

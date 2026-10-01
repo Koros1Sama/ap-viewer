@@ -3807,7 +3807,7 @@
       window.TOC_IMG_PROMPTS = [];
       document.write(
         window.TOC_CONFIG.files.index
-          .map((f) => '<script src="data/' + f + '.js"><\/script>')
+          .map((f) => '<script src="data/' + f + '.js?v=10"><\/script>')
           .join(""),
       );
     </script>
@@ -7261,6 +7261,6 @@
         }, { passive: true });
       })();
     </script>
-    <script src="app.js?v=9"></script>
+    <script src="app.js?v=10"></script>
   </body>
 </html>
