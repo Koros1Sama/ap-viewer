@@ -7,7 +7,7 @@
      صور الشرائح = الكاش أولاً (كبيرة ومستقرة)
    ═══════════════════════════════════════════════════════ */
 const RUNTIME = "ap-runtime-v7";
-const CORE = "ap-core-v7";
+const CORE = "ap-core-v8";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -36,16 +36,36 @@ self.addEventListener("install", (e) => {
 
 self.addEventListener("activate", (e) => {
   e.waitUntil(
-    caches
-      .keys()
-      .then((keys) =>
-        Promise.all(
-          keys
-            .filter((k) => k !== RUNTIME && k !== CORE)
-            .map((k) => caches.delete(k)),
-        ),
-      )
-      .then(() => self.clients.claim()),
+    (async () => {
+      const keys = await caches.keys();
+      const targetRuntime = await caches.open(RUNTIME);
+
+      /* حماية ونقل كافة الشرائح والموارد المحملة من أي كاش رن تايم سابق لمنع ضياع أي ملف تم تحميله */
+      for (const k of keys) {
+        if (k.startsWith("ap-runtime-") && k !== RUNTIME) {
+          try {
+            const oldC = await caches.open(k);
+            const oldReqs = await oldC.keys();
+            for (const req of oldReqs) {
+              const res = await oldC.match(req);
+              if (res) await targetRuntime.put(req, res);
+            }
+            await caches.delete(k);
+          } catch {}
+        }
+      }
+
+      /* تنظيف كاش القشرة القديم فقط (ap-core-*) مع الحظر التام لمس كاش الرن تايم الأساسي */
+      for (const k of keys) {
+        if (k !== RUNTIME && k !== CORE && !k.startsWith("ap-runtime-")) {
+          try {
+            await caches.delete(k);
+          } catch {}
+        }
+      }
+
+      await self.clients.claim();
+    })(),
   );
 });
 
