@@ -10,22 +10,6 @@ window.TOC_MODELS.push({
   "kind": "نظري",
   "title_ar": "بنك أسئلة ونماذج البرمجة المتقدمة النهائي — د. بيداء لعلع",
   "origin_ar": "بنك أسئلة معياري شامل مولّد ومطوّر بالذكاء الاصطناعي بدقة تامة وفق السلايدات والمحاضرات الرسمية المعتمدة للدكتورة بيداء لعلع (أنماط التصميم 23، مبادئ SOLID، العمارة النظيفة، التزامن، وإدارة الذاكرة)، مع تدقيق علمي وتفسير لكل خيار ووقفة امتحانية لكل سؤال.",
-  "origin_url": "https://github.com/Koros1Sama/ap-viewer/tree/main/exams",
-  "origin_label": "مجلد النماذج على GitHub",
-  "origin_sources": [
-    {
-      "label": "ملف الامتحانات الأصلية (PDF)",
-      "url": "./exams/exam_questions_answers.pdf"
-    },
-    {
-      "label": "بنك الـ 90 سؤال الأصلي (JSON)",
-      "url": "./exams/90_qu.json"
-    },
-    {
-      "label": "كود بنك النماذج المباشر (models_ap.js)",
-      "url": "https://github.com/Koros1Sama/ap-viewer/blob/main/data/models_ap.js"
-    }
-  ],
   "questions": [
     {
       "n": 1,
