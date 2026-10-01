@@ -6,8 +6,8 @@
      بيانات data = قديم فوراً + تحديث بالخلفية (SWR)
      صور الشرائح = الكاش أولاً (كبيرة ومستقرة)
    ═══════════════════════════════════════════════════════ */
-const RUNTIME = "ap-runtime-v3";
-const CORE = "ap-core-v3";
+const RUNTIME = "ap-runtime-v4";
+const CORE = "ap-core-v4";
 const CORE_ASSETS = [
   "./",
   "./index.html",
