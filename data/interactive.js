@@ -957,74 +957,74 @@
         <rect x="20" y="20" width="820" height="360" rx="10" fill="var(--sf2)" stroke="var(--ln)" stroke-width="1.5"/>
         <line x1="20" y1="65" x2="840" y2="65" stroke="var(--ln)" stroke-width="1.5"/>
         
-        <!-- Column Separators -->
-        <line x1="220" y1="20" x2="220" y2="380" stroke="var(--ln)" stroke-width="1.2"/>
-        <line x1="430" y1="20" x2="430" y2="380" stroke="var(--ln)" stroke-width="1.2"/>
+        <!-- Column Separators (Col 1: 20-180, Col 2: 180-340, Col 3: 340-840) -->
+        <line x1="180" y1="20" x2="180" y2="380" stroke="var(--ln)" stroke-width="1.2"/>
+        <line x1="340" y1="20" x2="340" y2="380" stroke="var(--ln)" stroke-width="1.2"/>
 
         <!-- Header Titles -->
-        <text x="120" y="48" text-anchor="middle" fill="var(--acc-b)" font-size="12" font-weight="700" class="ar-txt">العلاقة (Relationship)</text>
-        <text x="325" y="48" text-anchor="middle" fill="var(--acc-b)" font-size="12" font-weight="700" class="ar-txt">الرمز في UML (Notation)</text>
-        <text x="635" y="48" text-anchor="middle" fill="var(--acc-b)" font-size="12" font-weight="700" class="ar-txt">المعنى البرمجي في كود C# والمنهج</text>
+        <text x="100" y="48" text-anchor="middle" fill="var(--acc-b)" font-size="12" font-weight="700">العلاقة (Relationship)</text>
+        <text x="260" y="48" text-anchor="middle" fill="var(--acc-b)" font-size="12" font-weight="700">الرمز في UML (Notation)</text>
+        <text x="590" y="48" text-anchor="middle" fill="var(--acc-b)" font-size="12" font-weight="700">المعنى البرمجي في كود C# والمنهج</text>
 
         <!-- Row 1: Association -->
         <g transform="translate(0, 70)">
-          <text x="120" y="30" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700" class="ar-txt">الاقتران (Association)</text>
-          <text x="120" y="45" text-anchor="middle" fill="var(--ink-m)" font-size="9.5" class="mono">ClassA ──> ClassB</text>
+          <text x="100" y="28" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">الاقتران (Association)</text>
+          <text x="100" y="45" text-anchor="middle" fill="var(--ink-m)" font-size="9.5" class="mono">ClassA ──> ClassB</text>
           <!-- Vector Arrow -->
-          <line x1="260" y1="35" x2="390" y2="35" stroke="var(--acc)" stroke-width="2" marker-end="url(#uml-arrow)"/>
-          <text x="450" y="30" fill="var(--ink)" font-size="10.5" font-weight="600" class="ar-txt">كائن يستخدم كائناً آخر أو يحتفظ به كحقل دائم في الصنف (One uses another).</text>
+          <line x1="205" y1="35" x2="315" y2="35" stroke="var(--acc)" stroke-width="2" marker-end="url(#uml-arrow)"/>
+          <text x="360" y="32" fill="var(--ink)" font-size="10.5" font-weight="600">كائن يستخدم كائناً آخر أو يحتفظ به كحقل دائم في الصنف (One uses another).</text>
           <line x1="20" y1="52" x2="840" y2="52" stroke="var(--ln-s)" stroke-width="1"/>
         </g>
 
         <!-- Row 2: Aggregation -->
         <g transform="translate(0, 122)">
-          <text x="120" y="30" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700" class="ar-txt">التجميع (Aggregation)</text>
-          <text x="120" y="45" text-anchor="middle" fill="var(--ink-m)" font-size="9.5" class="mono">Has-A (ضعيف)</text>
+          <text x="100" y="28" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">التجميع (Aggregation)</text>
+          <text x="100" y="45" text-anchor="middle" fill="var(--ink-m)" font-size="9.5" class="mono">Has-A (ضعيف)</text>
           <!-- Vector Arrow with Hollow Diamond -->
-          <line x1="260" y1="35" x2="390" y2="35" stroke="var(--acc)" stroke-width="2" marker-start="url(#uml-diamond-hollow)" marker-end="url(#uml-arrow)"/>
-          <text x="450" y="24" fill="var(--ink)" font-size="10.5" font-weight="600" class="ar-txt">علاقة ملكية مستقلة: الكائن المحتوى يمكنه العيش بمفرده دون الكائن الحاوي.</text>
-          <text x="450" y="40" fill="var(--ink-m)" font-size="9.5" class="ar-txt">مثال: القسم يمتلك أستاذاً (Department ◇──> Professor). إذا حُذف القسم، يبقى الأستاذ حياً.</text>
+          <line x1="205" y1="35" x2="315" y2="35" stroke="var(--acc)" stroke-width="2" marker-start="url(#uml-diamond-hollow)" marker-end="url(#uml-arrow)"/>
+          <text x="360" y="24" fill="var(--ink)" font-size="10.5" font-weight="600">علاقة ملكية مستقلة: الكائن المحتوى يمكنه العيش بمفرده دون الكائن الحاوي.</text>
+          <text x="360" y="42" fill="var(--ink-m)" font-size="9.5">مثال: القسم يمتلك أستاذاً (Department ◇──> Professor). إذا حُذف القسم، يبقى الأستاذ حياً.</text>
           <line x1="20" y1="52" x2="840" y2="52" stroke="var(--ln-s)" stroke-width="1"/>
         </g>
 
         <!-- Row 3: Composition -->
         <g transform="translate(0, 174)">
-          <text x="120" y="30" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700" class="ar-txt">التركيب (Composition)</text>
-          <text x="120" y="45" text-anchor="middle" fill="var(--ink-m)" font-size="9.5" class="mono">Has-A (قوي ملتصق)</text>
+          <text x="100" y="28" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">التركيب (Composition)</text>
+          <text x="100" y="45" text-anchor="middle" fill="var(--ink-m)" font-size="9.5" class="mono">Has-A (قوي ملتصق)</text>
           <!-- Vector Arrow with Solid Diamond -->
-          <line x1="260" y1="35" x2="390" y2="35" stroke="var(--acc)" stroke-width="2" marker-start="url(#uml-diamond-solid)" marker-end="url(#uml-arrow)"/>
-          <text x="450" y="24" fill="var(--ink)" font-size="10.5" font-weight="600" class="ar-txt">ملكية تامة ودورة حياة ملتصقة: الكائن التابع يولد ويموت مع الكائن الحاوي حصراً.</text>
-          <text x="450" y="40" fill="var(--ink-m)" font-size="9.5" class="ar-txt">مثال: المنزل والغرفة (House ◆──> Room). إذا هُدم المنزل، تنعدم الغرف تماماً.</text>
+          <line x1="205" y1="35" x2="315" y2="35" stroke="var(--acc)" stroke-width="2" marker-start="url(#uml-diamond-solid)" marker-end="url(#uml-arrow)"/>
+          <text x="360" y="24" fill="var(--ink)" font-size="10.5" font-weight="600">ملكية تامة ودورة حياة ملتصقة: الكائن التابع يولد ويموت مع الكائن الحاوي حصراً.</text>
+          <text x="360" y="42" fill="var(--ink-m)" font-size="9.5">مثال: المنزل والغرفة (House ◆──> Room). إذا هُدم المنزل، تنعدم الغرف تماماً.</text>
           <line x1="20" y1="52" x2="840" y2="52" stroke="var(--ln-s)" stroke-width="1"/>
         </g>
 
         <!-- Row 4: Inheritance -->
         <g transform="translate(0, 226)">
-          <text x="120" y="30" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700" class="ar-txt">الوراثة (Inheritance)</text>
-          <text x="120" y="45" text-anchor="middle" fill="var(--ink-m)" font-size="9.5" class="mono">Generalization (IS-A)</text>
+          <text x="100" y="28" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">الوراثة (Inheritance)</text>
+          <text x="100" y="45" text-anchor="middle" fill="var(--ink-m)" font-size="9.5" class="mono">Generalization (IS-A)</text>
           <!-- Solid Line + Hollow Triangle -->
-          <line x1="260" y1="35" x2="390" y2="35" stroke="var(--ink)" stroke-width="2" marker-end="url(#uml-generalize)"/>
-          <text x="450" y="30" fill="var(--ink)" font-size="10.5" font-weight="600" class="ar-txt">اشتقاق صنف فرعي من صنف أب (Dog ──▷ Animal). سهم مستمر ورأس مثلث مفرغ.</text>
+          <line x1="205" y1="35" x2="315" y2="35" stroke="var(--ink)" stroke-width="2" marker-end="url(#uml-generalize)"/>
+          <text x="360" y="32" fill="var(--ink)" font-size="10.5" font-weight="600">اشتقاق صنف فرعي من صنف أب (Dog ──▷ Animal). سهم مستمر ورأس مثلث مفرغ.</text>
           <line x1="20" y1="52" x2="840" y2="52" stroke="var(--ln-s)" stroke-width="1"/>
         </g>
 
         <!-- Row 5: Realization -->
         <g transform="translate(0, 278)">
-          <text x="120" y="30" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700" class="ar-txt">تطبيق الواجهة (Realization)</text>
-          <text x="120" y="45" text-anchor="middle" fill="var(--ink-m)" font-size="9.5" class="mono">implements Interface</text>
+          <text x="100" y="28" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">تطبيق الواجهة (Realization)</text>
+          <text x="100" y="45" text-anchor="middle" fill="var(--ink-m)" font-size="9.5" class="mono">implements Interface</text>
           <!-- Dashed Line + Hollow Triangle -->
-          <line x1="260" y1="35" x2="390" y2="35" stroke="var(--ink)" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#uml-realize)"/>
-          <text x="450" y="30" fill="var(--ink)" font-size="10.5" font-weight="600" class="ar-txt">صنف ينفذ عقداً برمجياً (Car - - - ▷ IVehicle). خط متقطع ورأس مثلث مفرغ.</text>
+          <line x1="205" y1="35" x2="315" y2="35" stroke="var(--ink)" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#uml-realize)"/>
+          <text x="360" y="32" fill="var(--ink)" font-size="10.5" font-weight="600">صنف ينفذ عقداً برمجياً (Car - - - ▷ IVehicle). خط متقطع ورأس مثلث مفرغ.</text>
           <line x1="20" y1="52" x2="840" y2="52" stroke="var(--ln-s)" stroke-width="1"/>
         </g>
 
         <!-- Row 6: Dependency -->
         <g transform="translate(0, 330)">
-          <text x="120" y="24" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700" class="ar-txt">التبعية (Dependency)</text>
-          <text x="120" y="39" text-anchor="middle" fill="var(--ink-m)" font-size="9.5" class="mono">Uses-A (مؤقت)</text>
+          <text x="100" y="24" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">التبعية (Dependency)</text>
+          <text x="100" y="39" text-anchor="middle" fill="var(--ink-m)" font-size="9.5" class="mono">Uses-A (مؤقت)</text>
           <!-- Dashed Line + Open Arrow -->
-          <line x1="260" y1="28" x2="390" y2="28" stroke="var(--acc)" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#uml-arrow)"/>
-          <text x="450" y="28" fill="var(--ink)" font-size="10.5" font-weight="600" class="ar-txt">استخدام مؤقت كمعامل داخل دالة دون تخزينه كحقل دائم (Method parameter).</text>
+          <line x1="205" y1="28" x2="315" y2="28" stroke="var(--acc)" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#uml-arrow)"/>
+          <text x="360" y="30" fill="var(--ink)" font-size="10.5" font-weight="600">استخدام مؤقت كمعامل داخل دالة دون تخزينه كحقل دائم (Method parameter).</text>
         </g>
       </svg>
     `;
