@@ -264,25 +264,25 @@
       .topbar-in {
         display: flex;
         align-items: center;
-        gap: 12px;
-        padding: 8px 16px;
+        gap: 10px;
+        padding: 6px 14px;
         max-width: 1440px;
         margin: 0 auto;
-        min-height: 54px;
+        min-height: 52px;
         position: relative;
       }
       .brand {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         font-family: var(--fm);
-        font-size: 0.84rem;
+        font-size: 0.82rem;
         font-weight: 700;
         letter-spacing: 0.04em;
         text-transform: uppercase;
         color: var(--acc);
         white-space: nowrap;
-        flex: none;
+        flex: 0 0 auto;
         user-select: none;
       }
       .brand .lm {
@@ -325,28 +325,35 @@
       .top-nav-wrap {
         display: flex;
         align-items: center;
-        gap: 8px;
-        flex: none;
+        gap: 6px;
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .top-nav-wrap::-webkit-scrollbar {
+        display: none;
       }
       .seg-pills {
         display: flex;
         align-items: center;
-        gap: 6px;
-        flex: none;
+        gap: 5px;
+        flex: 0 0 auto;
       }
       .seg-pill {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 7px;
-        height: 34px;
-        padding: 0 14px;
+        gap: 6px;
+        height: 32px;
+        padding: 0 11px;
         border-radius: 999px;
         border: 1px solid var(--ln);
         background: var(--sf);
         color: var(--ink-m);
         font-family: var(--fa);
-        font-size: 0.78rem;
+        font-size: 0.76rem;
         font-weight: 700;
         line-height: 1;
         cursor: pointer;
@@ -458,15 +465,15 @@
         align-items: center;
         justify-content: center;
         gap: 5px;
-        height: 34px;
-        padding: 0 11px;
+        height: 32px;
+        padding: 0 9px;
         border-radius: 999px;
         border: 1px solid var(--ln);
         background: var(--sf);
         color: var(--ink-m);
         font-family: var(--fa);
         font-weight: 700;
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         line-height: 1;
         box-sizing: border-box;
         transition: all var(--dur) var(--ease);
@@ -552,24 +559,24 @@
       /* Actions */
       .top-actions {
         display: flex;
-        gap: 6px;
+        gap: 5px;
         align-items: center;
-        flex: none;
+        flex: 0 0 auto;
         margin-inline-start: auto;
       }
       .top-btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 6px;
+        gap: 5px;
         background: var(--sf);
         border: 1px solid var(--ln);
         border-radius: 999px;
         color: var(--ink-m);
-        height: 34px;
-        padding: 0 13px;
+        height: 32px;
+        padding: 0 11px;
         font-family: var(--fa);
-        font-size: 0.78rem;
+        font-size: 0.76rem;
         font-weight: 700;
         line-height: 1;
         box-sizing: border-box;
@@ -624,13 +631,13 @@
       .zen-toggle-group {
         display: inline-flex;
         align-items: center;
-        padding: 3px;
+        padding: 2px;
         gap: 2px;
         background: var(--sf);
         border: 1px solid var(--ln);
         border-radius: 999px;
-        flex: none;
-        height: 34px;
+        flex: 0 0 auto;
+        height: 32px;
         box-sizing: border-box;
         transition: border-color var(--dur) var(--ease);
       }
@@ -641,15 +648,15 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 5px;
-        padding: 0 9px;
+        gap: 4px;
+        padding: 0 8px;
         height: 26px;
         border-radius: 999px;
         border: 1px solid transparent;
         background: transparent;
         color: var(--ink-m);
         font-family: var(--fa);
-        font-size: 0.74rem;
+        font-size: 0.72rem;
         font-weight: 700;
         cursor: pointer;
         transition: all 0.2s var(--ease);
@@ -670,8 +677,37 @@
         box-shadow: 0 0 8px var(--acc-g);
       }
       .zen-opt .svg-ic {
-        width: 14px;
-        height: 14px;
+        width: 13px;
+        height: 13px;
+      }
+      @media (max-width: 1320px) {
+        .brand small {
+          display: none;
+        }
+        .top-actions #btnSearchToggle .txt,
+        .top-actions #btnSet .txt,
+        .top-actions #btnApp .txt {
+          display: none !important;
+        }
+        .top-actions #btnSearchToggle,
+        .top-actions #btnSet,
+        .top-actions #btnApp {
+          padding: 0;
+          width: 32px;
+          min-width: 32px;
+        }
+      }
+      @media (max-width: 1180px) {
+        .zen-opt .svg-ic {
+          display: none !important;
+        }
+        .zen-opt {
+          padding: 0 7px;
+        }
+        .topbar-in {
+          gap: 6px;
+          padding: 6px 10px;
+        }
       }
       /* Clean SVG Icons Standard */
       .svg-ic {
@@ -1385,10 +1421,27 @@
       /* filter chips row (slides: unseen / models: lecture+type+lang) */
       .fchips {
         display: flex;
-        gap: 7px;
+        gap: 8px;
         flex-wrap: wrap;
         align-items: center;
         margin: 6px 0 20px;
+      }
+      .fchip-group {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: nowrap;
+      }
+      .fchip-break {
+        flex-basis: 100%;
+        width: 100%;
+        height: 0;
+        margin: 0;
+      }
+      @media (max-width: 640px) {
+        .fchip-group {
+          flex-wrap: wrap;
+        }
       }
       .fchip {
         display: inline-flex;
@@ -1432,6 +1485,7 @@
         height: 20px;
         background: var(--ln-s);
         margin: 0 3px;
+        flex-shrink: 0;
       }
 
       /* ===== Slide card ===== */
@@ -4056,9 +4110,9 @@
               <svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
               <span>الملخص</span>
             </button>
-            <button id="segTopInteractive" class="seg-pill">
+            <button id="segTopInteractive" class="seg-pill" title="الشرح التفاعلي والمعماري (Interactive Guide)">
               <svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-              <span>الشرح التفاعلي</span>
+              <span>التفاعلي</span>
             </button>
           </div>
 
@@ -4417,7 +4471,7 @@
       window.TOC_IMG_PROMPTS = [];
       document.write(
         window.TOC_CONFIG.files.index
-          .map((f) => '<script src="data/' + f + '.js?v=20"><\/script>')
+          .map((f) => '<script src="data/' + f + '.js?v=21"><\/script>')
           .join(""),
       );
     </script>
@@ -7038,14 +7092,17 @@
           both: "الاثنين",
           smart: "ذكي",
         };
-        flt.appendChild(
+
+        // 1. Language Filter Group
+        const grpLang = el("div", { class: "fchip-group" });
+        grpLang.appendChild(
           el("span", {
             class: "side-title",
             style: "margin:0 4px 0 0; display: inline-flex; align-items: center; gap: 4px;",
           }, iconSvg("ar"), "اللغة"),
         );
         ["ar", "en", "both", "smart"].forEach((l) =>
-          flt.appendChild(
+          grpLang.appendChild(
             el(
               "button",
               {
@@ -7061,8 +7118,13 @@
             ),
           ),
         );
+        flt.appendChild(grpLang);
+
         flt.appendChild(el("span", { class: "fsep" }));
-        flt.appendChild(
+
+        // 2. Lecture Filter Group
+        const grpLec = el("div", { class: "fchip-group" });
+        grpLec.appendChild(
           el("span", {
             class: "side-title",
             style: "margin:0 4px; display: inline-flex; align-items: center; gap: 4px;",
@@ -7072,7 +7134,7 @@
           .filter(Boolean)
           .sort()
           .filter((id) => !EXCLUDED_LECS.has(id) || lecHasIncluded(id));
-        flt.appendChild(
+        grpLec.appendChild(
           el("button", {
             class: "fchip" + (S.qLec === "all" ? " on" : ""),
             onclick: (e) => {
@@ -7083,7 +7145,7 @@
           }),
         );
         lecIds.forEach((l) =>
-          flt.appendChild(
+          grpLec.appendChild(
             el(
               "button",
               {
@@ -7100,11 +7162,21 @@
             ),
           ),
         );
+        flt.appendChild(grpLec);
+
+        // 3. Question Type Group (wrapped onto row 2 to keep 'الكل' with its type choices)
         const types = [...new Set(m.questions.map((q) => q.type))];
         if (types.length > 1) {
-          flt.appendChild(el("span", { class: "fsep" }));
+          flt.appendChild(el("div", { class: "fchip-break" }));
+          const grpType = el("div", { class: "fchip-group fchip-group-type" });
+          grpType.appendChild(
+            el("span", {
+              class: "side-title",
+              style: "margin:0 4px; display: inline-flex; align-items: center; gap: 4px;",
+            }, iconSvg("check"), "النوع"),
+          );
           const typeLabels = { mcq: "اختيار", tf: "صح/خطأ", essay: "كتابي" };
-          flt.appendChild(
+          grpType.appendChild(
             el("button", {
               class: "fchip" + (S.qType === "all" ? " on" : ""),
               onclick: () => {
@@ -7115,7 +7187,7 @@
             }),
           );
           types.forEach((tp) =>
-            flt.appendChild(
+            grpType.appendChild(
               el(
                 "button",
                 {
@@ -7129,11 +7201,14 @@
               ),
             ),
           );
+          flt.appendChild(grpType);
         }
-        /* exam-scope filter (L4 out) */
+
+        // 4. Exam-scope Filter
         if (m.questions.some(isQExcluded)) {
           flt.appendChild(el("span", { class: "fsep" }));
-          flt.appendChild(
+          const grpScope = el("div", { class: "fchip-group" });
+          grpScope.appendChild(
             el("button", {
               class: "fchip" + (S.hideExcluded ? " on" : ""),
               style: "display: inline-flex; align-items: center; gap: 4px;",
@@ -7150,6 +7225,7 @@
               : " الكل (مع الخارج)",
             ),
           );
+          flt.appendChild(grpScope);
         }
 
                 const origin = clear($("#modelOrigin"));
@@ -8323,6 +8399,6 @@
         }, { passive: true });
       })();
     </script>
-    <script src="app.js?v=20"></script>
+    <script src="app.js?v=21"></script>
   </body>
 </html>
