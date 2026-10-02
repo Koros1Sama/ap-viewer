@@ -12,8 +12,8 @@
 (() => {
   if (!("serviceWorker" in navigator)) return;
 
-  const CORE = "ap-core-v19";
-  const RUNTIME = "ap-runtime-v14";
+  const CORE = "ap-core-v20";
+  const RUNTIME = "ap-runtime-v15";
   const isStandalone =
     matchMedia("(display-mode: standalone)").matches ||
     navigator.standalone === true;

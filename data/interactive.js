@@ -497,13 +497,13 @@
   const GOF_TRIAD_MODEL = {
     id: "gof-patterns-triad",
     module: "L2-L4",
-    module_title: "الوحدات 2 و 3 و 4: أنماط التصميم المعمارية (GoF Design Patterns)",
+    module_title: "الوحدات 2-4 · GoF Patterns",
     ref: "L2-S009",
     title_ar: "جوهر أنماط التصميم وعائلاتها الثلاث الكبرى (The Visual Triad)",
     title_en: "The Visual Triad: Creational · Structural · Behavioral Patterns",
     desc_ar:
       "أنماط التصميم (Design Patterns) هي حلول معمارية مستوحاة من العالم الفيزيائي لحل معضلات برمجية شائعة. هذا المحاكي البصري يوضح لك بالرسم المتجهي الفيزيائي كيف يشرح الشكل المفهوم المعماري فوراً: كيف تُخلق الكائنات بالذاكرة (الإنشائية)، كيف تُوفّق الواجهات (الهيكلية)، وكيف تتخاطب الكائنات وتوزع الأحداث (السلوكية).",
-    badge: "النموذج البصري الكانوني · Master Showcase",
+    badge: "النموذج الكانوني · Master Showcase",
     tip: "وقفة امتحانية حاسمة: تؤكد د. بيداء لعلع على الفروق الجوهرية بين العائلات الثلاث: الإنشائية (Creational) تتعامل مع ولادة الكائن وإدارته بالذاكرة وتفادي التكرار (Singleton/Factory)، الهيكلية (Structural) توفق بين هياكل وواجهات الكائنات دون كسرها (Adapter/Decorator)، والسلوكية (Behavioral) تدير تدفق الرسائل والأحداث بين الكائنات المنفصلة (Observer/Strategy).",
 
     render: function (card, utils) {
@@ -518,10 +518,10 @@
 
       const tabsBar = el("div", { class: "int-tabs-bar" });
       const tabs = [
-        { id: "behavioral", label: "1. الأنماط السلوكية: محاكي رادار البث والمراقب (Observer Radar)" },
-        { id: "structural", label: "2. الأنماط الهيكلية: محاكي المحوّل والمقبس (Adapter Plug & Socket)" },
-        { id: "creational", label: "3. الأنماط الإنشائية: محاكي النواة المفردة بالذاكرة (Singleton Forge)" },
-        { id: "matrix", label: "4. مصفوفة المقارنة المعمارية وفخاخ الامتحان (Synthesis Matrix)" },
+        { id: "behavioral", label: "1. السلوكية · رادار المراقب (Observer)" },
+        { id: "structural", label: "2. الهيكلية · محوّل المقبس (Adapter)" },
+        { id: "creational", label: "3. الإنشائية · السينغلتون (Singleton)" },
+        { id: "matrix", label: "4. مصفوفة المقارنة المعمارية" },
       ];
 
       const stageWrap = el("div", { class: "int-stage-wrap" });
@@ -1530,7 +1530,7 @@
   const UML_TABS_DATA = [
     {
       id: "relations",
-      label: "علاقات UML السبعة (L3-S010)",
+      label: "العلاقات السبعة (L3-S010)",
       title: "العلاقات السبعة الأكثر شيوعاً في لغة النمذجة الموحدة (UML Relationships)",
       ref: "L3-S010",
       desc: "تعتمد أنماط التصميم بالكامل على ضبط العلاقات بين الكائنات. يوضح هذا المخطط الفروق المعمارية الستة الكبرى المعتمدة في اختبارات د. بيداء لعلع، خاصة الفرق بين التجميع والتركيب وتطبيق الواجهة.",
@@ -1770,13 +1770,13 @@ public class CoffeeShop {
   const CURRICULUM_UML_MODEL = {
     id: "curriculum-uml-studio",
     module: "L2-L4",
-    module_title: "الوحدات 2 و 3 و 4: لغة النمذجة الموحدة ومخططات الفئات (UML Diagrams)",
+    module_title: "الوحدات 2-4 · مخططات UML",
     ref: "L3-S010",
     title_ar: "أطلس مخططات UML المعمارية لأنماط المقرر وعلاقاتها المشروحة",
     title_en: "Curriculum UML Class Diagrams & OOP Architecture Atlas",
     desc_ar:
       "استوديو تفاعلي شامل يجمع كافة مخططات فئات UML المعتمدة في سلايدات د. بيداء لعلع لأنماط التصميم والعلاقات الأكثر شيوعاً (The Most Common UML Relationships)، مع شرح مرئي مفصل لكل سهم وعلاقة (Inheritance, Implementation, Aggregation, Composition, Dependency)، ودلالة علامات الرؤية (+ للعام، - للخاص، # للمحمي)، والتسطير للدوال والحقول الساكنة (Static)، مع المقارنة المباشرة بالسلايد الرسمي وكود C#.",
-    badge: "مخططات المنهج المعتمدة · Annotated UML Studio",
+    badge: "مخططات المنهج · UML Studio",
     tip: "وقفة امتحانية مؤكدة: د. بيداء لعلع تركز بشدة في الاختبارات النهائية على دلالات الأسهم في UML: السهم ذو الخط المتقطع برأس مثلث مفرغ يعني Realization (تطبيق واجهة)، والمعين المفرغ يعني Aggregation (امتلاك ضعيف Has-A)، والمعين المصمت يعني Composition (امتلاك قوي ودورة حياة ملتصقة)، والتسطير يعني عضو ساكن (Static).",
 
     render: function (card, utils) {

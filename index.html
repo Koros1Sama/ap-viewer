@@ -2042,6 +2042,14 @@
           font-size: 0.75rem;
           padding: 6px 13px;
         }
+        .int-card {
+          padding: 16px 14px;
+        }
+        .int-tab-btn {
+          padding: 6px 12px;
+          font-size: 0.74rem;
+          max-width: 280px;
+        }
       }
       .q-imglink {
         font-size: 0.66rem;
@@ -3145,7 +3153,9 @@
         border: 1px solid color-mix(in srgb, var(--acc) 30%, transparent);
         padding: 3px 12px;
         border-radius: 999px;
-        flex: none;
+        flex: 0 0 auto;
+        max-width: 100%;
+        box-sizing: border-box;
       }
       .lec-badge.out {
         color: var(--err);
@@ -3352,6 +3362,9 @@
         border: 1px solid var(--ln);
         border-radius: var(--r-l);
         padding: 24px;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
         transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
       }
       .int-card:hover {
@@ -3362,6 +3375,9 @@
         align-items: flex-start;
         gap: 12px;
         flex-wrap: wrap;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
         border-bottom: 1px solid var(--ln-s);
         padding-bottom: 16px;
         margin-bottom: 18px;
@@ -3372,7 +3388,29 @@
         gap: 8px;
         flex-wrap: wrap;
         width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
         margin-bottom: 6px;
+        min-width: 0;
+      }
+      .int-meta-row .lec-badge {
+        max-width: 100%;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        direction: rtl;
+        unicode-bidi: isolate;
+        font-family: var(--fa);
+      }
+      .int-meta-row .ref-chip {
+        max-width: 100%;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        direction: rtl;
+        unicode-bidi: isolate;
       }
       .int-title {
         font-family: var(--fa);
@@ -3382,6 +3420,8 @@
         line-height: 1.4;
         flex: 1;
         min-width: 240px;
+        max-width: 100%;
+        word-break: break-word;
       }
       .int-en-title {
         display: block;
@@ -3392,12 +3432,14 @@
         margin-top: 3px;
         direction: ltr;
         text-align: right;
+        word-break: break-word;
       }
       .int-desc {
         font-size: 0.92rem;
         line-height: 2.05;
         color: var(--ink);
         margin-bottom: 18px;
+        word-break: break-word;
       }
       .int-tip {
         border: 1px solid color-mix(in srgb, var(--acc) 30%, transparent);
@@ -3408,6 +3450,7 @@
         line-height: 2;
         color: var(--ink);
         margin-bottom: 20px;
+        word-break: break-word;
       }
       .int-tip .wt {
         font-weight: 800;
@@ -3418,9 +3461,27 @@
         display: flex;
         gap: 8px;
         overflow-x: auto;
-        padding-bottom: 4px;
+        overflow-y: hidden;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        padding-bottom: 8px;
         margin-bottom: 20px;
         border-bottom: 1px solid var(--ln-s);
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: var(--ln) transparent;
+        scroll-snap-type: x proximity;
+      }
+      .int-tabs-bar::-webkit-scrollbar {
+        height: 4px;
+      }
+      .int-tabs-bar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .int-tabs-bar::-webkit-scrollbar-thumb {
+        background: var(--ln);
+        border-radius: 4px;
       }
       .int-tab-btn {
         display: inline-flex;
@@ -3436,6 +3497,12 @@
         font-weight: 700;
         cursor: pointer;
         white-space: nowrap;
+        flex-shrink: 0;
+        max-width: min(100%, 360px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        box-sizing: border-box;
+        scroll-snap-align: start;
         transition: all 0.2s var(--ease);
       }
       .int-tab-btn:hover {
@@ -4350,7 +4417,7 @@
       window.TOC_IMG_PROMPTS = [];
       document.write(
         window.TOC_CONFIG.files.index
-          .map((f) => '<script src="data/' + f + '.js?v=19"><\/script>')
+          .map((f) => '<script src="data/' + f + '.js?v=20"><\/script>')
           .join(""),
       );
     </script>
@@ -8256,6 +8323,6 @@
         }, { passive: true });
       })();
     </script>
-    <script src="app.js?v=19"></script>
+    <script src="app.js?v=20"></script>
   </body>
 </html>
