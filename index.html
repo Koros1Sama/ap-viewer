@@ -1878,10 +1878,55 @@
         transition: all var(--dur) var(--ease);
         flex: none;
         direction: ltr;
+        text-decoration: none;
       }
       .q-ref:hover {
         background: var(--acc-g);
         border-style: solid;
+      }
+      .jump-return-bar {
+        position: fixed;
+        bottom: 76px;
+        right: 18px;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+      }
+      .jump-return-bar[hidden] {
+        display: none !important;
+      }
+      .jump-return-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--bg-card, var(--sf));
+        color: var(--acc-b, var(--acc));
+        border: 1px solid color-mix(in srgb, var(--acc) 50%, var(--ln));
+        border-radius: 999px;
+        padding: 8px 16px;
+        font-family: var(--f);
+        font-size: 0.8rem;
+        font-weight: 700;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+        cursor: pointer;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: all var(--dur) var(--ease);
+      }
+      .jump-return-btn:hover {
+        background: var(--acc-g);
+        border-color: var(--acc);
+        transform: translateY(-2px);
+      }
+      @media (max-width: 640px) {
+        .jump-return-bar {
+          bottom: 72px;
+          right: 12px;
+        }
+        .jump-return-btn {
+          font-size: 0.75rem;
+          padding: 6px 13px;
+        }
       }
       .q-imglink {
         font-size: 0.66rem;
@@ -3807,7 +3852,7 @@
       window.TOC_IMG_PROMPTS = [];
       document.write(
         window.TOC_CONFIG.files.index
-          .map((f) => '<script src="data/' + f + '.js?v=12"><\/script>')
+          .map((f) => '<script src="data/' + f + '.js?v=13"><\/script>')
           .join(""),
       );
     </script>
@@ -3878,6 +3923,7 @@
         chevronRight: '<svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>',
         video: '<svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>',
         external: '<svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>',
+        back: '<svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg>',
       };
 
       function iconSvg(name, extraClass) {
@@ -4131,6 +4177,7 @@
       function setView(v, opts = {}) {
         viewScroll[S.view] = window.scrollY;
         S.view = v;
+        if (v !== "slides") hideJumpReturnBar();
         document.body.dataset.view = v;
         $("#slidesView").hidden = v !== "slides";
         $("#modelsView").hidden = v !== "models";
@@ -4172,24 +4219,129 @@
       });
       $("#brandHome").addEventListener("click", () => setView("slides"));
 
-      function jumpToSlide(ref) {
+      function isPwaStandalone() {
+        try {
+          return (
+            window.matchMedia("(display-mode: standalone)").matches ||
+            window.matchMedia("(display-mode: fullscreen)").matches ||
+            window.matchMedia("(display-mode: minimal-ui)").matches ||
+            window.navigator.standalone === true ||
+            (typeof document !== "undefined" && Boolean(document.referrer && document.referrer.includes("android-app://")))
+          );
+        } catch (_) {
+          return false;
+        }
+      }
+
+      function slideRefAttrs(ref) {
+        const pwa = isPwaStandalone();
+        return {
+          href: "#" + ref,
+          target: pwa ? "_self" : "_blank",
+          rel: "noopener",
+          title: pwa
+            ? `افتح السلايد ${ref} — زر الرجوع يعيدك إلى موضعك السابق`
+            : `افتح السلايد ${ref} في صفحة جديدة`,
+          onclick: (e) => {
+            if (isPwaStandalone()) {
+              e.preventDefault();
+              jumpToSlide(ref);
+            }
+          },
+        };
+      }
+
+      function showJumpReturnBar(fromView) {
+        let bar = $("#jumpReturnBar");
+        if (!bar) {
+          bar = el(
+            "div",
+            { id: "jumpReturnBar", class: "jump-return-bar" },
+            el(
+              "button",
+              {
+                id: "btnJumpReturn",
+                class: "jump-return-btn",
+                type: "button",
+                onclick: () => {
+                  if (window.history.length > 1) {
+                    window.history.back();
+                  } else {
+                    setView(fromView || "models");
+                    hideJumpReturnBar();
+                  }
+                },
+              },
+              iconSvg("back"),
+              "العودة إلى السؤال السابق",
+            ),
+          );
+          document.body.appendChild(bar);
+        }
+        bar.hidden = false;
+      }
+
+      function hideJumpReturnBar() {
+        const bar = $("#jumpReturnBar");
+        if (bar) bar.hidden = true;
+      }
+
+      function navigateToSlide(ref, opts = {}) {
         const lecId = lecOf(ref);
-        history.pushState({ tocJump: true }, "", "#" + ref);
+        const lec = META.lectures.find((l) => l.id === lecId);
+        if (!lec) return;
         S.lec = lecId;
         save();
         setView("slides", {
           keepHash: true,
           after: () => {
-            const card = document.querySelector(
-              `.slide-card[data-id="${ref}"]`,
-            );
-            if (card) {
-              card.scrollIntoView({ behavior: "smooth", block: "center" });
-              card.classList.add("flash");
-              setTimeout(() => card.classList.remove("flash"), 2200);
+            const tryScroll = () => {
+              const card = document.querySelector(`.slide-card[data-id="${ref}"]`);
+              if (card) {
+                card.scrollIntoView({ behavior: opts.instant ? "auto" : "smooth", block: "center" });
+                card.classList.add("flash");
+                setTimeout(() => card.classList.remove("flash"), 2600);
+                return true;
+              }
+              return false;
+            };
+            if (!tryScroll()) {
+              setTimeout(tryScroll, 120);
             }
           },
         });
+      }
+
+      function jumpToSlide(ref) {
+        const lecId = lecOf(ref);
+        const lec = META.lectures.find((l) => l.id === lecId);
+        if (!lec) return;
+        viewScroll[S.view] = window.scrollY;
+        const fromView = S.view;
+        history.pushState(
+          { tocJump: true, fromView, fromScroll: window.scrollY },
+          "",
+          "#" + ref,
+        );
+        S.lec = lecId;
+        save();
+        setView("slides", {
+          keepHash: true,
+          after: () => {
+            const tryScroll = () => {
+              const card = document.querySelector(`.slide-card[data-id="${ref}"]`);
+              if (card) {
+                card.scrollIntoView({ behavior: "smooth", block: "center" });
+                card.classList.add("flash");
+                setTimeout(() => card.classList.remove("flash"), 2600);
+                return true;
+              }
+              return false;
+            };
+            setTimeout(tryScroll, 80);
+          },
+        });
+        showJumpReturnBar(fromView);
       }
 
       /* ===== Navs ===== */
@@ -5143,13 +5295,8 @@
           t.refs && t.refs.length
             ? el("a", {
                 class: "q-ref",
-                title: "افتح السلايد — زر الرجوع يعيدك لنفس الجدول",
-                href: "#" + t.refs[0],
-                onclick: (e) => {
-                  e.preventDefault();
-                  jumpToSlide(t.refs[0]);
-                },
                 text: "→ " + t.refs[0],
+                ...slideRefAttrs(t.refs[0]),
               })
             : null;
         return el(
@@ -5686,14 +5833,9 @@
                 "a",
                 {
                   class: "ref-chip",
-                  href: "#" + r,
-                  title: "انتقل إلى السلايد المرجعي " + r,
-                  onclick: (e) => {
-                    e.preventDefault();
-                    jumpToSlide(r);
-                  },
+                  text: `→ ${r}`,
+                  ...slideRefAttrs(r),
                 },
-                `→ ${r}`,
               ),
             ),
           );
@@ -6223,12 +6365,7 @@
                 class: "q-ref",
                 style: "display: inline-flex; align-items: center; gap: 4px;",
                 text: `→ ${q.ref}`,
-                title: "افتح السلايد — زر الرجوع يعيدك لنفس السؤال",
-                href: "#" + q.ref,
-                onclick: (e) => {
-                  e.preventDefault();
-                  jumpToSlide(q.ref);
-                },
+                ...slideRefAttrs(q.ref),
               })
             : null,
           safePromptHref
@@ -6237,8 +6374,12 @@
                 {
                   class: "q-imglink",
                   style: "display: inline-flex; align-items: center; gap: 4px;",
-                  title: "برومبت صورة جاهز — زر الرجوع يعيدك هنا",
+                  title: isPwaStandalone()
+                    ? "برومبت صورة جاهز — زر الرجوع يعيدك هنا"
+                    : "برومبت صورة جاهز — يفتح في صفحة جديدة",
                   href: safePromptHref,
+                  target: isPwaStandalone() ? "_self" : "_blank",
+                  rel: "noopener",
                 },
                 iconSvg("image"),
                 "برومبت",
@@ -6404,12 +6545,7 @@
                   {
                     class: "q-ref",
                     style: "display: inline-flex; align-items: center; gap: 4px;",
-                    title: "افتح السلايد — زر الرجوع يعيدك لنفس السؤال",
-                    href: "#" + q.ref,
-                    onclick: (e) => {
-                      e.preventDefault();
-                      jumpToSlide(q.ref);
-                    },
+                    ...slideRefAttrs(q.ref),
                   },
                   iconSvg("slides"),
                   `راجع السلايد ${q.ref}`,
@@ -7194,52 +7330,67 @@
       buildNavs();
       buildSlidesChips();
       renderSlides();
-      /* defaultView من الإعداد */
-      document.body.dataset.view = S.view;
-      if (S.view === "models") setView("models");
-      else if (S.view === "tables") setView("tables");
-      else if (S.view === "summary") setView("summary");
-      else setView("slides");
+      /* Initial view and deep link routing */
+      const rawHash = (location.hash || "").replace("#", "");
+      const slideMatch = rawHash.match(/^(?:view=slides&)?(?:slide=)?(L\d+-S\d{3})$/i);
+      const vmMatch = rawHash.match(/^(?:view=)?(slides|models|tables|summary)(?:&part=([^&]+))?$/i);
 
-      /* deep links: index.html#L3-S016 (slide) · #view=models · #view=tables · #view=summary */
-      const h = (location.hash || "").replace("#", "");
-      const dl = h.match(/^(L\d+-S\d{3})$/);
-      const vm = h.match(/^(?:view=)?(slides|models|tables|summary)(?:&part=([^&]+))?$/);
-      if (dl) {
-        const ref = dl[1];
-        const lecId = lecOf(ref);
-        const lec = META.lectures.find((l) => l.id === lecId);
-        if (lec && S.lec !== lecId) {
-          S.lec = lecId;
-          renderSlides();
-          buildNavs();
-        }
-        setTimeout(() => {
-          const card = document.querySelector(`.slide-card[data-id="${ref}"]`);
-          if (card) {
-            card.scrollIntoView({ behavior: "smooth", block: "center" });
-            card.classList.add("flash");
-            setTimeout(() => card.classList.remove("flash"), 2600);
-          }
-        }, 350);
-        history.replaceState(null, "", "#view=slides");
-      } else if (vm) {
-        setView(vm[1]);
-        if (vm[2]) {
+      if (slideMatch) {
+        navigateToSlide(slideMatch[1].toUpperCase(), { instant: false });
+      } else if (vmMatch) {
+        setView(vmMatch[1]);
+        if (vmMatch[2]) {
           setTimeout(() => {
-            const target = document.getElementById(decodeURIComponent(vm[2]));
+            const target = document.getElementById(decodeURIComponent(vmMatch[2]));
             if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
           }, 250);
         }
+      } else {
+        document.body.dataset.view = S.view;
+        if (S.view === "models") setView("models");
+        else if (S.view === "tables") setView("tables");
+        else if (S.view === "summary") setView("summary");
+        else setView("slides");
       }
-      /* رجوع المتصفح/التطبيق يعيدك للقسم وموضع التمرير نفسه */
-      window.addEventListener("popstate", () => {
+
+      window.addEventListener("hashchange", () => {
         const h = (location.hash || "").replace("#", "");
-        const back = h.match(/^(?:view=)?(slides|models|tables|summary)/);
-        if (!back) return;
-        const v = back[1];
-        if (S.view !== v) setView(v);
-        window.scrollTo({ top: viewScroll[v] || 0 });
+        const sm = h.match(/^(?:view=slides&)?(?:slide=)?(L\d+-S\d{3})$/i);
+        if (sm) {
+          navigateToSlide(sm[1].toUpperCase());
+        }
+      });
+
+      /* رجوع المتصفح/التطبيق يعيدك للقسم وموضع التمرير نفسه */
+      window.addEventListener("popstate", (e) => {
+        const h = (location.hash || "").replace("#", "");
+        const sm = h.match(/^(?:view=slides&)?(?:slide=)?(L\d+-S\d{3})$/i);
+        const back = h.match(/^(?:view=)?(slides|models|tables|summary)/i);
+
+        if (sm) {
+          navigateToSlide(sm[1].toUpperCase());
+          return;
+        }
+
+        hideJumpReturnBar();
+
+        if (back) {
+          const v = back[1];
+          if (S.view !== v) setView(v);
+          const targetScroll =
+            e.state && typeof e.state.fromScroll === "number"
+              ? e.state.fromScroll
+              : viewScroll[v] || 0;
+          requestAnimationFrame(() => {
+            window.scrollTo({ top: targetScroll, behavior: "auto" });
+          });
+          return;
+        }
+
+        if (e.state && e.state.fromView) {
+          setView(e.state.fromView);
+          window.scrollTo({ top: e.state.fromScroll || 0, behavior: "auto" });
+        }
       });
 
       /* Smart Dynamic Header & Sidebar Hierarchy Controller */
@@ -7272,6 +7423,6 @@
         }, { passive: true });
       })();
     </script>
-    <script src="app.js?v=12"></script>
+    <script src="app.js?v=13"></script>
   </body>
 </html>
