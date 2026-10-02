@@ -14,6 +14,7 @@ window.TOC_MODELS.push({
   "id": "midterm_2026_m1",
   "kind": "نظري",
   "title_ar": "اختبار نصفي 2026م — النموذج الأول (د. بيداء لعلع)",
+  "short_label": "نصفي 1",
   "teacher_ar": "د. بيداء لعلع",
   "origin_ar": "ورقة الاختبار النصفي الرسمي لعام 2026م — النموذج الأول (د. بيداء لعلع). مستخرج بالرؤية البصرية من النموذج الامتحاني المعتمد ومدقق علمياً 100% وفق سلايدات المنهج، مع ربط كل سؤال بالشريحة المرجعية وتقديم التفسير والوقفة الامتحانية لكل خيار.",
   "origin_label": "النموذج النصفي الأول (CS25)",
@@ -44,7 +45,7 @@ window.TOC_MODELS.push({
     {
       "n": 2,
       "type": "tf",
-      "ref": "L4-S007",
+      "ref": "L4-S003",
       "q_ar": "نستخدم نمط المزخرف (Decorator Pattern) عندما يُراد جعل الخوارزميات قابلة للتبديل أثناء وقت التشغيل (at runtime).",
       "q_en": "We use Decorator Pattern when Algorithms should be interchangeable at runtime.",
       "opts": [
@@ -110,7 +111,7 @@ window.TOC_MODELS.push({
     {
       "n": 5,
       "type": "tf",
-      "ref": "L3-S055",
+      "ref": "L3-S056",
       "q_ar": "يتيح نمط الاستراتيجية (Strategy Pattern) إضافة سلوك جديد إلى كائن برمجياً بشكل ديناميكي دون تعديل كوده المصدري.",
       "q_en": "The Strategy Pattern allows you to add new behavior to an object dynamically without modifying its source code.",
       "opts": [
@@ -132,7 +133,7 @@ window.TOC_MODELS.push({
     {
       "n": 6,
       "type": "tf",
-      "ref": "L3-S011",
+      "ref": "L3-S012",
       "q_ar": "يسمح نمط المحوّل (Adapter Pattern) للواجهات البرمجية غير المتوافقة بالعمل معاً.",
       "q_en": "Adapter Pattern allows incompatible interfaces to work together.",
       "opts": [
@@ -242,7 +243,7 @@ window.TOC_MODELS.push({
     {
       "n": 11,
       "type": "mcq",
-      "ref": "L3-S032",
+      "ref": "L3-S036",
       "q_ar": "يستخدم أحد التطبيقات نظاماً فرعياً معقداً يضم كلاً من: AuthenticationService و PaymentService و NotificationService. وتريد تزويد العميل بواجهة موحدة وبسيطة لاستخدام هذه الخدمات. ما هو النمط الذي ينبغي استخدامه؟",
       "q_en": "An application uses a complex subsystem containing AuthenticationService, PaymentService, and NotificationService. You want to provide the client with one simple interface to use these services. Which pattern should you use?",
       "opts": [
@@ -437,6 +438,7 @@ window.TOC_MODELS.push({
   "id": "midterm_2026_m2",
   "kind": "نظري",
   "title_ar": "اختبار نصفي 2026م — النموذج الثاني (د. بيداء لعلع)",
+  "short_label": "نصفي 2",
   "teacher_ar": "د. بيداء لعلع",
   "origin_ar": "ورقة الاختبار النصفي الرسمي لعام 2026م — النموذج الثاني (د. بيداء لعلع). مستخرج بالرؤية البصرية بدقة متناهية ومدقق علمياً 100% وفق سلايدات المنهج المعتمدة، مع ربط كل سؤال بالشريحة المرجعية وتقديم التفسيرات والوقفات الامتحانية النموذجية.",
   "origin_label": "النموذج النصفي الثاني (CS25)",
@@ -511,7 +513,7 @@ window.TOC_MODELS.push({
     {
       "n": 4,
       "type": "tf",
-      "ref": "L3-S011",
+      "ref": "L3-S012",
       "q_ar": "يعمل نمط الاستراتيجية (Strategy) كجسر بين فئتين عبر تحويل واجهة إحداهما إلى واجهة أخرى متوافقة يتوقعها العميل.",
       "q_en": "Strategy acts as a bridge between two classes by converting one interface into another that the client expects.",
       "opts": [
@@ -533,7 +535,7 @@ window.TOC_MODELS.push({
     {
       "n": 5,
       "type": "tf",
-      "ref": "L3-S046",
+      "ref": "L3-S047",
       "q_ar": "نمط الوكيل (Proxy) هو نمط تصميم إنشائي يضمن أن الفئة تمتلك نسخة واحدة فقط، مع توفير نقطة وصول عامة موحدة لهذه النسخة.",
       "q_en": "Proxy is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.",
       "opts": [
@@ -665,7 +667,7 @@ window.TOC_MODELS.push({
     {
       "n": 11,
       "type": "mcq",
-      "ref": "L4-S016",
+      "ref": "L4-S022",
       "q_ar": "نظام إشعارات يجب أن يرسل تنبيهاً تلقائياً لجميع المستخدمين المسجلين كلما تم نشر رسالة جديدة. ما هو النمط الأنسب؟",
       "q_en": "A notification system should automatically notify all registered users whenever a new message is published. Which pattern is most suitable?",
       "opts": [
@@ -699,7 +701,7 @@ window.TOC_MODELS.push({
     {
       "n": 12,
       "type": "mcq",
-      "ref": "L3-S032",
+      "ref": "L3-S008",
       "q_ar": "أي نمط تصميم يوفر واجهة برمجية مبسطة للتعامل مع نظام فرعي معقد؟",
       "q_en": "Which Design Pattern provides a simplified interface to a complex subsystem?",
       "opts": [
@@ -860,6 +862,7 @@ window.TOC_MODELS.push({
   "id": "midterm_2026_m3",
   "kind": "نظري",
   "title_ar": "اختبار نصفي 2026م — النموذج الثالث (د. بيداء لعلع)",
+  "short_label": "نصفي 3",
   "teacher_ar": "د. بيداء لعلع",
   "origin_ar": "ورقة الاختبار النصفي الرسمي لعام 2026م — النموذج الثالث (د. بيداء لعلع). مستخرج بالرؤية البصرية بدقة متناهية ومدقق علمياً 100% وفق سلايدات المنهج المعتمدة، مع ربط كل سؤال بالشريحة المرجعية وتقديم التفسيرات والوقفات الامتحانية النموذجية.",
   "origin_label": "النموذج النصفي الثالث (CS25)",
@@ -912,7 +915,7 @@ window.TOC_MODELS.push({
     {
       "n": 3,
       "type": "tf",
-      "ref": "L3-S032",
+      "ref": "L3-S008",
       "q_ar": "يوفر نمط الواجهة الموحدة (Façade Pattern) واجهة برمجية مبسطة للتعامل مع نظام فرعي معقد.",
       "q_en": "Façade Pattern provides a simplified interface to a complex subsystem",
       "opts": [
@@ -1022,7 +1025,7 @@ window.TOC_MODELS.push({
     {
       "n": 8,
       "type": "tf",
-      "ref": "L3-S046",
+      "ref": "L3-S047",
       "q_ar": "يوفر نمط الوكيل (Proxy Pattern) عنصراً نائباً أو بديلاً لكائن آخر بغرض التحكم في الوصول إليه.",
       "q_en": "The Proxy Pattern provides a placeholder or surrogate for another object to control access to it.",
       "opts": [
@@ -1088,7 +1091,7 @@ window.TOC_MODELS.push({
     {
       "n": 11,
       "type": "mcq",
-      "ref": "L4-S002",
+      "ref": "L4-S003",
       "q_ar": "يدعم نظام دفع كلاً من الدفع بالبطاقة الائتمانية (CreditCardPayment)، وباي بال (PayPalPayment)، والتحويل البنكي (BankTransferPayment). ويجب أن يتمكن التطبيق من تغيير خوارزمية الدفع أثناء وقت التشغيل. ما هو النمط الأنسب؟",
       "q_en": "A payment system supports CreditCardPayment, PayPalPayment, and BankTransferPayment. The application should be able to change the payment algorithm at runtime. Which pattern is most suitable?",
       "opts": [

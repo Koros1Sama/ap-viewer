@@ -9,6 +9,7 @@ window.TOC_MODELS.push({
   "id": "ap_theory_final",
   "kind": "نظري",
   "title_ar": "بنك أسئلة ونماذج البرمجة المتقدمة النهائي — د. بيداء لعلع",
+  "short_label": "بنك النهائي",
   "origin_ar": "بنك أسئلة معياري شامل مولّد ومطوّر بالذكاء الاصطناعي بدقة تامة وفق السلايدات والمحاضرات الرسمية المعتمدة للدكتورة بيداء لعلع (أنماط التصميم 23، مبادئ SOLID، العمارة النظيفة، التزامن، وإدارة الذاكرة)، مع تدقيق علمي وتفسير لكل خيار ووقفة امتحانية لكل سؤال.",
   "questions": [
     {
@@ -2428,7 +2429,7 @@ window.TOC_MODELS.push({
     {
       "n": 72,
       "type": "mcq",
-      "ref": "L3-S011",
+      "ref": "L3-S012",
       "q_ar": "ما هي المشكلة المعمارية المحددة التي صُمم نمط المحول (Adapter Pattern) لحلها؟",
       "q_en": "What specific architectural problem was the Adapter Pattern designed to solve?",
       "opts": [
@@ -2768,7 +2769,7 @@ window.TOC_MODELS.push({
     {
       "n": 82,
       "type": "mcq",
-      "ref": "L3-S032",
+      "ref": "L3-S036",
       "q_ar": "ما هو الهدف المعماري الرئيسي لنمط الواجهة (Facade Design Pattern)؟",
       "q_en": "What is the primary architectural goal of the Facade Design Pattern?",
       "opts": [
@@ -2938,7 +2939,7 @@ window.TOC_MODELS.push({
     {
       "n": 87,
       "type": "mcq",
-      "ref": "L3-S046",
+      "ref": "L3-S047",
       "q_ar": "ما هو الغرض المعماري الأساسي لنمط الوكيل (Proxy Design Pattern)؟",
       "q_en": "What is the primary architectural purpose of the Proxy Design Pattern?",
       "opts": [
@@ -3074,7 +3075,7 @@ window.TOC_MODELS.push({
     {
       "n": 91,
       "type": "mcq",
-      "ref": "L3-S055",
+      "ref": "L3-S056",
       "q_ar": "ما هو الهدف المعماري الأساسي لنمط المزيّن (Decorator Design Pattern)؟",
       "q_en": "What is the primary architectural goal of the Decorator Design Pattern?",
       "opts": [
@@ -3788,7 +3789,7 @@ window.TOC_MODELS.push({
     {
       "n": 112,
       "type": "mcq",
-      "ref": "L4-S002",
+      "ref": "L4-S003",
       "q_ar": "ما هو الهدف المعماري الأساسي لنمط الاستراتيجية (Strategy Design Pattern)؟",
       "q_en": "What is the primary architectural goal of the Strategy Design Pattern?",
       "opts": [
@@ -4128,7 +4129,7 @@ window.TOC_MODELS.push({
     {
       "n": 122,
       "type": "mcq",
-      "ref": "L4-S016",
+      "ref": "L4-S022",
       "q_ar": "ما هو الهدف المعماري الأساسي لنمط المراقب (Observer Design Pattern)؟",
       "q_en": "What is the primary architectural goal of the Observer Design Pattern?",
       "opts": [

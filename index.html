@@ -3807,7 +3807,7 @@
       window.TOC_IMG_PROMPTS = [];
       document.write(
         window.TOC_CONFIG.files.index
-          .map((f) => '<script src="data/' + f + '.js?v=11"><\/script>')
+          .map((f) => '<script src="data/' + f + '.js?v=12"><\/script>')
           .join(""),
       );
     </script>
@@ -3909,8 +3909,19 @@
       }
 
       function modelIconSvg(numStr, isTheory) {
-        const d = String(numStr || "").replace(/^[^\d]*/, "");
-        const digits = isTheory ? "ث" : (d ? String(parseInt(d, 10)) : (numStr === "sec_theory" ? "ث" : (numStr || "1")));
+        if (isTheory || numStr === "sec_theory" || numStr === "ap_theory_final") {
+          return `<svg class="svg-ic model-num-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="color-mix(in srgb, currentColor 8%, transparent)"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <text x="11.5" y="14.8" font-size="9.5" font-weight="900" font-family="system-ui, -apple-system, sans-serif" text-anchor="middle" dominant-baseline="central" fill="currentColor" stroke="none">ث</text>
+        </svg>`;
+        }
+        const mMatch = String(numStr || "").match(/m(\d+)$/i);
+        let digits = mMatch ? mMatch[1] : null;
+        if (!digits) {
+          const d = String(numStr || "").replace(/^[^\d]*/, "");
+          digits = d ? String(parseInt(d, 10)) : (numStr || "1");
+        }
         const fontSize = digits.length > 2 ? "7" : (digits.length === 2 ? "8" : "9.5");
         return `<svg class="svg-ic model-num-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="color-mix(in srgb, currentColor 8%, transparent)"/>
@@ -4269,7 +4280,7 @@
                 el(
                   "span",
                   { class: "lt" },
-                  el("span", null, `${m.id} · ${m.title_ar}`),
+                  el("span", null, `${m.short_label || m.id} · ${m.title_ar}`),
                   el("span", { class: "cnt" }, `${st.right}/${st.total}`),
                 ),
                 el(
@@ -4389,7 +4400,7 @@
                 },
               },
               el("span", { class: "ic" }, svgNode(modelIconSvg(m.id))),
-              m.id,
+              m.short_label || m.origin_label || m.id,
             );
             if (m.id === S.model) activeModelBtn = btn;
             bnavLecs.appendChild(btn);
@@ -5936,7 +5947,7 @@
         const m = MODELS.find((x) => x.id === S.model);
         const st = modelStats(m.id);
         $("#modelKicker").textContent =
-          `${m.id} · ${m.kind} · ${m.questions.length} سؤال`;
+          `${m.short_label || m.id} · ${m.kind} · ${m.questions.length} سؤال`;
         const t = clear($("#modelTitle"));
         t.append(
           m.title_ar,
@@ -5973,7 +5984,7 @@
                 class: "kind-badge",
                 style: "display: inline-flex; align-items: center; gap: 4px;",
               }, iconSvg("models"), ` ${mm.kind}`),
-              `${mm.id} · ${mm.title_ar}`,
+              `${mm.short_label || mm.id} · ${mm.title_ar}`,
               el("span", {
                 class: "model-score",
                 text: `${s2.right}/${s2.total}`,
@@ -7261,6 +7272,6 @@
         }, { passive: true });
       })();
     </script>
-    <script src="app.js?v=11"></script>
+    <script src="app.js?v=12"></script>
   </body>
 </html>
