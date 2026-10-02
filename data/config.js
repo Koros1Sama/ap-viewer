@@ -55,6 +55,7 @@ window.TOC_CONFIG = {
       "glossary",
       "img_prompts",
       "qpics",
+      "models_midterm",
       "models_ap",
       "tables",
       "summary"
