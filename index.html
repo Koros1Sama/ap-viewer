@@ -4471,7 +4471,7 @@
       window.TOC_IMG_PROMPTS = [];
       document.write(
         window.TOC_CONFIG.files.index
-          .map((f) => '<script src="data/' + f + '.js?v=21"><\/script>')
+          .map((f) => '<script src="data/' + f + '.js?v=23"><\/script>')
           .join(""),
       );
     </script>
@@ -6681,11 +6681,10 @@
         // Category filter chips
         const categories = [
           { id: "all", label: "الكل" },
-          { id: "patterns", label: "أنماط التصميم (Patterns)" },
-          { id: "L2", label: "الأنماط الإنشائية (L2)" },
-          { id: "L3", label: "الأنماط الهيكلية (L3)" },
-          { id: "L4", label: "الأنماط السلوكية (L4)" },
-          { id: "L5", label: "البنية النظيفة (L5)" },
+          { id: "L1", label: "مبادئ SOLID (L1)" },
+          { id: "patterns", label: "أنماط التصميم (L2-L4)" },
+          { id: "L5", label: "العمارة النظيفة (L5)" },
+          { id: "L7", label: "التزامن والذاكرة (L7)" },
         ];
         categories.forEach((cat) => {
           chipsWrap.appendChild(
@@ -8399,6 +8398,6 @@
         }, { passive: true });
       })();
     </script>
-    <script src="app.js?v=21"></script>
+    <script src="app.js?v=23"></script>
   </body>
 </html>
