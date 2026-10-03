@@ -6,8 +6,8 @@
      بيانات data = قديم فوراً + تحديث بالخلفية (SWR)
      صور الشرائح = الكاش أولاً (كبيرة ومستقرة)
    ═══════════════════════════════════════════════════════ */
-const RUNTIME = "ap-runtime-v23";
-const CORE = "ap-core-v30";
+const RUNTIME = "ap-runtime-v24";
+const CORE = "ap-core-v31";
 const CORE_PREFIX = "ap-core-";
 const RUNTIME_PREFIX = "ap-runtime-";
 const CORE_ASSETS = [
@@ -19,6 +19,7 @@ const CORE_ASSETS = [
   "./manifest.json",
   "./favicon.ico",
   "./data/config.js",
+  "./data/emergency.js",
   "./icons/icon.svg",
   "./icons/icon-32.png",
   "./icons/icon-192.png",

@@ -59,7 +59,8 @@ window.TOC_CONFIG = {
       "models_ap",
       "tables",
       "summary",
-      "interactive"
+      "interactive",
+      "emergency"
     ],
     summary: ["meta", "tables", "summary"],
     prompts: ["img_prompts"]
