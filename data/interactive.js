@@ -71,7 +71,7 @@
       metaphor: "سكين الجيب السويسري مقابل طقم أدوات جراحية متخصصة: دمج فتاحة العلب والمقص والسكين في مقبض واحد يجعلك إذا أردت استبدال شفرة تالفة قد تفسد المقص أو تجرح يدك. في البرمجة: كل صنف هو أداة دقيقة لغرض واحد فقط.",
       explanation: "صاغ روبرت مارتن (Uncle Bob) هذا المبدأ ليعني أن الصنف يجب أن يكون مسؤولاً تجاه فاعل ومستفيد واحد فقط (Single Actor / Stakeholder). عندما يجمع صنف Employee بين حساب الرواتب (للـ CFO) وإعداد التقارير (للـ COO) والحفظ (للـ CTO)، فإن أي تعديل تطلبه المالية يهدد بكسر تقارير العمليات دون قصد، ويحدث تضارب دمج (Merge Conflicts) بين فرق التطوير.",
       examTrap: "الوقفة الامتحانية المؤكدة لدكتورة المادة: 1. تركز د. بيداء على أن المسؤولية الواحدة لا تعني 'دالة واحدة'، بل تعني 'دافع وسبب واحد للتغيير' (Single Reason to Change / Single Actor). 2. سيناريو صنف Employee وتأثر دالة regularHours() هو المثال الرسمي في الامتحان: تعديل حساب الساعات الإضافية للمالية يفسد تقارير الموارد البشرية. 3. الحل المعماري هو استخراج أصناف متخصصة: PayrollCalculator, HoursReporter, EmployeeRepository.",
-      codeBad: `// كود منتهك لـ SRP: كائن الإله يخدم فاعلين متناقضين في صنف واحد!
+      codeBad: `// كود منتهك لـ SRP: كائن متضخم أحادي الكتلة يخدم فاعلين متناقضين في صنف واحد!
 public class Employee {
     public string Name { get; set; }
     public decimal RegularHours { get; set; }
@@ -475,14 +475,14 @@ public class OrderService {
   }
 
   /* ───────────────────────────────────────────────────────────
-     2. الدالة التوليدية للتاب 2: محاكي تفكيك كائن الإله (SRP Simulator)
+     2. الدالة التوليدية للتاب 2: محاكي تفكيك الكائن المتضخم أحادي الكتلة (SRP Simulator)
      ─────────────────────────────────────────────────────────── */
   function buildSrpSimulationSvg(isRefactored) {
     const svgW = 860;
     const svgH = 390;
 
     if (!isRefactored) {
-      // ─── Before: God Object (OrderManager) ───
+      // ─── Before: Monolithic Object (OrderManager) ───
       return `
         <svg viewBox="0 0 ${svgW} ${svgH}" dir="ltr" direction="ltr" class="int-svg" fill="none"
              stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
@@ -527,7 +527,7 @@ public class OrderService {
             <line x1="0" y1="30" x2="-45" y2="225" stroke="var(--acc)" stroke-width="1.8" marker-end="url(#solid-arrow-acc)"/>
           </g>
 
-          <!-- Central Monolith: OrderManager (God Object) -->
+          <!-- Central Monolith: OrderManager (Monolithic Object) -->
           <g transform="translate(230, 30)">
             <rect x="0" y="0" width="400" height="270" rx="12"
                   fill="color-mix(in srgb, var(--err) 8%, var(--sf2))"
@@ -535,7 +535,7 @@ public class OrderService {
 
             <rect x="0" y="0" width="400" height="38" rx="12" fill="color-mix(in srgb, var(--err) 20%, var(--sf2))"/>
             <text x="200" y="24" text-anchor="middle" fill="var(--err)" font-size="12" font-weight="800" class="mono">
-              OrderManager (God Object - كائن الإله المتضخم)
+              OrderManager (Monolithic Object - الكائن المتضخم أحادي الكتلة)
             </text>
 
             <!-- 4 Tangled internal boxes -->
@@ -953,7 +953,7 @@ public class OrderService {
     ref: "L1-S005",
     title_ar: "استوديو مبادئ SOLID المعمارية وتفكيك الارتباط الوثيق",
     title_en: "SOLID Architecture Studio & Decoupling Simulator",
-    desc_ar: "استوديو معماري تفاعلي يشرح مبادئ SOLID الخمسة مع محاكاة بصرية لتفكيك كائن الإله (God Object) إلى فئات مستقلة (SRP)، وتوسيع السلوك بلا تعديل (OCP)، وحل الارتباط الوثيق عبر حقن التبعيات (DIP).",
+    desc_ar: "استوديو معماري تفاعلي يشرح مبادئ SOLID الخمسة مع محاكاة بصرية لتفكيك الكائن المتضخم (Monolithic Object) إلى فئات مستقلة (SRP)، وتوسيع السلوك بلا تعديل (OCP)، وحل الارتباط الوثيق عبر حقن التبعيات (DIP).",
     badge: "مبادئ العمارة · SOLID Studio",
     tip: "وقفة امتحانية مؤكدة: تركز د. بيداء في أسئلة SOLID على: 1. SRP تعني سبب واحد للتغيير (Single Reason to Change). 2. OCP تعني مفتوح للتوسيع مغلق للتعديل. 3. DIP تعني أن الطبقات العليا والدنيا تعتمد على التجريد (Interfaces) وليس على الفئات الملموسة.",
 
@@ -979,7 +979,7 @@ public class OrderService {
       const tabsBar = el("div", { class: "int-tabs-bar" });
       const solidTabs = [
         { id: "matrix", label: "1. مصفوفة مبادئ SOLID الخمسة" },
-        { id: "srp", label: "2. محاكي SRP (تفكيك كائن الإله)" },
+        { id: "srp", label: "2. محاكي SRP (تفكيك الكائن المتضخم)" },
         { id: "ocp", label: "3. محاكي OCP (التوسيع بلا تعديل)" },
         { id: "dip", label: "4. محاكي DIP (حقن التبعيات)" },
       ];
@@ -1100,7 +1100,7 @@ public class OrderService {
         }
 
         // ═════════════════════════════════════════════════════════
-        // TAB 2: محاكي SRP (تفكيك كائن الإله)
+        // TAB 2: محاكي SRP (تفكيك الكائن المتضخم)
         // ═════════════════════════════════════════════════════════
         else if (activeSolidTab === "srp") {
           const pane = el("div", { class: "int-pane" });
@@ -1110,7 +1110,7 @@ public class OrderService {
               "div",
               { class: "int-tip" },
               el("span", { class: "wt" }, "مبدأ المسؤولية الواحدة (SRP - Single Responsibility Principle):"),
-              "الصنف يجب أن يمتلك سبباً واحداً فقط للتغيير (Single Reason to Change) ويكون مسؤولاً تجاه فاعل ومستفيد واحد (Single Actor). كائن الإله (God Object) يجمع حساب الضرائب، تنسيق الفواتير، تخزين قواعد البيانات، وإرسال البريد في ملف واحد؛ مما يؤدي إلى تضارب الدمج (Merge Conflicts) وتعديلات غير مقصودة تكسر أقساماً أخرى.",
+              "الصنف يجب أن يمتلك سبباً واحداً فقط للتغيير (Single Reason to Change) ويكون مسؤولاً تجاه فاعل ومستفيد واحد (Single Actor). الكائن المتضخم أحادي الكتلة (Monolithic Object) يجمع حساب الضرائب، تنسيق الفواتير، تخزين قواعد البيانات، وإرسال البريد في ملف واحد؛ مما يؤدي إلى تضارب الدمج (Merge Conflicts) وتعديلات غير مقصودة تكسر أقساماً أخرى.",
             ),
           );
 
@@ -1121,7 +1121,7 @@ public class OrderService {
               "div",
               { class: "int-sim-label" },
               svgNode(ICONS.interactive),
-              "بدّل بين حالة كائن الإله وحالة المعمارية المفككة لملاحظة الفارق:",
+              "بدّل بين حالة الكائن المتضخم وحالة المعمارية المفككة لملاحظة الفارق:",
             ),
           );
 
@@ -1137,7 +1137,7 @@ public class OrderService {
                 },
               },
               iconSvg(!srpRefactored ? "alert" : "cross"),
-              "قبل: كائن الإله المتشابك (God Object · OrderManager)",
+              "قبل: الكائن المتضخم المتشابك (Monolithic Object · OrderManager)",
             ),
           );
           pills.appendChild(
@@ -1198,7 +1198,7 @@ public class OrderService {
               { class: "int-code-block" },
               srpRefactored
                 ? `// كود C# بعد التفكيك وتطبيق SRP (Clean Cohesive Architecture):\n${srpData.codeGood}`
-                : `// كود C# المنتهك لـ SRP قبل التفكيك (God Object):\n${srpData.codeBad}`,
+                : `// كود C# المنتهك لـ SRP قبل التفكيك (Monolithic Object):\n${srpData.codeBad}`,
             ),
           );
 

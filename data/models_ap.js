@@ -680,7 +680,7 @@ window.TOC_MODELS.push({
         {
           "ar": "يجب أن تتولى الفئة مسؤولية النظام بالكامل من قاعدة البيانات إلى واجهة المستخدم.",
           "ok": false,
-          "why": "هذا تعريف الكائن العملاق (God Object) وهو انتهاك صارخ لمبدأ SRP.",
+          "why": "هذا تعريف الكائن المتضخم أحادي الكتلة (Monolithic Class / The Blob) وهو انتهاك صارخ لمبدأ SRP.",
           "en": "A class should be responsible for the entire system, from database to UI."
         },
         {
