@@ -1376,20 +1376,20 @@ window.TOC_MODELS.push({
       "n": 41,
       "type": "mcq",
       "ref": "L2-S006",
-      "q_ar": "ما هو مفهوم 'اللزوجة' (Viscosity) كأحد أعراض التصميم البرمجي السيئ؟",
-      "q_en": "What is 'Viscosity' as a symptom of poor software design?",
+      "q_ar": "ما هي الحقيقة الثابتة والمحورية في تطور الأنظمة البرمجية (Software Evolution) وفقاً لما يُطرح معمارياً؟",
+      "q_en": "What is the inevitable reality in software evolution according to architectural principles?",
       "opts": [
         {
           "ar": "زيادة حجم الملفات التنفيذية بسبب ضغط البيانات التالفة.",
           "ok": false,
-          "why": "هذا حجم تخزين ولا يعبر عن مفهوم اللزوجة المعماري.",
+          "why": "هذا حجم تخزين ولا يعبر عن مفهوم تطور البرمجيات.",
           "en": "Increased executable file size due to corrupted data compression."
         },
         {
-          "ar": "الحالة التي يكون فيها تطبيق الحلول البرمجية النظيفة المتوافقة مع التصميم أصعب بكثير من اللجوء إلى الحيل البرمجية الرديئة (Hacks).",
+          "ar": "أن التغيير حتمي ومستمر (Change is Inevitable)، والتصميم البرمجي الناجح هو الذي يتوقع التغيير ويحتويه بمرونة عبر التجريد وفصل المسؤوليات.",
           "ok": true,
-          "why": "اللزوجة تجعل المطور يفضل كتابة كود عشوائي سريع وسيء لأن الحفاظ على التصميم الأصلي أصبح معقداً وبطيئاً للغاية.",
-          "en": "The condition where doing things in accordance with the design is much harder than taking shortcuts or writing dirty hacks."
+          "why": "تتغير متطلبات العملاء وبيئات التشغيل وقوانين الأعمال باستمرار؛ لذا فالتصميم القوي يتكيف مع التغيير دون انهيار النظام.",
+          "en": "Change is inevitable; successful software design anticipates and accommodates change flexibly through abstraction and separation of concerns."
         },
         {
           "ar": "توقف الشاشة عن التحديث أثناء تحميل البيانات من الخادم.",
@@ -1404,7 +1404,7 @@ window.TOC_MODELS.push({
           "en": "Incompatibility of the system with the Python programming language."
         }
       ],
-      "tip": "وقفة امتحانية: أعراض التصميم السيئ الأربعة: Rigidity (صلابة)، Fragility (هشاشة)، Immobility (جمود تنقل)، Viscosity (لزوجة)."
+      "tip": "وقفة امتحانية: تذكر أن التغيير في البرمجيات حتمي (Change is Inevitable) بسبب تغير متطلبات العمل والتقنيات، والتصميم المعماري هو ما يحدد سهولة التكيف معه."
     },
     {
       "n": 42,
@@ -5790,7 +5790,7 @@ window.TOC_MODELS.push({
           "en": "Dropping and reinitializing databases on every request."
         }
       ],
-      "tip": "وقفة امتحانية: محتويات طبقة التطبيق: Use Cases, Application Services, DTOs, Repository Interfaces, CQRS Handlers."
+      "tip": "وقفة امتحانية: محتويات طبقة التطبيق: Use Cases, Application Services, DTOs, Repository Interfaces."
     },
     {
       "n": 171,
@@ -6306,8 +6306,8 @@ window.TOC_MODELS.push({
       "n": 186,
       "type": "mcq",
       "ref": "L5-S101",
-      "q_ar": "ما هي كارثة 'التبعية الأسيرة' (Captive Dependency) في حاوية حقن التبعيات؟",
-      "q_en": "What is the 'Captive Dependency' trap in dependency injection containers?",
+      "q_ar": "ما هي المشكلة المعمارية عند حقن خدمة مسجلة بنطاق طلب (Scoped مثل DbContext) داخل خدمة مسجلة ككائن وحيد دائم (Singleton)؟",
+      "q_en": "What is the architectural problem when injecting a Scoped service (like DbContext) into a Singleton service?",
       "opts": [
         {
           "ar": "توقف خادم قاعدة البيانات بسبب نفاد سعة التخزين.",
@@ -6316,10 +6316,10 @@ window.TOC_MODELS.push({
           "en": "Database server shutdown due to running out of disk storage."
         },
         {
-          "ar": "حقن خدمة ذات دورة حياة قصيرة (مثل Scoped DbContext) داخل خدمة ذات دورة حياة أطول (مثل Singleton)، مما يجعل الكائن القصير أسيراً ومحتجزاً للأبد في الذاكرة.",
+          "ar": "يتم احتجاز الخدمة Scoped طوال دورة حياة التطبيق ككائن دائم، مما يلغي خصوصيتها بالطلب الواحد (Per Request) ويسبب تسريب موارد وتضارب خيوط بالتزامن لأن DbContext ليس Thread-safe.",
           "ok": true,
-          "why": "الكائن Scoped سيتحول قسراً إلى كائن دائم، مما يسبب تسريب ذاكرة وأخطاء تضارب خيوط كارثية (Concurrency Exceptions) لأن DbContext ليس Thread-safe.",
-          "en": "Injecting a short-lived service (such as Scoped DbContext) into a longer-lived service (such as Singleton), keeping the short-lived object captive in memory forever."
+          "why": "الكائن Scoped يتحول عملياً إلى كائن دائم بحكم تبعيته للـ Singleton، مما يكسر عزل العمليات لكل HTTP Request.",
+          "en": "The Scoped service is retained in memory for the entire application lifetime as a singleton, breaking per-request isolation and causing memory leaks and concurrency threading conflicts."
         },
         {
           "ar": "نسيان كتابة الكلمة المفتاحية async قبل الدالة.",
@@ -6334,7 +6334,7 @@ window.TOC_MODELS.push({
           "en": "Encrypting passwords using obsolete algorithms."
         }
       ],
-      "tip": "وقفة امتحانية: فخ الفاينل الأكبر: Captive Dependency = حقن Scoped داخل Singleton! النتيجة: تسريب ذاكرة وانهيار DbContext بالتزامن."
+      "tip": "وقفة امتحانية: انتبه لقواعد دورات الحياة (Lifetimes): لا تحقن خدمة قصيرة العمر (Scoped) داخل خدمة طويلة العمر (Singleton) لتجنب احتجازها الدائم في الذاكرة وتضارب التزامن."
     },
     {
       "n": 187,
@@ -8986,7 +8986,7 @@ window.TOC_MODELS.push({
           "en": "High-speed download of a zip archive."
         }
       ],
-      "tip": "وقفة امتحانية: شروط كوفمان للـ Deadlock: أهمها الانتظار الدائري (Circular Wait)؛ ولتفاديه: اتبع دائماً ترتيباً موحداً وصارماً للحصول على الأقفال (Lock Ordering)."
+      "tip": "وقفة امتحانية: قواعد تجنب الـ Deadlock: أهمها تفادي الانتظار الدائري عبر اتباع ترتيب موحد وصارم دائماً للحصول على الأقفال (Consistent Lock Ordering)."
     },
     {
       "n": 265,
@@ -9230,35 +9230,35 @@ window.TOC_MODELS.push({
       "n": 272,
       "type": "mcq",
       "ref": "L7-S038",
-      "q_ar": "ما هو حوض الكائنات الكبيرة (Large Object Heap - LOH)، وما هو الحد الحجمي الأدنى لانتقال الكائن إليه مباشرة؟",
-      "q_en": "What is the Large Object Heap (LOH), and what is the minimum byte threshold for an object to be allocated directly onto it?",
+      "q_ar": "كيف تُنظّم أجيال مجمع النفايات (.NET Generational Garbage Collection)، وما هو المبدأ العام الذي ترتكز عليه في إدارتها؟",
+      "q_en": "How are .NET Garbage Collection generations structured, and what is the general premise governing them?",
       "opts": [
         {
-          "ar": "كائن بحجم 10 بايت فقط.",
+          "ar": "كافة الكائنات تذهب فوراً للجيل الثاني وتبقى هناك دائماً.",
           "ok": false,
-          "why": "هذا حجم كائن ضئيل جداً يوضع في Gen 0.",
-          "en": "An object of only 10 bytes."
+          "why": "الكائنات الجديدة تبدأ في الجيل الصفري Gen 0 وليس Gen 2.",
+          "en": "All objects are immediately allocated to Generation 2 and remain there permanently."
         },
         {
-          "ar": "الكائنات التي يبلغ حجمها 85,000 بايت (حوالي 85 كيلوبايت) فأكثر، وتوضع مباشرة في الـ LOH وتُعامل كجزء من الجيل الثاني (Gen 2) ولا يتم ضغطها افتراضياً لتفادي تكلفة النسخ الباهظة.",
+          "ar": "ترتكز على مبدأ 'معظم الكائنات تموت صغيرة' (Most objects die young)؛ حيث تبدأ الكائنات في Gen 0 (قصيرة العمر)، والناجون يرتقون إلى Gen 1 ثم Gen 2 (الكائنات المعمرة).",
           "ok": true,
-          "why": "الكائنات الكبيرة (مثل المصفوفات الضخمة والصور) إذا وضعت في Gen 0 فسترهق الذاكرة بنسخها المستمر، لذا تذهب فوراً للـ LOH التابع لـ Gen 2.",
-          "en": "Objects sized 85,000 bytes (~85KB) or greater, allocated directly into LOH, treated as Gen 2, and not compacted by default to avoid huge memory copy overhead."
+          "why": "أغلب الكائنات مؤقتة وتنظف بسرعة وتكلفة رخيصة في Gen 0، بينما الناجون فقط يُرحلون للأجيال الأعلى لتقليل تكلفة الفحص المتكرر.",
+          "en": "It is based on the principle 'Most objects die young'; new allocations start in Gen 0 (short-lived), and survivors are promoted to Gen 1 and then Gen 2 (long-lived)."
         },
         {
-          "ar": "كائن بحجم 100 جيجابايت فقط.",
+          "ar": "فحص كافة كائنات الذاكرة بمعدل متساوٍ وموحد دون تفريق بين حديث ومعمر.",
           "ok": false,
-          "why": "حجم يفوق الذاكرة العادية.",
-          "en": "An object of 100 Gigabytes only."
+          "why": "هذا هو أسلوب مجمعات النفايات البدائية غير المعتمدة على الأجيال.",
+          "en": "Scanning all memory objects at an equal rate without distinguishing between young and old."
         },
         {
-          "ar": "الـ LOH مخصص فقط لنصوص كلمات المرور السرية.",
+          "ar": "تخصيص الذاكرة فقط للنصوص والبيانات الرقمية واستبعاد المصفوفات والكائنات.",
           "ok": false,
-          "why": "الـ LOH يعتمد على الحجم بالبايت فقط بغض النظر عن محتوى الكائن.",
-          "en": "LOH is strictly reserved for secret password strings."
+          "why": "مجمع النفايات يدير كافة أنواع الكائنات المرجعية في الكومة (Heap).",
+          "en": "Allocating memory only for strings and numbers while excluding arrays and objects."
         }
       ],
-      "tip": "وقفة امتحانية: رقم امتحاني محفوظ: عتبة الـ Large Object Heap هي: 85,000 بايت؛ والكائنات فيه تعامل كـ Gen 2 مباشرة لتجنب كلفة ترحيلها."
+      "tip": "وقفة امتحانية: تذكر المبدأ المعماري المكتوب في شريحة د. بيداء (L7-S038): Most objects die young — لذلك يبدأ الفحص السريع الرخيص في Gen 0، والناجون يرتقون لـ Gen 1 ثم Gen 2."
     },
     {
       "n": 273,
@@ -9530,7 +9530,7 @@ window.TOC_MODELS.push({
           "en": "Removing .NET and installing Android."
         }
       ],
-      "tip": "وقفة امتحانية: قاعدة كوفمان للوقاية من Deadlock: 'Always acquire locks in the exact same order!' (إذا كان Lock A ثم Lock B، فليكن ذلك في كافة الدوال بلا شذوذ)."
+      "tip": "وقفة امتحانية: قاعدة الوقاية الأساسية من Deadlock: 'Always acquire locks in the exact same order!' (إذا كان Lock A ثم Lock B، فليكن ذلك في كافة الدوال بلا شذوذ)."
     },
     {
       "n": 281,
@@ -10896,20 +10896,20 @@ window.TOC_MODELS.push({
       "n": 321,
       "type": "mcq",
       "ref": "L8-S045",
-      "q_ar": "كيف يتم التعامل مع المعاملات الموزعة التي تتطلب التناسق عبر عدة خدمات مصغرة دون استخدام قفل قاعدة البيانات ثنائي الطور (2PC) المعيق؟",
-      "q_en": "How are distributed transactions coordinated across multiple microservices without using blocking Two-Phase Commit (2PC)?",
+      "q_ar": "كيف يتدفق الطلب في المعمارية الموزعة الكاملة (Complete Distributed Architecture) عند وصول رسالة جديدة من العميل عبر الـ Webhook؟",
+      "q_en": "How does a request flow in the complete distributed architecture when a new customer message arrives via Webhook?",
       "opts": [
         {
           "ar": "بحذف قاعدة البيانات عند حدوث أي خطأ والبدء من الصفر.",
           "ok": false,
-          "why": "تدمير للبيانات.",
+          "why": "تدمير للبيانات ولا يمثل أي تصميم معماري.",
           "en": "By dropping the database on any error."
         },
         {
-          "ar": "عبر نمط الساجا (Saga Pattern)، وهو سلسلة من المعاملات المحلية المستقلة في كل خدمة، تُنسق عبر الأحداث مع تنفيذ معاملات تعويضية (Compensating Transactions) للتراجع عن الخطوات السابقة في حال فشل أي خطوة لاحقة.",
+          "ar": "تستقبل خدمة Webhook الرسالة وترد فوراً بـ 200 OK، ثم تضع المهمة في وسيط الرسائل (Message Broker) ليتم استهلاكها ومعالجتها غير المتزامنة من الخدمات المختصة وقواعد بياناتها المستقلة.",
           "ok": true,
-          "why": "نمط Saga يستبدل أقفال ACID الموزعة البطيئة بنظام المعاملات التعويضية (مثل: إذا فشل الدفع، تنطلق معاملة تعويضية لإلغاء حجز المقعد).",
-          "en": "Via the Saga Pattern: a sequence of local transactions coordinated via events, using Compensating Transactions to roll back previous steps if a subsequent step fails."
+          "why": "هذا التدفق المعماري الموضح في الشريحة 45 يضمن الاستجابة السريعة وفك الارتباط وعدم فقدان الرسائل مع قابلية التوسع العالية.",
+          "en": "The Webhook service acknowledges immediately with 200 OK, pushes the task to a Message Broker for asynchronous processing by dedicated services and their private databases."
         },
         {
           "ar": "بإجبار المطورين على تصحيح المعاملات يدوياً بالهاتف كل دقيقة.",
@@ -10918,13 +10918,13 @@ window.TOC_MODELS.push({
           "en": "By forcing developers to manually fix records by phone."
         },
         {
-          "ar": "المعاملات الموزعة مستحيلة تماماً ولا يمكن تنفيذها في المعماريات الحديثة.",
+          "ar": "معالجة الرسالة بالكامل بشكل متزامن داخل خدمة الـ Webhook مما يجمد طلبات Meta ويسبب فشل الاتصال.",
           "ok": false,
-          "why": "نمط Saga ينفذ المعاملات الموزعة في كبرى الشركات العالمية مثل Netflix و Uber.",
-          "en": "Distributed transactions are strictly impossible in modern systems."
+          "why": "المعالجة المتزامنة الطويلة للـ Webhook تتجاوز مهلة Meta وتؤدي لحظر نقطة النهاية.",
+          "en": "Processing the message entirely synchronously inside the Webhook service, causing timeouts and blocked connections."
         }
       ],
-      "tip": "وقفة امتحانية: في الميكروسيرفس: بديل المعاملات الموزعة التقليدية هو نمط الساجا (`Saga Pattern`) بالاعتماد على المعاملات التعويضية (Compensating Transactions)."
+      "tip": "وقفة امتحانية: تذكر البنية المتكاملة في الشريحة 45: استلام فوري عبر Webhook -> فك ارتباط وتوزيع عبر Message Broker -> معالجة غير متزامنة -> قاعدة بيانات مستقلة لكل خدمة (Database per Service)."
     },
     {
       "n": 322,

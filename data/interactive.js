@@ -1000,7 +1000,7 @@ public class OrderService {
               "div",
               { class: "int-tip" },
               el("span", { class: "wt" }, "دستور العمارة النظيفة (Robert C. Martin / Uncle Bob):"),
-              "صاغ روبرت مارتن مبادئ SOLID الخمسة لتكون الركائز الهندسية التي تمنع تعفن البرمجيات (Software Rot) وتنقذ المشاريع من الروائح التصميمية الأربعة: الصلابة (Rigidity)، الهشاشة (Fragility)، عدم القدرة على التنقل (Immobility)، واللزوجة (Viscosity). انقر على أي مبدأ في المصفوفة بالأسفل لمعاينته بالتفصيل:",
+              "صاغ روبرت مارتن مبادئ SOLID الخمسة لتكون الركائز الهندسية التي تمنع تعفن البرمجيات (Software Rot) وتنقذ المشاريع من مشاكل التصميم والارتباط الوثيق وصعوبة الصيانة. انقر على أي مبدأ في المصفوفة بالأسفل لمعاينته بالتفصيل:",
             ),
           );
 
@@ -5114,7 +5114,7 @@ builder.Services.AddScoped<IOrderRepository, SqlOrderRepository>();
   }
 
   /* ───────────────────────────────────────────────────────────
-     2. دالة بناء SVG محاكي القفل الميت وشروط كوفمان (Deadlock Simulator)
+     2. دالة بناء SVG محاكي القفل الميت وقواعد تجنبه (Deadlock Simulator)
      ─────────────────────────────────────────────────────────── */
   function buildDeadlockSimulatorSvg(params) {
     const { mode = "deadlock" } = params || {};
@@ -5616,10 +5616,10 @@ builder.Services.AddScoped<IOrderRepository, SqlOrderRepository>();
     title_ar: "استوديو التزامن ومحاكي القفل الميت وأجيال الذاكرة (CLR GC)",
     title_en: "Concurrency Timeline, Deadlock Simulator & Memory Generations",
     desc_ar:
-      "محاكي بصري تفاعلي للمخطط الزمني للبرمجة المتزامنة وغير المتزامنة (async/await)، وتجربة القفل الميت (Deadlock) فيزيائياً مع شروط كوفمان، ومحاكاة دورة حياة الكائنات وترقيتها عبر أجيال مجمع النفايات الثلاثة (Gen 0, Gen 1, Gen 2).",
+      "محاكي بصري تفاعلي للمخطط الزمني للبرمجة المتزامنة وغير المتزامنة (async/await)، وتجربة القفل الميت (Deadlock) فيزيائياً وقواعد تجنبه، ومحاكاة دورة حياة الكائنات وترقيتها عبر أجيال مجمع النفايات الثلاثة (Gen 0, Gen 1, Gen 2).",
     badge: "التزامن والذاكرة · Async & GC Studio",
     tip:
-      "وقفة امتحانية مؤكدة: تركز د. بيداء على: 1. async/await لا تنشئ بالضرورة Thread جديداً بل تحرر Thread الحالي لخدمة طلبات أخرى. 2. القفل الميت يتطلب شروط كوفمان الأربعة وأهم حل هو ترتيب حجز الموارد (Resource Ordering). 3. كائنات Gen 0 تنظف فوراً، والناجون يرتقون إلى Gen 1 ثم Gen 2 (الكائنات طويلة البقاء).",
+      "وقفة امتحانية مؤكدة: تركز د. بيداء على: 1. async/await لا تنشئ بالضرورة Thread جديداً بل تحرر Thread الحالي لخدمة طلبات أخرى. 2. قواعد تجنب القفل الميت الخمس وأهمها ترتيب حجز الأقفال الموحد (Consistent Lock Ordering) وتجنب الأقفال المتداخلة (Nested Locks). 3. كائنات Gen 0 تنظف فوراً، والناجون يرتقون إلى Gen 1 ثم Gen 2 (الكائنات طويلة البقاء).",
 
     render: function (card, utils) {
       const { el, clear, svgNode, iconSvg, slideRefAttrs, ICONS } = utils;
@@ -5867,7 +5867,7 @@ public async Task<string> DownloadDataAsync() {
         }
 
         // ═══════════════════════════════════════════════════════════
-        // TAB 2: DEADLOCK SIMULATOR & COFFMAN CONDITIONS
+        // TAB 2: DEADLOCK SIMULATOR & PREVENTION RULES
         // ═══════════════════════════════════════════════════════════
         else if (activeStudioTab === "deadlock") {
           const pane = el("div", { class: "int-pane" });
@@ -5877,7 +5877,7 @@ public async Task<string> DownloadDataAsync() {
               "div",
               { class: "int-tip" },
               el("span", { class: "wt" }, "السر المعماري للقفل الميت (Deadlock Architecture):"),
-              "القفل الميت (Deadlock) لا يحدث صدفة، بل يتطلب فيزيائياً اجتماع شروط كوفمان الأربعة (Coffman Conditions) معاً: الاستبعاد المتبادل، الاحتجاز والانتظار، عدم انتزاع المورد، والانتظار الدائري. إذا كسرت شرطاً واحداً فقط، يستحيل أن يحدث القفل الميت! والحل المعتمد لدى د. بيداء لعلع هو فرض ترتيب حجز عالمي موحد للأقفال (Strict Lock Ordering): كافة المسالك تطلب Lock A أولاً ثم Lock B دائماً.",
+              "القفل الميت (Deadlock) يحدث عندما يحتجز مسلك مورداً وينتظر مورداً آخر محتجزاً من مسلك ثانٍ في حلقة دائرية مفرغة. والحل المعتمد لدى د. بيداء لعلع (L7-S028 إلى L7-S032) هو تطبيق قواعد التجنب الخمس: 1. إبقاء الأقفال صغيرة (Small Locks) 2. تجنب الأقفال المتداخلة (Avoid Nested Locks) 3. ترتيب حجز الأقفال الموحد (Consistent Lock Ordering) 4. تجنب حظر العمليات غير المتزامنة 5. استخدام تجريدات التزامن الحديثة.",
             ),
           );
 
@@ -5922,7 +5922,7 @@ public async Task<string> DownloadDataAsync() {
           svgBox.innerHTML = buildDeadlockSimulatorSvg({ mode: deadlockMode });
           pane.appendChild(svgBox);
 
-          // Coffman Checklist
+          // Prevention Rules Checklist
           const isDeadlock = deadlockMode === "deadlock";
 
           pane.appendChild(
@@ -5933,7 +5933,7 @@ public async Task<string> DownloadDataAsync() {
                 "div",
                 { class: "int-sim-label", style: "color: var(--ink);" },
                 iconSvg("terminal"),
-                "لوحة فحص شروط كوفمان الأربعة (Coffman Conditions Checklist):",
+                "لوحة فحص قواعد تجنب القفل الميت الخمس (Deadlock Prevention Rules):",
               ),
               el(
                 "div",
@@ -6309,7 +6309,7 @@ public class DatabaseManager : IDisposable {
       // Studio Navigation Tabs
       const studioTabs = [
         { id: "timeline", label: "1. المخطط الزمني: متزامن مقابل غير متزامن (Timeline)" },
-        { id: "deadlock", label: "2. محاكي القفل الميت وشروط كوفمان (Deadlock Simulator)" },
+        { id: "deadlock", label: "2. محاكي القفل الميت وقواعد تجنبه الخمس (Deadlock Simulator)" },
         { id: "gc", label: "3. محاكي أجيال مجمع النفايات (GC Generations: Gen 0, 1, 2)" },
       ];
 

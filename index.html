@@ -725,7 +725,7 @@
       .slide-card,
       .tcard,
       .q-card {
-        scroll-margin-top: 68px;
+        scroll-margin-top: calc(56px + env(safe-area-inset-top, 0px) + 12px);
       }
 
       /* ===== Settings dropdown ===== */
@@ -3954,7 +3954,7 @@
         .slide-card,
         .tcard,
         .q-card {
-          scroll-margin-top: 92px;
+          scroll-margin-top: calc(96px + env(safe-area-inset-top, 0px) + 12px);
         }
         .headline h1 {
           font-size: 1.18rem;
@@ -4473,7 +4473,7 @@
       window.TOC_IMG_PROMPTS = [];
       document.write(
         window.TOC_CONFIG.files.index
-          .map((f) => '<script src="data/' + f + '.js?v=26"><\/script>')
+          .map((f) => '<script src="data/' + f + '.js?v=27"><\/script>')
           .join(""),
       );
     </script>
@@ -4940,40 +4940,24 @@
         if (!card) return false;
 
         card.classList.remove("hidden");
+        if (card.classList.contains("reveal") && !card.classList.contains("in")) {
+          card.classList.add("in");
+        }
 
-        const alignCard = (behavior) => {
-          const topbarH = getTopbarHeight();
-          const rect = card.getBoundingClientRect();
-          const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-          const targetY = Math.max(0, Math.round(currentScrollY + rect.top - topbarH - 12));
-          window.scrollTo({
-            top: targetY,
-            behavior: behavior || (opts.instant ? "auto" : "smooth"),
-          });
-        };
-
-        alignCard(opts.instant ? "auto" : "smooth");
+        const behavior = opts.instant ? "auto" : "smooth";
+        card.scrollIntoView({ behavior, block: "start" });
 
         card.classList.add("flash");
         setTimeout(() => card.classList.remove("flash"), 2600);
 
+        // Verification pass: after smooth scroll settles (450ms), ensure exact topbar alignment
         setTimeout(() => {
+          const rect = card.getBoundingClientRect();
           const topbarH = getTopbarHeight();
-          const topDiff = Math.abs(card.getBoundingClientRect().top - (topbarH + 12));
-          if (topDiff > 6) alignCard("auto");
-        }, 80);
-
-        setTimeout(() => {
-          const topbarH = getTopbarHeight();
-          const topDiff = Math.abs(card.getBoundingClientRect().top - (topbarH + 12));
-          if (topDiff > 8) alignCard("smooth");
-        }, 360);
-
-        setTimeout(() => {
-          const topbarH = getTopbarHeight();
-          const topDiff = Math.abs(card.getBoundingClientRect().top - (topbarH + 12));
-          if (topDiff > 10) alignCard("auto");
-        }, 700);
+          if (rect.top < topbarH - 4 || rect.top > topbarH + 48) {
+            card.scrollIntoView({ behavior: "auto", block: "start" });
+          }
+        }, 450);
 
         return true;
       }
@@ -8457,6 +8441,6 @@
         }, { passive: true });
       })();
     </script>
-    <script src="app.js?v=26"></script>
+    <script src="app.js?v=28"></script>
   </body>
 </html>

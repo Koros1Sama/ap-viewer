@@ -7,363 +7,679 @@ window.TOC_AR["L1"] = window.TOC_AR["L1"] || {};
 
 window.TOC_AR["L1"]["L1-S001"] = { ar: [
   "البرمجة المتقدمة (Advanced Programming)",
-  "المحاضرة الأولى (Lecture 1)",
-  "المدرس: د. بيداء لعلع"
+  "المحاضرة الأولى (Lecture 1)"
 ] };
 window.TOC_AR["L1-S001"] = window.TOC_AR["L1"]["L1-S001"];
 
 window.TOC_AR["L1"]["L1-S002"] = { ar: [
   "لماذا ندرس هذا المقرر؟ (Why Are We Studying This Course?)",
-  "- يبدأ العديد من الطلاب بتطوير تطبيقات صغيرة وبسيطة مثل:",
-  "  * آلة حاسبة (Calculator)",
-  "  * نظام درجات الطلاب (Student Grades System)",
-  "  * نظام إدارة المكتبة (Library Management System)",
-  "- هذه المشاريع مفيدة لفهم أساسيات البرمجة، لكنها لا تعكس تعقيد أنظمة البرمجيات الحقيقية في العالم الواقعي.",
-  "- أنظمة البرمجيات الحديثة مثل فيسبوك وأمازون والأنظمة المصرفية تخدم ملايين المستخدمين وتعالج كميات هائلة من البيانات.",
-  "- بناء مثل هذه الأنظمة يتطلب مفاهيم متقدمة في البرمجة وتصميماً برمجياً فعالاً وفهماً متيناً لمبادئ هندسة البرمجيات."
+  "- يبدأ العديد من الطلاب بتعلم البرمجة من خلال تطوير تطبيقات صغيرة وبسيطة مثل:",
+  "  * آلة حاسبة (calculator)",
+  "  * نظام درجات الطلاب (student grades system)",
+  "  * نظام إدارة مكتبة (library management system)",
+  "- في حين أن هذه المشاريع مفيدة لفهم أساسيات البرمجة، إلا أنها لا تعكس تعقيد أنظمة البرمجيات في العالم الحقيقي.",
+  "- تطبيقات البرمجيات الحديثة مثل فيسبوك (Facebook)، وأمازون (Amazon)، والأنظمة المصرفية (banking systems)، وأنظمة معلومات الجامعات (university information systems) هي أنظمة واسعة النطاق (large-scale systems) تخدم ملايين المستخدمين وتعالج كميات هائلة من البيانات.",
+  "- يتطلب تطوير مثل هذه الأنظمة مفاهيم برمجة متقدمة، وتقنيات تصميم برمجي فعالة، وفهماً قوياً لمبادئ هندسة البرمجيات."
 ] };
 window.TOC_AR["L1-S002"] = window.TOC_AR["L1"]["L1-S002"];
 
 window.TOC_AR["L1"]["L1-S003"] = { ar: [
-  "تحديات الأنظمة البرمجية الضخمة (Why Study This Course?)",
-  "- التعقيد البرمجي وتداخل المسؤوليات (Software Complexity).",
-  "- حجم البيانات الكبير وتعدد المستخدمين المتزامنين (High Concurrency & Big Data).",
-  "- متطلبات الأمان العالي والاستقرار المستمر (High Availability & Security).",
-  "- الحاجة المستمرة لإضافة ميزات جديدة دون كسر الميزات السابقة (Extensibility & Modifiability)."
+  "لماذا ندرس هذا المقرر؟ (Why Are We Studying This Course?)",
+  "- اليوم، لا تبحث الشركات فقط عن مبرمجين يمكنهم كتابة الكود البرمجي.",
+  "- بل تسعى لتوظيف محترفين يمكنهم تصميم، وتطوير، وصيانة حلول برمجية معقدة.",
+  "- تشمل هذه الأدوار الوظيفية:",
+  "  * مهندسو البرمجيات (Software Engineers)",
+  "  * مطورو الواجهات الخلفية (Backend Developers)",
+  "  * معماريو الحلول (Solution Architects)",
+  "  * مهندسو الذكاء الاصطناعي (AI Engineers)",
+  "- للنجاح في هذه المسارات المهنية، يجب على الطلاب اكتساب مهارات برمجة متقدمة تمكنهم من بناء أنظمة برمجية:",
+  "  * قابلة للتوسع (Scalable)",
+  "  * فعالة وعالية الكفاءة (Efficient)",
+  "  * آمنة (Secure)",
+  "  * قابلة للصيانة (Maintainable)"
 ] };
 window.TOC_AR["L1-S003"] = window.TOC_AR["L1"]["L1-S003"];
 
 window.TOC_AR["L1"]["L1-S004"] = { ar: [
   "هدف المقرر (Course Goal)",
-  "- كتابة كود برمجي نظيف، مرن، وقابل للتوسع (Clean, Flexible & Scalable Code).",
-  "- فهم وتطبيق مبادئ التصميم كائني التوجه (OOP & SOLID Principles).",
-  "- استخدام أنماط التصميم القياسية لحل المشاكل المعمارية المتكررة (Design Patterns).",
-  "- إتقان تقنيات الأنظمة الحديثة مثل التزامن، إدارة الذاكرة، وحقن التبعيات (DI, GC, Concurrency)."
+  "- تم تصميم هذا المقرر من أجل:",
+  "  * تحويل الطلاب من مبرمجين إلى مهندسي برمجيات قادرين على بناء تطبيقات ذكية حديثة (modern intelligent applications).",
+  "  * فهم كيفية تصميم وتطوير الأنظمة البرمجية الاحترافية ودمجها مع التقنيات الحديثة مثل:",
+  "    - واجهات برمجة التطبيقات (APIs)",
+  "    - الحوسبة السحابية (Cloud)",
+  "    - الأتمتة (Automation)",
+  "    - الذكاء الاصطناعي (Artificial Intelligence)"
 ] };
 window.TOC_AR["L1-S004"] = window.TOC_AR["L1"]["L1-S004"];
 
 window.TOC_AR["L1"]["L1-S005"] = { ar: [
   "خارطة طريق المقرر (Course Roadmap)",
-  "- الوحدة الأولى: ركائز OOP، العلاقات بين الكائنات، ومبادئ SOLID.",
-  "- الوحدة الثانية: الكود النظيف، روائح الكود، والأنماط الإنشائية (Creational Patterns).",
-  "- الوحدة الثالثة: أنماط التصميم الهيكلية (Structural Patterns).",
-  "- الوحدة الرابعة: أنماط التصميم السلوكية (Behavioral Patterns).",
-  "- الوحدة الخامسة: العمارة النظيفة، التزامن، وإدارة الذاكرة والأنظمة الموزعة."
+  "- الوحدة الأولى: أسس البرمجة (Module 1 - Programming Foundations)",
+  "  * البرمجة كائنية التوجه ومبادئ سوليد (OOP & SOLID)",
+  "- الوحدة الثانية: الكود النظيف وإعادة الهيكلة وأنماط التصميم (Module 2 – Clean Code & Refactoring / Design Patterns)",
+  "  * الكود النظيف وإعادة الهيكلة (Clean Code & Refactoring)",
+  "  * أنماط التصميم (Design Patterns):",
+  "    - الأنماط الإنشائية (Creational): Factory Method, Singleton",
+  "    - الأنماط الهيكلية (Structural): Adapter, Facade, Proxy, Decorator",
+  "    - الأنماط السلوكية (Behavioral): Strategy, Observer",
+  "- الوحدة الثالثة: تطوير الواجهات الخلفية (Module 3 - Backend Development)",
+  "  * العمارة النظيفة وحقن التبعيات (Clean Architecture & Dependency Injection)",
+  "  * البرمجة غير المتزامنة، التزامن وتعدد الخيوط (Asynchronous Programming, Concurrency & Multithreading)",
+  "  * إدارة الذاكرة (Memory Management)",
+  "  * واجهات برمجة التطبيقات وخدمات RESTful (APIs & RESTful Services)",
+  "- الوحدة الرابعة: الأنظمة الحديثة (Module 4 - Modern Systems)",
+  "  * الخدمات المصغرة (Microservices)",
+  "  * هندسة الذكاء الاصطناعي ونظم توليد الاسترجاع المعزز (AI Engineering & RAG)",
+  "  * الأتمتة (Automation)"
 ] };
 window.TOC_AR["L1-S005"] = window.TOC_AR["L1"]["L1-S005"];
 
 window.TOC_AR["L1"]["L1-S006"] = { ar: [
-  "المتطلبات السابقة ونظام التقييم (Assessment & Prerequisites)",
-  "- المتطلبات: إتقان مفاهيم البرمجة الكائنية الأساسية وقواعد لغة C#.",
-  "- نظام التقييم وتوزيع الدرجات:",
-  "  * اختبار نصفي (Midterm Exam)",
-  "  * واجبات وتطبيقات عملية (Assignments & Practical Work)",
-  "  * اختبار نهائي نظري شامل (Final Exam)"
+  "نظام التقييم وتوزيع الدرجات (Assessment)",
+  "- الواجبات والتكاليف (Assignments): 5%",
+  "- العرض التقديمي (Presentation): 5%",
+  "- الحضور والمواظبة (Attendance): 5%",
+  "- المعمل / الجزء العملي (Lab): 20%",
+  "- الامتحان النصفي (Midterm): 15%",
+  "- الامتحان النهائي (Final): 50%"
 ] };
 window.TOC_AR["L1-S006"] = window.TOC_AR["L1"]["L1-S006"];
 
 window.TOC_AR["L1"]["L1-S007"] = { ar: [
-  "المراجع المعتمدة (Recommended Books)",
-  "- كتاب Clean Code للمؤلف روبرت مارتن (Uncle Bob).",
-  "- كتاب Design Patterns: Elements of Reusable Object-Oriented Software (عصابة الأربعة GoF).",
-  "- كتاب Clean Architecture: A Craftsman's Guide to Software Structure and Design.",
-  "- مراجع التوثيق الرسمية لمنصة Microsoft .NET."
+  "المراجع والكتب المعتمدة (Books & References)",
+  "- الكتب المرجعية (Books):",
+  "  * كتاب Pro C# 12 with .NET 8",
+  "  * كتاب Clean Code",
+  "  * كتاب Clean Architecture",
+  "  * كتاب Head First Design Patterns",
+  "  * كتاب ASP.NET Core in Action",
+  "- التوثيق والمواقع الإلكترونية (Documentation & References):",
+  "  * التوثيق الرسمي لمنصة دوت نت من مايكروسوفت (Microsoft Learn .NET Documentation)",
+  "  * التوثيق الرسمي للغة سي شارب (C# Documentation)",
+  "  * موقع أنماط التصميم وإعادة الهيكلة: refactoring.guru/design-patterns",
+  "  * موقع w3schools.com"
 ] };
 window.TOC_AR["L1-S007"] = window.TOC_AR["L1"]["L1-S007"];
 
 window.TOC_AR["L1"]["L1-S008"] = { ar: [
   "ما هي البرمجة؟ (What is Programming?)",
-  "- إعطاء تعليمات دقيقة للحاسوب لحل مشكلة معينة.",
-  "- التطور من الأسلوب الإجرائي (Procedural) حيث البيانات والدوال منفصلة، إلى الأسلوب الكائني (OOP) حيث تتحد البيانات مع العمليات داخل كائنات.",
-  "- الكود المبتدئ يركز فقط على إيجاد الناتج الصحيح (Correct Output)، بينما الكود الاحترافي يركز على بنية النظام وسهولة تعديله وصيانته."
+  "- البرمجة هي عملية إنشاء تعليمات يمكن للحاسوب تنفيذها (process of creating instructions that a computer can execute).",
+  "- دورة العمل الأساسية: المدخلات ← المعالجة ← المخرجات (Input → Processing → Output)",
+  "- مثال توضيحي (Example):",
+  "  * درجات الطالب (Student Marks)",
+  "  * ↓",
+  "  * حساب المعدل (Calculate Average)",
+  "  * ↓",
+  "  * عرض المعدل التراكمي (Display GPA)",
+  "- البرمجة تحل المشكلات من خلال كتابة الكود البرمجي (Programming solves problems through code)."
 ] };
 window.TOC_AR["L1-S008"] = window.TOC_AR["L1"]["L1-S008"];
 
 window.TOC_AR["L1"]["L1-S009"] = { ar: [
-  "ما هي البرمجة المتقدمة؟ (Advanced Programming)",
-  "- ليست مجرد معرفة وسوم أو كلمات محجوزة جديدة في اللغة.",
-  "- هي فهم التصميم المعماري للأنظمة (Software Architecture).",
-  "- تنظيم العلاقات بين الكائنات لتقليل الاعتمادية وزيادة التماسك (Low Coupling & High Cohesion).",
-  "- التحكم في موارد النظام: استهلاك الذاكرة، إدارة العمليات المتزامنة، والأمان."
+  "البرمجة المتقدمة (Advanced Programming)",
+  "- تركز البرمجة المتقدمة على تصميم وتطوير أنظمة برمجية قابلة للتوسع، وقابلة للصيانة، وعالية الجودة.",
+  "- تؤكد على معمارية البرمجيات (software architecture)، وممارسات الكود النظيف (clean code practices)، وأنماط التصميم (design patterns)، ومبادئ التطوير الحديثة.",
+  "- الأهداف الرئيسية (Key Goals):",
+  "  * جودة الكود (Code Quality): كتابة كود نظيف، ومقروء، وسهل الفهم.",
+  "  * إعادة الاستخدام (Reusability): تطوير مكونات برمجية يمكن إعادة استخدامها عبر تطبيقات مختلفة.",
+  "  * قابلية الصيانة (Maintainability): جعل تعديل البرمجيات وتحسينها بمرور الوقت أكثر سهولة.",
+  "  * القابلية للتوسع (Scalability): تصميم أنظمة قادرة على التعامل مع تزايد أعداد المستخدمين وأعباء العمل.",
+  "  * القابلية للامتداد (Extensibility): إضافة ميزات جديدة بأقل قدر ممكن من التأثير على الكود القائم."
 ] };
 window.TOC_AR["L1-S009"] = window.TOC_AR["L1"]["L1-S009"];
 
 window.TOC_AR["L1"]["L1-S010"] = { ar: [
-  "منصة دوت نت (.NET Platform Overview)",
-  "- منصة تطوير برمجيات شاملة وعابرة للمنصات طورتها Microsoft.",
-  "- المكونات الرئيسية:",
-  "  * بيئة التشغيل (Runtime Environment): محرك CLR.",
-  "  * مكتبات الأصناف الأساسية (Base Class Library - BCL).",
-  "  * أدوات التطوير ومترجمات اللغات (C#, F#, VB.NET).",
-  "- أنواع التطبيقات المدعومة: تطبيقات الويب، سطح المكتب، الأجهزة المحمولة، الخدمات السحابية، والذكاء الاصطناعي."
+  "منصة دوت نت (.NET)",
+  "- .NET هي منصة لتطوير البرمجيات أنشأتها Microsoft لبناء أنواع مختلفة من التطبيقات.",
+  "- توفر المنصة ما يلي (It provides):",
+  "  * بيئة تشغيل (Runtime Environment)",
+  "  * مكتبات برمجية (Libraries)",
+  "  * أدوات تطوير (Development Tools)",
+  "- أنواع التطبيقات التي تُبنى باستخدام منصة .NET:",
+  "  * تطبيقات الويب (Web Applications)",
+  "  * تطبيقات سطح المكتب (Desktop Applications)",
+  "  * تطبيقات الهواتف المحمولة (Mobile Applications)",
+  "  * الخدمات السحابية (Cloud Services)",
+  "  * تطبيقات الذكاء الاصطناعي (AI Applications)"
 ] };
 window.TOC_AR["L1-S010"] = window.TOC_AR["L1"]["L1-S010"];
 
 window.TOC_AR["L1"]["L1-S011"] = { ar: [
-  "محرك التشغيل المشترك (Common Language Runtime - CLR)",
-  "- هو القلب النابض لمنصة .NET ومحرك التنفيذ المدار للبرامج.",
-  "- المسؤوليات الجوهرية لـ CLR:",
-  "  * إدارة الذاكرة وجمع القمامة تلقائياً (Garbage Collection).",
-  "  * الترجمة اللحظية لكود الوسيط إلى كود الآلة (Just-In-Time - JIT Compilation).",
-  "  * التحقق من سلامة الأنواع ومنع التجاوزات غير المشروعة (Type Safety).",
-  "  * إدارة الخيوط والتزامن (Thread Management & Synchronization).",
-  "  * معالجة الاستثناءات والرقابة الأمنية (Exception Handling & Security)."
+  "محرك تشغيل اللغة المشتركة (Common Language Runtime - CLR)",
+  "- يعد محرك CLR محرك التنفيذ الأساسي لمنصة .NET. وهو يدير تنفيذ البرنامج ويوفر خدمات وقت التشغيل الجوهرية لضمان عمل التطبيقات بأمان وكفاءة.",
+  "- المسؤوليات الرئيسية لمحرك CLR (Main Responsibilities of CLR):",
+  "  * جمع القمامة وإدارة الذاكرة (Garbage Collection - GC):",
+  "    - يدير الذاكرة تلقائياً (Automatically manages memory).",
+  "    - يزيل الكائنات غير المستخدمة من الذاكرة (Removes unused objects from memory).",
+  "    - يمنع تسريب الذاكرة ويحسن الأداء (Prevents memory leaks and improves performance).",
+  "  * سلامة الأنواع والتحقق (Type Safety & Verification):",
+  "    - يضمن استخدام المتغيرات والكائنات بالشكل الصحيح.",
+  "    - يمنع التحويلات غير الصالحة بين الأنواع (Prevents invalid type conversions).",
+  "    - يعزز موثوقية التطبيق وأمانه (Enhances application reliability and security).",
+  "  * معالجة الاستثناءات (Exception Handling):",
+  "    - يوفر طريقة مهيكلة لاكتشاف الأخطاء ومعالجتها (Provides a structured way to detect and handle errors).",
+  "    - يمنع انهيارات التطبيق غير المتوقعة (Prevents unexpected application crashes).",
+  "    - يحسن استقرار وثبات النظام (Improves system stability)."
 ] };
 window.TOC_AR["L1-S011"] = window.TOC_AR["L1"]["L1-S011"];
 
 window.TOC_AR["L1"]["L1-S012"] = { ar: [
-  "مراجعة البرمجة كائنية التوجه (Object-Oriented Programming Review)",
-  "- البرمجة كائنية التوجه أسلوب برمجي ينظم البرمجيات حول البيانات أو الكائنات بدلاً من الوظائف والمنطق.",
-  "- الصنف (Class): المخطط أو القالب الهندسي الذي يعرف الخصائص والسلوكيات.",
-  "- الكائن (Object): نسخة فعلية في الذاكرة مبنية على أساس الصنف (Instance of a Class)."
+  "البرمجة كائنية التوجه: الصنف مقابل الكائن (Object Oriented Programming)",
+  "- الصنف (The Class - The Blueprint / المخطط):",
+  "  * يمثل المخطط الهندسي أو القالب الذي يحدد بنية البيانات والعمليات.",
+  "  ```csharp",
+  "  class Student {",
+  "      public string Name;",
+  "      public void Register() { }",
+  "  }",
+  "  ```",
+  "- الكائن (The Object - The Instance / النسخة المادية الملموسة):",
+  "  * يمثل النسخة المادية الملموسة المحجوزة في الذاكرة انطلاقاً من المخطط (كما يُبنى صرح الجامعة الفعلي استناداً إلى المخطط الهندسي الورقي).",
+  "  ```csharp",
+  "  Student s = new Student();",
+  "  s.Name = \"Ahmed\";",
+  "  s.Register();",
+  "  ```"
 ] };
 window.TOC_AR["L1-S012"] = window.TOC_AR["L1"]["L1-S012"];
 
 window.TOC_AR["L1"]["L1-S013"] = { ar: [
-  "ركائز البرمجة الكائنية الأربعة (Principles of OOP)",
-  "1. الكبسلة (Encapsulation): تغليف البيانات ومنع الوصول المباشر.",
-  "2. التجريد (Abstraction): إخفاء التفاصيل المعقدة وإبراز الميزات الأساسية.",
-  "3. الوراثة (Inheritance): إعادة استخدام الكود وبناء علاقات تصنيفية.",
-  "4. تعددية الأشكال (Polymorphism): معالجة الكائنات المختلفة عبر واجهة موحدة."
+  "مبادئ البرمجة كائنية التوجه (Principles of OOP)",
+  "- الكبسلة (Encapsulation) = إخفاء البيانات داخل الأصناف (Hide data inside classes).",
+  "- التجريد (Abstraction) = إظهار ما هو ضروري فقط (Show only what’s necessary).",
+  "- الوراثة (Inheritance) = إعادة استخدام ميزات الصنف الأب (Reuse parent features).",
+  "- تعددية الأشكال (Polymorphism) = نفس الدالة، بسلوك مختلف (Same method, different behavior).",
+  "- تساعدنا هذه المفاهيم في بناء برمجيات تكون أسهل في الصيانة والتوسيع (easier to maintain and extend)."
 ] };
 window.TOC_AR["L1-S013"] = window.TOC_AR["L1"]["L1-S013"];
 
 window.TOC_AR["L1"]["L1-S014"] = { ar: [
-  "الركيزة الأولى: الكبسلة (Encapsulation)",
-  "- حزم البيانات (الحقول) والدوال التي تعمل عليها في وحدة واحدة (Class).",
-  "- حماية الحالة الداخلية للكائن من التعديل العشوائي أو غير المشروع عبر محدد الوصول private.",
-  "- إتاحة التحكم في القراءة والكتابة والتحقق من صحة المدخلات عبر الخصائص (Properties: get & set).",
-  "- الفائدة: الحفاظ على اتساق الكائن وتسهيل الصيانة الداخلية دون التأثير على المستدعي الخارجي."
+  "الكبسلة (Encapsulation)",
+  "- الكبسلة (Encapsulation): الكبسلة هي فعلياً الخطوة الأولى في البرمجة كائنية التوجه. إنها تجمع متغيرات البيانات ذات الصلة (وتسمى الخصائص properties) والدوال (وتسمى methods) في وحدات فردية (تسمى كائنات objects) لتقليل تعقيد الكود المصدري وزيادة قابليته لإعادة الاستخدام.",
+  "- مثال برمجي لصنف الحساب البنكي (BankAccount Code Example):",
+  "  ```csharp",
+  "  class BankAccount",
+  "  {",
+  "      private decimal balance;",
+  "",
+  "      public void Deposit(decimal amount)",
+  "      {",
+  "          if (amount > 0)",
+  "              balance += amount;",
+  "      }",
+  "",
+  "      public void Withdraw(decimal amount)",
+  "      {",
+  "          if (amount <= balance)",
+  "              balance -= amount;",
+  "      }",
+  "",
+  "      public decimal GetBalance()",
+  "      {",
+  "          return balance;",
+  "      }",
+  "  }",
+  "  ```"
 ] };
 window.TOC_AR["L1-S014"] = window.TOC_AR["L1"]["L1-S014"];
 
 window.TOC_AR["L1"]["L1-S015"] = { ar: [
-  "الركيزة الثانية: التجريد (Abstraction)",
-  "- التركيز على ماذا يفعل الكائن (What) وليس كيف يفعل ذلك (How).",
-  "- إخفاء تفاصيل التنفيذ المعقدة وإظهار الواجهة الضرورية فقط للمستخدم.",
-  "- في لغة C# يتم تحقيق التجريد باستخدام:",
-  "  * الواجهات (Interfaces): عقود برمجية خالصة تحدد أسماء الدوال وتواقيعها.",
-  "  * الأصناف المجردة (Abstract Classes): أصناف لا يمكن عمل instance منها وتحتوي دوال مجردة وغير مجردة."
+  "التجريد (Abstraction)",
+  "- التجريد (Abstraction): يحتوي التجريد جوهرياً على تفاصيل العمل الداخلية لكود البرمجة كائنية التوجه ويخفيها لإنشاء واجهات برمجية أبسط (create simpler interfaces).",
+  "- مثال برمجي لبوابة الدفع (IPaymentGateway Code Example):",
+  "  * تعريف واجهة العقد البرمجي (Interface):",
+  "    ```csharp",
+  "    public interface IPaymentGateway",
+  "    {",
+  "        void Pay(decimal amount);",
+  "    }",
+  "    ```",
+  "  * التنفيذ الفعلي لبوابة PayPalGateway:",
+  "    ```csharp",
+  "    public class PayPalGateway : IPaymentGateway",
+  "    {",
+  "        public void Pay(decimal amount)",
+  "        {",
+  "            Console.WriteLine(\"Processing PayPal Payment\");",
+  "        }",
+  "    }",
+  "    ```",
+  "  * استخدام الواجهة المبسطة في الكود المستدعي:",
+  "    ```csharp",
+  "    IPaymentGateway payment = new PayPalGateway();",
+  "    payment.Pay(100);",
+  "    ```"
 ] };
 window.TOC_AR["L1-S015"] = window.TOC_AR["L1"]["L1-S015"];
 
 window.TOC_AR["L1"]["L1-S016"] = { ar: [
-  "الركيزة الثالثة: الوراثة (Inheritance)",
-  "- آلية تتيح لصنف جديد (Derived/Child Class) أن يرث الخصائص والسلوكيات من صنف موجود (Base/Parent Class).",
-  "- تمثل علاقة (IS-A) مثل: Car is a Vehicle، Employee is a Person.",
-  "- الفائدة: إعادة استخدام الكود وتقليل التكرار وتنظيم الشيفرة في شجرة هرمية.",
-  "- تحذير معماري: الوراثة العميقة تسبب صلابة النظام وهشاشة الصنف الأساسي (Fragile Base Class)."
+  "الوراثة (Inheritance)",
+  "- الوراثة (Inheritance): الوراثة هي آلية البرمجة كائنية التوجه للتخلص من الكود المكرر الزائد (eliminating redundant code). وتعني أن الخصائص والدوال ذات الصلة يمكن تجميعها في كائن واحد يمكن إعادة استخدامه بشكل متكرر – دون تكرار كتابة الكود مراراً وتكراراً.",
+  "- مثال برمجي لهيكل الموظفين (Employee Hierarchy Code Example):",
+  "  * الصنف الأب الأساسي (Base Class):",
+  "    ```csharp",
+  "    class Employee",
+  "    {",
+  "        public string Name { get; set; }",
+  "",
+  "        public void Login()",
+  "        {",
+  "            Console.WriteLine(\"Logged In\");",
+  "        }",
+  "    }",
+  "    ```",
+  "  * صنف المدير المشتق (Derived Class - Manager):",
+  "    ```csharp",
+  "    class Manager : Employee",
+  "    {",
+  "        public void ApproveRequest()",
+  "        {",
+  "            Console.WriteLine(\"Request Approved\");",
+  "        }",
+  "    }",
+  "    ```",
+  "  * صنف المطور المشتق (Derived Class - Developer):",
+  "    ```csharp",
+  "    class Developer : Employee",
+  "    {",
+  "        public void WriteCode()",
+  "        {",
+  "            Console.WriteLine(\"Writing Code...\");",
+  "        }",
+  "    }",
+  "    ```"
 ] };
 window.TOC_AR["L1-S016"] = window.TOC_AR["L1"]["L1-S016"];
 
 window.TOC_AR["L1"]["L1-S017"] = { ar: [
-  "الركيزة الرابعة: تعددية الأشكال (Polymorphism)",
-  "- قدرة الكائنات المختلفة على الاستجابة لنفس الرسالة أو استدعاء الدالة بطرق متباينة.",
-  "- ينقسم إلى نوعين رئيسيين:",
-  "  * تعددية أشكال وقت الترجمة (Compile-time / Static): مثل التحميل الزائد للدوال (Method Overloading).",
-  "  * تعددية أشكال وقت التشغيل (Runtime / Dynamic): مثل التجاوز على الدوال (Method Overriding) باستخدام الكلمتين virtual في الأب و override في الابن."
+  "تعددية الأشكال (Polymorphism)",
+  "- تعددية الأشكال (Polymorphism): تعددية الأشكال، وتعني أشكالاً متعددة (many forms)، هي التقنية المستخدمة في البرمجة كائنية التوجه لتقديم المتغيرات والدوال والكائنات في أشكال وصيغ متعددة.",
+  "- مثال برمجي لنظام الإشعارات (INotification Code Example):",
+  "  * واجهة الإشعار العامة (Interface):",
+  "    ```csharp",
+  "    public interface INotification",
+  "    {",
+  "        void Send(string message);",
+  "    }",
+  "    ```",
+  "  * التنفيذات المتعددة للدالة Send:",
+  "    ```csharp",
+  "    public class PushNotification : INotification",
+  "    {",
+  "        public void Send(string message)",
+  "        {",
+  "            Console.WriteLine($\"Push Notification: {message}\");",
+  "        }",
+  "    }",
+  "",
+  "    public class SmsNotification : INotification",
+  "    {",
+  "        public void Send(string message)",
+  "        {",
+  "            Console.WriteLine($\"SMS: {message}\");",
+  "        }",
+  "    }",
+  "",
+  "    public class EmailNotification : INotification",
+  "    {",
+  "        public void Send(string message)",
+  "        {",
+  "            Console.WriteLine($\"Email: {message}\");",
+  "        }",
+  "    }",
+  "    ```",
+  "  * الاستخدام متعدد الأشكال وقت التشغيل (Usage):",
+  "    ```csharp",
+  "    INotification notification = new EmailNotification();",
+  "    notification.Send(\"Order Confirmed\");",
+  "    ```"
 ] };
 window.TOC_AR["L1-S017"] = window.TOC_AR["L1"]["L1-S017"];
 
 window.TOC_AR["L1"]["L1-S018"] = { ar: [
-  "محددات الوصول في لغة C# (Access Modifiers in C#)",
-  "- public: متاح للوصول من أي مكان داخل المشروع وخارجه.",
-  "- private: متاح فقط داخل نفس الصنف (Default للأعضاء).",
-  "- protected: متاح داخل نفس الصنف والأصناف المشتقة منه فقط.",
-  "- internal: متاح داخل نفس التجميع (Assembly / Project) فقط.",
-  "- protected internal: متاح داخل نفس التجميع، أو للأصناف المشتقة في تجميعات أخرى.",
-  "- private protected: متاح داخل نفس الصنف والأصناف المشتقة التي تقع داخل نفس التجميع فقط."
+  "محددات الوصول في سي شارب (Access Modifiers in C#)",
+  "- تحدد محددات الوصول الأماكن التي يمكن من خلالها الوصول إلى الأصناف والدوال والمتغيرات.",
+  "- إنها تتحكم في مستوى الرؤية وإمكانية الوصول (control visibility).",
+  "- المحددات الرئيسية الأربعة (Main modifiers):",
+  "  * public ← متاح لوصول الجميع (Everyone can access).",
+  "  * private ← متاح داخل هذا الصنف فقط (Only this class).",
+  "  * protected ← متاح داخل هذا الصنف + الأصناف المشتقة منه (This class + child classes).",
+  "  * internal ← متاح داخل نفس المشروع فقط (Same project only)."
 ] };
 window.TOC_AR["L1-S018"] = window.TOC_AR["L1"]["L1-S018"];
 
 window.TOC_AR["L1"]["L1-S019"] = { ar: [
-  "مقدمة إلى مبادئ SOLID (SOLID Principles Overview)",
-  "- صاغها روبرت مارتن (Robert C. Martin / Uncle Bob) في أوائل الألفية.",
-  "- اختصار لخمسة مبادئ هندسية لتصميم برمجيات مرنة ونظيفة:",
-  "  * S: مبدأ المسؤولية الواحدة (Single Responsibility Principle - SRP)",
-  "  * O: مبدأ الفتح والإغلاق (Open/Closed Principle - OCP)",
-  "  * L: مبدأ استبدال لسكوف (Liskov Substitution Principle - LSP)",
-  "  * I: مبدأ فصل الواجهات (Interface Segregation Principle - ISP)",
-  "  * D: مبدأ قلب الاعتمادية (Dependency Inversion Principle - DIP)",
-  "- الهدف: إنشاء أنظمة مرنة، سهلة الفهم، قابلة للتعديل والصيانة، ومقاومة لتراكم الأخطاء."
+  "مبادئ سوليد (SOLID)",
+  "- SOLID هي مجموعة من مبادئ التصميم الهندسي للبرمجيات (collection of design principles).",
+  "- الهدف الأساسي (Goal):",
+  "  * إنشاء أنظمة برمجية مرنة وقابلة للصيانة (Create flexible and maintainable systems)."
 ] };
 window.TOC_AR["L1-S019"] = window.TOC_AR["L1"]["L1-S019"];
 
 window.TOC_AR["L1"]["L1-S020"] = { ar: [
   "مبدأ المسؤولية الواحدة (S — Single Responsibility Principle)",
   "- نص المبدأ: يجب أن يمتلك الصنف سبباً واحداً فقط للتغيير (A class should have only one reason to change).",
-  "- مثال سيء (Bad Example):",
-  "  * صنف Student يقوم بـ:",
-  "    1. حفظ بيانات الطالب في قاعدة البيانات (Data Persistence).",
-  "    2. طباعة تقرير أداء الطالب (Reporting).",
-  "    3. إرسال بريد إلكتروني لولي الأمر (Email Notifications).",
-  "- المشكلة: أي تغيير في نظام البريد أو شكل التقرير أو بنية قاعدة البيانات سيفرض تعديل نفس الصنف Student.",
-  "- الحل السليم: فصل كل مسؤولية في صنف متخصص ومستقل."
+  "- مثال سيئ (Bad Example):",
+  "  * صنف الطالب (Student class) يقوم بعدة مهام غير متجانسة:",
+  "    - يحفظ البيانات (Saves data)",
+  "    - يطبع التقارير (Prints reports)",
+  "    - يرسل البريد الإلكتروني (Sends email)",
+  "- مثال جيد (Good Example):",
+  "  * تخصيص أصناف منفصلة لكل مسؤولية مستقلة (Separate classes for each responsibility)."
 ] };
 window.TOC_AR["L1-S020"] = window.TOC_AR["L1"]["L1-S020"];
 
 window.TOC_AR["L1"]["L1-S021"] = { ar: [
-  "مبدأ SRP وسيناريو الموظف (S — Single Responsibility Principle: Employee Scenario)",
-  "- الصنف Employee يحتوي ثلاث دوال تستخدمها جهات مختلفة في المؤسسة:",
-  "  * calculatePay() → تستخدمها إدارة المحاسبة والمالية (CFO).",
-  "  * reportHours() → تستخدمها إدارة الموارد البشرية (COO).",
-  "  * save() → يستخدمها مسؤولو قواعد البيانات (CTO).",
-  "- الكارثة المعمارية:",
-  "  * كل من calculatePay() و reportHours() تعتمدان على دالة داخلية مشتركة اسمها regularHours().",
-  "  * طلبت المحاسبة تعديل حساب الساعات الإضافية، فقام المبرمج بتعديل دالة regularHours().",
-  "  * النتيجة: نجحت حسابات الرواتب، لكن تقارير الموارد البشرية أصبحت غير دقيقة وتسببت في خسائر فادحة دون أن يعلم أحد!"
+  "مبدأ المسؤولية الواحدة: دراسة حالة سيناريو الموظف (S — Single Responsibility Principle)",
+  "- يحتوي صنف الموظف (Employee class) على ثلاث دوال تستخدمها أقسام إدارية مختلفة:",
+  "  * calculatePay() ← قسم المحاسبة / الإدارة المالية (CFO)",
+  "  * reportHours() ← قسم الموارد البشرية / إدارة العمليات (COO)",
+  "  * save() ← مسؤولو قواعد البيانات / الإدارة التقنية (CTO)",
+  "- نظراً لأن كل هذه المسؤوليات مجمعة داخل صنف واحد، فإن التعديلات التي يطلبها قسم معين قد تؤثر عن غير قصد على الأقسام الأخرى (unintentionally affect others).",
+  "- مثال تفصيلي للمشكلة (Example):",
+  "  * تستخدم كل من دالتي calculatePay() و reportHours() دالة داخلية مشتركة تسمى regularHours().",
+  "  * عندما تطلب المحاسبة تعديلاً في طريقة الحساب، يقوم المطور بتعديل كود regularHours().",
+  "  * تعمل حسابات الرواتب بنجاح، لكن تقارير ساعات الموارد البشرية تصبح غير دقيقة لأنها تعتمد على نفس الدالة المشتركة.",
+  "- المخطط التوضيحي (Diagram): يوضح ارتباط فاعلين مختلفين (CFO, COO, CTO) بصنف واحد (Employee) يضم الدوال (+ calculatePay, + reportHours, + save)."
 ] };
 window.TOC_AR["L1-S021"] = window.TOC_AR["L1"]["L1-S021"];
 
 window.TOC_AR["L1"]["L1-S022"] = { ar: [
-  "حل مشكلة SRP وتفادي تضارب الدمج (SRP Solution & Merge Conflicts)",
-  "- مشكلة تضارب الدمج (Merge Conflicts): عمل عدة فرق على نفس ملف Employee يسبب أخطاء تصادم عند دمج الشيفرات.",
-  "- الدرس المعماري المستفاد:",
-  "  * الشيفرات التي تخدم فاعلين مختلفين يجب أن تُفصل في أصناف مختلفة تماماً.",
-  "- إعادة الهيكلة (Refactoring):",
-  "  * بدلاً من صنف Employee واحد متضخم، نقسمه إلى:",
-  "    1. PayrollCalculator: لحساب الرواتب ومطالب المالية.",
-  "    2. HoursReporter: لإعداد تقارير ساعات العمل للموارد البشرية.",
-  "    3. EmployeeRepository: للتعامل مع قاعدة البيانات وتخزين البيانات."
+  "مبدأ المسؤولية الواحدة: تضارب الدمج والحل المعماري (S — Single Responsibility Principle)",
+  "- قضية أخرى هي تضارب الدمج (merge conflicts): قد تقوم فرق عمل مختلفة بتعديل نفس صنف Employee لأسباب مختلفة، مما يرفع مخاطر حدوث أخطاء أثناء دمج الكود البرمجي.",
+  "- الدرس المستفاد (Lesson):",
+  "  * وفقاً لمبدأ المسؤولية الواحدة (SRP)، يجب فصل الكود الذي يخدم فاعلين مختلفين (different actors) في أصناف مستقلة تماماً.",
+  "- بدلاً من صنف واحد متضخم (Instead of):",
+  "  ```csharp",
+  "  Employee",
+  "  {",
+  "      calculatePay();",
+  "      reportHours();",
+  "      save();",
+  "  }",
+  "  ```",
+  "- استخدم أصنافاً متخصصة ومستقلة (Use):",
+  "  * PayrollCalculator",
+  "  * HoursReporter",
+  "  * EmployeeRepository",
+  "- مخططات الحل (Solution Diagrams):",
+  "  * تجزئة العمليات: أصناف PayCalculator (+ calculatePay) و HourReporter (+ reportHours) و EmployeeSaver (+ saveEmployee) وجميعها ترتبط بصنف بيانات الموظف المشترك (Employee Data).",
+  "  * نمط الواجهة (Employee Facade): استخدام صنف Facade وسيط لتوجيه استدعاءات (+ calculatePay, + reportHours, + save) إلى الأصناف المتخصصة دون خلط المسؤوليات."
 ] };
 window.TOC_AR["L1-S022"] = window.TOC_AR["L1"]["L1-S022"];
 
 window.TOC_AR["L1"]["L1-S023"] = { ar: [
   "مبدأ الفتح والإغلاق (O — Open Closed Principle)",
-  "- صاغه برتراند ماير (Bertrand Meyer) عام 1988.",
-  "- نص المبدأ: الكيانات البرمجية (الأصناف، الوحدات، الدوال) يجب أن تكون:",
-  "  * مفتوحة للامتداد (Open for Extension): يمكن إضافة ميزات جديدة وسلوكيات مختلفة للنظام.",
-  "  * مغلقة أمام التعديل (Closed for Modification): لا يتم تعديل الشيفرات الأصلية التي تم اختبارها واعتمادها.",
-  "- الآلية لتحقيق ذلك: استخدام التجريد (Abstraction) وتعددية الأشكال (Polymorphism) والواجهات."
+  "- تمت صياغة مبدأ الفتح والإغلاق (OCP) في عام 1988 بواسطة العالم برتراند ماير (Bertrand Meyer).",
+  "- ينص المبدأ حرفياً على:",
+  "  * يجب أن يكون المكون البرمجي مفتوحاً للامتداد ولكن مغلقاً أمام التعديل (A software artifact should be open for extension but closed for modification)."
 ] };
 window.TOC_AR["L1-S023"] = window.TOC_AR["L1"]["L1-S023"];
 
 window.TOC_AR["L1"]["L1-S024"] = { ar: [
-  "سيناريو OCP المعماري: تقرير الويب مقابل التقرير المطبوع (OCP Scenario)",
-  "- السيناريو الواقعي:",
-  "  * نظام يعرض ملخصاً مالياً على صفحة ويب مع إمكانية التمرير وتمييز الأرقام السالبة باللون الأحمر.",
-  "  * لاحقاً، طلب أصحاب المصلحة تقريراً مطبوعاً يحتوي نفس البيانات ولكن:",
-  "    - يدعم تقسيم الصفحات (Pagination) والترويسة والتذييل.",
-  "    - يعرض الأرقام السالبة بين قوسين بدلاً من اللون الأحمر.",
-  "- التحدي المعماري: إضافة ميزة التقرير المطبوع بأقل تعديل ممكن على الشيفرات القائمة.",
-  "- الحل المعماري الرصين يجمع بين مبدأين:",
-  "  * SRP: فصل مسؤولية معالجة البيانات المالية عن مسؤولية تنسيق العرض.",
-  "  * DIP: جعل منطق الأعمال عالي المستوى مستقلاً تماماً عن تفاصيل العرض منخفضة المستوى."
+  "مبدأ الفتح والإغلاق: سيناريو التقرير المالي (O — Open Closed Principle)",
+  "- تخيل نظاماً يعرض ملخصاً مالياً على صفحة ويب، حيث يمكن التمرير خلال البيانات وتظهر الأرقام السالبة باللون الأحمر.",
+  "- لاحقاً، يطلب أصحاب المصلحة تقريراً مطبوعاً يحتوي على نفس المعلومات، على أن يدعم التقرير المطبوع:",
+  "  * تقسيم وترقيم الصفحات (pagination)",
+  "  * الترويسات (headers) والتذييلات (footers)",
+  "  * تسميات الأعمدة (column labels)",
+  "  * عرض الأرقام السالبة بين أقواس بدلاً من النص الأحمر",
+  "- التحدي المعماري: إضافة هذه الميزة الجديدة بأقل قدر ممكن من التعديل على الكود القائم.",
+  "- تحقق المعمارية الجيدة ذلك من خلال تطبيق مبدأين أساسيين:",
+  "  * مبدأ المسؤولية الواحدة (SRP): فصل المسؤوليات التي تتغير لأسباب ودوافع مختلفة.",
+  "  * مبدأ قلب الاعتمادية (DIP): تنظيم التبعيات بحيث يكون منطق الأعمال عالي المستوى مستقلاً تماماً عن تفاصيل التنفيذ منخفضة المستوى."
 ] };
 window.TOC_AR["L1-S024"] = window.TOC_AR["L1"]["L1-S024"];
 
 window.TOC_AR["L1"]["L1-S025"] = { ar: [
-  "بنية المكونات لتحقيق OCP (OCP Architecture Solution)",
-  "- تقسيم النظام إلى مكونات تخصصية منفصلة:",
+  "مبدأ الفتح والإغلاق: الحل المعماري بتفكيك المكونات (O — Open Closed Principle)",
+  "- الحل المعماري هو فصل النظام إلى مكونات تخصصية (components):",
   "  * المتحكم (Controller): يستقبل طلبات المستخدم وينسق تدفق العمل.",
-  "  * المتفاعل / منطق الأعمال (Interactor): يحتوي قواعد العمل الأساسية ويعالج البيانات المالية.",
-  "  * قاعدة البيانات (Database): تخزن وتسترجع السجلات المالية.",
-  "  * المقدمون (Presenters): ينسقون البيانات لمخرجات محددة (WebPresenter, PrintPresenter).",
-  "  * الواجهات (Views): تعرض الناتج النهائي للمستخدم (WebPage, PrintedReport).",
-  "- الفائدة: إضافة طريقة عرض جديدة (مثل تصدير Excel) تتم بإنشاء Presenter و View جديدين دون تغيير سطر واحد في Interactor."
+  "  * المتفاعل (Interactor): يحتوي على قواعد العمل الأساسية ويعالج البيانات المالية.",
+  "  * قاعدة البيانات (Database): تتولى تخزين البيانات واسترجاعها.",
+  "  * المقدمون (Presenters): ينسقون البيانات لتناسب صيغ مخرجات محددة.",
+  "  * العروض (Views): تعرض الناتج النهائي للمستخدم (سواء كانت صفحة ويب أو تقريراً مطبوعاً).",
+  "- ينتج المتفاعل (Interactor) بيانات جاهزة للتقرير، بينما يتولى مختلف الـ Presenters والـ Views معالجة صيغ الإخراج المتباينة.",
+  "- يتيح ذلك إضافة طرق عرض جديدة (مثل التقارير المطبوعة، أو ملفات PDF، أو صفحات الويب) دون تعديل منطق الأعمال الأساسي إطلاقاً.",
+  "- الفائدة الرئيسية (Key Benefit): من خلال فصل المسؤوليات والتبعيات، يمكن تنفيذ المتطلبات الجديدة بأثر ضئيل أو معدوم على الكود القائم، مما يجعل النظام أسهل في الصيانة والاختبار والتوسع."
 ] };
 window.TOC_AR["L1-S025"] = window.TOC_AR["L1"]["L1-S025"];
 
 window.TOC_AR["L1"]["L1-S026"] = { ar: [
-  "الهدف المعماري لمبدأ OCP (Goal of OCP)",
-  "- مبدأ OCP هو القوة الدافعة الأساسية وراء معمارية الأنظمة البرمجية الناجحة.",
-  "- الهدف الاستراتيجي: جعل النظام سهل التوسع دون تكبد تكلفة باهظة أو مخاطر مرتفعة عند التغيير.",
-  "- الآلية: تجزئة النظام إلى مكونات وترتيبها في تدرج هرمي للاعتمادية (Dependency Hierarchy) يحمي المكونات العليا من تغييرات المكونات الدنيا."
+  "مبدأ الفتح والإغلاق: التدرج الهرمي للاعتمادية (O — Open Closed Principle)",
+  "- يعد مبدأ OCP القوة الدافعة الأساسية وراء معمارية وهندسة الأنظمة البرمجية.",
+  "- الهدف المعماري: جعل النظام سهل الامتداد والتوسع دون تكبد تأثير كبير أو تكاليف باهظة ناتجة عن التغيير (without incurring a high impact of change).",
+  "- يتحقق هذا الهدف من خلال:",
+  "  * تجزئة النظام وتقسيمه إلى مكونات مستقلة (components).",
+  "  * ترتيب تلك المكونات في تسلسل هرمي للاعتمادية (dependency hierarchy) يحمي المكونات ذات المستوى الأعلى من التغييرات التي تحدث في المكونات ذات المستوى الأدنى."
 ] };
 window.TOC_AR["L1-S026"] = window.TOC_AR["L1"]["L1-S026"];
 
 window.TOC_AR["L1"]["L1-S027"] = { ar: [
   "مبدأ استبدال لسكوف (L — Liskov Substitution Principle)",
-  "- صاغته العالمة باربرا لسكوف (Barbara Liskov) عام 1987.",
-  "- نص المبدأ: الأصناف المشتقة يجب أن تكون قابلة للاستبدال محل الأصناف الأساسية دون كسر سلوك البرنامج أو صحته.",
-  "- قاعدة السلوك: يجب أن تحافظ الوراثة على السلوك المتوقع من الفئة الأساسية (Preserve Expected Behavior).",
-  "- مثال الفشل الشهير (Bad Inheritance):",
-  "  * فئة أساسية Bird تحتوي دالة Fly().",
-  "  * الفئة المشتقة Sparrow تطير بنجاح (صحيح).",
-  "  * الفئة المشتقة Penguin لا تطير (غير صحيح)، وترمي استثناء NotSupportedException!",
-  "- النتيجة: انتهاك LSP؛ لأن استبدال Bird بـ Penguin يكسر كود العميل الذي يستدعي Fly()."
+  "- يجب أن تكون الأصناف المشتقة قادرة على استبدال الأصناف الأساسية دون كسر السلوك (without breaking behavior).",
+  "- يجب أن يكون الصنف الفرعي (Subclass) قابلاً للاستبدال محل صنفه الأساسي (Base Class).",
+  "- يجب أن تحافظ الوراثة على السلوك المتوقع (Inheritance should preserve expected behavior).",
+  "- إذا أدى استبدال كائن الصنف الأب بكائن الصنف الابن إلى كسر عمل البرنامج، فإن ذلك يعد انتهاكاً لمبدأ LSP.",
+  "- مثال توضيحي (Example):",
+  "  * صنف الطائر (Bird)",
+  "  * ↓",
+  "  * عصفور دوري (Sparrow) [سليم / يطير بنجاح]",
+  "  * بطريق (Penguin) [مخالف / لا يستطيع الطيران (Cannot Fly)]",
+  "- تصميم الوراثة السيئ يتسبب في مشاكل برمجية معقدة."
 ] };
 window.TOC_AR["L1-S027"] = window.TOC_AR["L1"]["L1-S027"];
 
 window.TOC_AR["L1"]["L1-S028"] = { ar: [
-  "تطبيق LSP المعماري: نموذج التراخيص (LSP in Architecture: Licensing)",
-  "- صنف أساسي مجرد: License يحتوي الدالة CalcFee().",
-  "- صنفان مشتقان:",
-  "  * PersonalLicense: يحسب الرسوم بناءً على تسعيرة الأفراد.",
-  "  * BusinessLicense: يحسب الرسوم بناءً على تسعيرة الشركات وعدد المستخدمين.",
-  "- تطبيق الفواتير BillingApplication يتعامل حصراً مع الصنف الأساسي License.",
-  "- هذا التصميم يحقق LSP تماماً لأن سلوك تطبيق الفواتير لا يعتمد على الصنف الفرعي المستخدم، ويمكن استبدال أحدهما بالآخر بسلاسة."
+  "مبدأ استبدال لسكوف: دراسة حالة التراخيص والمعمارية (L — Liskov Substitution Principle)",
+  "- يتوافق هذا التصميم مع مبدأ LSP لأن سلوك تطبيق الفواتير (Billing application) لا يعتمد، بأي شكل من الأشكال، على أي من النوعين الفرعيين اللذين يستخدمهما.",
+  "- كلا النوعين الفرعيين قابلان للاستبدال الكامل محل نوع الترخيص الأساسي (License type).",
+  "- يمكن لمبدأ LSP، بل ويجب عليه، أن يمتد إلى مستوى معمارية النظام (level of architecture).",
+  "- فالانتهاك البسيط لقابلية الاستبدال يمكن أن يتسبب في تلويث معمارية النظام بكم هائل من الآليات الاستثنائية الإضافية (polluted with extra mechanisms).",
+  "- المخطط المعماري (UML Diagram):",
+  "  * تطبيق الفواتير (Billing) يعتمد على الواجهة المجردة <I> License ذات الدالة (+ calcFee()).",
+  "  * الصنفان المشتقان: ترخيص الأفراد (Personal License) وترخيص الشركات (Business License - users) يشتقان من License ويحققان متطلبات العقد بسلاسة."
 ] };
 window.TOC_AR["L1-S028"] = window.TOC_AR["L1"]["L1-S028"];
 
 window.TOC_AR["L1"]["L1-S029"] = { ar: [
-  "مثال عملي على LSP وتعددية الأشكال (Polymorphism & LSP Example)",
-  "- فئة BillingApplication تستدعي license.CalcFee().",
-  "- يتم تحديد الخوارزمية الفعلية وقت التشغيل بناءً على الكائن المحقون.",
-  "- يتيح هذا التصميم إضافة نوع ترخيص جديد مستقبلاً (مثل EducationalLicense) دون تعديل كود BillingApplication، محققاً بذلك OCP و LSP معاً."
+  "مبدأ استبدال لسكوف: الكود البرمجي لنموذج التراخيص (L — Liskov Substitution Principle: Code)",
+  "- التنفيذ البرمجي لنموذج التراخيص وتطبيق الفواتير المتوافق مع LSP:",
+  "  * الصنف الأساسي المجرد (Base Class):",
+  "    ```csharp",
+  "    public abstract class License",
+  "    {",
+  "        public abstract decimal CalcFee();",
+  "    }",
+  "    ```",
+  "  * الأصناف المشتقة (Derived Classes):",
+  "    ```csharp",
+  "    public class PersonalLicense : License",
+  "    {",
+  "        public override decimal CalcFee()",
+  "        {",
+  "            return 50m;",
+  "        }",
+  "    }",
+  "",
+  "    public class BusinessLicense : License",
+  "    {",
+  "        public override decimal CalcFee()",
+  "        {",
+  "            return 200m;",
+  "        }",
+  "    }",
+  "    ```",
+  "  * صنف العميل المستدعي (Client Class):",
+  "    ```csharp",
+  "    public class BillingApplication",
+  "    {",
+  "        public void GenerateBill(License license)",
+  "        {",
+  "            decimal fee = license.CalcFee();",
+  "            Console.WriteLine($\"Fee = {fee}\");",
+  "        }",
+  "    }",
+  "    ```",
+  "  * الاستخدام وقت التشغيل (Usage):",
+  "    ```csharp",
+  "    BillingApplication billing = new BillingApplication();",
+  "",
+  "    License personal = new PersonalLicense();",
+  "    billing.GenerateBill(personal);",
+  "",
+  "    License business = new BusinessLicense();",
+  "    billing.GenerateBill(business);",
+  "    ```"
 ] };
 window.TOC_AR["L1-S029"] = window.TOC_AR["L1"]["L1-S029"];
 
 window.TOC_AR["L1"]["L1-S030"] = { ar: [
   "مبدأ فصل الواجهات (I — Interface Segregation Principle)",
   "- نص المبدأ: لا ينبغي إجبار العملاء على الاعتماد على دوال لا يستخدمونها (Clients should not be forced to depend on methods they do not use).",
-  "- جوهر المبدأ: جعل الواجهات صغيرة، مركزة، وتخصصية (Small & Focused Interfaces).",
-  "- خطر الواجهات المتضخمة (Fat Interfaces): إجبار الأصناف على تضمين دوال فارغة أو رمي استثناءات NotImplementedException، مما يرفع الارتباط ويزيد تكاليف الصيانة."
+  "- فكرة مبدأ ISP هي إبقاء الواجهات صغيرة ومركزة في وظائفها (keep interfaces small and focused).",
+  "- الواجهات الكبيرة والضخمة تجبر الأصناف على تنفيذ دوال غير ضرورية، مما يؤدي إلى تصميم رديء ومشاكل صيانة معقدة."
 ] };
 window.TOC_AR["L1-S030"] = window.TOC_AR["L1"]["L1-S030"];
 
 window.TOC_AR["L1"]["L1-S031"] = { ar: [
-  "التصميم المعيب لـ ISP: سيناريو العمال والروبوت (ISP Bad Design)",
-  "- واجهة واحدة شاملة ومتضخمة: IWorker تحتوي:",
-  "  * Work()",
-  "  * Eat()",
-  "  * Sleep()",
-  "- الصنف HumanWorker يطبق جميع الدوال بشكل طبيعي.",
-  "- الكارثة عند إنشاء الصنف RobotWorker:",
-  "  * الروبوت يعمل بجدية Work() ((صحيح)).",
-  "  * لكن الروبوت مجبر على تطبيق Eat() و Sleep()، مما يضطره لكتابة شيفرات فارغة أو رمي استثناءات!",
-  "- هذا تصميم سيئ ينتهك ISP بشكل صريح."
+  "مبدأ فصل الواجهات: التصميم السيئ (I — Interface Segregation Principle: Bad Design)",
+  "- تصميم سيئ ينتهك ISP (Bad Design):",
+  "- واجهة مفردة تحتوي على دوال غير مترابطة في طبيعتها (A single interface contains unrelated methods):",
+  "  ```csharp",
+  "  public interface IWorker",
+  "  {",
+  "      void Work();",
+  "      void Eat();",
+  "      void Sleep();",
+  "  }",
+  "  ```",
+  "- يُجبر الروبوت على تنفيذ دوال لا يحتاج إليها بطبيعتها (A robot is forced to implement methods it does not need):",
+  "  ```csharp",
+  "  public class Robot : IWorker",
+  "  {",
+  "      public void Work() { }",
+  "",
+  "      public void Eat()",
+  "      {",
+  "          throw new NotImplementedException();",
+  "      }",
+  "",
+  "      public void Sleep()",
+  "      {",
+  "          throw new NotImplementedException();",
+  "      }",
+  "  }",
+  "  ```"
 ] };
 window.TOC_AR["L1-S031"] = window.TOC_AR["L1"]["L1-S031"];
 
 window.TOC_AR["L1"]["L1-S032"] = { ar: [
-  "التصميم السليم لـ ISP: تجزئة الواجهات (ISP Good Design)",
-  "- تقسيم الواجهة الكبيرة إلى واجهات صغيرة تخصصية:",
-  "  * واجهة IWorkable: تحتوي فقط دالة Work().",
-  "  * واجهة IFeedable: تحتوي فقط دالة Eat().",
-  "  * واجهة ISleepable: تحتوي فقط دالة Sleep().",
-  "- التطبيق حسب الاحتياج الفعلي:",
-  "  * الصنف HumanWorker يطبق: IWorkable, IFeedable, ISleepable.",
-  "  * الصنف RobotWorker يطبق حصراً: IWorkable.",
-  "- النتيجة: لا يوجد أي كود زائد، ولا توجد دوال وهمية، والتصميم مرن ونظيف 100%."
+  "مبدأ فصل الواجهات: التصميم الجيد بتجزئة الواجهات (I — Interface Segregation Principle: Good Design)",
+  "- التصميم الجيد المتوافق مع ISP (Good Design):",
+  "- تجزئة وتقسيم الواجهة الكبيرة إلى واجهات أصغر وأكثر تخصصاً (Split into smaller, specialized interfaces):",
+  "  ```csharp",
+  "  public interface IWorkable",
+  "  {",
+  "      void Work();",
+  "  }",
+  "",
+  "  public interface IEatable",
+  "  {",
+  "      void Eat();",
+  "  }",
+  "",
+  "  public interface ISleepable",
+  "  {",
+  "      void Sleep();",
+  "  }",
+  "  ```",
+  "- تنفيذ الواجهات المطلوبة فقط وفق الحاجة الفعلية لكل صنف (Implement only the required interfaces):",
+  "  ```csharp",
+  "  public class Human : IWorkable, IEatable, ISleepable",
+  "  {",
+  "      public void Work() { }",
+  "      public void Eat() { }",
+  "      public void Sleep() { }",
+  "  }",
+  "",
+  "  public class Robot : IWorkable",
+  "  {",
+  "      public void Work() { }",
+  "  }",
+  "  ```"
 ] };
 window.TOC_AR["L1-S032"] = window.TOC_AR["L1"]["L1-S032"];
 
 window.TOC_AR["L1"]["L1-S033"] = { ar: [
-  "فوائد تطبيق مبدأ فصل الواجهات (Benefits of ISP)",
-  "- واجهات صغيرة وأكثر تركيزاً (Smaller & Focused Interfaces).",
-  "- تقليل الارتباط بين أجزاء النظام (Reduced Coupling).",
-  "- سهولة صيانة وتوسيع البرمجيات دون آثار جانبية.",
-  "- تطبيق الأصناف لما تحتاجه فعلياً وتفادي الشيفرات الوهمية أو الزائدة."
+  "مبدأ فصل الواجهات: الفوائد المعمارية (I — Interface Segregation Principle: Benefits)",
+  "- الفوائد المترتبة على تطبيق مبدأ ISP (Benefits):",
+  "  * واجهات أصغر وأكثر تركيزاً (Smaller and more focused interfaces).",
+  "  * خفض درجة الاقتران والارتباط بين مكونات النظام (Reduced coupling).",
+  "  * صيانة وتوسيع أسهل وأكثر سلاسة للبرمجيات (Easier maintenance and extension).",
+  "  * تنفذ الأصناف فقط ما تحتاجه وتستخدمه بالفعل (Classes implement only what they actually need)."
 ] };
 window.TOC_AR["L1-S033"] = window.TOC_AR["L1"]["L1-S033"];
 
 window.TOC_AR["L1"]["L1-S034"] = { ar: [
-  "مبدأ قلب الاعتمادية (D — Dependency Inversion Principle)",
-  "- نص المبدأ وفق العمارة النظيفة:",
-  "  * الوحدات عالية المستوى (High-level modules) لا ينبغي أن تعتمد على الوحدات منخفضة المستوى (Low-level modules)؛ كلاهما يجب أن يعتمد على التجريدات (Abstractions).",
-  "  * التجريدات لا ينبغي أن تعتمد على التفاصيل؛ التفاصيل هي التي يجب أن تعتمد على التجريدات.",
-  "- المعنى التطبيقي: منطق الأعمال الأساسي لا يرتبط مباشرة بـ SQL Server أو نظام ملفات محدد، بل يرتبط بواجهة مثل IRepository."
+  "مبدأ قلب الاعتمادية: المفهوم والاستثناء المعماري (D — Dependency Inversion Principle)",
+  "- وفقاً للعمارة النظيفة (Clean Architecture)، فإن الهدف من مبدأ قلب الاعتمادية (DIP) هو أن تعتمد قواعد الأعمال عالية المستوى على التجريدات (الواجهات interfaces)، وليس على التنفيذات الملموسة (concrete implementations).",
+  "- ومع ذلك، هناك استثناء مهم واحد (one important exception):",
+  "  * في مرحلة ما، يجب حتماً إنشاء كائنات ملموسة (At some point, concrete objects must be created).",
+  "  * لا يمكن للنظام أن يعمل بالاعتماد على الواجهات فقط؛ بل يجب إنشاء نسخ حقيقية من التنفيذات الفعلية في مكان ما (actual implementations must be instantiated somewhere)."
 ] };
 window.TOC_AR["L1-S034"] = window.TOC_AR["L1"]["L1-S034"];
 
 window.TOC_AR["L1"]["L1-S035"] = { ar: [
-  "استثناء مبدأ DIP والتطبيق العملي (DIP Practical Exception)",
-  "- ينص المبدأ على الاعتماد على التجريدات، ولكن هناك استثناء واقعي حتمي:",
-  "  * في نهاية المطاف، لا بد من إنشاء كائنات ملموسة (Concrete Objects) في مكان ما من النظام!",
-  "  * لا يمكن للنظام أن يعمل بالواجهات فقط؛ بل يجب تجسيد كائن حقيقي وقت التشغيل.",
-  "- الحل المعماري لهذا الاستثناء:",
-  "  * حصر إنشاء الكائنات في أماكن معزولة مخصصة مثل المصانع (Abstract Factory Pattern) أو حاويات حقن التبعيات (IoC / DI Containers) عند نقطة انطلاق التطبيق (Composition Root).",
-  "- ختام الوحدة الأولى وجاهزية الانطلاق نحو الكود النظيف وأنماط التصميم."
+  "مبدأ قلب الاعتمادية: التطبيق البرمجي وحقن التبعية (D — Dependency Inversion Principle: Code)",
+  "- التطبيق البرمجي لمبدأ قلب الاعتمادية (DIP Implementation):",
+  "  * التجريد المشترك (Abstraction / Interface):",
+  "    ```csharp",
+  "    public interface IMessageService",
+  "    {",
+  "        void Send(string message);",
+  "    }",
+  "    ```",
+  "  * التنفيذ الملموس منخفض المستوى (Concrete Implementation):",
+  "    ```csharp",
+  "    public class EmailService : IMessageService",
+  "    {",
+  "        public void Send(string message)",
+  "        {",
+  "            Console.WriteLine(message);",
+  "        }",
+  "    }",
+  "    ```",
+  "  * الصنف عالي المستوى المحقون بالتجريد (High-level Class with Constructor Injection):",
+  "    ```csharp",
+  "    public class Notification",
+  "    {",
+  "        private IMessageService service;",
+  "",
+  "        public Notification(IMessageService service)",
+  "        {",
+  "            this.service = service;",
+  "        }",
+  "",
+  "        public void Notify(string message)",
+  "        {",
+  "            service.Send(message);",
+  "        }",
+  "    }",
+  "    ```",
+  "  * نقطة تكوين وإنشاء الكائنات الفعلية (Composition Root / Program.Main):",
+  "    ```csharp",
+  "    class Program",
+  "    {",
+  "        static void Main()",
+  "        {",
+  "            IMessageService service = new EmailService();",
+  "",
+  "            Notification notification = new Notification(service);",
+  "",
+  "            notification.Notify(\"Hello\");",
+  "        }",
+  "    }",
+  "    ```"
 ] };
 window.TOC_AR["L1-S035"] = window.TOC_AR["L1"]["L1-S035"];

@@ -7,155 +7,167 @@ window.TOC_AR["L4"] = window.TOC_AR["L4"] || {};
 
 window.TOC_AR["L4"]["L4-S001"] = { ar: [
   "البرمجة المتقدمة (Advanced Programming)",
-  "المحاضرة الرابعة (Lecture 4)",
+  "المحاضرة 4 (Lecture 4)",
   "أنماط التصميم السلوكية (Behavioral Design Patterns)"
 ] };
 window.TOC_AR["L4-S001"] = window.TOC_AR["L4"]["L4-S001"];
 
 window.TOC_AR["L4"]["L4-S002"] = { ar: [
-  "نمط الاستراتيجية (Strategy Pattern)",
-  "شريحة عنوان فاصلة للنمط الأول من أنماط التصميم السلوكية."
+  "نمط الاستراتيجية (Strategy Pattern)"
 ] };
 window.TOC_AR["L4-S002"] = window.TOC_AR["L4"]["L4-S002"];
 
 window.TOC_AR["L4"]["L4-S003"] = { ar: [
   "نمط الاستراتيجية (Strategy Pattern)",
-  "- نمط الاستراتيجية هو نمط تصميم سلوكي يعرّف عائلة من الخوارزميات (Family of algorithms)، ويغلف كل خوارزمية منها داخل صنف منفصل ومستقل، ويجعل هذه الخوارزميات قابلة للتبديل فيما بينها أثناء وقت التشغيل (Interchangeable at runtime).",
-  "- بدلاً من حشر وكتابة كافة الخوارزميات داخل صنف واحد، يتم وضع كل خوارزمية في صنفها الخاص.",
-  "- يمكن لكود العميل اختيار الخوارزمية التي يرغب في استخدامها ديناميكياً أثناء تشغيل البرنامج."
+  "- نمط الاستراتيجية هو نمط تصميم سلوكي يعرّف عائلة من الخوارزميات، ويغلّف كل واحدة منها في صنف منفصل، ويجعلها قابلة للتبديل في وقت التشغيل (interchangeable at runtime).",
+  "- بدلاً من كتابة جميع الخوارزميات داخل صنف واحد، يتم وضع كل خوارزمية في صنفها الخاص.",
+  "- يمكن للعميل (client) اختيار الخوارزمية التي سيستخدمها أثناء تشغيل البرنامج."
 ] };
 window.TOC_AR["L4-S003"] = window.TOC_AR["L4"]["L4-S003"];
 
 window.TOC_AR["L4"]["L4-S004"] = { ar: [
-  "دوافع تصميم نظام الدفع (Motivation for Payment System Design)",
-  "- السيناريو الواقعي:",
-  "- تخيل أنك تطور نظاماً لمتجر إلكتروني عبر الإنترنت (Online Shopping System).",
-  "- يمكن للعملاء والزبائن سداد قيمة مشترياتهم عبر طرق دفع متعددة:",
-  "  * بطاقات فيزا (Visa)",
-  "  * بطاقات ماستركارد (MasterCard)",
-  "  * حسابات بايبال (PayPal)",
-  "  * خدمة آبل باي (Apple Pay)",
-  "  * الدفع نقداً عند الاستلام (Cash)",
-  "- لكل زبون طريقته المفضلة في السداد.",
-  "- السؤال المعماري الحاسم: كيف يجب علينا تصميم وبرمجة نظام الدفع ليتعامل مع هذا التنوع بمرونة؟"
+  "الدافع (Motivation)",
+  "- تخيل أنك تطور نظام تسوق عبر الإنترنت (Online Shopping System).",
+  "- يمكن للعملاء الدفع باستخدام:",
+  "  * فيزا (Visa)",
+  "  * ماستركارد (MasterCard)",
+  "  * بايبال (PayPal)",
+  "  * أبل باي (Apple Pay)",
+  "  * نقداً (Cash)",
+  "- عملاء مختلفون يفضلون طرق دفع مختلفة.",
+  "- كيف ينبغي لنا تصميم نظام الدفع؟"
 ] };
 window.TOC_AR["L4-S004"] = window.TOC_AR["L4"]["L4-S004"];
 
 window.TOC_AR["L4"]["L4-S005"] = { ar: [
-  "الحل السيئ: صنف خدمة الدفع التقليدي (Strategy Pattern Example - Bad Solution)",
-  "- كود صنف PaymentService باستخدام جمل الشرط التقليدية (if-else chain):",
-  "- المشكلة البرمجية:",
-  "  * تعتمد الدالة `Pay(string paymentType, double amount)` على سلسلة شروط متتالية.",
-  "  * إذا كان paymentType يساوي Visa، ينفذ كود فيزا.",
-  "  * وإلا إذا كان يساوي PayPal، ينفذ كود بايبال.",
-  "  * وإلا إذا كان يساوي Cash، ينفذ كود الدفع النقدي.",
-  "- هذا النهج شائع جداً بين المبرمجين المبتدئين لكنه بالغ الجمود والهشاشة وينتهك مبادئ التصميم النظيف."
+  "صنف خدمة الدفع (PaymentService)",
+  "```csharp",
+  "public class PaymentService",
+  "{",
+  "    public void Pay(string paymentType, double amount)",
+  "    {",
+  "        if (paymentType == \"Visa\")",
+  "        {",
+  "            Console.WriteLine(\"Paid using Visa\");",
+  "        }",
+  "        else if (paymentType == \"PayPal\")",
+  "        {",
+  "            Console.WriteLine(\"Paid using PayPal\");",
+  "        }",
+  "        else if (paymentType == \"ApplePay\")",
+  "        {",
+  "            Console.WriteLine(\"Paid using Apple Pay\");",
+  "        }",
+  "        else if (paymentType == \"Cash\")",
+  "        {",
+  "            Console.WriteLine(\"Paid using Cash\");",
+  "        }",
+  "    }",
+  "}",
+  "```"
 ] };
 window.TOC_AR["L4-S005"] = window.TOC_AR["L4"]["L4-S005"];
 
 window.TOC_AR["L4"]["L4-S006"] = { ar: [
-  "مشاكل وعيوب هذا الحل (Problems with This Solution)",
-  "- لنفترض أن إدارة الشركة طلبت منا غداً إضافة خيارات جديدة:",
-  "  * قوقل باي (Google Pay)",
+  "مشاكل هذا الحل (Problems with This Solution)",
+  "- افترض أننا أضفنا غداً:",
+  "  * جوجل باي (Google Pay)",
   "  * سامسونج باي (Samsung Pay)",
-  "  * العملات الرقمية المشفرة (Cryptocurrency)",
-  "- كل طريقة دفع جديدة ستجبرنا حتماً على فتح نفس الصنف وتعديل كوده الداخلي.",
-  "- المشاكل والآثار السلبية المترتبة:",
-  "  1. انتهاك صريح وفادح لمبدأ المفتوح/المغلق (Violates Open/Closed Principle - OCP).",
-  "  2. كود متضخم مليء بجمل الشروط المعقدة والمتشابكة (Large if-else statements).",
-  "  3. صعوبة بالغة في كتابة اختبارات الوحدة (Difficult unit testing).",
-  "  4. صعوبة ومخاطر عالية في الصيانة والتعديل (Difficult maintenance).",
-  "  5. انعدام المرونة وصعوبة التوسع وإضافة ميزات جديدة (Hard to extend)."
+  "  * العملات الرقمية (Cryptocurrency)",
+  "- كل طريقة دفع جديدة تتطلب تعديل الصنف نفسه.",
+  "- المشاكل (Problems):",
+  "  * انتهاك مبدأ المفتوح/المغلق (Violates the Open/Closed Principle - OCP)",
+  "  * جمل شرطية كبيرة (Large if-else statements)",
+  "  * اختبار صعب (Difficult testing)",
+  "  * صيانة صعبة (Difficult maintenance)",
+  "  * صعوبة في التوسعة (Hard to extend)"
 ] };
 window.TOC_AR["L4-S006"] = window.TOC_AR["L4"]["L4-S006"];
 
 window.TOC_AR["L4"]["L4-S007"] = { ar: [
-  "الفكرة الجوهرية لنمط الاستراتيجية (Strategy Pattern Core Idea)",
-  "- الحل المعماري الرصين:",
-  "- بدلاً من حشر كافة خوارزميات الدفع داخل صنف واحد، نقوم بإنشاء صنف مستقل ومخصص لكل طريقة دفع.",
-  "- الهيكل المقترح:",
-  "  * الواجهة المعيارية: استراتيجية الدفع (Payment Strategy Interface)",
-  "    ▲",
-  "    ┌─────────────┼─────────────┐",
-  "    │             │             │",
-  "    Visa        PayPal       ApplePay",
-  "- كل صنف يحقق نفس الواجهة المشتركة.",
-  "- التطبيق ببساطة يختار الاستراتيجية المطلوبة ويسندها للسياق دون أي شروط."
+  "فكرة نمط الاستراتيجية (Strategy Pattern Idea)",
+  "- بدلاً من وضع جميع خوارزميات الدفع في صنف واحد،",
+  "- أنشئ صنفاً واحداً لكل طريقة دفع.",
+  "  Payment Strategy",
+  "  ▲",
+  "  ┌─────────────┼─────────────┐",
+  "  │             │             │",
+  "  Visa        PayPal       ApplePay",
+  "- كل صنف يطبق نفس الواجهة (same interface).",
+  "- يختار التطبيق ببساطة الاستراتيجية المناسبة."
 ] };
 window.TOC_AR["L4-S007"] = window.TOC_AR["L4"]["L4-S007"];
 
 window.TOC_AR["L4"]["L4-S008"] = { ar: [
-  "مخطط أصناف لغة النمذجة الموحدة لنمط الاستراتيجية (Strategy Pattern - UML Class Diagram)",
-  "- المكونات الأساسية في المخطط:",
-  "  * سياق الاستخدام (Context): صنف سلة التسوق (ShoppingCart).",
-  "  * واجهة الاستراتيجية (Strategy Interface): الواجهة IPaymentStrategy بدالة `+ Pay(amount: double)`.",
-  "  * الاستراتيجيات الملموسة (Concrete Strategies):",
-  "    - صنف VisaPayment",
-  "    - صنف PayPalPayment",
-  "    - صنف CashPayment",
-  "- العلاقات:",
-  "  * ShoppingCart يمتلك مرجعاً لواجهة IPaymentStrategy (علاقة تركيب/اقتران).",
-  "  * الأصناف الثلاثة تحقق واجهة IPaymentStrategy (علاقة Realization)."
+  "نمط الاستراتيجية – مخطط أصناف UML (Strategy Pattern – UML Class Diagram)",
+  "- واجهة استراتيجية الدفع (<<interface>> IPaymentStrategy):",
+  "  * `+ Pay(amount: double): void`",
+  "- الاستراتيجيات الملموسة التي تطبق الواجهة (Concrete Strategies):",
+  "  * VisaPayment: `+ Pay(amount: double): void`",
+  "  * PayPalPayment: `+ Pay(amount: double): void`",
+  "  * ApplePayPayment: `+ Pay(amount: double): void`",
+  "  * CashPayment: `+ Pay(amount: double): void`",
+  "- صنف السياق ShoppingCart (Context):",
+  "  * حقل خاص: `- strategy: IPaymentStrategy`",
+  "  * منشئ الصنف: `+ ShoppingCart(strategy: IPaymentStrategy)`",
+  "  * دالة إتمام الدفع: `+ Checkout(amount: double): void`",
+  "- العميل (Client):",
+  "  * يرتبط بصنف ShoppingCart بعلاقة تبعية (dashed arrow).",
+  "- العلاقات في المخطط:",
+  "  * علاقة تحقيق/تنفيذ (Realization - خط متقطع ومثلث مجوف) من الأصناف الملموسة الأربعة إلى واجهة IPaymentStrategy.",
+  "  * علاقة تجميع (Aggregation - ماسة سوداء) تربط صنف ShoppingCart بواجهة IPaymentStrategy."
 ] };
 window.TOC_AR["L4-S008"] = window.TOC_AR["L4"]["L4-S008"];
 
 window.TOC_AR["L4"]["L4-S009"] = { ar: [
-  "هيكل ومشاركو نمط الاستراتيجية (Structure & Participants of Strategy Pattern)",
-  "- يتألف نمط الاستراتيجية من ثلاثة مشاركين رئيسيين:",
+  "بنية نمط الاستراتيجية (Structure of Strategy Pattern)",
+  "- يتألف نمط الاستراتيجية من ثلاثة مشاركين رئيسيين (three main participants):",
   "  1. الاستراتيجية (Strategy):",
-  "     - واجهة برمجية موحدة تحدد العقد المشترك للخوارزمية.",
-  "     - مثال: الواجهة IPaymentStrategy.",
-  "  2. الاستراتيجيات الملموسة (Concrete Strategies):",
-  "     - تطبيقات وتنفيذات مختلفة ومتنوعة للخوارزمية.",
-  "     - أمثلة: VisaPayment, PayPalPayment, CashPayment.",
-  "  3. السياق (Context):",
-  "     - الصنف المستفيد الذي يستخدم الاستراتيجية المختارة لتنفيذ مهمته.",
-  "     - مثال: صنف سلة التسوق ShoppingCart."
+  "     - واجهة تعرّف الخوارزمية (An interface that defines the algorithm).",
+  "     - مثال: IPaymentStrategy",
+  "  2. الاستراتيجية الملموسة (Concrete Strategy):",
+  "     - تطبيقات وتنفيذات مختلفة للخوارزمية (Different implementations of the algorithm).",
+  "     - أمثلة: VisaPayment, PayPalPayment, CashPayment"
 ] };
 window.TOC_AR["L4-S009"] = window.TOC_AR["L4"]["L4-S009"];
 
 window.TOC_AR["L4"]["L4-S010"] = { ar: [
-  "دور صنف السياق في نمط الاستراتيجية (Strategy Pattern Context)",
-  "- الصنف السياقي (Context Class - ShoppingCart):",
-  "  * يمثل الصنف الذي يعتمد على الاستراتيجية المحددة لإنجاز مهمته.",
-  "- خاصية معمارية جوهرية:",
-  "  * صنف السياق لا يعرف على الإطلاق كيف تعمل عملية الدفع تفصيلياً (Does not know how payment works).",
-  "  * كل ما يعرفه السياق هو أن أي استراتيجية دفع متوافقة توفر دالة تسمى: `Pay()`.",
-  "- هذا التجريد الكامل يحرر السياق من التبعيات ويجعله منيعاً ضد التغييرات في بوابات الدفع."
+  "3. السياق (Context)",
+  "- الصنف الذي يستخدم الاستراتيجية المختارة (The class that uses the selected strategy).",
+  "- مثال: ShoppingCart",
+  "- السياق لا يعرف كيف تعمل عملية الدفع (The Context does not know how payment works).",
+  "- هو فقط يعرف أن كل استراتيجية دفع توفر دالة ()Pay."
 ] };
 window.TOC_AR["L4-S010"] = window.TOC_AR["L4"]["L4-S010"];
 
 window.TOC_AR["L4"]["L4-S011"] = { ar: [
-  "الخطوة الأولى: إنشاء واجهة الاستراتيجية (Step 1 – Strategy Interface)",
-  "- واجهة استراتيجية الدفع المعيارية:",
+  "الخطوة 1 – واجهة الاستراتيجية (Step 1 – Strategy Interface)",
   "```csharp",
   "public interface IPaymentStrategy",
   "{",
   "    void Pay(double amount);",
   "}",
-  "```",
-  "- خصائص الواجهة البرمجية:",
-  "  * تحدد العقد الذي يجب أن تلتزم به كافة طرق الدفع الحالية والمستقبلية.",
-  "  * تعلن عن دالة وحيدة: `void Pay(double amount)` تأخذ المبلغ المالي المطلوب كمعامل."
+  "```"
 ] };
 window.TOC_AR["L4-S011"] = window.TOC_AR["L4"]["L4-S011"];
 
 window.TOC_AR["L4"]["L4-S012"] = { ar: [
-  "الخطوة الثانية: إنشاء الاستراتيجيات الملموسة (Step 2 – Concrete Strategies)",
+  "الخطوة 2 – الاستراتيجيات الملموسة (Step 2 – Concrete Strategies)",
   "```csharp",
   "public class VisaPayment : IPaymentStrategy",
   "{",
   "    public void Pay(double amount)",
   "    {",
-  "        Console.WriteLine(\"Paid $\" + amount + \" using Visa Card.\");",
+  "        Console.WriteLine($\"Paid ${amount} using Visa.\");",
   "    }",
   "}",
-  "",
+  "```",
+  "```csharp",
   "public class PayPalPayment : IPaymentStrategy",
   "{",
   "    public void Pay(double amount)",
   "    {",
-  "        Console.WriteLine(\"Paid $\" + amount + \" using PayPal.\");",
+  "        Console.WriteLine($\"Paid ${amount} using PayPal.\");",
   "    }",
   "}",
   "```"
@@ -163,27 +175,20 @@ window.TOC_AR["L4"]["L4-S012"] = { ar: [
 window.TOC_AR["L4-S012"] = window.TOC_AR["L4"]["L4-S012"];
 
 window.TOC_AR["L4"]["L4-S013"] = { ar: [
-  "الخطوة الثالثة: صنف السياق - سلة التسوق (Step 3 – Context Class)",
+  "الخطوة 3 – صنف السياق (Step 3 – Context Class)",
   "```csharp",
   "public class ShoppingCart",
   "{",
-  "    private IPaymentStrategy _paymentStrategy;",
+  "    private readonly IPaymentStrategy strategy;",
   "",
-  "    // 1. التعيين عبر حقن المنشئ (Constructor Injection)",
-  "    public ShoppingCart(IPaymentStrategy paymentStrategy)",
+  "    public ShoppingCart(IPaymentStrategy strategy)",
   "    {",
-  "        _paymentStrategy = paymentStrategy;",
-  "    }",
-  "",
-  "    // 2. إمكانية تبديل الاستراتيجية أثناء التشغيل (Setter Injection)",
-  "    public void SetPaymentStrategy(IPaymentStrategy paymentStrategy)",
-  "    {",
-  "        _paymentStrategy = paymentStrategy;",
+  "        this.strategy = strategy;",
   "    }",
   "",
   "    public void Checkout(double amount)",
   "    {",
-  "        _paymentStrategy.Pay(amount);",
+  "        strategy.Pay(amount);",
   "    }",
   "}",
   "```"
@@ -191,23 +196,16 @@ window.TOC_AR["L4"]["L4-S013"] = { ar: [
 window.TOC_AR["L4-S013"] = window.TOC_AR["L4"]["L4-S013"];
 
 window.TOC_AR["L4"]["L4-S014"] = { ar: [
-  "كود العميل وتبديل الاستراتيجيات أثناء التشغيل (Strategy Pattern Example - Client Code)",
+  "كود العميل (Client Code)",
   "```csharp",
   "class Program",
   "{",
   "    static void Main()",
   "    {",
-  "        // 1. الشراء باستخدام استراتيجية فيزا",
-  "        ShoppingCart cart1 = new ShoppingCart(new VisaPayment());",
-  "        cart1.Checkout(150); // Paid $150 using Visa Card.",
+  "        ShoppingCart cart =",
+  "            new ShoppingCart(new VisaPayment());",
   "",
-  "        // 2. الشراء باستخدام استراتيجية بايبال لنفس السلة أو سلة جديدة",
-  "        ShoppingCart cart2 = new ShoppingCart(new PayPalPayment());",
-  "        cart2.Checkout(200); // Paid $200 using PayPal.",
-  "",
-  "        // 3. تبديل الاستراتيجية لحظياً لنفس الكائن",
-  "        cart1.SetPaymentStrategy(new PayPalPayment());",
-  "        cart1.Checkout(50);  // Paid $50 using PayPal.",
+  "        cart.Checkout(100);",
   "    }",
   "}",
   "```"
@@ -215,206 +213,228 @@ window.TOC_AR["L4"]["L4-S014"] = { ar: [
 window.TOC_AR["L4-S014"] = window.TOC_AR["L4"]["L4-S014"];
 
 window.TOC_AR["L4"]["L4-S015"] = { ar: [
-  "حالات واستخدامات نمط الاستراتيجية (When to Use Strategy Pattern)",
-  "- متى يجب استخدام نمط الاستراتيجية؟",
-  "  1. عند وجود عدة خوارزميات أو حلول بديلة لحل نفس المسألة وتريد التبديل بينها بمرونة.",
-  "  2. عندما تتغير الخوارزميات وتتطور وتتعدد بشكل مستمر ومتكرر.",
-  "  3. للتخلص النهائي من جمل الشروط المعقدة والمتشابكة (Avoid if-else or switch chains).",
-  "  4. عندما تحتاج إلى جعل الخوارزمية قابلة للتبديل ديناميكياً أثناء وقت التشغيل (Interchangeable at runtime).",
-  "  5. عندما يتطلب عملاء مختلفون سلوكيات وحسابات متباينة لنفس العملية.",
-  "- أمثلة وتطبيقات واقعية شهيرة لنمط الاستراتيجية:",
-  "  * بوابات الدفع الإلكتروني (Payment Gateways).",
-  "  * حساب تكاليف الشحن (Shipping Cost Calculation: أرامكس، فيدكس، دي إتش إل).",
-  "  * احتساب الضرائب والرسوم (Tax Calculation بحسب قوانين كل دولة).",
-  "  * خوارزميات ضغط البيانات (Data Compression: Zip, Rar, Gzip).",
-  "  * خوارزميات الفرز والترتيب (Sorting Algorithms: QuickSort, MergeSort).",
-  "  * طرق مصادقة وتسجيل دخول المستخدمين (Authentication: Password, OTP, Google OAuth, Biometric)."
+  "استخدم نمط الاستراتيجية عندما: (Use Strategy Pattern when:)",
+  "- تحل خوارزميات متعددة نفس المشكلة (Multiple algorithms solve the same problem).",
+  "- تتغير الخوارزميات بشكل متكرر (Algorithms change frequently).",
+  "- تريد تجنب جمل if-else أو switch.",
+  "- يجب أن تكون الخوارزميات قابلة للتبديل في وقت التشغيل (Algorithms should be interchangeable at runtime).",
+  "- يتطلب عملاء مختلفون سلوكيات مختلفة (Different clients require different behaviors).",
+  "أمثلة (Examples):",
+  "- بوابات الدفع (Payment gateways)",
+  "- حساب تكلفة الشحن (Shipping cost calculation)",
+  "- حساب الضرائب (Tax calculation)",
+  "- ضغط البيانات (Data compression)",
+  "- خوارزميات الترتيب (Sorting algorithms)",
+  "- طرق المصادقة (Authentication methods)"
 ] };
 window.TOC_AR["L4-S015"] = window.TOC_AR["L4"]["L4-S015"];
 
 window.TOC_AR["L4"]["L4-S016"] = { ar: [
-  "نمط المراقب (Observer Pattern)",
-  "شريحة عنوان فاصلة للنمط السلوكي الثاني: نمط المراقب (Observer Pattern)."
+  "نمط المراقب (Observer Pattern)"
 ] };
 window.TOC_AR["L4-S016"] = window.TOC_AR["L4"]["L4-S016"];
 
 window.TOC_AR["L4"]["L4-S017"] = { ar: [
-  "دوافع ومبررات نمط المراقب (Observer Pattern Motivation)",
-  "- تخيل الأنظمة التفاعلية التالية في حياتنا اليومية:",
-  "  * إشعارات فيسبوك (Facebook Notifications).",
-  "  * مشتركو قنوات يوتيوب (YouTube Subscribers).",
-  "  * تطبيقات الطقس وتحديثات درجات الحرارة (Weather Applications).",
-  "  * تطبيقات البورصة وأسعار الأسهم (Stock Market Apps).",
-  "- المبدأ المشترك بينها جميعاً:",
-  "  * كلما حدث تغيير في حالة معينة (نشر منشور، رفع فيديو، تغير الطقس، هبوط سهم)...",
-  "  * يجب على جميع المهتمين والمشتركين أن يعلموا بهذا التغيير فوراً وتلقائياً.",
-  "  * دون الحاجة للاتصال بكل شخص يدوياً أو سؤاله في كل ثانية.",
-  "- هذا هو بالضبط العمل التلقائي الذي ينجزه نمط المراقب (Observer)."
+  "الدافع (Motivation)",
+  "- تخيل:",
+  "  * إشعارات فيسبوك (Facebook Notifications)",
+  "  * مشتركو يوتيوب (YouTube Subscribers)",
+  "  * تطبيقات الطقس (Weather Applications)",
+  "  * تطبيقات سوق الأسهم (Stock Market Apps)",
+  "- كلما تغير شيء ما...",
+  "- يجب أن يعرف كل مهتم تلقائياً.",
+  "- دون الاتصال بالجميع يدوياً.",
+  "- هذا بالضبط ما يفعله نمط المراقب (Observer)."
 ] };
 window.TOC_AR["L4-S017"] = window.TOC_AR["L4"]["L4-S017"];
 
 window.TOC_AR["L4"]["L4-S018"] = { ar: [
-  "مثال واقعي: قناة يوتيوب والمشتركون (Observer Pattern Real Life Example)",
+  "مثال من الواقع (Real Life Example)",
   "- قناة يوتيوب (YouTube Channel):",
-  "  * تقوم بالاشتراك في قناة يوتيوب معينة وتفعيل زر التنبيهات.",
-  "  * عندما يقوم صاحب القناة برفع فيديو جديد:",
-  "    - تتلقى أنت وجميع المشتركين إشعاراً فورياً على هواتفكم فوراً.",
-  "  * لاحظ أن صاحب القناة لا يعرف هويتك الشخصية ولا رقم هاتفك ولا أين تسكن.",
-  "  * كل ما تعرفه القناة وتفعله هو أمر وحيد:",
-  "    - «أرسل إشعاراً لكافة المشتركين المسجلين في قائمتي».",
-  "- هذه هي الآلية الصريحة لنمط المراقب: فك الترابط التام بين الناشر والمشتركين."
+  "  * أنت تشترك في قناة.",
+  "  * عندما يتم رفع فيديو جديد:",
+  "    - تتلقى إشعاراً على الفور.",
+  "  * القناة لا تعرف هويتك شخصياً.",
+  "  * هي تعرف فقط:",
+  "    \"أخطر جميع المشتركين.\" (\"Notify all subscribers.\")",
+  "- هذا هو نمط المراقب (Observer Pattern)."
 ] };
 window.TOC_AR["L4-S018"] = window.TOC_AR["L4"]["L4-S018"];
 
 window.TOC_AR["L4"]["L4-S019"] = { ar: [
-  "سيناريو مقهى القهوة الحديث (Observer Pattern Scenario - Coffee Shop)",
-  "- سيناريو برمجي واقعي لتطبيق النمط:",
-  "- تخيل مقهى عصرياً يطلب فيه الزبون كوباً من القهوة.",
-  "- في البداية، تكون حالة الطلب (Order Status): «قيد التحضير» (Preparing...).",
-  "- بعد دقائق، ينتهي صانع القهوة (Barista) من إعداد المشروب، وتتغير حالة الطلب إلى: «جاهز» (Ready).",
-  "- بمجرد تحول حالة الطلب إلى «جاهز»، يجب إخطار وتحديث عدة أنظمة فرعية تلقائياً في نفس اللحظة:",
-  "  1. شاشة عرض الطلبات المعلقة في المقهى (Order Display Screen).",
-  "  2. تطبيق الهاتف المحمول الخاص بالزبون (Customer Mobile App).",
-  "  3. خدمة إرسال الرسائل النصية القصيرة (SMS Notification Service).",
-  "  4. خدمة إرسال البريد الإلكتروني (Email Notification Service).",
-  "  5. نظام التحليلات والإحصاءات للمقهى (Analytics System).",
-  "- لا ينبغي لصانع القهوة أو صنف الطلب الاتصال بكل خدمة يدوياً.",
-  "- بدلاً من ذلك، يعلن الطلب ببساطة: «الطلب جاهز»، فتقوم كافة الأنظمة المهتمة باستلام الإشعار والتصرف بناءً عليه تلقائياً."
+  "السيناريو (Scenario)",
+  "- تخيل مقهى حديثاً. يقوم العميل بتقديم طلب. في البداية، تكون حالة الطلب:",
+  "  * قيد الإعداد... (Preparing...)",
+  "- بعد بضع دقائق، ينتهي صانع القهوة (barista) من إعداد المشروب. تتغير حالة الطلب إلى:",
+  "  * جاهز (Ready)",
+  "- بمجرد أن يصبح الطلب جاهزاً (Ready)، يجب إخطار عدة أنظمة تلقائياً:",
+  "  * شاشة عرض الطلبات (Order Display Screen)",
+  "  * تطبيق الهاتف للعميل (Customer Mobile App)",
+  "  * خدمة إشعارات الرسائل القصيرة (SMS Notification Service)",
+  "  * خدمة إشعارات البريد الإلكتروني (Email Notification Service)",
+  "  * نظام التحليلات (Analytics System)",
+  "- لا ينبغي للمقهى الاتصال بكل خدمة يدوياً.",
+  "- بدلاً من ذلك، يعلن ببساطة: \"الطلب جاهز.\" (\"The order is ready.\")",
+  "- يتلقى كل نظام مهتم الإشعار تلقائياً.",
+  "- هذا بالضبط ما يفعله نمط المراقب (Observer Pattern)."
 ] };
 window.TOC_AR["L4-S019"] = window.TOC_AR["L4"]["L4-S019"];
 
 window.TOC_AR["L4"]["L4-S020"] = { ar: [
-  "المشكلة المعمارية: الترابط الوثيق في صنف المقهى (The Problem with Tight Coupling in CoffeeShop Class)",
-  "- بدون تطبيق نمط المراقب، يكتب كود صنف CoffeeShop أو الطلب كالتالي:",
-  "  * يمتلك مراجع مباشرة للأصناف الخمسة.",
-  "  * يستدعي كل خدمة يدوياً بالاسم داخل دالة إتمام الطلب.",
-  "- الكوارث المعمارية المترتبة:",
-  "  1. ترابط وثيق ومفرط (Tight coupling) بين صنف الطلب وجميع خدمات الإشعار.",
-  "  2. صعوبة بالغة في إضافة أي خدمة إشعار جديدة مستقبلاً.",
-  "  3. كل إضافة أو تعديل لخدمة إشعار يجبر المطور على فتح وتعديل صنف CoffeeShop.",
-  "  4. انتهاك صريح لمبدأ المفتوح/المغلق (Violates Open/Closed Principle) ومبدأ المسؤولية الأحادية (SRP)."
+  "المشكلة (The Problem)",
+  "- بدون نمط المراقب، قد يبدو الكود هكذا:",
+  "```csharp",
+  "public class CoffeeShop",
+  "{",
+  "    private OrderDisplay display = new();",
+  "    private SmsService sms = new();",
+  "    private MobileApp app = new();",
+  "    private AnalyticsService analytics = new();",
+  "",
+  "    public void OrderReady(string orderNumber)",
+  "    {",
+  "        display.Update(orderNumber);",
+  "        sms.Send(orderNumber);",
+  "        app.Notify(orderNumber);",
+  "        analytics.Save(orderNumber);",
+  "    }",
+  "}",
+  "```",
+  "المشاكل (Problems):",
+  "- ترابط وثيق (Tight coupling)",
+  "- صعوبة إضافة خدمات جديدة (Difficult to add new services)",
+  "- كل إشعار جديد يتطلب تعديل صنف CoffeeShop",
+  "- ينتهك مبدأ المفتوح/المغلق (Violates the Open/Closed Principle)"
 ] };
 window.TOC_AR["L4-S020"] = window.TOC_AR["L4"]["L4-S020"];
 
 window.TOC_AR["L4"]["L4-S021"] = { ar: [
-  "حل نمط المراقب: القائمة الديناميكية (Observer Pattern Solution)",
-  "- الحل المعماري لفك الترابط:",
-  "- بدلاً من معرفة كل خدمة على حدة بالاسم، يحتفظ صنف الطلب بقائمة واحدة مجردة من المراقبين (List of Observers).",
-  "- كلما تحول الطلب إلى حالة «جاهز» (Ready):",
-  "  * يقوم الطلب بخطوة واحدة وحيدة: إخطار كافة المراقبين المسجلين في القائمة (Notify All Observers).",
-  "- كل مراقب مسجل في القائمة يستقبل الإشعار وهو من يقرر بمفرده ما الذي يجب عليه فعله.",
-  "- النتيجة: صنف الطلب مفصول تماماً عن تفاصيل وأنواع خدمات الإشعار."
+  "الحل (The Solution)",
+  "- بدلاً من معرفة كل خدمة، يحتفظ المقهى (Coffee Shop) بقائمة من المراقبين فقط.",
+  "- كلما أصبح الطلب جاهزاً:",
+  "  Notify All Observers (إخطار جميع المراقبين)",
+  "- كل مراقب يقرر ما يجب فعله."
 ] };
 window.TOC_AR["L4-S021"] = window.TOC_AR["L4"]["L4-S021"];
 
 window.TOC_AR["L4"]["L4-S022"] = { ar: [
-  "التعريف الصارم لنمط المراقب (Observer Pattern Formal Definition)",
-  "- نمط المراقب هو نمط تصميم سلوكي يعرّف علاقة تبعية من نمط «واحد إلى متعدد» (One-to-Many dependency) بين مجموعة من الكائنات.",
-  "- بموجب هذه العلاقة:",
-  "  * عندما تتغير الحالة الداخلية لكائن واحد (الموضوع - Subject)...",
-  "  * يتم إخطار وتحديث كافة الكائنات التابعة له المعتمدة عليه (المراقبون - Observers) تلقائياً ودون تدخل يدوي.",
-  "- الكلمات المفتاحية للتعريف:",
-  "  * علاقة واحد إلى متعدد (One-to-Many).",
-  "  * تحديث تلقائي (Notified and updated automatically)."
+  "نمط المراقب (Observer Pattern)",
+  "- يعرّف نمط المراقب تبعية واحد-إلى-متعدد (one-to-many dependency) بين الكائنات بحيث عندما تتغير حالة كائن واحد، يتم إخطار جميع الكائنات المعتمدة عليه تلقائياً."
 ] };
 window.TOC_AR["L4-S022"] = window.TOC_AR["L4"]["L4-S022"];
 
 window.TOC_AR["L4"]["L4-S023"] = { ar: [
-  "المشاركون في نمط المراقب (Observer Pattern Participants)",
-  "- يتكون نمط المراقب من ثلاثة عناصر رئيسية:",
-  "  1. الموضوع (Subject):",
-  "     - صنف طلب القهوة (CoffeeOrder).",
-  "     - مسؤول عن: تسجيل المراقبين الجدد (Register/Attach)، حذف المراقبين (Remove/Detach)، وإخطار المراقبين (Notify).",
-  "  2. المراقب التجريدي (Observer Interface):",
-  "     - الواجهة البرمجية الموحدة: IObserver.",
-  "     - تحدد وتعلن عن دالة التحديث الإجبارية: Update().",
-  "  3. المراقبون الملموسون (Concrete Observers):",
-  "     - الأصناف المنفذة للواجهة: OrderDisplay, CustomerApp, SmsService, EmailService, AnalyticsService.",
-  "     - ينفذ كل مراقب سلوكه الخاص عند استلام نداء التحديث."
+  "المشاركون (Participants)",
+  "1. الموضوع (Subject):",
+  "   - CoffeeOrder",
+  "   - مسؤول عن:",
+  "     * تسجيل المراقبين (Register observers)",
+  "     * حذف المراقبين (Remove observers)",
+  "     * إخطار المراقبين (Notify observers)",
+  "2. المراقب (Observer):",
+  "   - IObserver",
+  "   - يعرّف دالة ()Update.",
+  "3. المراقبون الملموسون (Concrete Observers):",
+  "   - OrderDisplay",
+  "   - CustomerApp",
+  "   - SmsService",
+  "   - EmailService",
+  "   - AnalyticsService",
+  "   - كل مراقب ينفذ إجراءً مختلفاً بعد تلقي الإشعار."
 ] };
 window.TOC_AR["L4-S023"] = window.TOC_AR["L4"]["L4-S023"];
 
 window.TOC_AR["L4"]["L4-S024"] = { ar: [
-  "مخطط أصناف لغة النمذجة الموحدة لنمط المراقب (Observer Pattern – UML Class Diagram)",
-  "- بنية مخطط UML القياسي:",
-  "  * الموضوع (Subject):",
-  "    - يحتوي على قائمة خاصة: `observers: List<IObserver>`",
-  "    - يحتوي على الدوال: `+ Attach(IObserver)`, `+ Detach(IObserver)`, `+ Notify()`",
-  "  * الواجهة (<<interface>> IObserver):",
-  "    - تحتوي على الدالة التجريدية: `+ Update()`",
-  "  * الموضوع الملموس (ConcreteSubject / CoffeeOrder): يرث من Subject ويغير حالته عبر `+ OrderReady()`",
-  "  * المراقبون الملموسون (ConcreteObserver): يحققون IObserver وينفذون دالة `+ Update()`.",
-  "- العلاقة بين Subject و IObserver: علاقة تجميع/تركيب بنهاية ماسية ورمز تعددية (0..*)."
+  "نمط المراقب – مخطط أصناف UML (Observer Pattern – UML Class Diagram)",
+  "- تبعية واحد-إلى-متعدد بين الموضوع والمراقبين (One-to-Many dependency between Subject and Observers)",
+  "- واجهة المراقب (<<interface>> Observer):",
+  "  * `+ Update() : void`",
+  "- المراقبون الملموسون (ConcreteObserverA, ConcreteObserverB, ConcreteObserverC, ConcreteObserverN):",
+  "  * حقل الحالة: `- observerState: State`",
+  "  * الدالة: `+ Update() : void`",
+  "- صنف الموضوع (Subject):",
+  "  * الحقول: `- observers: List<Observer>`, `- subjectState: State`",
+  "  * الدوال:",
+  "    + Attach(o: Observer) : void",
+  "    + Detach(o: Observer) : void",
+  "    + Notify() : void",
+  "    + SetState(s: State) : void",
+  "    + GetState() : State",
+  "- ملاحظة الموضوع (Subject Note):",
+  "  * يحتفظ بقائمة من المراقبين. عندما تتغير حالته، يخطر جميع المراقبين المسجلين.",
+  "- دليل الرموز (Legend):",
+  "  * مثلث فارغ: وراثة/تحقيق (Inheritance / implements)",
+  "  * خط متصل: اقتران (Association)",
+  "  * ماسة سوداء: تجميع (Aggregation / has-a)",
+  "  * 1: واحد (One)",
+  "  * *: متعدد (Many)"
 ] };
 window.TOC_AR["L4-S024"] = window.TOC_AR["L4"]["L4-S024"];
 
 window.TOC_AR["L4"]["L4-S025"] = { ar: [
-  "مخطط هيكلية نظام مقهى القهوة (Observer Pattern – Coffee Shop Example Diagram)",
-  "- مخطط معماري تطبيقي يوضح:",
-  "  * صنف الطلب المركزي: CoffeeOrder (يمثل دور Subject).",
-  "  * قائمة المشتركين المرتبطين به:",
-  "    ├── OrderDisplay (شاشة العرض)",
-  "    ├── CustomerApp (تطبيق الزبون)",
-  "    ├── SmsService (خدمة الرسائل)",
-  "    └── AnalyticsService (نظام التحليلات)",
-  "- استدعاء دالة `OrderReady()` في CoffeeOrder يفعل تلقائياً استدعاء دالة `Update()` في الخدمات الأربع معاً."
+  "نمط المراقب – مثال مقهى القهوة (Observer Pattern – Coffee Shop Example)",
+  "مخطط أصناف UML (UML Class Diagram)",
+  "- واجهة المراقب (<<interface>> IObserver):",
+  "  * `+ Update(order: CoffeeOrder) : void`",
+  "  * ملاحظة: تعرّف عملية Update التي يجب على جميع المراقبين الملموسين تنفيذها.",
+  "- المراقبون الملموسون (Concrete Observers):",
+  "  * OrderDisplay: `- displayId: string`, `+ Update(order: CoffeeOrder) : void`",
+  "  * CustomerApp: `- userId: string`, `+ Update(order: CoffeeOrder) : void`",
+  "  * SmsService: `- phoneNumber: string`, `+ Update(order: CoffeeOrder) : void`",
+  "  * EmailService: `- email: string`, `+ Update(order: CoffeeOrder) : void`",
+  "  * AnalyticsService: `- serviceName: string`, `+ Update(order: CoffeeOrder) : void`",
+  "- صنف الموضوع CoffeeOrder (Subject):",
+  "  * الحقول: `- observers: List<IObserver>`, `- orderNumber: string`, `- status: OrderStatus`",
+  "  * الدوال:",
+  "    + Attach(observer: IObserver) : void",
+  "    + Detach(observer: IObserver) : void",
+  "    + Notify() : void",
+  "    + SetStatus(status: OrderStatus) : void",
+  "  * ملاحظة: CoffeeOrder هو الموضوع (Subject). يحتفظ بقائمة من المراقبين ويخطرهم كلما تغيرت حالة الطلب."
 ] };
 window.TOC_AR["L4-S025"] = window.TOC_AR["L4"]["L4-S025"];
 
 window.TOC_AR["L4"]["L4-S026"] = { ar: [
-  "الخطوة الأولى: إنشاء واجهة المراقب (Step 1 – Create the Observer Interface)",
-  "- واجهة المراقب المعيارية بلغة C#:",
+  "الخطوة 1 — إنشاء واجهة المراقب (Step 1 — Create the Observer Interface)",
   "```csharp",
   "public interface IObserver",
   "{",
   "    void Update(string orderNumber);",
   "}",
-  "```",
-  "- خصائص الواجهة البرمجية:",
-  "  * تحدد العقد الذي يجب أن يلتزم به أي نظام يرغب في استقبال تنبيهات الطلبات.",
-  "  * تعلن عن دالة وحيدة: `void Update(string orderNumber)` تستقبل رقم الطلب كمعامل لتحديد المعاملة الجاهزة."
+  "```"
 ] };
 window.TOC_AR["L4-S026"] = window.TOC_AR["L4"]["L4-S026"];
 
 window.TOC_AR["L4"]["L4-S027"] = { ar: [
-  "الخطوة الثانية: إنشاء صنف الموضوع - طلب القهوة (Step 2 – Create the Subject)",
+  "الخطوة 2 — إنشاء الموضوع (Step 2 — Create the Subject)",
   "```csharp",
   "public class CoffeeOrder",
   "{",
-  "    private readonly List<IObserver> _observers = new List<IObserver>();",
-  "    private readonly string _orderNumber;",
+  "    private List<IObserver> observers = new();",
   "",
-  "    public CoffeeOrder(string orderNumber)",
-  "    {",
-  "        _orderNumber = orderNumber;",
-  "    }",
-  "",
-  "    // 1. تسجيل وإرفاق مراقب جديد",
   "    public void Attach(IObserver observer)",
   "    {",
-  "        _observers.Add(observer);",
+  "        observers.Add(observer);",
   "    }",
   "",
-  "    // 2. إلغاء اشتراك مراقب",
   "    public void Detach(IObserver observer)",
   "    {",
-  "        _observers.Remove(observer);",
+  "        observers.Remove(observer);",
   "    }",
   "",
-  "    // 3. إخطار كافة المراقبين المسجلين",
-  "    public void Notify()",
+  "    public void Notify(string orderNumber)",
   "    {",
-  "        foreach (var observer in _observers)",
+  "        foreach (var observer in observers)",
   "        {",
-  "            observer.Update(_orderNumber);",
+  "            observer.Update(orderNumber);",
   "        }",
   "    }",
   "",
-  "    // دالة تغيير الحالة وإطلاق الحدث",
-  "    public void OrderReady()",
+  "    public void OrderReady(string orderNumber)",
   "    {",
-  "        Console.WriteLine(\"Order \" + _orderNumber + \" is ready!\");",
-  "        Notify();",
+  "        Console.WriteLine($\"Order {orderNumber} is ready.\");",
+  "",
+  "        Notify(orderNumber);",
   "    }",
   "}",
   "```"
@@ -422,154 +442,133 @@ window.TOC_AR["L4"]["L4-S027"] = { ar: [
 window.TOC_AR["L4-S027"] = window.TOC_AR["L4"]["L4-S027"];
 
 window.TOC_AR["L4"]["L4-S028"] = { ar: [
-  "الخطوة الثالثة: إنشاء المراقبين - شاشة عرض الطلبات (Step 3 – Create Observers: Order Display)",
-  "- المراقب الأول: شاشة العرض بالمحل (OrderDisplay):",
+  "الخطوة 3 — إنشاء المراقبين (Step 3 — Create Observers)",
+  "شاشة العرض (Order Display)",
   "```csharp",
   "public class OrderDisplay : IObserver",
   "{",
   "    public void Update(string orderNumber)",
   "    {",
-  "        Console.WriteLine(\"Display Screen: Order \" + orderNumber + \" is ready for pickup.\");",
+  "        Console.WriteLine($\"Display: Order {orderNumber} is ready.\");",
   "    }",
   "}",
-  "```",
-  "- يطبق الصنف واجهة IObserver ويعرض في دالة Update رسالة موجهة للشاشة الكبيرة في صالة الاستلام."
+  "```"
 ] };
 window.TOC_AR["L4-S028"] = window.TOC_AR["L4"]["L4-S028"];
 
 window.TOC_AR["L4"]["L4-S029"] = { ar: [
-  "الخطوة الثالثة: إنشاء المراقبين - تطبيق هاتف العميل (Step 3 – Create Observers: Customer App)",
-  "- المراقب الثاني: تطبيق الهاتف المحمول (CustomerApp):",
+  "تطبيق الهاتف للعميل (Customer Mobile App)",
   "```csharp",
   "public class CustomerApp : IObserver",
   "{",
   "    public void Update(string orderNumber)",
   "    {",
-  "        Console.WriteLine(\"Mobile App: Push Notification -> Your order \" + orderNumber + \" is ready!\");",
+  "        Console.WriteLine($\"Mobile App: Your order {orderNumber} is ready.\");",
   "    }",
   "}",
-  "```",
-  "- يطبق الصنف واجهة IObserver ويحاكي إرسال إشعار لحظي (Push Notification) لهاتف الزبون."
+  "```"
 ] };
 window.TOC_AR["L4-S029"] = window.TOC_AR["L4"]["L4-S029"];
 
 window.TOC_AR["L4"]["L4-S030"] = { ar: [
-  "الخطوة الثالثة: إنشاء المراقبين - خدمة الرسائل القصيرة (Step 3 – Create Observers: SMS Service)",
-  "- المراقب الثالث: خدمة رسائل SMS الخلوية (SmsService):",
+  "خدمة الرسائل القصيرة (SMS Service)",
   "```csharp",
   "public class SmsService : IObserver",
   "{",
   "    public void Update(string orderNumber)",
   "    {",
-  "        Console.WriteLine(\"SMS Gateway: Sending SMS -> Order \" + orderNumber + \" is ready.\");",
+  "        Console.WriteLine($\"SMS sent for order {orderNumber}.\");",
   "    }",
   "}",
-  "```",
-  "- يطبق الصنف واجهة IObserver ويحاكي الاتصال ببوابة الرسائل القصيرة لإبلاغ الزبائن غير المتصلين بالإنترنت."
+  "```"
 ] };
 window.TOC_AR["L4-S030"] = window.TOC_AR["L4"]["L4-S030"];
 
 window.TOC_AR["L4"]["L4-S031"] = { ar: [
-  "الخطوة الثالثة: إنشاء المراقبين - نظام التحليلات والإحصاءات (Step 3 – Create Observers: Analytics)",
-  "- المراقب الرابع: نظام التحليلات للمقهى (AnalyticsService):",
+  "خدمة التحليلات (Analytics Service)",
   "```csharp",
   "public class AnalyticsService : IObserver",
   "{",
   "    public void Update(string orderNumber)",
   "    {",
-  "        Console.WriteLine(\"Analytics System: Logging completion timestamp for order \" + orderNumber + \".\");",
+  "        Console.WriteLine($\"Analytics updated for order {orderNumber}.\");",
   "    }",
   "}",
-  "```",
-  "- يطبق الصنف واجهة IObserver ويقوم بتسجيل الطابع الزمني لإنجاز الطلب لأغراض تقارير الأداء والمراقبة الإدارية."
+  "```"
 ] };
 window.TOC_AR["L4-S031"] = window.TOC_AR["L4"]["L4-S031"];
 
 window.TOC_AR["L4"]["L4-S032"] = { ar: [
-  "كود العميل وتشغيل نظام المراقبين (Observer Pattern Example - Client Code)",
+  "كود العميل (Client Code)",
   "```csharp",
-  "class Program",
-  "{",
-  "    static void Main()",
-  "    {",
-  "        // 1. إنشاء الموضوع (Subject)",
-  "        CoffeeOrder order = new CoffeeOrder(\"ORD-101\");",
+  "CoffeeOrder order = new CoffeeOrder();",
   "",
-  "        // 2. إنشاء المراقبين وتسجيلهم في قائمة الطلب",
-  "        order.Attach(new OrderDisplay());",
-  "        order.Attach(new CustomerApp());",
-  "        order.Attach(new SmsService());",
-  "        order.Attach(new AnalyticsService());",
+  "order.Attach(new OrderDisplay());",
+  "order.Attach(new CustomerApp());",
+  "order.Attach(new SmsService());",
+  "order.Attach(new AnalyticsService());",
   "",
-  "        // 3. إعلان جاهزية الطلب وبث الإشعارات لجميع المسجلين",
-  "        order.OrderReady();",
-  "    }",
-  "}",
-  "```",
-  "- المخرجات في شاشة الكونسول:",
-  "  * Order ORD-101 is ready!",
-  "  * Display Screen: Order ORD-101 is ready for pickup.",
-  "  * Mobile App: Push Notification -> Your order ORD-101 is ready!",
-  "  * SMS Gateway: Sending SMS -> Order ORD-101 is ready.",
-  "  * Analytics System: Logging completion timestamp for order ORD-101."
+  "order.OrderReady(\"A102\");",
+  "```"
 ] };
 window.TOC_AR["L4-S032"] = window.TOC_AR["L4"]["L4-S032"];
 
 window.TOC_AR["L4"]["L4-S033"] = { ar: [
-  "إضافة مراقب جديد وإثبات مبدأ OCP (Adding a New Observer - Demonstrating OCP)",
-  "- متطلب إداري جديد:",
-  "- يطلب مدير المقهى إرسال بريد إلكتروني تلقائياً للزبون فور جاهزية طلبه.",
-  "- خطوات التنفيذ السلسة في ظل نمط المراقب:",
-  "  1. إنشاء صنف مراقب جديد يحقق واجهة IObserver:",
+  "إضافة مراقب جديد (Adding a New Observer)",
+  "- افترض أن المدير يريد إرسال رسائل بريد إلكتروني كلما كان الطلب جاهزاً.",
+  "- أنشئ مراقباً جديداً (Create a new observer):",
   "```csharp",
   "public class EmailService : IObserver",
   "{",
   "    public void Update(string orderNumber)",
   "    {",
-  "        Console.WriteLine(\"Email Service: Sent email confirmation for order \" + orderNumber);",
+  "        Console.WriteLine($\"Email sent for order {orderNumber}.\");",
   "    }",
   "}",
   "```",
-  "  2. تسجيله ببساطة في كود العميل: `order.Attach(new EmailService());`",
-  "- البرهان المعماري الأهم: صنف CoffeeOrder ظل ثابتاً بدون تعديل حرف واحد (Remains unchanged)، مما يثبت التطبيق العملي الكامل لمبدأ Open/Closed Principle."
+  "- سجّله (Register it):",
+  "```csharp",
+  "order.Attach(new EmailService());",
+  "```",
+  "- ملاحظة: يبقى صنف CoffeeOrder دون أي تغيير. هذا يوضح مبدأ المفتوح/المغلق (Open/Closed Principle)."
 ] };
 window.TOC_AR["L4-S033"] = window.TOC_AR["L4"]["L4-S033"];
 
 window.TOC_AR["L4"]["L4-S034"] = { ar: [
-  "جدول المقارنة الشامل لكافة أنماط التصميم (Comprehensive Design Patterns Overview)",
-  "النمط | الفئة | المشكلة التي يعالجها | الحل البرمجي | مبادئ SOLID المحققة | الفكرة الجوهرية",
-  "- المنفرد (Singleton) | إنشائي | تعدد النسخ يهدر الموارد ويحدث تضارباً في الحالة | ضمان وجود نسخة وحيدة ونقطة وصول عالمية | SRP, OCP | كائن واحد مشترك للتطبيق بالكامل.",
-  "- طريقة المصنع (Factory Method) | إنشائي | اعتماد العميل على أصناف ملموسة محددة مسبقاً | تفويض إنشاء الكائنات لدالة مصنع تعيد تجريداً | OCP, DIP | إنشاء الكائنات دون كشف أصنافها الملموسة.",
-  "- المهايئ (Adapter) | هيكلي | عدم توافق الواجهات بين أصناف قائمة | تحويل واجهة إلى الواجهة التي يتوقعها العميل | OCP, DIP | جعل الأصناف غير المتوافقة تتعاون معاً.",
-  "- الواجهة (Facade) | هيكلي | تعقيد النظام الفرعي وتشتت العميل بين أصنافه | توفير واجهة موحدة ومبسطة وعالية المستوى | SRP, DIP | إخفاء التعقيد خلف نقطة دخول وحيدة.",
-  "- المزخرف (Decorator) | هيكلي | الحاجة لميزات إضافية مع تجنب انفجار الأصناف بالوراثة | تغليف الكائن ديناميكياً بمزخرفات تضيف مسؤوليات | OCP, SRP | إضافة وظائف وسلوكيات أثناء وقت التشغيل.",
-  "- الوكيل (Proxy) | هيكلي | الحاجة للتحكم في الوصول أو تأجيل الإنشاء أو الحماية | وضع كائن بديل أو نائب بين العميل والكائن الحقيقي | OCP, SRP | التحكم والوساطة في الوصول إلى كائن آخر.",
-  "- المراقب (Observer) | سلوكي | حاجة كائنات متعددة لمعرفة تغير حالة كائن آخر تلقائياً | إدارة قائمة مراقبين وبث إشعار Notify عند التغيير | OCP, DIP | إشعار تلقائي من نمط واحد إلى متعدد.",
-  "- الاستراتيجية (Strategy) | سلوكي | وجود خوارزميات متعددة والحاجة للتبديل بينها بدون if-else | تغليف كل خوارزمية في صنف واختيارها وقت التشغيل | OCP, DIP | استبدال وتبديل الخوارزميات ديناميكياً."
+  "جدول مقارنة الأنماط (Pattern Comparison Table)",
+  "النمط (Pattern) | الفئة (Category) | المشكلة (Problem) | الحل (Solution) | مبادئ SOLID | الفكرة الجوهرية (Key Idea)",
+  "- Singleton | Creational | إنشاء نسخ متعددة من صنف قد يسبب سلوكاً غير متسق أو هدراً في الموارد | ضمان وجود نسخة واحدة فقط وتوفير نقطة وصول عامة | SRP, OCP (عند استخدامه بشكل مناسب) | كائن واحد مشترك للتطبيق بأكمله.",
+  "- Factory Method | Creational | كود العميل يعتمد على أصناف ملموسة ويجب عليه تحديد أي كائن سينشئه | تفويض إنشاء الكائن إلى دالة مصنع تعيد تجريداً | OCP, DIP | إنشاء كائنات دون كشف الأصناف الملموسة.",
+  "- Adapter | Structural | الأصناف الحالية تمتلك واجهات غير متوافقة ولا يمكنها العمل معاً | تحويل واجهة إلى واجهة أخرى يتوقعها العميل | OCP, DIP | جعل الأصناف غير المتوافقة تتعاون معاً.",
+  "- Facade | Structural | نظام فرعي معقد ويصعب على العملاء استخدامه مباشرة | توفير واجهة بسيطة وموحدة للنظام الفرعي | SRP, DIP | إخفاء التعقيد خلف نقطة دخول واحدة.",
+  "- Decorator | Structural | الحاجة لسلوكيات جديدة دون تعديل الأصناف الحالية أو إنشاء فئات فرعية كثيرة | تغليف كائن بأصناف مزخرفة تضيف مسؤوليات ديناميكياً | OCP, SRP | إضافة وظائف في وقت التشغيل.",
+  "- Proxy | Structural | يجب التحكم في الوصول المباشر إلى كائن، أو تأجيله، أو تأمينه | وضع كائن وكيل بين العميل والكائن الحقيقي | OCP, SRP | التحكم في الوصول إلى كائن آخر.",
+  "- Observer | Behavioral | كائنات كثيرة تحتاج لأن تُخطر تلقائياً عند تغير حالة كائن آخر | الاحتفاظ بقائمة من المراقبين وإخطارهم كلما تغير الموضوع | OCP, DIP | إخطار تلقائي من نمط واحد-إلى-متعدد.",
+  "- Strategy | Behavioral | توجد خوارزميات متعددة ويجب على العميل التبديل بينها دون تغيير كوده | تغليف كل خوارزمية في صنف استراتيجية منفصل واختيار واحدة وقت التشغيل | OCP, DIP | استبدال الخوارزميات ديناميكياً."
 ] };
 window.TOC_AR["L4-S034"] = window.TOC_AR["L4"]["L4-S034"];
 
 window.TOC_AR["L4"]["L4-S035"] = { ar: [
-  "مصفوفة الأسئلة التشخيصية لاختيار النمط (Design Pattern Decision Questions)",
-  "النمط التصميمي | السؤال الذهبي البسيط الذي تسأله لنفسك لتحديده فوراً",
-  "- المنفرد (Singleton) | هل يجب أن توجد نسخة وحيدة فقط من هذا الصنف في التطبيق بالكامل؟",
-  "- طريقة المصنع (Factory Method) | من هو المسؤول عن إنشاء وتهيئة هذا الكائن وتحديد نوعه؟",
-  "- المهايئ (Adapter) | هل يمكنني جعل هذين الصنفين غير المتوافقين يعملان معاً دون تعديلهما؟",
-  "- الواجهة (Facade) | هل يمكنني إخفاء هذا النظام الفرعي المعقد وتبسيطه للعميل بواجهة واحدة؟",
-  "- المزخرف (Decorator) | هل يمكنني إضافة ميزات وسلوكيات لهذا الكائن دون تعديل صنفه أو اللجوء للوراثة؟",
-  "- الوكيل (Proxy) | هل يجب علي التحكم في الوصول إلى هذا الكائن أو تأجيل إنشائه أو تأمينه؟",
-  "- المراقب (Observer) | هل ينبغي إخطار وتنبيه كائنات متعددة تلقائياً عندما يتغير شيء ما في هذا الكائن؟",
-  "- الاستراتيجية (Strategy) | هل يمكنني تغيير وتبديل هذه الخوارزمية ديناميكياً أثناء وقت التشغيل؟"
+  "سؤال بسيط تسأله لنفسك (Easy Question to Ask Yourself)",
+  "النمط (Pattern) | سؤال بسيط تسأله لنفسك (Easy Question to Ask Yourself)",
+  "- Singleton | هل يجب أن تكون هناك نسخة واحدة فقط؟ (Should there be only one instance?)",
+  "- Factory Method | من الذي ينبغي عليه إنشاء الكائن؟ (Who should create the object?)",
+  "- Adapter | هل يمكن لهذين الصنفين غير المتوافقين العمل معاً؟ (Can these two incompatible classes work together?)",
+  "- Facade | هل يمكنني إخفاء هذا النظام الفرعي المعقد؟ (Can I hide this complex subsystem?)",
+  "- Decorator | هل يمكنني إضافة ميزات دون تعديل الصنف؟ (Can I add features without modifying the class?)",
+  "- Proxy | هل ينبغي التحكم في الوصول إلى هذا الكائن؟ (Should access to this object be controlled?)",
+  "- Observer | هل يجب إخطار عدة كائنات عندما يتغير شيء ما؟ (Should many objects be notified when something changes?)",
+  "- Strategy | هل يمكنني تغيير الخوارزمية في وقت التشغيل؟ (Can I change the algorithm at runtime?)"
 ] };
 window.TOC_AR["L4-S035"] = window.TOC_AR["L4"]["L4-S035"];
 
 window.TOC_AR["L4"]["L4-S036"] = { ar: [
-  "أنماط التصميم ومبادئ SOLID الخمسة (Patterns and SOLID Principles Mapping)",
-  "مبدأ SOLID | الأنماط التصميمية التي تحققه وتجسده | التعليل المعماري والبرمجي",
-  "- مبدأ المسؤولية الأحادية (SRP) | Singleton, Facade, Decorator, Proxy | كل صنف يمتلك مسؤولية واحدة محددة ومبرراً وحيداً للتعديل.",
-  "- مبدأ المفتوح/المغلق (OCP) | Factory Method, Adapter, Decorator, Proxy, Observer, Strategy | إضافة سلوكيات وميزات جديدة بتوسيع الأصناف دون تعديل الأكواد القائمة المستقرة.",
-  "- مبدأ استبدال لسكوف (LSP) | Factory Method, Decorator, Proxy, Strategy | الأصناف المشتقة والتحقيقات الملموسة تحل محل تجريداتها وواجهاتها دون كسر سلوك البرنامج.",
-  "- مبدأ فصل الواجهات (ISP) | Observer, Strategy, Adapter | استخدام واجهات برمجية صغيرة ومحددة ومركزة يمنع إجبار العميل على الاعتماد على دوال لا يحتاجها.",
-  "- مبدأ عكس التبعية (DIP) | Factory Method, Adapter, Facade, Observer, Strategy | اعتماد كود العميل والأنظمة عالية المستوى على التجريدات (الواجهات) بدلاً من الأصناف الملموسة المنخفضة."
+  "الأنماط ومبادئ SOLID (Patterns and SOLID Principles)",
+  "مبدأ SOLID | الأنماط المطبقة (Patterns That Apply) | لماذا؟ (Why?)",
+  "- SRP (المسؤولية الأحادية) | Singleton, Facade, Decorator, Proxy | كل صنف يمتلك مسؤولية واحدة محددة جيداً.",
+  "- OCP (المفتوح/المغلق) | Factory Method, Adapter, Decorator, Proxy, Observer, Strategy | تتم إضافة السلوك الجديد عبر توسيع الأصناف بدلاً من تعديل الأصناف الحالية.",
+  "- LSP (استبدال لسكوف) | Factory Method, Decorator, Proxy, Strategy | الأصناف المشتقة أو التطبيقات يمكن أن تحل محل تجريداتها.",
+  "- ISP (فصل الواجهات) | Observer, Strategy, Adapter | واجهات صغيرة ومركزة تمنع الاعتماديات غير الضرورية.",
+  "- DIP (عكس التبعية) | Factory Method, Adapter, Facade, Observer, Strategy | العملاء يعتمدون على التجريدات بدلاً من التطبيقات الملموسة."
 ] };
 window.TOC_AR["L4-S036"] = window.TOC_AR["L4"]["L4-S036"];

@@ -24,11 +24,15 @@ window.TOC_AR["L2"]["L2-S002"] = { ar: [
 window.TOC_AR["L2-S002"] = window.TOC_AR["L2"]["L2-S002"];
 
 window.TOC_AR["L2"]["L2-S003"] = { ar: [
-  "مشاكل التصميم البرمجي الرديء (Common Problems in Poor Software Design)",
-  "- الصلابة (Rigidity): صعوبة إجراء أي تغيير لأن التعديل البسيط يجر سلسلة تعديلات متتالية في أصناف أخرى.",
-  "- الهشاشة (Fragility): كسر أجزاء غير متوقعة من النظام في أماكن لا علاقة لها بالكود المعدل.",
-  "- عدم القابلية للنقل (Immobility): صعوبة إعادة استخدام أجزاء من الكود في مشاريع أخرى لارتباطها الشديد ببيئتها الحالية.",
-  "- اللزوجة (Viscosity): سهولة عمل ترقيعات برمجية خاطئة وسريعة مقابل صعوبة اتباع الأسلوب المعماري السليم."
+  "مشاكل شائعة في التصميم البرمجي الرديء (Common Problems in Poor Software Design)",
+  "- مع نمو المشاريع البرمجية، يواجه المطورون غالباً:",
+  "  * تكرار الكود (Duplicate Code).",
+  "  * الأصناف الضخمة (Large Classes).",
+  "  * الارتباط الوثيق (Tight Coupling).",
+  "  * صعوبة الاختبار (Difficult Testing).",
+  "  * صعوبة الصيانة (Difficult Maintenance).",
+  "  * صعوبة التوسيع (Difficult Extension).",
+  "- هذه المشاكل تزيد من تكلفة التطوير وتقلل من جودة البرمجيات."
 ] };
 window.TOC_AR["L2-S003"] = window.TOC_AR["L2"]["L2-S003"];
 
@@ -138,199 +142,346 @@ window.TOC_AR["L2"]["L2-S014"] = { ar: [
 window.TOC_AR["L2-S014"] = window.TOC_AR["L2"]["L2-S014"];
 
 window.TOC_AR["L2"]["L2-S015"] = { ar: [
-  "هيكلية نمط السينغلتون (Singleton Structure & Mechanics)",
-  "- كيف نمنع المطورين من استدعاء new MyClass()؟",
-  "  1. باني خاص (Private Constructor): جعل مشيد الصنف private لمنع إنشاء نسخ من خارج الصنف نهائياً.",
-  "  2. متحول ساكن خاص (Private Static Field): لتخزين النسخة الوحيدة من الصنف في الذاكرة.",
-  "  3. دالة أو خاصية ساكنة عامة (Public Static Method/Property): مثل GetInstance() أو Instance، تفحص إذا كانت النسخة موجودة تعيدها، وإن لم تكن قد أُنشئت بعد تقوم بإنشائها لأول مرة فقط (Lazy Initialization)."
+  "نمط السينغلتون (Singleton Definition)",
+  "- نمط السينغلتون هو نمط تصميم إنشائي (creational design pattern) يتيح لك ضمان أن الفئة تمتلك نسخة واحدة فقط، مع توفير نقطة وصول عامة عالمية لهذه النسخة (global access point to this instance)."
 ] };
 window.TOC_AR["L2-S015"] = window.TOC_AR["L2"]["L2-S015"];
 
 window.TOC_AR["L2"]["L2-S016"] = { ar: [
-  "متى نستخدم نمط السينغلتون؟ (When to Use Singleton)",
-  "- عندما تتطلب طبيعة النظام وجود كائن واحد حصري لتنسيق العمليات عبر التطبيق.",
-  "- أمثلة واقعية واستخدامات نموذجية:",
-  "  * مدير سجل الأحداث (Logger / Logging Service).",
-  "  * مجمع الاتصال بقاعدة البيانات (Database Connection Pool).",
-  "  * كائن إعدادات التطبيق المقروءة من ملف JSON أو XML (Configuration Settings).",
-  "  * نظام إدارة الطابعات (Print Spooler / Hardware Controller)."
+  "نمط السينغلتون (Singleton Pattern)",
+  "- يحل نمط السينغلتون مشكلتين في نفس الوقت، مما يجعله ينتهك مبدأ المسؤولية الأحادية (Single Responsibility Principle):",
+  "  1. ضمان أن الفئة تمتلك نسخة واحدة فقط (Ensure that a class has just a single instance).",
+  "  2. توفير نقطة وصول عامة عالمية لتلك النسخة (Provide a global access point to that instance)."
 ] };
 window.TOC_AR["L2-S016"] = window.TOC_AR["L2"]["L2-S016"];
 
 window.TOC_AR["L2"]["L2-S017"] = { ar: [
-  "تطبيق نمط السينغلتون في لغة C# (Singleton Implementation in C#)",
-  "```csharp",
-  "public class DatabaseConnection {",
-  "    private static DatabaseConnection _instance;",
-  "    private DatabaseConnection() {",
-  "        // باني خاص لمنع الإنشاء الخارجي",
-  "    }",
-  "    public static DatabaseConnection GetInstance() {",
-  "        if (_instance == null) {",
-  "            _instance = new DatabaseConnection();",
-  "        }",
-  "        return _instance;",
-  "    }",
-  "}",
-  "```"
+  "نمط السينغلتون — الخطوتان المشتركتان (Singleton Pattern)",
+  "- تشترك جميع تطبيقات نمط السينغلتون في هاتين الخطوتين:",
+  "  1. جعل المشيد الافتراضي خاصاً (private): لمنع الكائنات الأخرى من استخدام المعامل new مع فئة السينغلتون.",
+  "  2. إنشاء دالة إنشاء ساكنة (static creation method) تعمل كبديل للمشيد: تقوم هذه الدالة في الخفاء باستدعاء المشيد الخاص لإنشاء الكائن وحفظه في حقل ساكن (static field). وجميع الاستدعاءات التالية لهذه الدالة تعيد الكائن المحفوظ مسبقاً (cached object)."
 ] };
 window.TOC_AR["L2-S017"] = window.TOC_AR["L2"]["L2-S017"];
 
 window.TOC_AR["L2"]["L2-S018"] = { ar: [
-  "مجالات استخدام السينغلتون وسيناريوهات العمل (Where Is Singleton Used?)",
-  "- إدارة الموارد المشتركة والعتاد (Shared Hardware Resources).",
-  "- أنظمة التخزين المؤقت (In-Memory Caching Systems).",
-  "- خدمات الدخول والمصادقة الموحدة (Session / Auth Manager).",
-  "- مجمعات الكائنات والمسارات (Thread Pools & Object Pools)."
+  "أين يُستخدم نمط السينغلتون؟ (Where Is Singleton Used?)",
+  "- تشمل الأمثلة الشائعة ما يلي:",
+  "  * مسجل الأحداث (Logger).",
+  "  * مدير التكوين والإعدادات (Configuration Manager).",
+  "  * إعدادات التطبيق (Application Settings).",
+  "  * مدير الذاكرة المؤقتة (Cache Manager).",
+  "  * منسق طابور الطباعة (Printer Spooler).",
+  "  * مدير الاتصال بقاعدة البيانات في بعض المعماريات (Database Connection Manager in some architectures)."
 ] };
 window.TOC_AR["L2-S018"] = window.TOC_AR["L2"]["L2-S018"];
 
 window.TOC_AR["L2"]["L2-S019"] = { ar: [
-  "مخطط فئات UML لنمط السينغلتون (Singleton UML Diagram)",
-  "- الصنف Singleton في المخطط يحتوي:",
-  "  * حقل ساكن خاص: `- instance: Singleton` (علامة السالب تعني private، وتسطير الاسم يعني static).",
-  "  * باني خاص: `- Singleton()` لمنع الإنشاء عبر new.",
-  "  * دالة ساكنة عامة: `+ getInstance(): Singleton` (علامة الزائد تعني public).",
-  "  * دوال أعمال عامة إضافية: `+ doSomething()`."
+  "مخطط UML لنمط السينغلتون (Singleton Pattern – UML Diagram)",
+  "- فئة السينغلتون (Singleton Class):",
+  "  * حقل ساكن خاص: `- instance: Singleton (static, private)`",
+  "  * مُنشئ خاص: `- Singleton() (private)` — المشيد خاص لمنع إنشاء كائنات من فئات أخرى.",
+  "  * دالة ساكنة عامة: `+ getInstance(): Singleton (static)` — توفر نقطة وصول عامة للنسخة الوحيدة.",
+  "  * دالة عمليات عامة: `+ someOperation(): void`",
+  "- فئة العميل (Client Class):",
+  "  * `+ main(): void`",
+  "  * `+ doSomething(): void`",
+  "  * علاقة استخدام (uses) بين Client و Singleton.",
+  "- كود دالة الوصول الموضحة في المخطط:",
+  "```csharp",
+  "public static Singleton getInstance() {",
+  "    if (instance == null)",
+  "        instance = new Singleton();",
+  "    return instance;",
+  "}",
+  "```",
+  "- النقاط الجوهرية (Key Points):",
+  "  * الفئة تمتلك نسخة واحدة فقط (The class has only one instance).",
+  "  * المشيد خاص (The constructor is private).",
+  "  * النسخة خاصة وساكنة (The instance is private and static).",
+  "  * دالة ساكنة عامة توفر وصولاً عاماً للنسخة (A public static method provides global access).",
+  "- الغرض المعماري (Intent): ضمان امتلاك الفئة لنسخة واحدة فقط، وتوفير نقطة وصول عامة إليها."
 ] };
 window.TOC_AR["L2-S019"] = window.TOC_AR["L2"]["L2-S019"];
 
 window.TOC_AR["L2"]["L2-S020"] = { ar: [
-  "السينغلتون وتعدد الخيوط (Singleton Pattern & Thread Safety in C#)",
-  "- المشكلة في البيئات متعددة المسارات (Multi-threaded Environment):",
-  "  * إذا وصل خيطان (Threads) في نفس اللحظة وفحصا الشرط `if (_instance == null)`، فسيجدانه صحيحاً كلاهما!",
-  "  * النتيجة: سيقوم كل خيط بإنشاء كائن جديد، ونفقد صفة النسخة الوحيدة ويحدث تضارب في الذاكرة!",
-  "- الحل: استخدام آلية القفل (Locking Mechanism / Thread-Safe Singleton):",
+  "كود تطبيق نمط السينغلتون بلغة C# (C# Code)",
   "```csharp",
-  "private static readonly object _lock = new object();",
-  "public static DatabaseConnection GetInstance() {",
-  "    lock (_lock) {",
-  "        if (_instance == null) {",
-  "            _instance = new DatabaseConnection();",
-  "        }",
+  "public sealed class Singleton",
+  "{",
+  "    private static Singleton instance;",
+  "",
+  "    private Singleton()",
+  "    {",
   "    }",
-  "    return _instance;",
+  "",
+  "    public static Singleton GetInstance()",
+  "    {",
+  "        if (instance == null)",
+  "        {",
+  "            instance = new Singleton();",
+  "        }",
+  "",
+  "        return instance;",
+  "    }",
   "}",
-  "```"
+  "```",
+  "- تفكيك وترجمة عناصر الكود سطر بسطر:",
+  "  * `public sealed class Singleton`: فئة عامة مغلقة (sealed) لمنع الوراثة منها وحماية نمط النسخة الواحدة.",
+  "  * `private static Singleton instance;`: متغير ساكن خاص لتخزين المرجع الوحيد لكائن السينغلتون.",
+  "  * `private Singleton() { }`: مُنشئ (Constructor) خاص يمنع استخدام المعامل new من خارج الفئة نهائياً.",
+  "  * `public static Singleton GetInstance()`: دالة ساكنة عامة تُستدعى عبر اسم الفئة للحصول على النسخة.",
+  "  * `if (instance == null) { instance = new Singleton(); }`: التحقق الكسول؛ إذا لم يكن الكائن قد أُنشئ بعد يتم إنشاؤه لأول مرة.",
+  "  * `return instance;`: إرجاع النسخة المحفوظة."
 ] };
 window.TOC_AR["L2-S020"] = window.TOC_AR["L2"]["L2-S020"];
 
 window.TOC_AR["L2"]["L2-S021"] = { ar: [
-  "أمثلة عملية على السينغلتون (Singleton Practical Examples)",
-  "- نظام تسجيل الأحداث (Logger Example):",
-  "  * كتابة الرسائل التحذيرية والأخطاء في ملف مركزي موحد.",
-  "- مدير التكوين والإعدادات (Configuration Manager):",
-  "  * قراءة ملف الإعدادات appsettings.json مرة واحدة عند بدء التشغيل وتوفيره لكافة الأصناف دون إعادة قراءة الملف من القرص الصلب في كل مرة."
+  "أمثلة استخدام السينغلتون وحالات عدم استخدامه (Examples)",
+  "- استخدم نمط السينغلتون لفئات مثل (Use Singleton for classes such as):",
+  "  * الاتصال بقاعدة البيانات (Database Connection).",
+  "  * مسجل الأحداث (Logger).",
+  "  * مدير التكوين (Configuration Manager).",
+  "  * مدير الذاكرة المؤقتة (Cache Manager).",
+  "  * مدير الطابعة (Printer Manager).",
+  "  * إعدادات التطبيق (Application Settings).",
+  "- لا تستخدم نمط السينغلتون لفئات تتطلب بطبيعتها كائنات متعددة مثل (Do not use Singleton for classes that naturally require multiple objects):",
+  "  * الطالب (Student).",
+  "  * الموظف (Employee).",
+  "  * المنتج (Product).",
+  "  * العميل (Customer).",
+  "  * الطلب (Order)."
 ] };
 window.TOC_AR["L2-S021"] = window.TOC_AR["L2"]["L2-S021"];
 
 window.TOC_AR["L2"]["L2-S022"] = { ar: [
-  "دراسة حالة كود السينغلتون (Detailed Singleton Case Study)",
-  "- تطبيق كود C# متكامل يحتوي الحقول الساكنة، المشيد الخاص، ودالة الوصول المحمية بالقفل.",
-  "- اختبار استدعاء الدالة من أماكن متعددة والتأكد من تطابق مراجع الكائنات عبر `object.ReferenceEquals(c1, c2)`.",
-  "- النتيجة تكون دائماً True، مما يثبت أن كلا المرجعين يشيران إلى نفس المساحة التخزينية في الـ Heap."
+  "مثال تطبيقي كامل على السينغلتون واختبار النسخة (Example — Configuration & Program)",
+  "```csharp",
+  "using System;",
+  "",
+  "public sealed class Configuration",
+  "{",
+  "    private static Configuration instance;",
+  "",
+  "    private Configuration()",
+  "    {",
+  "        Console.WriteLine(\"Loading configuration file...\");",
+  "        DatabaseName = \"UniversityDB\";",
+  "    }",
+  "",
+  "    public string DatabaseName { get; private set; }",
+  "",
+  "    public static Configuration GetInstance()",
+  "    {",
+  "        if (instance == null)",
+  "        {",
+  "            instance = new Configuration();",
+  "        }",
+  "",
+  "        return instance;",
+  "    }",
+  "}",
+  "",
+  "class Program",
+  "{",
+  "    static void Main()",
+  "    {",
+  "        Configuration c1 = Configuration.GetInstance();",
+  "        Configuration c2 = Configuration.GetInstance();",
+  "",
+  "        Console.WriteLine(c1.DatabaseName);",
+  "        Console.WriteLine(c2.DatabaseName);",
+  "",
+  "        Console.WriteLine(Object.ReferenceEquals(c1, c2));",
+  "    }",
+  "}",
+  "```",
+  "- تفكيك وترجمة الكود ومخرجاته:",
+  "  * فئة Configuration: تمثل كائن إعدادات النظام، ويقوم مشيدها الخاص بطباعة رسالة تحميل الإعدادات وتعيين اسم قاعدة البيانات `DatabaseName = \"UniversityDB\"`.",
+  "  * فئة Program والتابع Main: تقوم بطلب النسخة مرتين وتخزين المرجع في متغيرين مستقلين `c1` و `c2`.",
+  "  * `Object.ReferenceEquals(c1, c2)`: تفحص هل المتغيران يشيران إلى نفس الكائن تماماً في الذاكرة (Heap)، وتطبع: `True`.",
+  "  * جملة `Loading configuration file...` تُطبع مرة واحدة فقط، مما يثبت أن المشيد لم يُستدعَ إلا مرة واحدة."
 ] };
 window.TOC_AR["L2-S022"] = window.TOC_AR["L2"]["L2-S022"];
 
 window.TOC_AR["L2"]["L2-S023"] = { ar: [
-  "نمط المصنع (Factory Pattern Overview)",
-  "- نمط إنشائي يهدف إلى فصل وتجريد عملية إنشاء الكائنات عن الكود المستدعي.",
-  "- المشكلة البرمجية بدون مصنع:",
-  "  * استخدام عبارات switch أو if-else المتشعبة لإنشاء كائنات بناءً على نوع محدد.",
-  "  * كلما أردنا إضافة نوع جديد، نضطر لتعديل الكود القائم، مما ينتهك مبدأ الفتح والإغلاق (OCP) ويرفع الارتباط (Tight Coupling).",
-  "- الحل عبر نمط المصنع: تفويض مسؤولية الإنشاء إلى صنف مصنع مستقل يعيد واجهة مشتركة."
+  "نمط المصنع (Factory Pattern)",
+  "- رسم توضيحي تمهيدي لنمط المصنع (Factory Metaphor):",
+  "  * تشبيه معمارية المصنع بمركز إدارة اللوجستيات (Logistics) الذي يشرف على نقل البضائع.",
+  "  * يتفرع العمل إلى نوعين رئيسيين من النقل: النقل البري (Road Logistics) عبر الشاحنات، والنقل البحري (Sea Logistics) عبر السفن.",
+  "  * العميل يطلب نقل البضاعة دون الحاجة لمعرفة التفاصيل الهندسية الداخلية لكل وسيلة نقل."
 ] };
 window.TOC_AR["L2-S023"] = window.TOC_AR["L2"]["L2-S023"];
 
 window.TOC_AR["L2"]["L2-S024"] = { ar: [
-  "هيكلية نمط المصنع ومخطط UML (Factory Pattern Structure)",
-  "- المكونات المعمارية لنمط المصنع:",
-  "  1. المنتج المجرد (Product Interface / Abstract Class): العقد البرمجي المشترك لجميع الكائنات المنتجة (مثل INotification).",
-  "  2. المنتجات الملموسة (Concrete Products): الأصناف الفعلية التي تطبق الواجهة (EmailNotification, SmsNotification, PushNotification).",
-  "  3. صنف المصنع (Factory Class / Creator): الصنف الذي يحتوي الدالة الإنشائية (CreateNotification) ويعيد مرجعاً من نوع المنتج المجرد."
+  "نمط المصنع (Factory Pattern)",
+  "- طريقة المصنع (Factory Method) هي نمط تصميم إنشائي يوفر واجهة لإنشاء الكائنات في فئة أساسية (superclass)، ولكنه يسمح للفئات الفرعية (subclasses) بتعديل وتغيير نوع الكائنات التي سيتم إنشاؤها (alter the type of objects that will be created).",
+  "- بدلاً من إنشاء الكائنات بشكل مباشر، تفوض طريقة المصنع مسؤولية إنشاء الكائن إلى دالة أو فئة مخصصة (delegates the responsibility of object creation to a dedicated method or class)، مما يعزز الترابط المرن المفكك وقابلية التوسع (promoting loose coupling and scalability).",
+  "- تحدد طريقة المصنع دالة يجب استخدامها لإنشاء الكائنات بدلاً من استخدام الاستدعاء المباشر للمشيد عبر المعامل new (instead of using a direct constructor call). ويمكن للفئات الفرعية إعادة تعريف هذه الدالة (override this method) لتغيير فئة الكائنات التي سيتم إنشاؤها.",
+  "- يُعد هذا النمط مفيداً بشكل خاص في السيناريوهات التي يكون فيها منطق إنشاء الكائنات معقداً أو يختلف بناءً على شروط معينة (instantiation logic is complex or varies based on certain conditions)."
 ] };
 window.TOC_AR["L2-S024"] = window.TOC_AR["L2"]["L2-S024"];
 
 window.TOC_AR["L2"]["L2-S025"] = { ar: [
-  "متى نستخدم نمط المصنع؟ (When to Use Factory Pattern)",
-  "- عندما لا يعرف الصنف المستدعي مسبقاً الفئات الملموسة للكائنات التي سيحتاج لإنشائها.",
-  "- عندما تكون عملية إنشاء الكائن معقدة وتحتوي خطوات تهيئة متعددة نرغب في تجميعها وتوحيدها.",
-  "- عندما نريد عزل كود العميل عن التغييرات المستقبلية وإتاحة إضافة منتجات جديدة دون كسر الكود القديم.",
-  "- لتطبيق مبدأ المسؤولية الواحدة (SRP) بحصر قرارات الإنشاء في مكان مخصص."
+  "متى نستخدمه؟ (When to Use It)",
+  "- فئات فرعية غير معروفة مسبقاً (Unknown Subclasses): عندما لا يعرف الكود البرمجي لديك مسبقاً الأنواع الدقيقة التي يحتاج للتعامل معها (When your code doesn't know ahead of time which exact types it needs to work with).",
+  "- تحكم مركزي موحد (Centralized Control): عندما ترغب في تجميع منطق الإنشاء المعقد أو إدارة دورة حياة الكائنات في مكان واحد (consolidate complex creation logic or object lifecycle management in one place).",
+  "- اختبارات الوحدة (Unit Testing): عندما تحتاج إلى استبدال التبعيات بكائنات وهمية بسهولة لأغراض الاختبار (substitute dependencies with mock objects easily)."
 ] };
 window.TOC_AR["L2-S025"] = window.TOC_AR["L2"]["L2-S025"];
 
 window.TOC_AR["L2"]["L2-S026"] = { ar: [
-  "مثال تطبيقي: مصنع الإشعارات (Notification Factory Example)",
-  "- الواجهة المشتركة: `INotification` وتحتوي دالة `Send(string message)`.",
-  "- الأصناف الملموسة:",
-  "  * EmailNotification: ترسل عبر خادم البريد SMTP.",
-  "  * SmsNotification: ترسل عبر بوابة رسائل الهاتف المحمول.",
-  "  * PushNotification: ترسل عبر خوادم إشعارات الهواتف الذكية (Firebase).",
-  "- صنف المصنع NotificationFactory يحتوي دالة CreateNotification(type)."
+  "نمط المصنع (المصنع البسيط) — مثال الإشعارات (Factory Pattern - Notification Example)",
+  "- مخطط ومكونات مصنع الإشعارات:",
+  "  * الواجهة `<<interface>> INotification`: تحتوي العقد `+ Send(): void`.",
+  "  * المنتجات الملموسة (Concrete Products):",
+  "    1. `EmailNotification`: تطبق `+ Send(): void // send email`.",
+  "    2. `SmsNotification`: تطبق `+ Send(): void // send sms`.",
+  "    3. `WhatsAppNotification`: تطبق `+ Send(): void // send whatsapp message`.",
+  "  * صنف المصنع `NotificationFactory`: يحتوي دالة `+ CreateNotification(type: string): INotification` مع جملة switch تفحص النوع (email, sms, whatsapp) وترجع الكائن المناسب أو ترمي Exception للأنواع غير الصالحة.",
+  "- مثال الاستخدام (Usage Example):",
+  "```csharp",
+  "NotificationFactory factory = new NotificationFactory();",
+  "INotification notification = factory.CreateNotification(\"email\");",
+  "notification.Send(); // Outputs: send email",
+  "",
+  "notification = factory.CreateNotification(\"sms\");",
+  "notification.Send(); // Outputs: send sms",
+  "",
+  "notification = factory.CreateNotification(\"whatsapp\");",
+  "notification.Send(); // Outputs: send whatsapp message",
+  "```",
+  "- آلية العمل خطوة بخطوة (How it works):",
+  "  1. العميل يستدعي دالة الإنشاء: `CreateNotification(\"email\")`.",
+  "  2. المصنع يفحص النوع داخل جملة switch.",
+  "  3. المصنع ينشئ ويعيد الكائن المناسب (`EmailNotification`).",
+  "  4. العميل يستلم الكائن من نوع الواجهة `INotification` ويستخدمه باستدعاء `Send()`."
 ] };
 window.TOC_AR["L2-S026"] = window.TOC_AR["L2"]["L2-S026"];
 
 window.TOC_AR["L2"]["L2-S027"] = { ar: [
-  "مخطط UML لمصنع الإشعارات (Notification Factory UML)",
-  "- يوضح المخطط العلاقة بين:",
-  "  * العميل (Client) يعتمد على NotificationFactory و INotification.",
-  "  * NotificationFactory ينشئ (Creates) كائنات تطبق INotification.",
-  "  * أصناف Email, SMS, Push ترث وتطبق واجهة INotification وتعتبر Concrete Products.",
-  "- العميل لا يرتبط مباشرة بأي من الأصناف الملموسة الثلاثة."
+  "مخطط فئات UML لنمط طريقة المصنع (Factory Method Pattern – UML Diagram)",
+  "- شجرة المنتجات (Products Hierarchy):",
+  "  * المنتج المجرد `<<abstract>> Product`: يحتوي دالة العمليات `+ operation(): void`.",
+  "  * المنتجات الملموسة `ConcreteProductA` و `ConcreteProductB`: تطبق دالة `+ operation(): void`.",
+  "- شجرة المنشئات (Creators Hierarchy):",
+  "  * المنشئ المجرد `<<abstract>> Creator`: يحتوي دالة القالب `+ templateMethod(): void` ودالة المصنع المحمية `# factoryMethod(): Product`.",
+  "  * دالة templateMethod() تستخدم factoryMethod() لإنشاء كائن Product.",
+  "  * المنشئ الملموس `ConcreteCreatorA`: يعيد تعريف دالة المصنع لترجع `new ConcreteProductA()`.",
+  "  * المنشئ الملموس `ConcreteCreatorB`: يعيد تعريف دالة المصنع لترجع `new ConcreteProductB()`.",
+  "- القاعدة المعمارية: المنشئ الملموس (ConcreteCreator) يعيد تعريف (overrides) دالة factoryMethod() ليرجع نسخة من ConcreteProduct."
 ] };
 window.TOC_AR["L2-S027"] = window.TOC_AR["L2"]["L2-S027"];
 
 window.TOC_AR["L2"]["L2-S028"] = { ar: [
-  "كود واجهة الإشعارات وتطبيقاتها في C# (C# Interface Implementation)",
+  "مثال كود C#: واجهة الإشعار وفئات المنتجات الملموسة (Example — INotification)",
   "```csharp",
-  "public interface INotification {",
-  "    void Send(string message);",
+  "public interface INotification",
+  "{",
+  "    void Send();",
   "}",
-  "public class EmailNotification : INotification {",
-  "    public void Send(string message) {",
-  "        Console.WriteLine(\"Sending Email: \" + message);",
+  "",
+  "public class EmailNotification : INotification",
+  "{",
+  "    public void Send()",
+  "    {",
+  "        Console.WriteLine(\"Email Sent\");",
   "    }",
   "}",
-  "public class SmsNotification : INotification {",
-  "    public void Send(string message) {",
-  "        Console.WriteLine(\"Sending SMS: \" + message);",
+  "",
+  "public class SmsNotification : INotification",
+  "{",
+  "    public void Send()",
+  "    {",
+  "        Console.WriteLine(\"SMS Sent\");",
   "    }",
   "}",
-  "```"
+  "",
+  "public class WhatsAppNotification : INotification",
+  "{",
+  "    public void Send()",
+  "    {",
+  "        Console.WriteLine(\"WhatsApp Message Sent\");",
+  "    }",
+  "}",
+  "```",
+  "- تفكيك وترجمة الكود سطر بسطر:",
+  "  * `public interface INotification`: الواجهة العامة التي تحدد العقد المشترك بدالة `void Send()`.",
+  "  * `EmailNotification`: تطبق الواجهة وتطبع عند الاستدعاء: `Email Sent`.",
+  "  * `SmsNotification`: تطبق الواجهة وتطبع عند الاستدعاء: `SMS Sent`.",
+  "  * `WhatsAppNotification`: تطبق الواجهة وتطبع عند الاستدعاء: `WhatsApp Message Sent`."
 ] };
 window.TOC_AR["L2-S028"] = window.TOC_AR["L2"]["L2-S028"];
 
 window.TOC_AR["L2"]["L2-S029"] = { ar: [
-  "كود صنف المصنع واستخدام العميل (Factory Implementation & Client Code)",
+  "مثال كود C#: فئة المصنع واستخدام العميل في Main (Example — NotificationFactory & Program)",
   "```csharp",
-  "public class NotificationFactory {",
-  "    public static INotification CreateNotification(string type) {",
-  "        switch (type.ToLower()) {",
-  "            case \"email\": return new EmailNotification();",
-  "            case \"sms\": return new SmsNotification();",
-  "            default: throw new ArgumentException(\"Invalid type\");",
+  "public class NotificationFactory",
+  "{",
+  "    public INotification CreateNotification(string type)",
+  "    {",
+  "        switch (type.ToLower())",
+  "        {",
+  "            case \"email\":",
+  "                return new EmailNotification();",
+  "",
+  "            case \"sms\":",
+  "                return new SmsNotification();",
+  "",
+  "            case \"whatsapp\":",
+  "                return new WhatsAppNotification();",
+  "",
+  "            default:",
+  "                throw new Exception(\"Invalid Notification Type\");",
   "        }",
   "    }",
   "}",
-  "// كود العميل:",
-  "INotification notify = NotificationFactory.CreateNotification(\"email\");",
-  "notify.Send(\"Hello Clean Architecture\");",
-  "```"
+  "",
+  "class Program",
+  "{",
+  "    static void Main()",
+  "    {",
+  "        NotificationFactory factory = new NotificationFactory();",
+  "",
+  "        INotification notification = factory.CreateNotification(\"sms\");",
+  "",
+  "        notification.Send();",
+  "    }",
+  "}",
+  "```",
+  "- تفكيك وترجمة الكود ومخرجاته:",
+  "  * فئة NotificationFactory: تحتوي دالة `CreateNotification` التي تأخذ النوع النصي وتحوله لحروف صغيرة وتستخدم switch لإرجاع الكائن المناسب من نوع الواجهة `INotification`.",
+  "  * إذا كان النوع غير معروف، يتم رمي استثناء: `throw new Exception(\"Invalid Notification Type\")`.",
+  "  * في التابع Main: يتم إنشاء المصنع، وطلب إشعار من نوع `\"sms\"`، ثم استدعاء `notification.Send()`، فيكون الناتج المطبوع على الشاشة: `SMS Sent`."
 ] };
 window.TOC_AR["L2-S029"] = window.TOC_AR["L2"]["L2-S029"];
 
 window.TOC_AR["L2"]["L2-S030"] = { ar: [
-  "مقارنة: الكود بدون مصنع مقابل الكود مع نمط المصنع (Without vs With Factory)",
-  "- بدون نمط المصنع (Without Factory):",
-  "  * العميل يستخدم new لإنشاء الصنف الملموس مباشرة.",
-  "  * ارتباط وثيق (Tightly Coupled) بين العميل وكل الأصناف.",
-  "  * تكرار كود التحقق والإنشاء في أماكن متعددة.",
-  "  * انتهاك مبدأ الفتح والإغلاق (OCP) ومبدأ المسؤولية الواحدة (SRP).",
-  "- مع نمط المصنع (With Factory):",
-  "  * العميل يعتمد فقط على الواجهة والمصنع.",
-  "  * ارتباط ضعيف ومرن (Loosely Coupled).",
-  "  * تمركز منطق الإنشاء في مكان موحد وسهل الصيانة والاختبار.",
-  "  * تحقيق كامل لمبادئ SOLID وتيسير إضافة منتجات جديدة."
+  "مقارنة تطبيقية: الكود بدون مصنع مقابل الكود مع المصنع (Example — Without vs With Factory)",
+  "- الكود بدون مصنع (Without Factory):",
+  "```csharp",
+  "INotification notification;",
+  "",
+  "if(type==\"email\")",
+  "    notification = new EmailNotification();",
+  "",
+  "else if(type==\"sms\")",
+  "    notification = new SmsNotification();",
+  "",
+  "else",
+  "    notification = new WhatsAppNotification();",
+  "",
+  "notification.Send();",
+  "```",
+  "- الكود مع نمط المصنع (With Factory):",
+  "```csharp",
+  "NotificationFactory factory = new NotificationFactory();",
+  "",
+  "INotification notification = factory.CreateNotification(type);",
+  "",
+  "notification.Send();",
+  "```",
+  "- الفارق الجوهري الموضح في الشريحة:",
+  "  * بدون مصنع: كود العميل يتضمن شروط if-else ويتصل مباشرة بالأصناف الملموسة عبر new، مما يجعله وثيق الارتباط وصعب التعديل.",
+  "  * مع المصنع: كود العميل يختزل في سطرين نظيفين بالاعتماد فقط على كائن المصنع والواجهة المشتركة `INotification`."
 ] };
 window.TOC_AR["L2-S030"] = window.TOC_AR["L2"]["L2-S030"];

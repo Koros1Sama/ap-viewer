@@ -8,9 +8,8 @@ window.TOC_AR["L6"] = window.TOC_AR["L6"] || {};
 window.TOC_AR["L6"]["L6-S001"] = {
   "ar": [
     "البرمجة المتقدمة (Advanced Programming)",
-    "المحاضرة السابعة: واجهات برمجة التطبيقات عبر ASP.NET Core (REST APIs with ASP.NET Core)",
-    "أستاذة المقرر: د. بيداء لعلع",
-    "مدخل شامل إلى هندسة الـ APIs، بروتوكولات الاتصال الشبكي، والأنماط المعمارية للخدمات الخلفية الحديثة."
+    "المحاضرة السابعة (Lecture 7)",
+    "واجهات REST APIs عبر ASP.NET Core (REST APIs with ASP.NET Core)"
   ]
 };
 window.TOC_AR["L6-S001"] = window.TOC_AR["L6"]["L6-S001"];
@@ -19,92 +18,104 @@ window.TOC_AR["L6"]["L6-S002"] = {
   "ar": [
     "مقدمة إلى واجهات برمجة التطبيقات (Introduction to APIs):",
     "- الاختصار API يعني: واجهة برمجة التطبيقات (Application Programming Interface).",
-    "- التعريف: آلية تتيح لنظامين برمجcontracts) محدد وموثق.",
-    "- مثال واقعي توضيحي (استعارة المطعم):",
-    "  * العميل (Customer): يطلب الطعام.",
-    "  * النادل (Waiter / API): ينقل الطلب للمطبخ ويعيد الوجبة للعميل دون أن يدخل العميل المطبخ.",
-    "  * المطبخ (Kitchen / Backend System): يعالج الطلب ويحضّر النتيجة.",
-    "- النادل يعزل التعقيد الداخلي للمطبخ ويقدم واجهة تفاعل موحدة وآمنة للزبون."
+    "- واجهة برمجة التطبيقات (API) هي آلية تتيح لنظامين برمجcontracts) محدد مسبقا.",
+    "- مثال من الواقع الحقيقي (Real-world Example):",
+    "  * تخيل مطعما (Imagine a restaurant):",
+    "    - الزبون / العميل (Customer)",
+    "    - النادل (Waiter) ويمثل واجهة البرمجة (API)",
+    "    - المطبخ (Kitchen) ويمثل النظام الداخلي (System)",
+    "- الزبون لا يدخل إلى المطبخ؛ النادل ينقل الطلبات ويعيد النتائج (The customer does not enter the kitchen. The waiter transfers requests and returns results)."
   ]
 };
 window.TOC_AR["L6-S002"] = window.TOC_AR["L6"]["L6-S002"];
 
 window.TOC_AR["L6"]["L6-S003"] = {
   "ar": [
-    "المعمارية الحديثة للأنظمة الطبقية (Modern Architecture):",
-    "- هيكلية تدفق البيانات في التطبيقات المؤسسية الحديثة:",
-    "  * طبقة العميل (Client Layer): متصفح الويب، تطبيق الجوال، أو أنظمة خارجية.",
-    "  * طبقة واجهة البرمجة (API Layer): استقبال الطلبات، التحقق من الصلاحيات والمدخلات وتوجيهها.",
-    "  * طبقة التطبيق (Application Layer): تنسيق سيناريوهات الاستخدام والعمليات الوظيفية.",
-    "  * طبقة البنية التحتية (Infrastructure Layer): الاتصال بقواعد البيانات وخدمات البريد والتخزين السحابي.",
-    "  * طبقة المجال (Domain Layer): قلب النظام، الكيانات وقواعد الأعمال الجوهرية الصافية.",
-    "- فوائد هذا الفصل المعماري: قابلية الصيانة (Maintainability)، قابلية التوسع (Scalability)، قابلية الاختبار (Testability)، والمرونة العالية (Flexibility)."
+    "المعمارية الحديثة للأنظمة (Modern architecture):",
+    "- هيكلية تدفق الطبقات:",
+    "  * العميل (Client)",
+    "  * طبقة واجهة البرمجة (API Layer)",
+    "  * طبقة التطبيق (Application Layer)",
+    "  * طبقة البنية التحتية (Infrastructure Layer)",
+    "  * طبقة المجال (Domain Layer)",
+    "- الفوائد والمزايا (Benefits):",
+    "  * قابلية الصيانة (Maintainability)",
+    "  * قابلية التوسع (Scalability)",
+    "  * قابلية الاختبار (Testability)",
+    "  * المرونة (Flexibility)"
   ]
 };
 window.TOC_AR["L6-S003"] = window.TOC_AR["L6"]["L6-S003"];
 
 window.TOC_AR["L6"]["L6-S004"] = {
   "ar": [
-    "أمثلة واقعية على تكامل الـ APIs (Real World API Examples):",
-    "1. واجهة بوابات الدفع (Payment API):",
-    "   - المتجر الإلكتروني (Online Store) -> واجهة بوابة الدفع (Payment API) -> النظام المصرفي والبنك (Bank).",
-    "   - المتجر لا يتعامل مع البطاقات البنكية مباشرة بل يفوض العملية لوسيط مالي معتمد عبر API.",
-    "2. واجهة الخرائط والمواقع (Maps API):",
-    "   - تطبيق التوصيل (Delivery Application) -> واجهة الخرائط (Maps API) -> خدمة تحديد المواقع والملاحة (Location Service).",
-    "   - يوفر على الشركات مليارات الدولارات بدلا من بناء أقمار صناعية وخرائط من الصفر."
+    "أمثلة واقعية على واجهات برمجة التطبيقات (Real World API Examples):",
+    "- واجهة الدفع الإلكتروني (Payment API):",
+    "  * المتجر الإلكتروني (Online Store) -> واجهة برمجة الدفع (Payment API) -> البنك (Bank).",
+    "- واجهة الخرائط (Map API):",
+    "  * تطبيق التوصيل (Delivery Application) -> واجهة برمجة الخرائط (Maps API) -> خدمة تحديد المواقع (Location Service)."
   ]
 };
 window.TOC_AR["L6-S004"] = window.TOC_AR["L6"]["L6-S004"];
 
 window.TOC_AR["L6"]["L6-S005"] = {
   "ar": [
-    "تصنيف واجهات برمجة التطبيقات (Types of APIs):",
-    "أولا: التصنيف حسب نطاق الإتاحة والوصول (Based on Availability):",
-    "  1. واجهات عامة (Public APIs): متاحة للمطورين الخارجيين.",
-    "  2. واجهات خاصة/داخلية (Private / Internal APIs): محصورة داخل المنشأة ومخصصة لخدماتها الداخلية.",
-    "  3. واجهات الشركاء (Partner APIs): مشتركة مع شركات وجهات أعمال موثوقة بموجب عقود وتصاريح خاصة.",
-    "ثانيا: التصنيف حسب التقنية والمعمارية (Based on Technology):",
-    "  1. واجهات REST API: النمط الأكثر انتشارا وشعبية عبر بروتوكول HTTP وصيغة JSON.",
-    "  2. واجهات SOAP API: بروتوكول صارم يعتمد على صيغة XML ومعايير أمان معقدة.",
-    "  3. واجهات GraphQL API: لغة استعلام تتيح للعميل تحديد الحقول المطلوبة بدقة من نقطة نهاية واحدة.",
-    "  4. واجهات gRPC API: إطار عمل فائق السرعة من Google يعتمد على ثنائيات Protocol Buffers و HTTP/2."
+    "أنواع واجهات برمجة التطبيقات (Types of APIs):",
+    "- يمكن تصنيف واجهات برمجة التطبيقات بطرق مختلفة (APIs can be classified in different ways):",
+    "1. بناء على الإتاحة ونطاق الوصول (Based on Availability):",
+    "   * واجهات البرمجة العامة (Public APIs)",
+    "   * واجهات البرمجة الخاصة / الداخلية (Private APIs / Internal APIs)",
+    "   * واجهات البرمجة للشركاء (Partner APIs)",
+    "2. بناء على التقنية والبروتوكول المعماري (Based on Technology):",
+    "   * واجهات REST (REST API)",
+    "   * واجهات SOAP (SOAP API)",
+    "   * واجهات GraphQL (GraphQL API)",
+    "   * واجهات gRPC (gRPC API)"
   ]
 };
 window.TOC_AR["L6-S005"] = window.TOC_AR["L6"]["L6-S005"];
 
 window.TOC_AR["L6"]["L6-S006"] = {
   "ar": [
-    "الواجهات العامة (Public APIs):",
-    "- المفهوم: واجهات معلنة ومتاحة لأي مطور خارجي لبناء تطبيقاته بالاعتماد عليها.",
-    "- أمثلة شهيرة: واجهات الطقس (Weather APIs)، واجهات بوابات الدفع (Stripe, PayPal)، واجهات الشبكات الاجتماعية (Twitter/X, Meta).",
-    "- المزايا: سهولة التكامل البرمجي، تشجيع الابتكار الخارجي، وتوسيع انتشار المنصة وفتح قنوات دخل جديدة.",
-    "- التحديات التشغيلية والأمنية:",
-    "  * الأمان وحماية البيانات (Security).",
-    "  * تحديد معدل الطلبات (Rate Limiting) لمنع استنزاف السيرفرات وهجمات DoS.",
-    "  * إدارة وتأمين مفاتيح الوصول (API Keys Management)."
+    "واجهات البرمجة العامة (Public API):",
+    "- واجهة برمجة متاحة للمطورين الخارجيين (An API available for external developers).",
+    "- أمثلة (Examples):",
+    "  * واجهات الطقس (Weather APIs)",
+    "  * واجهات الدفع الإلكتروني (Payment APIs)",
+    "  * واجهات منصات التواصل الاجتماعي (Social Media APIs)",
+    "- المزايا (Advantages):",
+    "  * سهولة التكامل والربط (Easy integration)",
+    "  * إتاحة وبناء التطوير الخارجي (Allows external development)",
+    "- التحديات (Challenges):",
+    "  * الأمان وحماية الموارد (Security)",
+    "  * تحديد سقف ومعدل الطلبات (Rate limiting)",
+    "  * إدارة مفاتيح الوصول البرمجية (API keys management)"
   ]
 };
 window.TOC_AR["L6-S006"] = window.TOC_AR["L6"]["L6-S006"];
 
 window.TOC_AR["L6"]["L6-S007"] = {
   "ar": [
-    "الواجهات الخاصة والداخلية (Private / Internal APIs):",
-    "- المفهوم: واجهات مصممة ومبنية حصريا للاستخدام داخل حدود المؤسسة وبين أنظمتها الداخلية.",
-    "- مثال واقعي: الأنظمة المصرفية للبنوك:",
-    "  * تطبيق الخدمات المصرفية للجوال (Mobile Banking) -> واجهة داخلية (Internal API) -> نظام الحسابات المصرفي الجوهري (Core Banking System).",
-    "- المزايا:",
-    "  * سيطرة وتحكم كامل في بنية البيانات ونقاط النهاية وسرعة التطوير والتعديل.",
-    "  * أمان وموثوقية عالية لعدم كشف نقاط النهاية لشبكة الإنترنت العامة مباشرة."
+    "واجهات البرمجة الخاصة / الداخلية (Private/Internal API):",
+    "- تُستخدم حصريا داخل المنظمة الواحدة (Used inside an organization).",
+    "- مثال (Example): الأنظمة المصرفية الداخلية للبنوك (Bank internal systems):",
+    "  * تطبيق الهاتف المصرفي (Mobile Banking) -> واجهة برمجة داخلية (Internal API) -> النظام المصرفي الأساسي (Core Banking System).",
+    "- المزايا (Advantages):",
+    "  * تحكم وسيطرة كاملة (Full control)",
+    "  * أمان وموثوقية أعلى (Higher security)"
   ]
 };
 window.TOC_AR["L6-S007"] = window.TOC_AR["L6"]["L6-S007"];
 
 window.TOC_AR["L6"]["L6-S008"] = {
   "ar": [
-    "واجهات الشركاء (Partner APIs):",
-    "- المفهوم: واجهات يتم مشاركتها حصريا مع شركاء أعمال محددين وموثوقين (Trusted Business Partners).",
-    "- مثال: بنك يتكامل مع مزود دفع إلكتروني أو تطبيق تجاري لتقديم تسهيلات ائتمانية مشتركة.",
-    "- حالات الاستخدام: التكامل المؤسسي التجاري (B2B Integration)، تبادل البيانات الآمن، وأتمتة العمليات التعاقدية المشتركة."
+    "واجهات البرمجة للشركاء (Partner API):",
+    "- واجهة برمجة تتم مشاركتها مع شركات موثوقة ومحددة فقط (API shared with trusted companies).",
+    "- مثال (Example):",
+    "  * البنك (Bank) -> واجهة برمجة مزود الدفع (Payment Provider API) -> الشركة الخارجية (External Company).",
+    "- مجالات الاستخدام (Used for):",
+    "  * التكامل بين الأعمال التجارية (Business integration)",
+    "  * تبادل البيانات المعتمدة (Data exchange)"
   ]
 };
 window.TOC_AR["L6-S008"] = window.TOC_AR["L6"]["L6-S008"];
@@ -112,23 +123,31 @@ window.TOC_AR["L6-S008"] = window.TOC_AR["L6"]["L6-S008"];
 window.TOC_AR["L6"]["L6-S009"] = {
   "ar": [
     "واجهات REST API (Representational State Transfer):",
-    "- المفهوم: نمط معماري (Architectural Style) لبناء واجهات الويب البرمجية نشره روي فيلدينغ (Roy Fielding) عام 2000.",
-    "- الخصائص والركائز الأساسية لـ REST:",
-    "  * الاعتماد الكامل على بروتوكول HTTP.",
-    "  * التعامل مع كل شيء بوصفه موردا مستقلا (Resource-oriented).",
-    "  * الاتصال عديم الحالة (Stateless Communication): كل طلب معزول ومستقل.",
-    "  * استخدام صيغة JSON كمعيار افتراضي لتبادل البيانات.",
-    "- مثال: GET /api/users لجلب بيانات المستخدمين."
+    "- النمط المعماري REST هو أسلوب معماري لبناء واجهات برمجة تطبيقات الويب (REST is an architectural style for building web APIs).",
+    "- تعتمد REST على ما يلي (REST uses):",
+    "  * بروتوكول HTTP (HTTP Protocol)",
+    "  * الموارد (Resources)",
+    "  * الاتصال عديم الحالة (Stateless communication)",
+    "  * صيغة بيانات JSON (JSON data format)",
+    "- مثال (Example):",
+    "  * `GET /api/users`"
   ]
 };
 window.TOC_AR["L6-S009"] = window.TOC_AR["L6"]["L6-S009"];
 
 window.TOC_AR["L6"]["L6-S010"] = {
   "ar": [
-    "المبادئ الأساسية لمعمارية REST (REST Principles):",
-    "1. التوجه نحو الموارد (Resource-Based): كل كيان في النظام يمثل موردا يعرّف برابط URI صريح (مثل /users, /orders).",
-    "2. انعدام الحالة (Stateless): السيرفر لا يحتفظ بأي جلسة أو ذاكرة عن الطلبات السابقة للعميل؛ كل طلب يجب أن يتضمن كامل بيانات التحقق (مثل رمز التفويض Bearer Token).",
-    "3. فصل العميل عن الخادم (Client-Server Separation): واجهة المستخدم (مثل React) مستقلة تماما عن منطق الخادم (.NET Backend)، مما يتيح تطويرهما وصيانتهما بمعزل عن بعضهما."
+    "مبادئ نمط REST الأساسية (REST Principles):",
+    "1. الاعتماد على الموارد (Resource Based):",
+    "   * كل شيء في النظام هو مورد (Everything is a resource).",
+    "   * أمثلة: `/users` و `/products` و `/orders`",
+    "2. انعدام الحالة (Stateless):",
+    "   * كل طلب يحتوي على جميع المعلومات اللازمة لمعالجته (Each request contains all information).",
+    "   * مثال: طلب `GET /orders` مع ترويسة `Authorization: Bearer Token`.",
+    "   * الخادم لا يتذكر الطلبات السابقة ولا يحتفظ بحالة الجلسة (Server does not remember previous requests).",
+    "3. فصل العميل عن الخادم (Client-Server Separation):",
+    "   * الواجهة الأمامية والواجهة الخلفية مستقلتان تماما (Frontend and backend are independent).",
+    "   * المخطط: العميل في React -> واجهة برمجة REST API -> الواجهة الخلفية في NET Backend."
   ]
 };
 window.TOC_AR["L6-S010"] = window.TOC_AR["L6"]["L6-S010"];
@@ -136,23 +155,31 @@ window.TOC_AR["L6-S010"] = window.TOC_AR["L6"]["L6-S010"];
 window.TOC_AR["L6"]["L6-S011"] = {
   "ar": [
     "واجهات SOAP API (Simple Object Access Protocol):",
-    "- المفهوم: بروتوكول قياسي رسمي قديم ومعتمد في المنظومات الحكومية والمصرفية الكبرى.",
-    "- الخصائص:",
-    "  * يعتمد حصريا على صيغة XML المهيكلة ذات الوسوم الدقيقة.",
-    "  * يعتمد على معايير صارمة جدا مثل WSDL لتعريف الواجهة و WS-Security لحماية الرسائل.",
-    "  * ثقيل الحجم ويستهلك نطاقا تردديا كبيرا مقارنة بصيغة JSON الخفيفة."
+    "- بروتوكول SOAP هو بروتوكول اتصال أقدم لواجهات البرمجة (SOAP is an older API protocol).",
+    "- الخصائص والميزات (Characteristics):",
+    "  * معتمد على لغة XML كصيغة للبيانات (XML based).",
+    "  * معايير بروتوكولية صارمة ومحددة (Strict standards).",
+    "  * معايير أمان مدمجة في صلب البروتوكول (Built-in security standards).",
+    "- مثال على البيانات (Example):",
+    "  * `<Customer><Name>Ali</Name></Customer>`",
+    "- مجالات الاستخدام (Used in):",
+    "  * البنوك والقطاع المصرفي (Banking)",
+    "  * القطاعات والأنظمة الحكومية (Government)",
+    "  * الأنظمة المؤسسية الضخمة (Enterprise systems)"
   ]
 };
 window.TOC_AR["L6-S011"] = window.TOC_AR["L6"]["L6-S011"];
 
 window.TOC_AR["L6"]["L6-S012"] = {
   "ar": [
-    "مقارنة معمارية بين REST و SOAP (REST vs SOAP):",
-    "- المعيار والنوع: REST هو نمط معماري مرن (Architectural Style)، بينما SOAP هو بروتوكول صارم (Strict Protocol).",
-    "- صيغة نقل البيانات: REST يدعم JSON و XML والنصوص، بينما SOAP محصور في XML فقط.",
-    "- سهولة الاستخدام والحجم: REST بسيط وخفيف وسريع، بينما SOAP معقد ويتطلب قوالب ومغلفات XML ضخمة (Overhead).",
-    "- الأمان: REST يعتمد على HTTPS و JWT و OAuth، بينما SOAP يدعم معايير WS-Security المتقدمة على مستوى الرسالة الفردية.",
-    "- الاستخدام الشائع: REST للويب وتطبيقات الجوال السحابية، و SOAP للأنظمة المالية والمصرفية القديمة التي تتطلب عقودا صارمة."
+    "مقارنة بين REST و SOAP (REST vs SOAP):",
+    "- جدول المقارنة التفصيلي:",
+    "  * صيغة البيانات (Data Format): في REST تكون JSON، بينما في SOAP تكون XML.",
+    "  * الأداء والسرعة (Performance): في REST سريع (Fast)، بينما في SOAP أبطأ (Slower).",
+    "  * مستوى التعقيد (Complexity): في REST بسيط (Simple)، بينما في SOAP معقد (Complex).",
+    "  * المرونة (Flexibility): في REST عالية (High)، بينما في SOAP منخفضة (Low).",
+    "  * الأمان (Security): في REST على مستوى التطبيق (Application level)، بينما في SOAP معايير مدمجة (Built-in standards).",
+    "  * مجالات الاستخدام (Usage): في REST للتطبيقات الحديثة (Modern Apps)، بينما في SOAP للأنظمة المؤسسية (Enterprise)."
   ]
 };
 window.TOC_AR["L6-S012"] = window.TOC_AR["L6"]["L6-S012"];
@@ -160,19 +187,31 @@ window.TOC_AR["L6-S012"] = window.TOC_AR["L6"]["L6-S012"];
 window.TOC_AR["L6"]["L6-S013"] = {
   "ar": [
     "واجهات GraphQL API:",
-    "- المفهوم: لغة استعلام للـ APIs ومحرك تشغيل نفذته شركة Meta عام 2012 ونشرته مفتوح المصدر عام 2015.",
-    "- الفكرة المحورية: نقطة نهاية واحدة فقط (Single Endpoint مثل /graphql)، والعميل يرسل استعلاما يحدد فيه بدقة متناهية الحقول التي يريد استلامها.",
-    "- الميزة: القضاء على مشكلة الإفراط في جلب البيانات (Over-fetching) ونقص جلب البيانات (Under-fetching)."
+    "- تتيح GraphQL للعميل طلب واسترجاع البيانات المطلوبة بدقة تامة فقط (GraphQL allows clients to request exactly the required data).",
+    "- المقارنة التطبيقية بين GraphQL و REST:",
+    "  * في GraphQL:",
+    "    - الطلب (Request):",
+    "      `{ user { name } }`",
+    "    - الاستجابة (Response):",
+    "      `{ \"name\": \"Ahmed\" }`",
+    "  * في REST:",
+    "    - الطلب (Request): `GET /users/1`",
+    "    - الاستجابة (Response):",
+    "      `{ \"name\": \"Ahmed\", \"email\": \"test@test.com\", \"address\": \"Yemen\" }`",
+    "  * الملاحظة: قد يكون العميل بحاجة إلى الاسم فقط (Maybe the client needs only the name)."
   ]
 };
 window.TOC_AR["L6-S013"] = window.TOC_AR["L6"]["L6-S013"];
 
 window.TOC_AR["L6"]["L6-S014"] = {
   "ar": [
-    "مقارنة وحل مشاكل جلب البيانات (REST vs GraphQL):",
-    "- مشكلة الإفراط في الجلب (Over-fetching): في REST يطلب العميل /api/users لجلب اسم المستخدم فقط، فيعيد السيرفر 50 حقلا لا يحتاجها العميل مما يهدر الشبكة والذاكرة.",
-    "- مشكلة نقص الجلب (Under-fetching): في REST يحتاج العميل لطلب /users ثم طلب آخر لـ /users/1/orders لجلب طلباته، مما يولد استدعاءات شبكية متتالية.",
-    "- حل GraphQL: استعلام واحد يحدد { user { name, orders { id, total } } } ويعود بالبيانات المطلوبة فقط في استدعاء شبكي واحد."
+    "مقارنة بين REST و GraphQL (REST vs GraphQL):",
+    "- جدول المقارنة التفصيلي:",
+    "  * جلب البيانات (Data fetching): في REST عبر نقاط نهاية ثابتة (Fixed endpoints)، بينما في GraphQL عبر استعلامات مرنة (Flexible queries).",
+    "  * الإفراط في جلب البيانات (Over fetching): في REST وارد ومحتمل (Possible)، بينما في GraphQL منخفض ومحدود (Reduced).",
+    "  * منحنى التعلم (Learning): في REST سهل (Easy)، بينما في GraphQL أكثر تعقيدا (More complex).",
+    "  * التخزين المؤقت (Caching): في REST سهل (Easy)، بينما في GraphQL أكثر تعقيدا (More complex).",
+    "  * الانتشار والاستخدام (Usage): في REST الأكثر شيوعا (Most common)، بينما في GraphQL للتطبيقات الحديثة (Modern applications)."
   ]
 };
 window.TOC_AR["L6-S014"] = window.TOC_AR["L6"]["L6-S014"];
@@ -180,345 +219,447 @@ window.TOC_AR["L6-S014"] = window.TOC_AR["L6"]["L6-S014"];
 window.TOC_AR["L6"]["L6-S015"] = {
   "ar": [
     "واجهات gRPC API (Google Remote Procedure Call):",
-    "- المفهوم: إطار عمل متطور وفائق السرعة مفتوح المصدر أنشأته Google لاستدعاء الدوال عن بعد.",
-    "- المكونات الجوهرية:",
-    "  * يعتمد على بروتوكول HTTP/2 السريع الذي يدعم تعدد الإرسال (Multiplexing) والتدفق الثنائي (Bidirectional Streaming).",
-    "  * يستخدم Protocol Buffers (Protobuf) كصيغة تسلسل ثنائية مدمجة شديدة الصغر والسرعة.",
-    "- الاستخدام النموذجي: الاتصال بين الخدمات المصغرة (Microservices Communication) وأنظمة التداول اللحظي والأنظمة السحابية عالية الحمل."
+    "- تقنية gRPC هي إطار عمل حديث لبناء واجهات برمجة عالية الأداء تتيح لخدمة استدعاء دوال في خدمة أخرى كما لو كانت دوال محلية (allows one service to call methods on another service as if they were local functions).",
+    "- بدلا من إرسال طلبات HTTP التقليدية بنصوص JSON كما في واجهات REST، تعتمد gRPC على:",
+    "  * بروتوكول HTTP/2 كبروتوكول للاتصال (HTTP/2 as the communication protocol).",
+    "  * مخازن البروتوكول Protocol Buffers (Protobuf) كصيغة للبيانات (Protocol Buffers (Protobuf) as the data format).",
+    "  * التسلسل الثنائي لتحقيق اتصال فائق السرعة (Binary serialization for faster communication).",
+    "- تم تطوير gRPC في الأصل بواسطة شركة Google وهي الآن مشروع مفتوح المصدر يُستخدم على نطاق واسع في الاتصال بين الأنظمة الموزعة (distributed systems)."
   ]
 };
 window.TOC_AR["L6-S015"] = window.TOC_AR["L6"]["L6-S015"];
 
 window.TOC_AR["L6"]["L6-S016"] = {
   "ar": [
-    "مقارنة الأداء والبروتوكول بين REST و gRPC (REST vs gRPC):",
-    "- صيغة التشفير والتمثيل: REST يستخدم نصوص JSON المفتوحة (Text-based)، بينما gRPC يستخدم شفرات ثنائية مضغوطة Protobuf (Binary-based).",
-    "- بروتوكول النقل: REST يعتمد تقليديا على HTTP/1.1 (أو HTTP/2)، بينما gRPC مبني حصريا للاستفادة الكاملة من ميزات HTTP/2.",
-    "- تدفق البيانات: REST يعتمد أساسا على نمط طلب/استجابة (Request/Response)، بينما gRPC يدعم التدفق اللحظي المستمر (Client/Server/Bidirectional Streaming).",
-    "- السرعة والكفاءة: gRPC أسرع بما يصل إلى 7-10 أضعاف من REST وأقل استهلاكا للذاكرة والنطاق الترددي."
+    "المقارنة البرمجية والمعمارية بين REST و gRPC:",
+    "- في واجهات REST: يرسل العميل طلبات HTTP ويستقبل استجابات JSON:",
+    "  * مثال: طلب `GET /api/users/10`",
+    "  * الاستجابة: `{ \"id\": 10, \"name\": \"Ahmed\" }`",
+    "- في واجهات gRPC: يستدعي العميل دالة عن بعد مباشرة:",
+    "  * كود الاستدعاء:",
+    "    `var user = client.GetUser(new UserRequest { Id = 10 });`",
+    "- يعتمد الاتصال على عقد محدد مسبقا باستخدام ملف .proto (The communication is based on a predefined contract using a .proto file).",
+    "- المعمارية المعروضة (Architecture):",
+    "  * العميل (Client)",
+    "  * بروتوكول النقل (HTTP/2)",
+    "  * خدمة gRPC على الخادم (gRPC Service)",
+    "  * رسائل ثنائية مشفرة بـ Protobuf (Protobuf Binary Messages)"
   ]
 };
 window.TOC_AR["L6-S016"] = window.TOC_AR["L6"]["L6-S016"];
 
 window.TOC_AR["L6"]["L6-S017"] = {
   "ar": [
-    "نموذج تعريف عقود البروتوكول (Protocol Buffers - Protobuf):",
-    "- مثال على ملف العقود (.proto):",
+    "مثال عملي على ملف تعريف Protobuf (Protobuf example):",
+    "- كود ملف العقد البرمجي:",
     "  syntax = \"proto3\";",
-    "  message User {",
-    "      int32 id = 1;",
-    "      string name = 2;",
+    "  package banking;",
+    "  service AccountService {",
+    "      rpc GetAccount(AccountRequest) returns(AccountResponse);",
+    "      rpc TransferMoney(TransferRequest) returns(TransactionResponse);",
     "  }",
-    "- يتم ترجمة هذا الملف تلقائيا إلى أصناف برمجية قوية النوعية (Strongly Typed Classes) في لغة C# أو Java أو Go أو Python.",
-    "- الأرقام (1, 2) تمثل معرّفات الحقول الثنائية (Field Tags) المستخدمة في ضغط البيانات بدلا من تكرار أسماء الحقول النصية."
+    "  message AccountRequest {",
+    "      string accountNumber = 1;",
+    "  }",
+    "  message AccountResponse {",
+    "      string accountNumber = 1;",
+    "      string customerName = 2;",
+    "      double balance = 3;",
+    "  }",
+    "  ......",
+    "- التوضيح: تعريف خدمة الحسابات البنكية ودوالها ورسائل الطلب والاستجابة مع ترقيم الحقول الثنائية (Field Tags)."
   ]
 };
 window.TOC_AR["L6-S017"] = window.TOC_AR["L6"]["L6-S017"];
 
 window.TOC_AR["L6"]["L6-S018"] = {
   "ar": [
-    "جدول المقارنة الشامل لتقنيات الـ APIs الأربعة:",
-    "1. REST: صيغة JSON/XML، بروتوكول HTTP، أداء ممتاز، استخدام عام وشائع لتطبيقات الويب والجوال.",
-    "2. SOAP: صيغة XML، بروتوكول HTTP/SMTP/TCP، أداء متوسط إلى ثقيل، استخدام مصرفي ومؤسسي قديم.",
-    "3. GraphQL: صيغة JSON، بروتوكول HTTP، أداء مرن ومحسن للعميل، استخدام لتطبيقات الجوال والواجهات المعقدة.",
-    "4. gRPC: صيغة ثنائية Protobuf، بروتوكول HTTP/2، أداء فائق السرعة، استخدام حصري للاتصال بين الخدمات المصغرة (Backend Microservices)."
+    "مسار تدفق الطلبات: REST مقابل gRPC:",
+    "- في واجهات REST (REST API):",
+    "  * المتحكم (Controller)",
+    "  * كائن نقل البيانات النصي (JSON DTO)",
+    "  * طبقة الخدمة (Service)",
+    "- في واجهات gRPC (gRPC):",
+    "  * عقد ملف البروتوكول (.proto Contract)",
+    "  * الأصناف المولدة آليا (Generated Classes)",
+    "  * خدمة gRPC على الخادم (gRPC Service)",
+    "  * خدمة التطبيق (Application Service)"
   ]
 };
 window.TOC_AR["L6-S018"] = window.TOC_AR["L6"]["L6-S018"];
 
 window.TOC_AR["L6"]["L6-S019"] = {
   "ar": [
-    "أفعال وطرق بروتوكول HTTP ونمذجة CRUD (HTTP Methods):",
-    "- واجهات REST تربط عمليات قواعد البيانات الأربع (CRUD) بأفعال HTTP القياسية:",
-    "  * عملية الإنشاء (Create) -> تقابل فعل POST.",
-    "  * عملية القراءة والاسترجاع (Read) -> تقابل فعل GET.",
-    "  * عملية التحديث الكامل (Update) -> تقابل فعل PUT.",
-    "  * عملية التحديث الجزئي (Partial Update) -> تقابل فعل PATCH.",
-    "  * عملية الحذف (Delete) -> تقابل فعل DELETE."
+    "أفعال وطرق بروتوكول HTTP (HTTP Methods):",
+    "- اتصال واجهات برمجة التطبيقات يستخدم أفعال HTTP (API communication uses HTTP methods).",
+    "- جدول الأفعال والغرض منها وأمثلتها:",
+    "  * فعل GET: استرجاع البيانات (Retrieve data) — مثال بسيط: جلب مستخدم (Get a user).",
+    "  * فعل POST: إنشاء بيانات جديدة (Create new data) — مثال بسيط: إنشاء مستخدم جديد (Create a new user).",
+    "  * فعل PUT: تحديث واستبدال كامل المورد (Update an entire resource) — مثال بسيط: استبدال جميع معلومات المستخدم (Replace all user information).",
+    "  * فعل PATCH: تحديث وتعديل جزء من المورد (Update part of a resource) — مثال بسيط: تحديث البريد الإلكتروني للمستخدم فقط (Update only the user's email).",
+    "  * فعل DELETE: حذف البيانات (Delete data) — مثال بسيط: حذف مستخدم (Delete a user)."
   ]
 };
 window.TOC_AR["L6-S019"] = window.TOC_AR["L6"]["L6-S019"];
 
 window.TOC_AR["L6"]["L6-S020"] = {
   "ar": [
-    "فعل الاسترجاع GET Method:",
-    "- الاستخدام: قراءة واسترجاع بيانات مورد محدد أو مجموعة موارد من الخادم.",
-    "- مثال: GET /api/products أو GET /api/products/5.",
-    "- الخصائص المعمارية الحاسمة:",
-    "  * آمن (Safe): لا يغير أي حالة على الخادم إطلاقا.",
-    "  * لا تتبدل نتيجته بتكراره (Idempotent): تكرار الطلب 100 مرة يعيد نفس النتيجة دون أثر جانبي.",
-    "  * قابل للتخزين المؤقت (Cacheable): يمكن للمتصفحات ومزودات CDN تخزينه لتسريع الاستجابة.",
-    "  * لا يحتوي على جسم رسالة (No Request Body) وتمرر الفلاتر عبر معاملات الرابط (Query Parameters)."
+    "1. فعل الاسترجاع GET:",
+    "- الغرض (Purpose): استرجاع وجلب البيانات من الخادم (Retrieve data from the server).",
+    "- مثال عملي (Example):",
+    "  * الطلب (Request): `GET /api/users/1`",
+    "  * الاستجابة (Response):",
+    "    `{ \"id\": 1, \"name\": \"Ahmed\", \"email\": \"ahmed@test.com\" }`",
+    "- حالة الاستخدام (Example): عرض الملف الشخصي للمستخدم (Display a user's profile)."
   ]
 };
 window.TOC_AR["L6-S020"] = window.TOC_AR["L6"]["L6-S020"];
 
 window.TOC_AR["L6"]["L6-S021"] = {
   "ar": [
-    "فعل الإنشاء POST Method:",
-    "- الاستخدام: إرسال بيانات لإنشاء مورد جديد تماما على الخادم.",
-    "- مثال: POST /api/products مع تمرير بيانات المنتج داخل جسم الطلب (Request Body) بصيغة JSON.",
-    "- الخصائص المعمارية:",
-    "  * غير آمن (Not Safe): يحدث تغييرا مباشرا ويضيف سجلا في قاعدة البيانات.",
-    "  * غير متكرر النتيجة (Not Idempotent): إرسال الطلب مرتين سيؤدي إلى إنشاء سجلين مكررين برقمين مختلفين.",
-    "  * رمز الاستجابة النموذجي: 201 Created مع ترويسة Location تحتوي رابط المورد الجديد."
+    "2. فعل الإنشاء POST:",
+    "- الغرض (Purpose): إنشاء مورد جديد (Create a new resource).",
+    "- مثال عملي (Example):",
+    "  * الطلب (Request): `POST /api/users`",
+    "  * جسم الطلب (Body):",
+    "    `{ \"name\": \"Ahmed\", \"email\": \"ahmed@test.com\" }`",
+    "  * الاستجابة (Response):",
+    "    `{ \"id\": 5, \"name\": \"Ahmed\", \"email\": \"ahmed@test.com\" }`",
+    "- حالة الاستخدام (Example): تسجيل مستخدم جديد (Register a new user)."
   ]
 };
 window.TOC_AR["L6-S021"] = window.TOC_AR["L6"]["L6-S021"];
 
 window.TOC_AR["L6"]["L6-S022"] = {
   "ar": [
-    "فعل الاستبدال الكامل PUT Method:",
-    "- الاستخدام: تحديث واستبدال كامل بيانات المورد القائم.",
-    "- مثال: PUT /api/products/5 مع إرسال جميع حقول المنتج (الاسم، السعر، الوصف، الكمية).",
-    "- الخصائص المعمارية:",
-    "  * متكرر النتيجة (Idempotent): تكرار إرسال نفس الكائن بالكامل 10 مرات يترك قاعدة البيانات بنفس الحالة النهائية تماما.",
-    "  * إذا كان المورد غير موجود، يمكن في بعض التصاميم أن ينشئه الخادم بنفس المعرف المحدد."
+    "3. فعل الاستبدال الكامل PUT:",
+    "- الغرض (Purpose): استبدال مورد قائم بالكامل ببيانات جديدة (Replace an existing resource with new data).",
+    "- مثال عملي (Example):",
+    "  * بيانات المستخدم الحالية (Current user):",
+    "    `{ \"name\": \"Ahmed\", \"email\": \"old@test.com\" }`",
+    "  * الطلب (Request): `PUT /api/users/1`",
+    "  * جسم الطلب (Body):",
+    "    `{ \"name\": \"Ahmed Ali\", \"email\": \"new@test.com\" }`",
+    "  * النتيجة (Result):",
+    "    `{ \"name\": \"Ahmed Ali\", \"email\": \"new@test.com\" }`",
+    "- حالة الاستخدام (Example): تعديل وتحديث كامل معلومات المستخدم (Edit all user information)."
   ]
 };
 window.TOC_AR["L6-S022"] = window.TOC_AR["L6"]["L6-S022"];
 
 window.TOC_AR["L6"]["L6-S023"] = {
   "ar": [
-    "فعل التعديل الجزئي PATCH Method:",
-    "- الاستخدام: تحديث وتعديل حقول محددة فقط من المورد دون الحاجة لإرسال كامل الكائن.",
-    "- مثال: PATCH /api/products/5 مع إرسال { \"price\": 199.99 } فقط لتحديث السعر.",
-    "- الخصائص المعمارية: يوفر النطاق الترددي ويقلل استهلاك الشبكة خصوصا في الكائنات الكبيرة وتطبيقات الجوال."
+    "4. فعل التعديل الجزئي PATCH:",
+    "- الغرض (Purpose): تحديث وتعديل حقول محددة فقط (Update only specific fields).",
+    "- مثال عملي (Example):",
+    "  * بيانات المستخدم الحالية (Current user):",
+    "    `{ \"name\": \"Ahmed\", \"email\": \"old@test.com\" }`",
+    "  * الطلب (Request): `PATCH /api/users/1`",
+    "  * جسم الطلب (Body):",
+    "    `{ \"email\": \"new@test.com\" }`",
+    "  * النتيجة (Result):",
+    "    `{ \"name\": \"Ahmed\", \"email\": \"new@test.com\" }`",
+    "- حالة الاستخدام (Example): تغيير البريد الإلكتروني للمستخدم فقط (Change only the user's email)."
   ]
 };
 window.TOC_AR["L6-S023"] = window.TOC_AR["L6"]["L6-S023"];
 
 window.TOC_AR["L6"]["L6-S024"] = {
   "ar": [
-    "فعل الحذف DELETE Method:",
-    "- الاستخدام: إزالة وحذف مورد محدد نهائيا من الخادم.",
-    "- مثال: DELETE /api/products/5.",
-    "- الخصائص المعمارية:",
-    "  * متكرر النتيجة (Idempotent): تنفيذ الحذف لمرة واحدة يحذف العنصر؛ وتكرار الطلب يجد العنصر محذوفا بالفعل وتبقى الحالة النهائية واحدة.",
-    "  * رمز الاستجابة المعتاد: 204 No Content (تم بنجاح ولا يوجد محتوى للرد) أو 200 OK."
+    "5. فعل الحذف DELETE:",
+    "- الغرض (Purpose): إزالة وحذف مورد (Remove a resource).",
+    "- مثال عملي (Example):",
+    "  * الطلب (Request): `DELETE /api/users/1`",
+    "  * الاستجابة (Response): `204 No Content`",
+    "- حالة الاستخدام (Example): حذف حساب مستخدم (Delete a user account)."
   ]
 };
 window.TOC_AR["L6-S024"] = window.TOC_AR["L6"]["L6-S024"];
 
 window.TOC_AR["L6"]["L6-S025"] = {
   "ar": [
-    "تصنيف رموز حالة بروتوكول HTTP (HTTP Status Code Categories):",
-    "- تقسم رموز الاستجابة الرقمية الثلاثية إلى 5 فئات رئيسية تحددها المئة الأولى:",
-    "  * فئة 1xx: استجابات إعلامية تمهيدية (Informational).",
-    "  * فئة 2xx: نجاح العملية واكتمالها بصورة صحيحة (Success).",
-    "  * فئة 3xx: إعادة توجيه الطلب إلى مسار آخر (Redirection).",
-    "  * فئة 4xx: خطأ من جانب العميل في الطلب أو الصلاحيات (Client Error).",
-    "  * فئة 5xx: خطأ وانهيار داخلي من جانب الخادم (Server Error)."
+    "فئات رموز حالة بروتوكول HTTP (HTTP Status Code Categories):",
+    "- جدول الفئات الرقمية المئوية:",
+    "  * الفئة 1xx: إعلامية (Informational) — الوصف: تم استلام الطلب، ومعالجة الطلب مستمرة (Request received, processing continues).",
+    "  * الفئة 2xx: نجاح (Success) — الوصف: تمت معالجة الطلب بنجاح تام (The request was successfully processed).",
+    "  * الفئة 3xx: إعادة توجيه (Redirection) — الوصف: يلزم اتخاذ إجراء إضافي لإكمال الطلب (Additional action is required to complete the request).",
+    "  * الفئة 4xx: خطأ من جانب العميل (Client Error) — الوصف: أرسل العميل طلبا غير صالح (The client sent an invalid request).",
+    "  * الفئة 5xx: خطأ من جانب الخادم (Server Error) — الوصف: فشل الخادم أثناء معالجة طلب صالح (The server failed while processing a valid request)."
   ]
 };
 window.TOC_AR["L6-S025"] = window.TOC_AR["L6"]["L6-S025"];
 
 window.TOC_AR["L6"]["L6-S026"] = {
   "ar": [
-    "أهم رموز الحالة الواجب حفظها لكل مطور (Common Status Codes):",
-    "- 200 OK: تم الطلب بنجاح وتمت إعادة البيانات المطلوبة.",
-    "- 201 Created: نجح الطلب وتم إنشاء مورد جديد على السيرفر.",
-    "- 204 No Content: نجح الطلب ونُفذ بنجاح ولكن لا يوجد محتوى في جسم الاستجابة (مثل عمليات الحذف).",
-    "- 400 Bad Request: الطلب معطوب أو يحتوي بيانات غير صالحة فشلت في التحقق (Validation Error).",
-    "- 401 Unauthorized: العميل غير مسجل الدخول، مجهول الهوية، أو تنقصه ترويسة التحقق (Missing/Invalid Token).",
-    "- 403 Forbidden: العميل مسجل ومعروف الهوية، ولكنه لا يمتلك الصلاحيات الكافية للوصول لهذا المورد.",
-    "- 404 Not Found: الرابط أو المورد المطلوب غير موجود على الخادم.",
-    "- 500 Internal Server Error: حدث خطأ واستثناء غير معالج داخل كود الخادم أدى لانهيار الاستجابة."
+    "أهم رموز الحالة الشائعة التي يجب على كل مطور معرفتها (Common Status Codes Every Developer Should Know):",
+    "- جدول رموز الحالة وحالات استخدامها:",
+    "  * 200 OK: استرجاع البيانات بنجاح (Data retrieved successfully).",
+    "  * 201 Created: تم إنشاء مورد جديد بنجاح (New resource created).",
+    "  * 204 No Content: نجاح عملية الحذف بدون محتوى (Delete successful).",
+    "  * 400 Bad Request: طلب غير صالح أو غير صحيح (Invalid request).",
+    "  * 401 Unauthorized: المستخدم غير مصادق عليه / لم يسجل دخوله (User not authenticated).",
+    "  * 403 Forbidden: المستخدم مصادق عليه ولكنه غير مسموح له بالوصول (User authenticated but not allowed).",
+    "  * 404 Not Found: المورد المطلوب غير موجود (Resource doesn't exist).",
+    "  * 409 Conflict: تعارض أو تكرار في البيانات (Duplicate/conflicting data).",
+    "  * 500 Internal Server Error: فشل غير متوقع في جانب الخادم (Unexpected server-side failure).",
+    "  * 503 Service Unavailable: الخادم غير متاح ومؤقتا خارج الخدمة (Server temporarily unavailable)."
   ]
 };
 window.TOC_AR["L6-S026"] = window.TOC_AR["L6"]["L6-S026"];
 
 window.TOC_AR["L6"]["L6-S027"] = {
   "ar": [
-    "معايير معالجة وإرجاع أخطاء الـ APIs (API Error Handling):",
-    "- الممارسة السيئة: إرجاع صفحة HTML مع تفاصيل مكدس الأخطاء (Stack Trace) أو إرجاع رسائل نصية مبهمة.",
-    "- الممارسة الاحترافية: اعتماد المعيار القياسي RFC 7807 (Problem Details for HTTP APIs):",
-    "  * إرجاع كائن JSON موحد يحتوي على: type, title, status, detail, timestamp, validationErrors.",
-    "  * عزل تفاصيل الاستثناءات الداخلية الحساسة لمنع كشف بنية الكود للمخترقين مع تقديم رسائل واضحة للواجهات."
+    "معالجة الأخطاء في واجهات البرمجة (API Error Handling):",
+    "- يجب على واجهة البرمجة الجيدة إرجاع أخطاء قياسية موحدة (Good API should return standard errors).",
+    "- الممارسة السيئة (Bad):",
+    "  `{ \"error\": \"SQL Exception\" }`",
+    "  * المشكلة (Problem): تكشف التفاصيل الداخلية للنظام (Exposes internal details).",
+    "- الممارسة الأفضل (Better):",
+    "  `{`",
+    "    `\"status\": 400,`",
+    "    `\"message\": \"Invalid request\",`",
+    "    `\"errors\": [ \"Email is required\" ]`",
+    "  `}`"
   ]
 };
 window.TOC_AR["L6-S027"] = window.TOC_AR["L6"]["L6-S027"];
 
 window.TOC_AR["L6"]["L6-S028"] = {
   "ar": [
-    "التهديدات الأمنية الكبرى لواجهات الـ APIs - الجزء الأول (Security Threats):",
-    "1. حقن استعلامات SQL الخبيثة (SQL Injection):",
-    "   - الخطر: دمج مدخلات المستخدم مباشرة مع جمل الاستعلام النصية يتيح للمخترق التلاعب بقاعدة البيانات.",
-    "   - الوقاية: استخدام الاستعلامات الوسيطة (Parameterized Queries) ومحركات التخطيط كـ Entity Framework Core.",
-    "2. كسر التفويض على مستوى الكائنات (Broken Object Level Authorization - BOLA / IDOR):",
-    "   - الخطر: التهديد رقم 1 في تصنيف OWASP للـ APIs؛ يقوم المستخدم بتعديل معرف الرابط من /orders/10 إلى /orders/11 فيرى بيانات عميل آخر!",
-    "   - الوقاية: التحقق الإلزامي من أن المورد المطلوب يخص فعليا المستخدم المسجل حاليا قبل إرجاعه."
+    "التهديدات الأمنية الشائعة لواجهات البرمجة (Common API Security Threats):",
+    "1. مشاكل المصادقة (Authentication Problems):",
+    "   * مثال (Example): كلمات المرور الضعيفة (Weak passwords).",
+    "   * سبل الحماية والوقاية (Protection):",
+    "     - استخدام رموز JWT",
+    "     - استخدام إطار عمل OAuth",
+    "     - تفعيل التحقق متعدد العوامل (MFA)",
+    "2. مشاكل التفويض والصلاحيات (Authorization Problems):",
+    "   * مثال (Example): مستخدم عادي يصل إلى واجهات مخصصة للمدير (User accessing Admin APIs).",
+    "   * سبل الحماية والوقاية (Protection):",
+    "     - استخدام نظام الأدوار (Roles)",
+    "     - تطبيق السياسات الأمنية (Policies)"
   ]
 };
 window.TOC_AR["L6-S028"] = window.TOC_AR["L6"]["L6-S028"];
 
 window.TOC_AR["L6"]["L6-S029"] = {
   "ar": [
-    "التهديدات الأمنية الكبرى لواجهات الـ APIs - الجزء الثاني (Security Threats):",
-    "3. هجمات استنزاف الموارد والحرمان من الخدمة (Rate Limiting & DoS):",
-    "   - الخطر: إرسال ملايين الطلبات المتزامنة لإسقاط الخادم وقاعدة البيانات.",
-    "   - الوقاية: تفعيل سياسات Rate Limiting عبر خوارزميات مثل Token Bucket وحظر العناوين المشبوهة.",
-    "4. كشف البيانات الحساسة والإسناد الجماعي (Sensitive Data Exposure & Mass Assignment):",
-    "   - الخطر: إعادة كائن الكيان مباشرة للواجهة متضمنا كلمات المرور المجزأة أو السماح للمستخدم بتعديل حقل IsAdmin.",
-    "   - الوقاية: استخدام كائنات نقل البيانات (DTOs - Data Transfer Objects) الصارمة لفصل نماذج قاعدة البيانات عن نماذج العرض."
+    "التهديدات الأمنية الشائعة لواجهات البرمجة (Common API Security Threats):",
+    "3. هجمات الحقن (Injection Attacks):",
+    "   * مثال (Example): حقن استعلامات إس كيو إل (SQL Injection).",
+    "   * سبل الحماية والوقاية (Protection):",
+    "     - الاستعلامات ذات المعاملات الوسيطة (Parameterized queries)",
+    "     - استخدام محركات تخطيط الكائنات العلائقية (ORM - Object-Relational Mapping)",
+    "4. كشف البيانات الحساسة (Data Exposure):",
+    "   * مثال (Example): إعادة كلمات المرور في الاستجابة (Returning passwords).",
+    "   * سبل الحماية والوقاية (Protection):",
+    "     - استخدام كائنات نقل البيانات (DTO)",
+    "     - تصفية وفلترة البيانات (Data filtering)"
   ]
 };
 window.TOC_AR["L6-S029"] = window.TOC_AR["L6"]["L6-S029"];
 
 window.TOC_AR["L6"]["L6-S030"] = {
   "ar": [
-    "المقارنة الجوهرية بين المصادقة والتفويض (Authentication vs Authorization):",
-    "- المصادقة (Authentication - AuthN):",
-    "  * السؤال الجوهري: من أنت؟ (Who are you?).",
-    "  * الوظيفة: التحقق من هوية المستخدم والتأكد من صدق ادعائه (عبر اسم المستخدم، كلمة المرور، الرمز المؤقت، البصمة).",
-    "- التفويض (Authorization - AuthZ):",
-    "  * السؤال الجوهري: ما هي الصلاحيات المسموح لك بتنفيذها؟ (What are you allowed to do?).",
-    "  * الوظيفة: فحص أدوار وصلاحيات المستخدم بعد تأكيد هويته (هل هذا المستخدم مدير Admin أم مستخدم عادي User؟)."
+    "المقارنة بين المصادقة والتفويض (Authentication vs Authorization):",
+    "- المصادقة (Authentication):",
+    "  * السؤال الجوهري: من أنت؟ (Who are you?)",
+    "  * أمثلة (Examples):",
+    "    - اسم المستخدم وكلمة المرور (Username/password)",
+    "    - بصمة الإصبع (Fingerprint)",
+    "    - رمز الويب (JWT)",
+    "- التفويض (Authorization):",
+    "  * السؤال الجوهري: ماذا يمكنك أن تفعل؟ وما هي صلاحياتك؟ (What can you do?)",
+    "  * أمثلة (Example):",
+    "    - المدير (Admin): إنشاء مستخدم جديد (Create User).",
+    "    - المستخدم العادي (User): عرض الملف الشخصي فقط (View Profile)."
   ]
 };
 window.TOC_AR["L6-S030"] = window.TOC_AR["L6"]["L6-S030"];
 
 window.TOC_AR["L6"]["L6-S031"] = {
   "ar": [
-    "المصادقة التقليدية باسم المستخدم وكلمة المرور (Username & Password):",
-    "- الآلية: إرسال اسم المستخدم وكلمة المرور المشفرة مع كل طلب، أو حفظ الجلسة على الخادم (Session-based Auth).",
-    "- التحدي في معمارية الويب والأنظمة الموزعة:",
-    "  * نظام الجلسات يحتاج ذاكرة مشتركة على السيرفر (Stateful)، مما يعيق التوسع الأفقي (Horizontal Scaling) وتوزيع الأحمال عبر سيرفرات متعددة.",
-    "  * الحل الحديث: الانتقال للمصادقة المعتمدة على الرموز الرقمية الموقعة (Token-based Authentication)."
+    "المصادقة باسم المستخدم وكلمة المرور (Username and Password Authentication):",
+    "- النهج التقليدي (Traditional approach):",
+    "  * المستخدم (User) يرسل اسم المستخدم وكلمة المرور (Username / Password) -> خادم المصادقة (Authentication Server) -> منح حق الوصول (Access Granted).",
+    "- المشاكل والمخاطر (Problems):",
+    "  * سرقة كلمات المرور (Password theft)",
+    "  * هجمات القوة الغاشمة والتخمين (Brute force attacks)",
+    "- الحلول المقترحة (Solutions):",
+    "  * تجزئة كلمات المرور (Hashing)",
+    "  * إضافة الملح التشفيري (Salt)",
+    "  * المصادقة متعددة العوامل (MFA - Multi-Factor Authentication)"
   ]
 };
 window.TOC_AR["L6-S031"] = window.TOC_AR["L6"]["L6-S031"];
 
 window.TOC_AR["L6"]["L6-S032"] = {
   "ar": [
-    "تجزئة وتمليح كلمات المرور (Password Hashing & Salting):",
-    "- القاعدة الذهبية الصارمة: ممنوع نهائيا تخزين كلمات المرور كنص صريح (Plain Text) أو تشفيرها بتشفير ثنائي الاتجاه يمكن فكه.",
-    "- دالة التجزئة (Hash Function): دالة اتجاه واحد رياضية مستحيلة العكس تحول أي نص لرمز ثابت الطول.",
-    "- ملح التشفير (Salt): سلسلة عشوائية فريدة تضاف لكلمة المرور قبل التجزئة لهزيمة جداول قوس قزح الجاهزة (Rainbow Tables).",
-    "- الخوارزميات الآمنة المعتمدة: BCrypt, Argon2, PBKDF2 (خوارزميات بطيئة عمدا لمقاومة هجمات القوة الغاشمة Brute Force)."
+    "تجزئة كلمات المرور (Password Hashing):",
+    "- تحذير صارم: لا تقم أبدا بتخزين كلمة المرور بصيغة نص صريح (Never store: Password123).",
+    "- الممارسة الصحيحة: قم بتخزين القيمة المجزأة فقط (Store: 8f2a8b91c....).",
+    "- مسار العملية (Process):",
+    "  * كلمة المرور الأصلية (Password) -> خوارزمية التجزئة (Hash Algorithm) -> القيمة المجزأة المخزنة (Stored Hash)."
   ]
 };
 window.TOC_AR["L6-S032"] = window.TOC_AR["L6"]["L6-S032"];
 
 window.TOC_AR["L6"]["L6-S033"] = {
   "ar": [
-    "المصادقة بواسطة رموز الويب القياسية (JSON Web Token - JWT):",
-    "- المفهوم: معيار مفتوح مشفر (RFC 7519) لنقل البيانات الآمنة بين طرفين بوصفها كائن JSON مضغوط وموقع رقميا.",
-    "- الأجزاء الثلاثة لرمز الـ JWT (مفصولة بنقاط Header.Payload.Signature):",
-    "  1. الترويسة (Header): تحدد خوارزمية التوقيع (مثل HS256) ونوع الرمز.",
-    "  2. الحمولة والمطالبات (Payload / Claims): بيانات المستخدم وصلاحياته وتاريخ انتهاء الصلاحية (sub, name, role, exp).",
-    "  3. التوقيع الرقمي (Signature): يُحسب بدمج الترويسة والحمولة وتشفيرهما بمفتاح سري خاص بالخادم (Secret Key).",
-    "- الميزة الكبرى: عديم الحالة تماما (Stateless)؛ يتحقق الخادم من صحته حسابيا دون الحاجة للرجوع لقاعدة البيانات مع كل طلب."
+    "المصادقة بواسطة رموز الويب القياسية (JWT Authentication):",
+    "- التعريف: الاختصار JWT يعني رمز ويب بصيغة جيسون (JWT = JSON Web Token).",
+    "- مسار وتدفق العمل (Flow):",
+    "  * تسجيل الدخول (Login)",
+    "  * التحقق من المستخدم (Validate User)",
+    "  * توليد رمز الـ JWT على الخادم (Generate JWT)",
+    "  * العميل يقوم بتخزين الرمز محليا (Client stores Token)",
+    "  * إرسال الرمز مع كل طلب لاحق (Send Token with Requests)",
+    "- مثال على الترويسة الأمنية (Example):",
+    "  * `Authorization: Bearer eyJhbGc...`"
   ]
 };
 window.TOC_AR["L6-S033"] = window.TOC_AR["L6"]["L6-S033"];
 
 window.TOC_AR["L6"]["L6-S034"] = {
   "ar": [
-    "إطار عمل التفويض المفوض (OAuth 2.0 Framework):",
-    "- المفهوم: معيار صناعي للتفويض يتيح لتطبيق خارجي الوصول إلى موارد المستخدم لدى مزود خدمة دون معرفة كلمة المرور للمستخدم.",
-    "- الأدوار الأربعة في منظومة OAuth 2.0:",
-    "  1. مالك المورد (Resource Owner): المستخدم نفسه.",
-    "  2. العميل (Client): التطبيق الذي يريد الوصول للمورد (مثل تطبيق جوال).",
-    "  3. خادم التفويض (Authorization Server): الخادم الذي يصدر رموز الوصول بعد موافقة المستخدم (مثل Google Login, Meta).",
-    "  4. خادم الموارد (Resource Server): خادم الـ API الذي يحتوي البيانات المحمية."
+    "إطار عمل التفويض المفتوح (OAuth 2.0):",
+    "- إطار OAuth هو إطار عمل مخصص للتفويض (OAuth is an authorization framework).",
+    "- مثال (Example): تسجيل الدخول باستخدام حساب جوجل (Login with Google).",
+    "- تدفق العمل (Flow):",
+    "  * التطبيق (Application) -> مزود الهوية كـ جوجل (Google) -> رمز الوصول (Access Token) -> واجهة برمجة التطبيقات (API).",
+    "- مجالات الاستخدام (Used for):",
+    "  * وصول تطبيقات الطرف الثالث (Third-party access)",
+    "  * تسجيل الدخول عبر الشبكات الاجتماعية (Social login)"
   ]
 };
 window.TOC_AR["L6-S034"] = window.TOC_AR["L6"]["L6-S034"];
 
 window.TOC_AR["L6"]["L6-S035"] = {
   "ar": [
-    "المقارنة بين تسجيل الدخول التقليدي وإطار OAuth 2.0:",
-    "- تسجيل الدخول التقليدي: المستخدم يعطي كلمة مروره مباشرة للتطبيق الخارجي، مما يمنحه وصولا كاملا وغير مقيد ويعرض حسابه للخطر.",
-    "- إطار OAuth 2.0: المستخدم يسجل دخوله لدى خادم التفويض الموثوق، الذي يصدر للتطبيق رمزا محدود الصلاحيات (Scoped Access Token) ومحدود المدة، ويمكن إلغاؤه في أي وقت دون تغيير كلمة المرور."
+    "مقارنة بين تسجيل الدخول التقليدي وإطار OAuth (Traditional Login vs OAuth):",
+    "- جدول المقارنة التفصيلي:",
+    "  * مشاركة كلمة المرور: في التقليدي تتم مشاركة كلمة المرور مع كل تطبيق (Share your password with every application)، بينما في OAuth تبقى كلمة المرور حصرا لدى مزود الهوية مثل جوجل (Password stays with the identity provider).",
+    "  * مستوى المخاطر الأمنية: في التقليدي مخاطر أمنية أعلى (Higher security risk)، بينما في OAuth أكثر أمانا (More secure).",
+    "  * إدارة الصلاحيات: في التقليدي يصعب إدارة وتحديد الصلاحيات (Difficult to manage permissions)، بينما في OAuth تتوفر صلاحيات دقيقة ومفصلة عبر الـ Scopes (Fine-grained permissions).",
+    "  * تخزين كلمات المرور: في التقليدي قد تُخزن كلمة المرور لدى تطبيقات متعددة (Password may be stored by multiple apps)، بينما في OAuth تستلم التطبيقات رموزا بدلا من كلمات المرور (Apps receive tokens instead of passwords)."
   ]
 };
 window.TOC_AR["L6-S035"] = window.TOC_AR["L6"]["L6-S035"];
 
 window.TOC_AR["L6"]["L6-S036"] = {
   "ar": [
-    "أفضل الممارسات الأمنية لحماية واجهات الـ APIs (Security Best Practices):",
-    "1. فرض بروتوكول HTTPS المشفر دائما لمنع اعتراض البيانات والتنصت (Man-in-the-Middle).",
-    "2. تفعيل تقييد معدل الطلبات (Rate Limiting) على مستوى الـ IP وحساب المستخدم لمنع هجمات الإغراق.",
-    "3. التحقق الصارم من صحة المدخلات وتعقيمها (Input Validation & Sanitization).",
-    "4. ضبط سياسات مشاركة الموارد عبر الأصول المختلفة (CORS - Cross-Origin Resource Sharing).",
-    "5. تطبيق مبدأ الامتيازات الأقل (Principle of Least Privilege) في كافة الصلاحيات والمفاتيح."
+    "أفضل الممارسات الأمنية لحماية واجهات البرمجة (API Security Best Practices):",
+    "1. فرض بروتوكول الاتصال المشفر HTTPS: لتشفير حركة البيانات وحمايتها من التنصت (Encrypt communication).",
+    "2. المصادقة والتحقق من الهوية (Authentication): باستخدام تقنيات JWT أو OAuth.",
+    "3. التفويض وإدارة الصلاحيات (Authorization): عبر تطبيق الأدوار والسياسات (Roles and policies).",
+    "4. التحقق من صحة المدخلات (Input Validation): لفحص وتدقيق كافة المدخلات القادمة من العميل.",
+    "5. تحديد معدل وسقف الطلبات (Rate Limiting): لحماية الخادم، مثال: السماح بـ 100 طلب في الدقيقة (100 requests/minute).",
+    "6. تسجيل السجلات والمراقبة المستمرة (Logging and Monitoring): لتتبع الأنشطة واكتشاف الأخطاء والهجمات."
   ]
 };
 window.TOC_AR["L6-S036"] = window.TOC_AR["L6"]["L6-S036"];
 
 window.TOC_AR["L6"]["L6-S037"] = {
   "ar": [
-    "استراتيجيات إصدارات واجهات البرمجة (API Versioning):",
-    "- الهدف: إتاحة إضافة ميزات جذرية وتعديلات معمارية دون كسر التطبيقات القائمة التي تعتمد على الإصدار القديم.",
-    "- أشهر استراتيجيات ترقيم الإصدارات:",
-    "  1. عبر مسار الرابط (URI Path): الأسلوب الأكثر انتشارا ووضوحا (مثل /api/v1/products و /api/v2/products).",
-    "  2. عبر معلمات الاستعلام (Query String): مثل /api/products?version=2.",
-    "  3. عبر الترويسات المخصصة (Custom Headers): مثل X-API-Version: 2.0.",
-    "  4. عبر التفاوض على المحتوى (Accept Header): مثل Accept: application/vnd.company.v2+json."
+    "إدارة إصدارات واجهات البرمجة (API Versioning):",
+    "- تتغير واجهات البرمجة وتتطور مع مرور الوقت (APIs change over time).",
+    "- مثال على الإصدارات (Example):",
+    "  * الإصدار الأول: `/api/v1/users`",
+    "  * الإصدار الثاني: `/api/v2/users`",
+    "- الفوائد والمزايا (Benefits):",
+    "  * التوافقية العكسية مع التطبيقات القديمة (Backward compatibility).",
+    "  * التحديثات الآمنة دون تعطيل الأنظمة القائمة (Safe updates)."
   ]
 };
 window.TOC_AR["L6-S037"] = window.TOC_AR["L6"]["L6-S037"];
 
 window.TOC_AR["L6"]["L6-S038"] = {
   "ar": [
-    "توثيق واجهات البرمجة القياسي (API Documentation - Swagger / OpenAPI):",
-    "- المفهوم: مواصفة قياسية مفتوحة (OpenAPI Specification) لإنشاء واجهات توثيق تفاعلية ذاتية التوليد.",
-    "- أداة Swagger في ASP.NET Core:",
-    "  * تقرأ المتحكمات والملاحظات البرمجية وتولد واجهة مستخدم تفاعلية (Swagger UI).",
-    "  * تتيح للمطورين والعملاء استكشاف نقاط النهاية واختبار استدعاءات GET و POST مباشرة من المتصفح.",
-    "  * تولد ملف swagger.json القياسي الذي يُستخدم لتوليد كود العملاء في مختلف لغات البرمجة آليا."
+    "توثيق واجهات برمجة التطبيقات (API Documentation):",
+    "- واجهة البرمجة هي عقد محدد وملزم (API is a contract).",
+    "- الأدوات المستخدمة (Tools):",
+    "  * أدوات Swagger ومواصفة OpenAPI (Swagger / OpenAPI).",
+    "- ما يوفره التوثيق للمطورين (Provides):",
+    "  * نقاط النهاية ومسارات الخدمة (Endpoints).",
+    "  * المعاملات والمدخلات المطلوبة (Parameters).",
+    "  * أمثلة توضيحية على الطلب والاستجابة (Examples).",
+    "  * إمكانية التجربة والاختبار المباشر (Testing)."
   ]
 };
 window.TOC_AR["L6-S038"] = window.TOC_AR["L6"]["L6-S038"];
 
 window.TOC_AR["L6"]["L6-S039"] = {
   "ar": [
-    "اختبار واجهات البرمجة وضمان الجودة (API Testing):",
-    "- أنواع الاختبارات البرمجية للـ APIs:",
-    "  * اختبارات الوحدة (Unit Testing): اختبار الدوال الفردية ومتحكمات الـ API بمعزل عن الشبكة وقاعدة البيانات باستخدام مكتبات المحاكاة (Mocking).",
-    "  * اختبارات التكامل (Integration Testing): تشغيل سيرفر تجريبي حقيقي (WebApplicationFactory) واختبار دورة حياة الطلب كاملة.",
-    "  * اختبارات الأدوات الخارجية: مثل Postman ومجموعات الاختبار الآلية وسيناريوهات فحص الأداء والضغط (Load Testing)."
+    "اختبار واجهات برمجة التطبيقات (API Testing):",
+    "- الأدوات المستخدمة (Tools):",
+    "  * أداة بوستمان (Postman).",
+    "- استخدامات أداة Postman (Used for):",
+    "  * اختبار الطلبات والاستجابات (Testing requests).",
+    "  * الأتمتة البرمجية للاختبارات (Automation).",
+    "- أنواع الاختبارات (Testing Types):",
+    "  * اختبارات الوحدة (Unit Testing): لاختبار المنطق البرمجي الداخلي (Test logic).",
+    "  * اختبارات التكامل (Integration Testing): لاختبار واجهة البرمجة بشكل كامل ومتكامل (Test complete API)."
   ]
 };
 window.TOC_AR["L6-S039"] = window.TOC_AR["L6"]["L6-S039"];
 
 window.TOC_AR["L6"]["L6-S040"] = {
   "ar": [
-    "سيناريو عملي متكامل للمصادقة عبر JWT - المرحلة 1 (JWT Flow):",
-    "- خطوة 1: يرسل تطبيق العميل طلب POST إلى نقطة نهاية تسجيل الدخول /api/auth/login متضمنا اسم المستخدم وكلمة المرور المشفرة داخل جسم الطلب.",
-    "- تدفق آمن بالكامل عبر قناة اتصال مشفرة HTTPS لمنع اعتراض أوراق الاعتماد."
+    "مثال عملي مبسط على مصادقة واجهة البرمجة عبر JWT (Simple API Authentication Example):",
+    "- السيناريو المفترض (Scenario):",
+    "  * لدينا واجهة برمجة لإدارة الطلاب (We have a Student Management API).",
+    "  * يُتاح لأي شخص تسجيل الدخول (Anyone can log in).",
+    "  * يُسمح فقط للمستخدمين المصادق عليهم بإضافة طالب جديد (Only authenticated users can add a student).",
+    "- الخطوة 1: تسجيل دخول المستخدم (Step 1: User Login):",
+    "  * يرسل العميل اسم المستخدم وكلمة المرور (The client sends a username and password).",
+    "  * الطلب (Request): `POST /api/auth/login`",
+    "  * جسم الطلب (Body):",
+    "    `{ \"username\": \"admin\", \"password\": \"123456\" }`"
   ]
 };
 window.TOC_AR["L6-S040"] = window.TOC_AR["L6"]["L6-S040"];
 
 window.TOC_AR["L6"]["L6-S041"] = {
   "ar": [
-    "سيناريو عملي متكامل للمصادقة عبر JWT - المرحلة 2 (Server Authentication):",
-    "- خطوة 2: يستقبل الخادم الطلب، ويتحقق من صحة كلمة المرور بمقارنة تجزئتها (Hash + Salt) مع القيمة المحفوظة في قاعدة البيانات.",
-    "- خطوة 3: في حال المطابقة، يولد الخادم رمز JWT موقعا بمفتاحه السري الخاص، متضمنا مطالبات المستخدم وصلاحياته وتاريخ الانتهاء، ثم يعيد الرمز في استجابة HTTP 200 OK للعميل ليحفظه محليا."
+    "الخطوة 2: الخادم يصادق على هوية المستخدم (Step 2: Server Authenticates the User):",
+    "- يقوم الخادم بالإجراءات التالية (The server):",
+    "  * فحص اسم المستخدم (Checks the username).",
+    "  * التحقق من صحة كلمة المرور (Verifies the password).",
+    "  * توليد رمز JWT إذا كانت بيانات الاعتماد صالحة (Generates a JWT token if the credentials are valid).",
+    "- الخطوة 3: استجابة الخادم (Step 3: Server Response):",
+    "  * نص الاستجابة:",
+    "    `{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\" }`",
+    "  * يقوم العميل بتخزين هذا الرمز لديه محليا (The client stores this token)."
   ]
 };
 window.TOC_AR["L6-S041"] = window.TOC_AR["L6"]["L6-S041"];
 
 window.TOC_AR["L6"]["L6-S042"] = {
   "ar": [
-    "سيناريو عملي متكامل للمصادقة عبر JWT - المرحلة 3 (Accessing Protected API):",
-    "- خطوة 4: عندما يريد العميل استدعاء أي نقطة نهاية محمية (مثل GET /api/orders):",
-    "- يرفق العميل رمز الـ JWT داخل ترويسة الطلب بالشكل القياسي:",
-    "  Authorization: Bearer <JWT_TOKEN>",
-    "- هذه الترويسة ترسل مع كل طلب لاحق دون الحاجة لإعادة إدخال كلمة المرور إطلاقا."
+    "الخطوة 4: الوصول إلى واجهة برمجة محمية (Step 4: Access a Protected API):",
+    "- يريد العميل الآن إضافة طالب جديد (The client wants to add a new student).",
+    "- الطلب المرسل (Request):",
+    "  * المسار: `POST /api/students`",
+    "  * الترويسة الأمنية (Header):",
+    "    `Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`",
+    "  * جسم الطلب (Body):",
+    "    `{ \"name\": \"Ahmed\", \"age\": 22 }`"
   ]
 };
 window.TOC_AR["L6-S042"] = window.TOC_AR["L6"]["L6-S042"];
 
 window.TOC_AR["L6"]["L6-S043"] = {
   "ar": [
-    "سيناريو عملي متكامل للمصادقة عبر JWT - المرحلة 4 (Token Verification):",
-    "- خطوة 5: يستقبل الخادم الطلب في برمجية وسيطة (Authentication Middleware):",
-    "  * يتحقق الخادم رياضيا من صحة التوقيع الرقمي (Signature) باستخدام المفتاح السري فقط.",
-    "  * يفحص تاريخ الصلاحية (Expiration Time) للتأكد من عدم انتهاء صلاحية الرمز.",
-    "  * إذا كان الرمز صالحا وموقعا بالمفتاح الأصلي، يُستخرج كائن ClaimsPrincipal ويتم توجيه الطلب للمتحكم دون الحاجة لأي استعلام في قاعدة البيانات، مما يمنح النظام سرعة خارقة وتوسعا لا نهائيا."
+    "الخطوة 5: الخادم يتحقق من صحة الرمز (Step 5: Server Verifies the Token):",
+    "- يقوم الخادم بفحص النقاط التالية (The server checks):",
+    "  * هل الرمز موجود في الطلب؟ (Is the token present?)",
+    "  * هل الرمز صالح وسليم؟ (Is the token valid?)",
+    "  * هل انتهت صلاحية الرمز؟ (Has the token expired?)",
+    "  * هل يمتلك المستخدم الصلاحية المطلوبة؟ (Does the user have permission?)",
+    "- إذا كانت جميع الشروط صالحة ومستوفاة (If everything is valid):",
+    "  * رمز الاستجابة: `201 Created`",
+    "  * نص الاستجابة:",
+    "    `{ \"message\": \"Student created successfully.\" }`"
   ]
 };
 window.TOC_AR["L6-S043"] = window.TOC_AR["L6"]["L6-S043"];

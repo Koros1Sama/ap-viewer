@@ -8,87 +8,123 @@ window.TOC_AR["L7"] = window.TOC_AR["L7"] || {};
 window.TOC_AR["L7"]["L7-S001"] = {
   "ar": [
     "البرمجة المتقدمة (Advanced Programming)",
-    "المحاضرة الثامنة: البرمجة غير المتزامنة، التزامن، تعدد المسالك وإدارة الذاكرة",
-    "Asynchronous Programming, Concurrency, Multithreading & Memory Management",
-    "أستاذة المقرر: د. بيداء لعلع",
-    "دليل هندسي شامل حول آليات التزامن، تشغيل المسالك، وأسرار إدارة الذاكرة في منصة .NET Core."
+    "المحاضرة الثامنة (Lecture 8)",
+    "البرمجة غير المتزامنة، التزامن، تعدد المسالك، وإدارة الذاكرة (Asynchronous Programming, Concurrency, Multithreading & Memory Management)"
   ]
 };
 window.TOC_AR["L7-S001"] = window.TOC_AR["L7"]["L7-S001"];
 
 window.TOC_AR["L7"]["L7-S002"] = {
   "ar": [
-    "الأهداف التعليمية للمحاضرة (Learning Objectives):",
-    "- التمييز الصارم بين التنفيذ المتزامن وغير المتزامن (Sync vs Async).",
-    "- فهم واستخدام الكلمات المحجوزة Task و async و await في C#.",
-    "- التفريق الجوهري بين التزامن (Concurrency) والتوازي (Parallelism).",
-    "- استيعاب بنية العمليات (Processes) والمسالك (Threads) وحوض المسالك (ThreadPool).",
-    "- تشخيص ظروف السباق (Race Conditions) ومعايير أمان المسالك (Thread Safety).",
-    "- استخدام أدوات التزامن: lock و Interlocked والمجموعات المتزامنة.",
-    "- فهم معمارية إدارة الذاكرة في .NET: الـ Stack والـ Heap وجامع القمامة (GC).",
-    "- شرح أجيال جامع القمامة (GC Generations) واستخدام واجهة IDisposable.",
-    "- تجنب تسريبات الذاكرة (Memory Leaks) وأخطاء الأداء الشائعة."
+    "أهداف التعلم (Learning Objectives):",
+    "- بنهاية هذه المحاضرة، سيكون الطلاب قادرين على:",
+    "  * شرح التنفيذ المتزامن وغير المتزامن (Explain synchronous and asynchronous execution).",
+    "  * فهم كل من Task و async و await (Understand Task, async, and await).",
+    "  * التمييز بين التزامن والتوازي (Distinguish concurrency from parallelism).",
+    "  * فهم العمليات والمسالك وحوض المسالك (Understand processes, threads, and ThreadPool).",
+    "  * تحديد حالات التسابق ومشاكل أمان المسالك (Identify race conditions and thread-safety issues).",
+    "  * استخدام lock و Interlocked والمجموعات المتزامنة (Use lock, Interlocked, and concurrent collections).",
+    "  * فهم إدارة الذاكرة في منصة .NET (Understand .NET memory management).",
+    "  * شرح المكدس والركام وجامع القمامة (Explain Stack, Heap, and Garbage Collection).",
+    "  * فهم أجيال جامع القمامة (Understand GC generations).",
+    "  * استخدام واجهة IDisposable وجملة using.",
+    "  * تحديد المشاكل الشائعة في إدارة الذاكرة (Identify common memory-management problems).",
+    "- مسار المحاضرة:",
+    "  * البرمجة غير المتزامنة (Async Programming) -> التزامن وتعدد المسالك (Concurrency & Multithreading) -> إدارة الذاكرة (Memory Management)."
   ]
 };
 window.TOC_AR["L7-S002"] = window.TOC_AR["L7"]["L7-S002"];
 
 window.TOC_AR["L7"]["L7-S003"] = {
   "ar": [
-    "الجزء الأول: البرمجة غير المتزامنة (Asynchronous Programming):",
-    "- التنفيذ المتزامن (Synchronous Execution): العمليات تنفذ بالتتالي واحدة تلو الأخرى.",
+    "الجزء 1 — البرمجة غير المتزامنة (Part 1 - Asynchronous Programming):",
+    "- التنفيذ المتزامن يعني أن العمليات تُنفذ واحدة تلو الأخرى على التوالي (Synchronous execution means operations are executed one after another).",
+    "- مثال الكود البرمجي:",
     "  var data = GetData();",
     "  ProcessData(data);",
     "  SaveData(data);",
-    "- مسار التنفيذ: استدعاء GetData -> انتظار (WAIT) -> تنفيذ ProcessData -> تنفيذ SaveData.",
-    "- المشكلة الجوهرية (Blocking Problem):",
-    "  * إذا استغرقت GetData مدة 5 ثوانٍ، فإن المسلك الحالي (Thread) يتجمد وينتظر 5 ثوانٍ كاملة دون أن ينجز أي عمل مفيد."
+    "- مسار التنفيذ (Execution):",
+    "  * استدعاء GetData() -> انتظار وتوقف (WAIT) -> استدعاء ProcessData() -> استدعاء SaveData().",
+    "- إذا استغرقت الدالة GetData() مدة 5 ثوانٍ، فإن البرنامج ينتظر ويتجمد لمدة 5 ثوانٍ كاملة.",
+    "- المشكلة الجوهرية (Key Problem):",
+    "  * العملية المعيقة والمجمدة للعمل (A blocking operation) تمنع المسلك الحالي من أداء أي عمل مفيد آخر."
   ]
 };
 window.TOC_AR["L7-S003"] = window.TOC_AR["L7"]["L7-S003"];
 
 window.TOC_AR["L7"]["L7-S004"] = {
   "ar": [
-    "مفهوم البرمجة غير المتزامنة (Asynchronous Execution):",
-    "- الآلية: بدلا من تجميد المسلك أثناء انتظار عمليات الإدخال والإخراج، يتم تحرير المسلك فورا ليعود إلى حوض المسالك (ThreadPool) لخدمة طلبات أخرى.",
-    "- عند اكتمال جلب البيانات من القرص أو الشبكة، يقوم نظام التشغيل بإشعار الـ .NET Runtime ليخصص مسلكا متاحا يستأنف تنفيذ الكود من حيث توقف.",
-    "- الفائدة: استغلال أقصى طاقة للموارد دون تجميد النظام."
+    "البرمجة غير المتزامنة (Asynchronous Programming):",
+    "- تتيح البرمجة غير المتزامنة للبرنامج بدء عملية معينة، والاستمرار في إنجاز أعمال أخرى أثناء انتظار اكتمال تلك العملية (allows a program to start an operation and continue doing other work while waiting for the operation to complete).",
+    "- مثال الكود البرمجي:",
+    "  var data = await GetDataAsync();",
+    "  ProcessData(data);",
+    "- المسار المفاهيمي (Conceptually):",
+    "  * بدء العملية (Start Operation) -> في أثناء الانتظار: تنفيذ أعمال أخرى مفيدة (Do Other Work) -> الحصول على النتيجة عند جاهزيتها (Result).",
+    "- قاعدة هامة جدا (Important):",
+    "  * البرمجة غير المتزامنة لا تعني تلقائيا تعدد المسالك (Asynchronous does not automatically mean multithreaded)."
   ]
 };
 window.TOC_AR["L7-S004"] = window.TOC_AR["L7"]["L7-S004"];
 
 window.TOC_AR["L7"]["L7-S005"] = {
   "ar": [
-    "المهام المقيدة بالإدخال/الإخراج مقابل المهام المقيدة بالمعالج (I/O-Bound vs CPU-Bound):",
-    "1. العمليات المقيدة بالإدخال والإخراج (I/O-Bound):",
-    "   - أمثلة: استعلامات قواعد البيانات، قراءة الملفات من القرص، واستدعاءات شبكة الـ API.",
-    "   - الخصائص: المعالج لا يبذل جهدا بل ينتظر جهازا خارجيا بطيئا؛ الحل المثالي هو async/await.",
-    "2. العمليات المقيدة بالمعالج (CPU-Bound):",
-    "   - أمثلة: العمليات الحسابية المعقدة، معالجة وتشفير الصور، وخوارزميات الضغط والذكاء الاصطناعي.",
-    "   - الخصائص: المعالج يعمل بنسبة 100%؛ الحل هو تفويض العمل لمسلك خلفي عبر Task.Run أو المعالجة المتوازية."
+    "مقارنة العمليات المقيدة بالإدخال/الإخراج مقابل العمليات المقيدة بالمعالج (I/O-Bound vs CPU-Bound):",
+    "- العمليات المقيدة بالإدخال/الإخراج (I/O-Bound):",
+    "  * يقضي التطبيق معظم وقته منتظرا لـ:",
+    "    - قاعدة البيانات (Database)",
+    "    - واجهات HTTP API",
+    "    - الملفات (File)",
+    "    - الشبكة (Network)",
+    "    - القرص الصلب (Disk)",
+    "  * مثال: var response = await client.GetAsync(url);",
+    "- العمليات المقيدة بالمعالج (CPU-Bound):",
+    "  * يكون المعالج نشطا في تنفيذ العمليات الحسابية والمعالجة الفعلية:",
+    "    - معالجة الصور (Image processing)",
+    "    - التشفير (Encryption)",
+    "    - ضغط البيانات (Compression)",
+    "    - الحسابات الرياضية الضخمة (Large calculations)",
+    "  * مثال: var result = CalculateLargeValue();",
+    "- القاعدة الذهبية:",
+    "  * عمليات I/O-Bound = انتظار (Waiting).",
+    "  * عمليات CPU-Bound = عمل ومعالجة فعلية (Working)."
   ]
 };
 window.TOC_AR["L7-S005"] = window.TOC_AR["L7"]["L7-S005"];
 
 window.TOC_AR["L7"]["L7-S006"] = {
   "ar": [
-    "لماذا نحتاج البرمجة غير المتزامنة؟ (Why Async Programming?):",
-    "1. في تطبيقات واجهات المستخدم (Desktop & Mobile UIs):",
-    "   - تمنع تجميد الشاشة واستجابة الأزرار (UI Responsiveness) وتضمن تجربة استخدام سلسة.",
-    "2. في خوادم وتطبيقات الويب (Web Servers & APIs):",
-    "   - رفع قدرة الخادم على استقبال آلاف الطلبات المتزامنة (Throughput & Scalability).",
-    "   - خادم الويب يمتلك عددا محدودا من المسالك؛ إذا تجمدت كلها في انتظار قواعد البيانات ينهار السيرفر فورا."
+    "لماذا نحتاج إلى البرمجة غير المتزامنة؟ (Why Do We Need Async Programming?):",
+    "- تبرز الحاجة إليها خصوصا في العمليات المقيدة بالإدخال/الإخراج (I/O-bound operations):",
+    "  * استعلامات قواعد البيانات (Database queries)",
+    "  * طلبات واستدعاءات HTTP (HTTP requests)",
+    "  * عمليات قراءة وكتابة الملفات (File operations)",
+    "  * الاتصال الشبكي (Network communication)",
+    "  * واجهات برمجة التطبيقات (APIs)",
+    "  * قراءة وكتابة تدفقات البيانات (Reading/writing streams)",
+    "- مثال الكود البرمجي:",
+    "  public async Task<string> GetUserAsync() {",
+    "      return await httpClient.GetStringAsync(url);",
+    "  }",
+    "- الفائدة الجوهرية: أثناء انتظار الاستجابة القادمة عبر الشبكة، لا يحتاج التطبيق إلى حجب وتجميد المسلك دون فائدة (the application does not need to block a thread unnecessarily)."
   ]
 };
 window.TOC_AR["L7-S006"] = window.TOC_AR["L7"]["L7-S006"];
 
 window.TOC_AR["L7"]["L7-S007"] = {
   "ar": [
-    "الكلمتان المحجوزتان async و await في C#:",
-    "- الكلمة async: توضع في توقيع الدالة لتمكين استخدام await بداخلها وإعلام المترجم بتوليد آلة حالة خلفية (State Machine).",
-    "- الكلمة await: توضع قبل المهمة غير المتزامنة؛ تقوم بتحرير المسلك الحالي فورا وإعادة التحكم للمستدعي حتى تكتمل المهمة.",
-    "  public async Task<string> DownloadDataAsync() {",
-    "      using var client = new HttpClient();",
-    "      return await client.GetStringAsync(\"https://api.example.com\");",
+    "الكلمات المحجوزة async و await:",
+    "- الكلمة المحجوزة async:",
+    "  * تشير إلى أن الدالة تحتوي على عمليات غير متزامنة (Indicates that a method contains asynchronous operations).",
+    "  * مثال التعريف:",
+    "    public async Task<string> GetDataAsync() { ... }",
+    "- الكلمة المحجوزة await:",
+    "  * تنتظر اكتمال العملية بصورة غير متزامنة دون تجميد المسلك (Asynchronously waits for the operation):",
+    "  * مثال الاستدعاء: var result = await GetDataAsync();",
+    "- مثال متكامل (Complete Example):",
+    "  public async Task<string> GetDataAsync() {",
+    "      await Task.Delay(1000);",
+    "      return \"Data received\";",
     "  }"
   ]
 };
@@ -96,190 +132,288 @@ window.TOC_AR["L7-S007"] = window.TOC_AR["L7"]["L7-S007"];
 
 window.TOC_AR["L7"]["L7-S008"] = {
   "ar": [
-    "معالجة العمليات المقيدة بالمعالج عبر Task.Run:",
-    "- عند وجود خوارزمية حسابية ثقيلة تستهلك المعالج، نستخدم Task.Run لنقلها إلى مسلك عامل من الـ ThreadPool:",
-    "  public async Task<int> CalculateHeavyTaskAsync() {",
-    "      return await Task.Run(() => {",
-    "          int sum = 0;",
-    "          for (int i = 0; i < 100000000; i++) sum += i;",
-    "          return sum;",
-    "      });",
+    "العمليات المقيدة بالمعالج (CPU-Bound Work):",
+    "- العمليات المقيدة بالمعالج تقضي معظم وقتها في استخدام المعالج للحسابات والمعالجة (spend most of their time using the CPU for computation).",
+    "- مثال على حسابات مكثفة (Example):",
+    "  long Calculate() {",
+    "      long result = 0;",
+    "      for (long i = 0; i < 1_000_000_000; i++)",
+    "          result += i;",
+    "      return result;",
     "  }",
-    "- يضمن بقاء مسلك واجهة المستخدم أو المسلك الرئيسي حرا وطليقا."
+    "- استخدام دالة Task.Run:",
+    "  var result = await Task.Run(Calculate);",
+    "- تقوم دالة Task.Run بنقل العمل المكثف حسابيا إلى مسلك من حوض المسالك (Thread Pool thread)، مما يسمح للمسلك المستدعي بالبقاء متجاوبا (allowing the calling thread to remain responsive).",
+    "- قاعدة هامة جدا (Important):",
+    "  * استخدم Task.Run للعمليات المقيدة بالمعالج (CPU-bound work) — ولا تستخدمها كبديل عام لعمليات الإدخال والإخراج غير المتزامنة (not as a generic replacement for asynchronous I/O)."
   ]
 };
 window.TOC_AR["L7-S008"] = window.TOC_AR["L7"]["L7-S008"];
 
 window.TOC_AR["L7"]["L7-S009"] = {
   "ar": [
-    "التنفيذ غير المتزامن التتابعي مقابل المتزامن الفعلي (Sequential vs Concurrent):",
-    "- النمط التتابعي (Sequential): انتظار كل مهمة حتى تنتهي قبل بدء المهمة التالية:",
-    "  var user = await GetUserAsync();",
-    "  var orders = await GetOrdersAsync(); // يبدأ فقط بعد انتهاء جلب المستخدم",
-    "- النمط المتزامن (Concurrent): إطلاق المهمتين معا في نفس اللحظة:",
-    "  var userTask = GetUserAsync();",
-    "  var ordersTask = GetOrdersAsync();",
-    "  await Task.WhenAll(userTask, ordersTask); // ينتهي في زمن أطول مهمة فقط بدلا من مجموعهما!"
+    "التنفيذ غير المتزامن المتسلسل مقابل المتزامن المشترك (Sequential Async vs Concurrent Async):",
+    "- التنفيذ المتسلسل (Sequential):",
+    "  var a = await GetAAsync();",
+    "  var b = await GetBAsync();",
+    "  * الخط الزمني (Timeline): العملية A ثم بعدها العملية B.",
+    "  * إجمالي الزمن المستغرق: Total ≈ A + B",
+    "- التنفيذ المتزامن المشترك (Concurrent):",
+    "  var taskA = GetAAsync();",
+    "  var taskB = GetBAsync();",
+    "  var a = await taskA;",
+    "  var b = await taskB;",
+    "  * الخط الزمني (Timeline): تعمل العمليتان A و B في فترات زمنية متداخلة.",
+    "  * إجمالي الزمن المستغرق: Total ≈ max(A, B)"
   ]
 };
 window.TOC_AR["L7-S009"] = window.TOC_AR["L7"]["L7-S009"];
 
 window.TOC_AR["L7"]["L7-S010"] = {
   "ar": [
-    "مفهوم المهمة Task في منصة .NET:",
-    "- كائن Task يمثل عملية مستقبلية قيد التنفيذ (Ongoing Operation / Promise).",
-    "- الأنواع:",
-    "  * Task: يمثل مهمة غير متزامنة لا تعيد قيمة (يقابل void في الدوال المتزامنة).",
-    "  * Task<TResult>: يمثل مهمة غير متزامنة تعيد قيمة من النوع TResult عند اكتمالها.",
-    "- حالات المهمة: Created, Running, RanToCompletion, Faulted, Canceled."
+    "مفهوم المهمة (Task):",
+    "- تمثل المهمة (Task) عملية غير متزامنة قيد التنفيذ (A Task represents an asynchronous operation).",
+    "- للمهام التي لا تعيد قيمة:",
+    "  Task task = DoSomethingAsync();",
+    "  await task;",
+    "- للمهام التي تعيد نتيجة وقيمة:",
+    "  Task<int> task = CalculateAsync();",
+    "  int result = await task;",
+    "- المفهوم الذهبي لـ Task:",
+    "  * المهمة Task هي: عملية ستكتمل في وقت ما في المستقبل (An operation that will finish sometime in the future)."
   ]
 };
 window.TOC_AR["L7-S010"] = window.TOC_AR["L7"]["L7-S010"];
 
 window.TOC_AR["L7"]["L7-S011"] = {
   "ar": [
-    "الجزء الثاني: التزامن (Part 2 — Concurrency):",
-    "- التزامن (Concurrency): مفهوم معماري يعني قدرة النظام على التعامل مع عدة مهام وإدارتها في فترات زمنية متداخلة.",
-    "- التزامن لا يعني بالضرورة تنفيذ المهام في نفس النانو ثانية، بل يعني تقسيم الوقت وتنسيق التقدم بين المهام بكفاءة."
+    "الجزء 2 — التزامن (Part 2 — Concurrency):",
+    "- التزامن (Concurrency) يعني التعامل مع عمليات متعددة خلال فترات زمنية متداخلة (dealing with multiple operations during overlapping periods of time).",
+    "- التمثيل الزمني:",
+    "  * المهمة Task A تتداخل زمنيا مع Task B وتتداخل مع Task C (The operations overlap).",
+    "- قاعدة أساسية وحاسمة:",
+    "  * التزامن لا يعني بالضرورة أن العمليات تُنفذ في نفس اللحظة بالتمام (Concurrency does not necessarily mean they execute at exactly the same time)."
   ]
 };
 window.TOC_AR["L7-S011"] = window.TOC_AR["L7"]["L7-S011"];
 
 window.TOC_AR["L7"]["L7-S012"] = {
   "ar": [
-    "أداة دمج المهام Task.WhenAll:",
-    "- الاستخدام: استقبال مصفوفة مهام وإرجاع مهمة موحدة تكتمل فقط عندما تكتمل جميع المهام الممررة بنجاح.",
-    "  Task t1 = ProcessImageA();",
-    "  Task t2 = ProcessImageB();",
-    "  await Task.WhenAll(t1, t2);",
-    "- إذا فشلت إحدى المهام، يجمع Task.WhenAll الاستثناءات في كائن AggregateException."
+    "دالة انتظار جميع المهام (Task.WhenAll):",
+    "- النهج الأمثل للتنفيذ المتزامن:",
+    "  var results = await Task.WhenAll(",
+    "      GetUserAsync(),",
+    "      GetOrdersAsync(),",
+    "      GetPaymentsAsync()",
+    "  );",
+    "- متى نستخدم Task.WhenAll؟",
+    "  * نستخدمها عندما تكون العمليات:",
+    "    - مستقلة عن بعضها البعض (Independent).",
+    "    - غير متزامنة (Asynchronous).",
+    "    - يمكن تشغيلها بالتزامن بأمان تام (Can safely run concurrently).",
+    "- مثال من الواقع الحقيقي (Real-world example):",
+    "  var tasks = countries.Select(country => GetExchangeRateAsync(country));",
+    "  var rates = await Task.WhenAll(tasks);"
   ]
 };
 window.TOC_AR["L7-S012"] = window.TOC_AR["L7"]["L7-S012"];
 
 window.TOC_AR["L7"]["L7-S013"] = {
   "ar": [
-    "أداة أول مهمة مكتملة Task.WhenAny:",
-    "- الاستخدام: إرجاع مهمة تكتمل بمجرد اكتمال أول مهمة من بين المهام الممررة.",
-    "- حالات الاستخدام الشهيرة:",
-    "  1. ضبط المهل الزمنية (Timeouts): التنافس بين مهمة جلب البيانات ومهمة Task.Delay(3000).",
-    "  2. استعلام الخوادم المتكررة (Redundant Requests): استدعاء ثلاثة خوادم واعتماد أسرع استجابة تصل أولا."
+    "دالة انتظار أول مهمة تكتمل (Task.WhenAny):",
+    "- الغرض: الانتظار حتى تكتمل أول مهمة من بين مجموعة مهام (Wait for the first task to complete).",
+    "- كود الاستدعاء:",
+    "  var task1 = GetFromServer1Async();",
+    "  var task2 = GetFromServer2Async();",
+    "  var completed = await Task.WhenAny(task1, task2);",
+    "  var result = await completed;",
+    "- المفهوم التوضيحي (Concept):",
+    "  * الخادم Server 1 مستمر في المعالجة.",
+    "  * الخادم Server 2 انتهى أولا وتم بنجاح (DONE).",
+    "  * تلتقط WhenAny المهمة المكتملة فورا وتستكمل التنفيذ دون انتظار البقية."
   ]
 };
 window.TOC_AR["L7-S013"] = window.TOC_AR["L7"]["L7-S013"];
 
 window.TOC_AR["L7"]["L7-S014"] = {
   "ar": [
-    "التزامن مقابل التوازي (Concurrency vs Parallelism):",
-    "- التزامن (Concurrency): هو التعامل مع عدة أشياء في وقت واحد (Structure / Dealing with many things at once). يمكن تحقيقه حتى على معالج بنواة واحدة (Single Core) عبر تجزئة الوقت.",
-    "- التوازي (Parallelism): هو تنفيذ عدة أشياء في الوقت الحقيقي ذاته في نفس اللحظة الفيزيائية (Execution / Doing many things at once). يتطلب بالضرورة عتادا متعدد النوى (Multi-core CPU)."
+    "مقارنة شاملة بين التزامن والتوازي (Concurrency vs Parallelism):",
+    "- جدول المقارنة التفصيلي:",
+    "  * حالة المهام: في التزامن عدة مهام قيد التقدم والإنجاز (Multiple tasks are in progress)، بينما في التوازي عدة مهام تُنفذ في نفس اللحظة تماما (Multiple tasks execute simultaneously).",
+    "  * متطلبات العتاد: التزامن يمكن أن يحدث على نواة معالج واحدة (Can happen on one CPU core)، بينما التوازي يتطلب عادة أنوية معالج متعددة (Usually requires multiple CPU cores).",
+    "  * محور التركيز: التزامن يركز على إدارة وتنظيم المهام (Focuses on managing tasks)، بينما التوازي يركز على سرعة تنفيذ المهام (Focuses on executing tasks).",
+    "  * الاستخدام الأمثل: التزامن ممتاز لعمليات الإدخال والإخراج (Great for I/O)، بينما التوازي ممتاز للأعمال الحسابية المكثفة (Great for CPU-intensive work).",
+    "- التوضيح بالرسم:",
+    "  * التزامن (Concurrency): معالج واحد يدير Task A و Task B و Task C.",
+    "  * التوازي (Parallelism): نواة 1 تنفذ Task A، نواة 2 تنفذ Task B، نواة 3 تنفذ Task C، ونواة 4 تنفذ Task D."
   ]
 };
 window.TOC_AR["L7-S014"] = window.TOC_AR["L7"]["L7-S014"];
 
 window.TOC_AR["L7"]["L7-S015"] = {
   "ar": [
-    "الجزء الثالث: تعدد المسالك (Part 3 — Multithreading):",
-    "- العملية (Process): برنامج قيد التشغيل يمتلك مساحة عناوين ذاكرة معزولة ومحمية بالكامل بواسطة نظام التشغيل.",
-    "- المسلك (Thread): أصغر وحدة تنفيذ داخل العملية؛ تشترك جميع مسالك العملية الواحدة في نفس الذاكرة (Shared Memory).",
-    "- تبديل السياق (Context Switching): التكلفة العالية التي يدفعها المعالج عند حفظ حالة مسلك وتحميل حالة مسلك آخر."
+    "الجزء 3 — تعدد المسالك (Part 3 — Multithreading):",
+    "- المسلك (Thread) هو مسار تنفيذ للتعليمات داخل العملية البرمجية (A thread is a path of execution inside a process).",
+    "- المخطط الهيكلي:",
+    "  * العملية (Process)",
+    "    - المسلك 1 (Thread 1)",
+    "    - المسلك 2 (Thread 2)",
+    "    - المسلك 3 (Thread 3)",
+    "- القاعدة الأساسية: يمكن للعملية الواحدة أن تحتوي على مسالك متعددة (A process can contain multiple threads)."
   ]
 };
 window.TOC_AR["L7-S015"] = window.TOC_AR["L7"]["L7-S015"];
 
 window.TOC_AR["L7"]["L7-S016"] = {
   "ar": [
-    "إنشاء المسالك يدويا في لغة C# (Creating a Thread):",
-    "- الكود الكلاسيكي القديم:",
-    "  Thread thread = new Thread(WorkerMethod);",
+    "إنشاء مسلك في لغة C# (Creating a Thread in C#):",
+    "- الكود اليدوي التقليدي:",
+    "  Thread thread = new Thread(() => {",
+    "      Console.WriteLine(\"Running...\");",
+    "  });",
     "  thread.Start();",
-    "- لماذا لا ننشئ المسالك يدويا في التطبيقات المعاصرة؟",
-    "  * كل مسلك يحجز حيزا كبيرا من الذاكرة (1 ميغابايت لمكدس الـ Stack).",
-    "  * إنشاء المسلك وإتلافه يتطلب نداءات مكلفة لنواة نظام التشغيل (OS Kernel Calls)."
+    "- التوجيه الهندسي الحديث:",
+    "  * في تطبيقات .NET الحديثة، يُفضل دائما استخدام البدائل الأرقى والأكثر كفاءة:",
+    "    - المهام (Task)",
+    "    - النمط غير المتزامن (async/await)",
+    "    - حوض المسالك (ThreadPool)",
+    "    - المعالجة المتوازية (Parallel)",
+    "  * وذلك بدلا من إنشاء المسالك يدويا (instead of manually creating threads)."
   ]
 };
 window.TOC_AR["L7-S016"] = window.TOC_AR["L7"]["L7-S016"];
 
 window.TOC_AR["L7"]["L7-S017"] = {
   "ar": [
-    "حوض المسالك (ThreadPool in .NET):",
-    "- المفهوم: مجموعة من المسالك الجاهزة والمُدارة مسبقا بواسطة بيئة تشغيل CLR.",
-    "- الفكرة: بدلا من إنشاء مسلك جديد لكل مهمة، تأخذ المهمة مسلكا خاملا من الحوض، وعندما تنتهي تعيده للحوض ليعاد استخدامه فورا.",
-    "- الميزة: القضاء على تكلفة إنشاء المسالك وإدارتها ديناميكيا وفق أحمال المعالج."
+    "حوض المسالك (ThreadPool):",
+    "- تحتفظ بيئة .NET بحوض من مسالك العمال القابلة لإعادة الاستخدام (maintains a pool of reusable worker threads).",
+    "- هيكلية الحوض:",
+    "  * حوض المسالك (ThreadPool)",
+    "    - مسلك عامل (Worker Thread)",
+    "    - مسلك عامل (Worker Thread)",
+    "    - مسلك عامل (Worker Thread)",
+    "    - مسلك عامل (Worker Thread)",
+    "- يمكن للمهام (Tasks) استخدام مسالك ThreadPool عند الاقتضاء.",
+    "- لماذا نستخدم حوض المسالك؟ (Why?):",
+    "  * تجنب إنشاء مسالك جديدة بشكل متكرر (Avoid creating threads repeatedly).",
+    "  * إعادة استخدام المسالك القائمة (Reuse threads).",
+    "  * تحسين قابلية التوسع والأداء للنظام (Improve scalability)."
   ]
 };
 window.TOC_AR["L7-S017"] = window.TOC_AR["L7"]["L7-S017"];
 
 window.TOC_AR["L7"]["L7-S018"] = {
   "ar": [
-    "النداء Task.Run ودوره مع الـ ThreadPool:",
-    "- النداء Task.Run هو الواجهة الحديثة الموصى بها لإرسال المهام إلى الـ ThreadPool.",
-    "- يقوم بإيداع المهمة في طابور مهام الحوض (Work-Stealing Queue) ليتم التقاطها وتنفيذها بأقصى كفاءة دون تدخل يدوي من المطور."
+    "دالة تفويض المهام Task.Run:",
+    "- مثال الاستخدام للعمليات الحسابية:",
+    "  var result = await Task.Run(() => {",
+    "      return CalculateSomething();",
+    "  });",
+    "- دالة Task.Run مفيدة جدا لنقل العمليات المقيدة بالمعالج (CPU-bound work) إلى مسلك من مسالك ThreadPool.",
+    "- تحذير حاسم: لا تستخدمها بشكل أعمى مع عمليات الإدخال والإخراج (I/O):",
+    "  * ممارسة غير ضرورية وسيئة:",
+    "    await Task.Run(() => httpClient.GetAsync(url));",
+    "  * الممارسة المفضلة والصحيحة:",
+    "    await httpClient.GetAsync(url);"
   ]
 };
 window.TOC_AR["L7-S018"] = window.TOC_AR["L7"]["L7-S018"];
 
 window.TOC_AR["L7"]["L7-S019"] = {
   "ar": [
-    "التوازي على مستوى البيانات (Data Parallelism — Parallel.For):",
-    "- توفر مكتبة TPL (Task Parallel Library) حلقة Parallel.For لمعالجة المصفوفات الضخمة بالتوازي عبر كافة أنوية المعالج:",
-    "  Parallel.For(0, 1000, i => {",
-    "      DoHeavyComputation(i);",
-    "  });",
-    "- يقوم المحرك بتقسيم النطاق تلقائيا بين الأنوية المتاحة لتسريع المعالجة."
+    "التكرار المتوازي Parallel.For — الجزء الأول:",
+    "- تُستخدم دالة Parallel.For في C# لتنفيذ دورات وتكرارات الحلقة بالتوازي (execute iterations of a loop in parallel).",
+    "- بدلا من معالجة كل دورة تلو الأخرى بالتتابع، تقوم بيئة تشغيل .NET بتوزيع العمل عبر مسالك متعددة من حوض Thread Pool.",
+    "- حلقة for المتسلسلة التقليدية (Sequential for Loop):",
+    "  for (int i = 0; i < 10; i++) {",
+    "      Process(i);",
+    "  }",
+    "- مسار التنفيذ المتسلسل:",
+    "  * 1 -> 2 -> 3 -> 4 -> 5 -> ... -> 10",
+    "  * كل دورة تنتظر اكتمال الدورة التي تسبقها بالكامل (Each iteration waits for the previous one to complete)."
   ]
 };
 window.TOC_AR["L7-S019"] = window.TOC_AR["L7"]["L7-S019"];
 
 window.TOC_AR["L7"]["L7-S020"] = {
   "ar": [
-    "حالات استخدام ومحاذير Parallel.For:",
-    "- الاستخدام الأمثل: الحسابات الرياضية المستقلة تماما التي لا تعتمد نتيجة أي دورة فيها على دورة أخرى (Embarrassingly Parallel).",
-    "- المحاذير الصارمة: تجنب تعديل متغيرات مشتركة داخل الحلقة دون مزامنة، وتجنب استخدامها في عمليات الـ I/O غير المتزامنة."
+    "التكرار المتوازي Parallel.For — الجزء الثاني:",
+    "- كود الاستدعاء المتوازي:",
+    "  Parallel.For(0, 10, i => {",
+    "      Process(i);",
+    "  });",
+    "- توزيع التكرارات عبر المسالك المتعددة:",
+    "  * المسلك 1 (Thread 1) -> الدورات 0, 1, 2",
+    "  * المسلك 2 (Thread 2) -> الدورات 3, 4, 5",
+    "  * المسلك 3 (Thread 3) -> الدورات 6, 7",
+    "  * المسلك 4 (Thread 4) -> الدورات 8, 9",
+    "- قد تُنفذ هذه التكرارات في نفس اللحظة عبر أنوية معالج مختلفة (different CPU cores).",
+    "- شروط الاستخدام المثالي:",
+    "  * دالة Parallel.For مفيدة أساسا للعمليات المقيدة بالمعالج (CPU-bound work) حيث تكون كل دورة مستقلة نسبيا عن الأخرى (each iteration is relatively independent)."
   ]
 };
 window.TOC_AR["L7-S020"] = window.TOC_AR["L7"]["L7-S020"];
 
 window.TOC_AR["L7"]["L7-S021"] = {
   "ar": [
-    "الجزء الرابع: أمان المسالك (Part 4 — Thread Safety):",
-    "- الكود الآمن للمسالك (Thread-Safe Code): هو الكود الذي يعمل بشكل صحيح ودقيق وخالٍ من الأخطاء حتى لو استدعته مئات المسالك في نفس اللحظة.",
-    "- جوهر المشكلة: الحالة المشتركة القابلة للتعديل (Shared Mutable State)."
+    "الجزء 4 — أمان المسالك (Part 4 — Thread Safety):",
+    "- حالة التسابق (Race condition): تحدث عندما تصل مسالك متعددة إلى بيانات مشتركة وتعتمد النتيجة النهائية على توقيت الوصول (result depends on timing).",
+    "- مثال:",
+    "  int counter = 0;",
+    "  counter++;",
+    "- تبدو العملية كأنها عملية واحدة، لكنها مفاهيميا تتكون من 3 خطوات:",
+    "  * القراءة (Read): قراءة القيمة الحالية من الذاكرة إلى مسجل المعالج.",
+    "  * التعديل (Modify): زيادة القيمة بمقدار 1.",
+    "  * الكتابة (Write): كتابة القيمة الجديدة وإعادتها للذاكرة.",
+    "- يمكن لمسلكين أن يتداخلا ويتعارضا مع بعضهما البعض (Two threads can interfere with each other)."
   ]
 };
 window.TOC_AR["L7-S021"] = window.TOC_AR["L7"]["L7-S021"];
 
 window.TOC_AR["L7"]["L7-S022"] = {
   "ar": [
-    "الحالة المشتركة وتضارب المسالك:",
-    "- إذا كانت الذاكرة للقراءة فقط (Immutable)، فالكود آمن تماما دون أي أقفال.",
-    "- الكارثة تبدأ عندما تحاول مسالك متعددة القراءة والكتابة في نفس المتغير في نفس الوقت دون تنظيم."
+    "أمان المسالك وحالة البيانات المشتركة (Thread Safety):",
+    "- الكود الآمن للمسالك (Thread-safe code):",
+    "  * هو الكود الذي يتصرف ويعمل بشكل صحيح عند الوصول إليه بالتزامن من قبل مسالك متعددة (Code that behaves correctly when accessed concurrently by multiple threads).",
+    "- الحالة والبيانات المشتركة (Shared State):",
+    "  * مثل: int counter;",
+    "  * مثل: List<int> items;",
+    "  * مثل: Dictionary<int, string> cache;",
+    "- المشكلة الرئيسية (Main Problem):",
+    "  * مسالك متعددة (Multiple Threads) -> تصل لحالة وبيانات مشتركة (Shared State) -> يؤدي إلى حالة تسابق وتلف البيانات (Race Condition)."
   ]
 };
 window.TOC_AR["L7-S022"] = window.TOC_AR["L7"]["L7-S022"];
 
 window.TOC_AR["L7"]["L7-S023"] = {
   "ar": [
-    "ظروف السباق (Race Condition Example):",
-    "- مثال عداد بسيط: `count++;`",
-    "- على مستوى المعالج، هذه العملية ليست خطوة واحدة بل ثلاث خطوات منفصلة:",
-    "  1. قراءة القيمة الحالية من الذاكرة إلى مسجل المعالج (Read).",
-    "  2. زيادة القيمة بمقدار 1 (Modify).",
-    "  3. كتابة القيمة الجديدة في الذاكرة (Write).",
-    "- إذا قاطع مسلك آخر العملية في المنتصف، تُفقد التحديثات ويصبح الناتج النهائي خاطئا."
+    "مثال عملي على حالة التسابق (Race Condition Example):",
+    "- الكود المصدري للتجربة:",
+    "  int counter = 0;",
+    "  Parallel.For(0, 1000, i => {",
+    "      counter++;",
+    "  });",
+    "  Console.WriteLine(counter);",
+    "- ما قد تتوقعه ظاهريا: 1000",
+    "- النتيجة الفعلية في الواقع:",
+    "  * يمكن أن تكون النتيجة أقل بكثير من 1000 (can be less than 1000) لأن مسالك متعددة تقوم بتعديل نفس المتغير بالتزامن وتتداخل خطوات التحديث مما يضيع جزءا من العمليات."
   ]
 };
 window.TOC_AR["L7-S023"] = window.TOC_AR["L7"]["L7-S023"];
 
 window.TOC_AR["L7"]["L7-S024"] = {
   "ar": [
-    "جملة القفل lock في C# (Mutual Exclusion):",
-    "- المفهوم: آلية تضمن أن مسلكا واحدا فقط هو الذي ينفذ المقطع الحرج (Critical Section) في أي لحظة:",
-    "  private readonly object _lock = new object();",
+    "المزامنة باستخدام كلمة lock:",
+    "- أحد الحلول لحماية البيانات المشتركة هو المزامنة باستخدام lock (synchronization using lock):",
+    "  private readonly object _lock = new();",
     "  lock (_lock) {",
-    "      count++;",
+    "      counter++;",
     "  }",
-    "- تكافئ داخليا استدعاء Monitor.Enter و Monitor.Exit داخل كتلة try/finally محكمة."
+    "- المفهوم العملي (Conceptually):",
+    "  * المسلك 1 (Thread 1) -> يمتلك القفل -> ينفذ التعديل -> يحرر القفل.",
+    "  * المسلك 2 (Thread 2) -> في حالة انتظار (WAIT).",
+    "  * المسلك 3 (Thread 3) -> في حالة انتظار (WAIT).",
+    "- القاعدة الأساسية: مسلك واحد فقط يدخل إلى القسم الحرج في المرة الواحدة (Only one thread enters the critical section at a time)."
   ]
 };
 window.TOC_AR["L7-S024"] = window.TOC_AR["L7"]["L7-S024"];
@@ -287,231 +421,390 @@ window.TOC_AR["L7-S024"] = window.TOC_AR["L7"]["L7-S024"];
 window.TOC_AR["L7"]["L7-S025"] = {
   "ar": [
     "الفئة الذرية Interlocked:",
-    "- لغة C# توفر فئة System.Threading.Interlocked لتنفيذ العمليات البسيطة مباشرة على مستوى أوامر عتاد المعالج الذرية (Atomic CPU Instructions):",
-    "  Interlocked.Increment(ref count);",
-    "- أسرع بكثير من استخدام lock التقليدي لأنها تتجنب تعليق المسالك وتبديل السياق."
+    "- للعمليات الذرية البسيطة (For simple atomic operations):",
+    "  Interlocked.Increment(ref counter);",
+    "  بدلا من استخدام: counter++;",
+    "- مفيدة جدا للعدادات والعمليات الذرية البسيطة ذات الأداء العالي.",
+    "- العمليات الذرية الشائعة التي توفرها Interlocked:",
+    "  * الزيادة بمقدار واحد (Increment)",
+    "  * الإنقاص بمقدار واحد (Decrement)",
+    "  * إضافة قيمة محددة (Add)",
+    "  * استبدال القيمة (Exchange)",
+    "  * المقارنة والاستبدال الشرطي (CompareExchange)"
   ]
 };
 window.TOC_AR["L7-S025"] = window.TOC_AR["L7"]["L7-S025"];
 
 window.TOC_AR["L7"]["L7-S026"] = {
   "ar": [
-    "المجموعات المتزامنة الجاهزة (Concurrent Collections):",
-    "- وفرت مايكروسوفت مجموعات بيانات آمنة للمسالك مدمجة في مساحة System.Collections.Concurrent:",
-    "  * ConcurrentDictionary: قاموس آمن يدعم القراءة والكتابة المتزامنة عبر أقفال دقيقة مجزأة.",
-    "  * ConcurrentQueue: طابور آمن بنظام FIFO.",
-    "  * ConcurrentBag: حقيبة غير مرتبة فائقة السرعة للمسالك.",
-    "- تغني المطور عن كتابة أقفال يدوية معقدة حول المجموعات العادية."
+    "المجموعات المتزامنة الآمنة للمسالك (Concurrent Collections):",
+    "- توفر منصة .NET مجموعات مهيأة ومصممة خصيصا للوصول المتزامن:",
+    "  * القاموس المتزامن: ConcurrentDictionary<TKey,TValue>",
+    "  * الطابور المتزامن: ConcurrentQueue<T>",
+    "  * المكدس المتزامن: ConcurrentStack<T>",
+    "  * الحقيبة المتزامنة: ConcurrentBag<T>",
+    "- مثال الاستخدام:",
+    "  var queue = new ConcurrentQueue<int>();",
+    "  Parallel.For(0, 1000, i => {",
+    "      queue.Enqueue(i);",
+    "  });",
+    "- صُممت هذه المجموعات للوصول المتزامن الآمن؛ وتوصي مايكروسوفت رسميا باستخدام الأنواع التابعة لحزمة System.Collections.Concurrent في سيناريوهات الإضافة والحذف المتزامنة لأنها توفر أمان المسالك وقابلية التوسع (thread safety and scalability)."
   ]
 };
 window.TOC_AR["L7-S026"] = window.TOC_AR["L7"]["L7-S026"];
 
 window.TOC_AR["L7"]["L7-S027"] = {
   "ar": [
-    "حالة الجمود المميت (Deadlock Concept):",
-    "- التعريف: حالة تجمد دائم تحدث عندما ينتظر مسلكان (أو أكثر) بعضهما البعض لإطلاق أقفال محتجزة، فلا يستطيع أي منهما المتابعة ويتجمد النظام للأبد.",
-    "- سيناريو كلاسيكي: المسلك 1 يحجز القفل A وينتظر القفل B؛ المسلك 2 يحجز القفل B وينتظر القفل A."
+    "حالة التعليق التام / الجمود الميت (Deadlock):",
+    "- التعريف: التعليق التام (Deadlock) هو حالة ينتظر فيها مسلكان أو أكثر إلى الأبد موارد يحتجزها كل منهما من الآخر (Two or more threads wait forever for resources held by each other).",
+    "- السيناريو التوضيحي:",
+    "  * المسلك A (Thread A) -> يحتجز القفل A (Lock A) -> وينتظر القفل B المحتجز لدى B.",
+    "  * المسلك B (Thread B) -> يحتجز القفل B (Lock B) -> وينتظر القفل A المحتجز لدى A.",
+    "- النتيجة الحتمية:",
+    "  * انتظار لا نهائي إلى الأبد وتجمد البرنامج بالكامل (FOREVER WAITING)."
   ]
 };
 window.TOC_AR["L7-S027"] = window.TOC_AR["L7"]["L7-S027"];
 
 window.TOC_AR["L7"]["L7-S028"] = {
   "ar": [
-    "مشكلة انعكاس ترتيب الأقفال (Lock Order Inversion):",
-    "- يوضح المخطط سبب حدوث الجمود: اختلاف ترتيب طلب الأقفال بين أجزاء البرنامج المختلفة.",
-    "- لحل المشكلة جذريا: يجب فرض ترتيب عالمي موحد للحصول على الأقفال (Global Lock Ordering) في كامل النظام."
+    "المشكلة الواقعية للتعليق التام (The problem):",
+    "- سيناريو تحويل الأموال بين الحسابات البنكية:",
+    "  * المعاملة 1 (Transaction 1): تحويل أموال من الحساب A إلى الحساب B:",
+    "    - تحجز القفل على الحساب Account A.",
+    "    - تنتظر الحصول على القفل للحساب Account B.",
+    "  * المعاملة 2 (Transaction 2): تحويل أموال بالاتجاه المعاكس من الحساب B إلى الحساب A:",
+    "    - تحجز القفل على الحساب Account B.",
+    "    - تنتظر الحصول على القفل للحساب Account A.",
+    "- المخطط الدائري:",
+    "  * المعاملة 1 تمتلك A وتنتظر B.",
+    "  * المعاملة 2 تمتلك B وتنتظر A.",
+    "  * النتيجة: حلقة انتظار متبادلة وتجمد تام لكلا المعاملتين البنكيتين."
   ]
 };
 window.TOC_AR["L7-S028"] = window.TOC_AR["L7"]["L7-S028"];
 
 window.TOC_AR["L7"]["L7-S029"] = {
   "ar": [
-    "أفضل الممارسات لتجنب الجمود (Locking Best Practices - Part 1):",
-    "1. فرض ترتيب موحد للأقفال: إذا كان هناك قفلان A و B، يجب على كافة المسالك حجز A أولا ثم B دائما.",
-    "2. تقليص مساحة المقطع الحرج: لا تضع عمليات شبكة أو استعلامات بطيئة داخل كتلة الـ lock؛ احجز القفل لتعديل المتغير فقط ثم أطلقه فورا.",
-    "3. استخدام مهل زمنية (Timeouts): استخدام Monitor.TryEnter لتحديد مهلة انتظار قبل التراجع لتفادي التعليق الدائم."
+    "أفضل ممارسات الأقفال وتجنب التعليق التام — القواعد 1 و 2:",
+    "1. إبقاء نطاق الأقفال صغيرا وموجزا (Keep Locks Small):",
+    "   * اجعل القسم الحرج (critical section) قصيرا قدر الإمكان.",
+    "   * كود المثال:",
+    "     var data = ReadData(); // قراءة البيانات خارج القفل",
+    "     lock (_lock) {",
+    "         sharedData.Update(data); // التحديث فقط داخل القفل",
+    "     }",
+    "   * السبب والغاية (Why?): القفل الأقصر يعني قضاء مسالك أخرى وقتا أقل بكثير في الانتظار.",
+    "2. تجنب الأقفال المتداخلة (Avoid Nested Locks):",
+    "   * تجنب حيازة قفل جديد بينما أنت تحتجز قفلا آخر بالفعل.",
+    "   * الكود المحفوف بالمخاطر (Risky):",
+    "     lock (_lockA) {",
+    "         lock (_lockB) {",
+    "             // Critical section",
+    "         }",
+    "     }",
+    "   * السبب والغاية (Why?): يمكن أن تؤدي الأقفال المتداخلة إلى Deadlock عندما يحصل مسلك آخر على الأقفال بالترتيب المعاكس."
   ]
 };
 window.TOC_AR["L7-S029"] = window.TOC_AR["L7"]["L7-S029"];
 
 window.TOC_AR["L7"]["L7-S030"] = {
   "ar": [
-    "أفضل الممارسات لتجنب الجمود (Locking Best Practices - Part 2):",
-    "4. استخدام كائن قفل خاص ومستقل: احرص دائما على إنشاء كائن مخصص `private readonly object _lockObj = new();`",
-    "5. المحاذير القاتلة:",
-    "   - إياك أن تقفل على `lock(this)`: لأن أي كود خارجي يمكنه القفل على نفس الكائن فيحدث جمود.",
-    "   - إياك أن تقفل على أنواع الكائنات `lock(typeof(MyClass))`.",
-    "   - إياك أن تقفل على نصوص `lock(\"myString\")`: لأن بيئة .NET تدمج النصوص المتطابقة في الذاكرة (String Interning)."
+    "أفضل ممارسات الأقفال وتجنب التعليق التام — القاعدة 3:",
+    "3. استخدام ترتيب ثابت وموحد للأقفال (Use Consistent Lock Ordering):",
+    "   * إذا كانت هناك حاجة حتمية لأقفال متعددة، قم دائما بحيازتها وطلبها بنفس الترتيب الموحد.",
+    "   * كود التطبيق الموحد:",
+    "     // المسلك 1 (Thread 1)",
+    "     lock (_lockA) {",
+    "         lock (_lockB) { /* العمل البرمجي */ }",
+    "     }",
+    "     // المسلك 2 (Thread 2)",
+    "     lock (_lockA) {",
+    "         lock (_lockB) { /* العمل البرمجي */ }",
+    "     }",
+    "   * السبب والغاية (Why?): الترتيب الموحد والمنسق يقلل بشكل حاسم من مخاطر حدوث التعليق التام (Consistent ordering reduces the risk of Deadlock)."
   ]
 };
 window.TOC_AR["L7-S030"] = window.TOC_AR["L7"]["L7-S030"];
 
 window.TOC_AR["L7"]["L7-S031"] = {
   "ar": [
-    "حظر تجميد الكود غير المتزامن (Avoid Blocking Async Code):",
-    "- القاعدة الذهبية الصارمة: إياك نهائيا استخدام `.Result` أو `.Wait()` أو `.GetAwaiter().GetResult()` على كائنات الـ Task!",
-    "- السبب: يؤدي لما يسمى (Sync-over-Async Deadlock) وخنق حوض المسالك (Thread Starvation) في ASP.NET وتطبيقات الواجهات الرسومية.",
-    "- الحل الصحيح: استخدام `await` على طول مسار الاستدعاء بالكامل (Async all the way)."
+    "أفضل ممارسات الأقفال وتجنب التعليق التام — القاعدة 4:",
+    "4. تجنب حجب وتجميد الكود غير المتزامن (Avoid Blocking Async Code):",
+    "   * لا تقم بحجب وتجميد العمليات غير المتزامنة باستخدام الخاصية .Result أو الدالة .Wait().",
+    "   * الكود الحاصر والخاطئ (Blocking):",
+    "     var result = GetDataAsync().Result;",
+    "   * الكود المفضل والصحيح (Asynchronous):",
+    "     var result = await GetDataAsync();",
+    "   * السبب والغاية (Why?): تجميد الكود غير المتزامن يهدر المسالك وقد يسبب حالات تعليق تام في بعض سياقات المزامنة (can waste threads and may cause deadlocks in some synchronization contexts)."
   ]
 };
 window.TOC_AR["L7-S031"] = window.TOC_AR["L7"]["L7-S031"];
 
 window.TOC_AR["L7"]["L7-S032"] = {
   "ar": [
-    "أدوات التزامن المتقدمة عالية المستوى:",
-    "- فئة SemaphoreSlim: للتحكم في عدد المسالك المتزامنة المسموح لها بالدخول لمورد معين، وتدعم الانتظار غير المتزامن `await WaitAsync()`.",
-    "- قنوات System.Threading.Channels: أفضل وأسرع نمط لتطبيق معمارية المنتج والمستهلك (Producer-Consumer Pattern) في تطبيقات .NET الحديثة."
+    "أفضل ممارسات الأقفال وتجنب التعليق التام — القاعدة 5:",
+    "5. تفضيل التجريدات عالية المستوى للتزامن (Prefer Higher-Level Concurrency Abstractions):",
+    "   * استخدم أدوات التزامن المدمجة الجاهزة عندما تناسب المشكلة البرمجية.",
+    "   * بدلا من القفل اليدوي للطابور:",
+    "     lock (_lock) { queue.Enqueue(item); }",
+    "   * استخدم المجموعات الآمنة المدمجة:",
+    "     var queue = new ConcurrentQueue<int>();",
+    "     queue.Enqueue(item);",
+    "   * تجريدات متقدمة ومفيدة أخرى تشمل:",
+    "     - Task / async-await",
+    "     - Task.WhenAll",
+    "     - Parallel.For",
+    "     - ConcurrentDictionary",
+    "     - ConcurrentQueue",
+    "     - Interlocked",
+    "- المبدأ الجوهري الحاكم (Key Principle):",
+    "  * الأقفال تحمي البيانات المشتركة، ولكن الأقفال غير الضرورية أو سيئة التصميم يمكن أن تسبب مشاكل خطيرة في الأداء وحالات تعليق تام (Locks protect shared data, but unnecessary or poorly designed locking can cause performance problems and deadlocks)."
   ]
 };
 window.TOC_AR["L7-S032"] = window.TOC_AR["L7"]["L7-S032"];
 
 window.TOC_AR["L7"]["L7-S033"] = {
   "ar": [
-    "الجزء الخامس: إدارة الذاكرة في منصة .NET (Memory Management):",
-    "- تقدم بيئة تشغيل لغة C# إدارة آلية متقدمة للذاكرة (Managed Memory) تحمي المبرمج من تخصيص وتحرير الذاكرة اليدوي الشاق والخطير.",
-    "- تنقسم ذاكرة التطبيق إلى قسمين رئيسيين: المكدس (Stack) والركام (Heap)."
+    "الجزء 5 — إدارة الذاكرة في منصة .NET (Part 5 — Memory Management):",
+    "- إدارة الذاكرة هي عملية تشمل الأنشطة التالية (Memory management is the process of):",
+    "  * تخصيص الذاكرة (Allocating memory).",
+    "  * استخدام الذاكرة (Using memory).",
+    "  * تحرير وتفريغ الذاكرة (Releasing memory).",
+    "  * إعادة استخدام الذاكرة (Reusing memory).",
+    "  * منع تسريبات الذاكرة (Preventing memory leaks).",
+    "- في منصة .NET، تتم إدارة الذاكرة إلى حد كبير وبشكل تلقائي بواسطة جامع القمامة (largely handled automatically by the Garbage Collector - GC)."
   ]
 };
 window.TOC_AR["L7-S033"] = window.TOC_AR["L7"]["L7-S033"];
 
 window.TOC_AR["L7"]["L7-S034"] = {
   "ar": [
-    "المقارنة بين المكدس والركام (Stack vs Heap):",
-    "1. المكدس (Stack):",
-    "   - هيكل بيانات بنظام الداخل أخيرا يخرج أولا (LIFO).",
-    "   - فائق السرعة وتتم إدارته مباشرة بواسطة مسجل المعالج.",
-    "   - يخزن المتغيرات المحلية ومؤشرات الكائنات وبيانات الدوال الحالية، ويتم تنظيفه آليا بمجرد انتهاء تنفيذ الدالة.",
-    "2. الركام (Heap):",
-    "   - مساحة ذاكرة ديناميكية عامة وكبيرة.",
-    "   - تخزن الكائنات الحقيقية والمصفوفات والنصوص.",
-    "   - تتم إدارته وتنظيفه حصريا بواسطة جامع القمامة (Garbage Collector)."
+    "مقارنة المكدس مقابل الركام (Stack vs Heap):",
+    "- نظرة مبسطة لهيكل الذاكرة (A simplified view):",
+    "  * الذاكرة (Memory)",
+    "    - المكدس (Stack)",
+    "    - الركام (Heap)",
+    "- ذاكرة المكدس (Stack):",
+    "  * تحتوي عادة على:",
+    "    - المتغيرات المحلية (Local variables).",
+    "    - معلومات استدعاء الدوال (Method call information).",
+    "    - المراجع والقيم المحلية (References/local values).",
+    "  * مثال: void Calculate() { int x = 10; }",
+    "- ذاكرة الركام (Heap):",
+    "  * تُستخدم للكائنات المخصصة ديناميكيا (Used for dynamically allocated objects).",
+    "  * مثال: var user = new User();",
+    "  * يتم حجز وتخصيص الكائن الفعلي على الركام المدار (allocated on the managed heap)."
   ]
 };
 window.TOC_AR["L7-S034"] = window.TOC_AR["L7"]["L7-S034"];
 
 window.TOC_AR["L7"]["L7-S035"] = {
   "ar": [
-    "أنواع القيمة مقابل أنواع المرجع (Value Types vs Reference Types):",
-    "- أنواع القيمة (Value Types):",
-    "  * مثل int, float, bool, struct, enum.",
-    "  * تخزن القيمة الفعلية مباشرة أينما تم التصريح عنها (غالبا في الـ Stack).",
-    "- أنواع المرجع (Reference Types):",
-    "  * مثل class, string, array, interface, delegates.",
-    "  * تخزن في الـ Heap، بينما يحمل الـ Stack مؤشرا (Pointer / Address) يشير إلى موقع الكائن في الـ Heap."
+    "أنواع القيمة مقابل أنواع المرجع — أنواع القيمة (Value Types):",
+    "- أمثلة على أنواع القيمة (Value Type Examples):",
+    "  * الأعداد الصحيحة: int",
+    "  * الأعداد العشرية: double",
+    "  * القيم المنطقية: bool",
+    "  * الهياكل: struct",
+    "  * التعدادات: enum",
+    "- مثال برمجي يوضح سلوك النسخ:",
+    "  int x = 10;",
+    "  int y = x;",
+    "  y = 20;",
+    "- القيمة النهائية للمتغير x:",
+    "  * يظل المتغير x محتفظا بقيمته الأصلية 10 دون أي تغيير (x remains: 10) لأن المتغير y أخذ نسخة مستقلة تماما من القيمة."
   ]
 };
 window.TOC_AR["L7-S035"] = window.TOC_AR["L7"]["L7-S035"];
 
 window.TOC_AR["L7"]["L7-S036"] = {
   "ar": [
-    "المعمارية الداخلية لتخزين أنواع المرجع في الذاكرة:",
-    "- عند إنشاء كائن في الـ Heap عبر المعامل new، يضيف الـ CLR بادئة تتكون من كلمتين خفيتين:",
-    "  1. مؤشر جدول الطرق (MethodTable Pointer / Type Handle): لربط الكائن بنوعه ودواله وتعددية أشكاله.",
-    "  2. كتلة المزامنة (SyncBlock Index): تستخدم في عمليات القفل lock والـ HashCode.",
-    "- تليها حقول البيانات الفعلية للكائن."
+    "أنواع المرجع (Reference Types):",
+    "- أمثلة على أنواع المرجع (Reference Type Examples):",
+    "  * الأصناف: class",
+    "  * الكائنات العامة: object",
+    "  * النصوص: string",
+    "  * المصفوفات: Array",
+    "- مثال برمجي يوضح سلوك المراجع المشتركة:",
+    "  var user1 = new User();",
+    "  var user2 = user1;",
+    "- كلا المرجعين يشيران إلى نفس الكائن تماما في الذاكرة الركامية (Both references point to the same object):",
+    "  * المرجع user1 والمرجع user2 يتجهان لنفس الكائن User Object على الركام."
   ]
 };
 window.TOC_AR["L7-S036"] = window.TOC_AR["L7"]["L7-S036"];
 
 window.TOC_AR["L7"]["L7-S037"] = {
   "ar": [
-    "جامع القمامة في .NET (Garbage Collector - GC):",
-    "- الوظيفة: مراقبة الذاكرة الركامية (Managed Heap) وتحرير المساحات التي كانت تشغلها الكائنات التي لم تعد مستخدمة.",
-    "- خوارزمية العمل (Mark and Sweep):",
-    "  1. مرحلة التحديد (Mark Phase): يبدأ الـ GC من الجذور (GC Roots: المتغيرات المحلية، المسجلات، المتغيرات الاستاتيكية) ويحدد كل كائن يمكن الوصول إليه ككائن حي (Live Object).",
-    "  2. مرحلة الكنس والضغط (Sweep & Compact): يعتبر أي كائن لم يتم تحديده كائنا ميتا ويتم تحرير مساحته وضغط الكائنات الحية بجوار بعضها لمنع تجزؤ الذاكرة."
+    "جامع القمامة في .NET (Garbage Collector):",
+    "- يقوم جامع القمامة في .NET تلقائيا بالتعرف على الكائنات التي لم يعد بالإمكان الوصول إليها ويقوم باسترجاع وتحرير ذاكرتها (automatically identifies objects that are no longer reachable and reclaims their memory).",
+    "- دورة حياة الكائن:",
+    "  * إنشاء الكائن (Create Object) -> استخدام الكائن (Use Object) -> انقطاع المراجع (No References) -> تدخل جامع القمامة (Garbage Collector) -> استرجاع الذاكرة وتحريرها (Memory Reclaimed).",
+    "- مثال:",
+    "  var user = new User();",
+    "  user = null;",
+    "- يصبح الكائن في النهاية مؤهلا لجمع القمامة (eligible for garbage collection).",
+    "- قاعدة هامة جدا (Important):",
+    "  * تعيين المرجع إلى null لا يحرر الذاكرة بشكل فوري (Setting a reference to null does not immediately free the memory)."
   ]
 };
 window.TOC_AR["L7-S037"] = window.TOC_AR["L7"]["L7-S037"];
 
 window.TOC_AR["L7"]["L7-S038"] = {
   "ar": [
-    "أجيال جامع القمامة (Generational Garbage Collection):",
-    "- يقسم الـ GC الذاكرة إلى ثلاثة أجيال رئيسية بناء على فرضية أن الكائنات الحديثة تموت سريعا بينما الكائنات القديمة تعيش طويلا:",
-    "  * الجيل 0 (Gen 0): أصغر جيل؛ تُنشأ فيه الكائنات الجديدة قصيرة العمر (مثل المتغيرات المحلية)، ويتم فحصه وتنظيفه بسرعة البرق.",
-    "  * الجيل 1 (Gen 1): منطقة وسيطة تعبر إليها الكائنات التي نجت من تنظيف الجيل 0.",
-    "  * الجيل 2 (Gen 2): للكائنات طويلة العمر (مثل الكائنات العامة وإعدادات النظام) وتكلفة تنظيفه عالية.",
-    "  * ركام الكائنات الكبيرة (LOH - Large Object Heap): للكائنات التي يتجاوز حجمها 85,000 بايت (مثل المصفوفات الضخمة) وتُعامل معاملة Gen 2 دون ضغط."
+    "جمع القمامة القائم على الأجيال (Generational Garbage Collection):",
+    "- يستخدم جامع القمامة في .NET نظام الأجيال (uses generations):",
+    "  * الجيل 0 (Generation 0) -> الجيل 1 (Generation 1) -> الجيل 2 (Generation 2).",
+    "- تعريف الأجيال:",
+    "  * الجيل 0 (Gen 0): مخصص للكائنات قصيرة العمر (Short-lived objects).",
+    "  * الجيل 1 (Gen 1): مخصص للكائنات التي نجت من جمع الجيل 0 (Objects that survived Gen 0).",
+    "  * الجيل 2 (Gen 2): مخصص للكائنات طويلة العمر (Long-lived objects).",
+    "- الفكرة العامة الحاكمة (General idea):",
+    "  * معظم الكائنات تموت وتفقد الحاجة إليها في وقت مبكر (Most objects die young) -> مما يمكن جامع القمامة من جمعها بكفاءة وسرعة عالية."
   ]
 };
 window.TOC_AR["L7-S038"] = window.TOC_AR["L7"]["L7-S038"];
 
 window.TOC_AR["L7"]["L7-S039"] = {
   "ar": [
-    "الموارد المدارة مقابل الموارد غير المدارة (Managed vs Unmanaged):",
-    "- الموارد المدارة (Managed Resources): الذاكرة الصافية للكائنات التي أنشأها الـ CLR، ويحررها الـ GC تلقائيا.",
-    "- الموارد غير المدارة (Unmanaged Resources): موارد ومقابض تطلبها المنظومة من نظام التشغيل مباشرة ولا يستطيع الـ GC تحريرها بمفرده:",
-    "  * مقابض الملفات المفتوحة (File Handles).",
-    "  * اتصالات قواعد البيانات والشبكات (Database Connections & Sockets).",
-    "  * موارد واجهات الرسوميات (GDI+ Handles)."
+    "الموارد المدارة مقابل الموارد غير المدارة (Managed vs Unmanaged Resources):",
+    "- الموارد المدارة (Managed):",
+    "  * تقع تحت السيطرة والإشراف الكامل لجامع القمامة في .NET (Controlled by the .NET GC):",
+    "    - الكائنات البرمجية (Objects)",
+    "    - المصفوفات (Arrays)",
+    "    - النصوص (Strings)",
+    "    - القوائم (Lists)",
+    "- الموارد غير المدارة (Unmanaged):",
+    "  * موارد تقع خارج نظام الذاكرة المدارة الطبيعي (Resources outside the normal managed-memory system):",
+    "    - مقابض ومؤشرات الملفات (File handles)",
+    "    - اتصالات قواعد البيانات (Database connections)",
+    "    - منافذ الشبكة (Sockets)",
+    "    - الموارد الأصلية للنظام (Native resources)",
+    "    - مقابض نظام التشغيل (Operating-system handles)",
+    "  * هذه الموارد تتطلب غالبا تنظيفا وإغلاقا صريحا من المطور (often require explicit cleanup)."
   ]
 };
 window.TOC_AR["L7-S039"] = window.TOC_AR["L7"]["L7-S039"];
 
 window.TOC_AR["L7"]["L7-S040"] = {
   "ar": [
-    "واجهة IDisposable وجملة using:",
-    "- الحل لتحرير الموارد غير المدارة: تطبيق واجهة IDisposable التي تفرض دالة `Dispose()` لتحرير المقابض فور الانتهاء منها.",
-    "- جملة using في C# تضمن استدعاء دالة Dispose حتى لو حدث استثناء مفاجئ:",
-    "  using (var stream = new FileStream(\"data.txt\", FileMode.Open)) {",
-    "      // قراءة الملف بأمان",
-    "  } // يتم إغلاق الملف وتحريره آليا هنا",
-    "- في C# 8+ نستخدم التعبير المختصر الأنيق: `using var stream = ...;`"
+    "واجهة التحرير IDisposable وجملة using:",
+    "- للموارد التي تتطلب تنظيفا وإغلاقا محددا وحتميا في وقت معلوم (deterministic cleanup):",
+    "  using var connection = new SqlConnection(connectionString);",
+    "  connection.Open();",
+    "- في نهاية النطاق (scope)، يتم استدعاء دالة Dispose() تلقائيا وبصورة حتمية.",
+    "- المفهوم المكافئ لجملة using هو كتلة try-finally:",
+    "  var resource = new MyResource();",
+    "  try {",
+    "      // استخدام المورد",
+    "  }",
+    "  finally {",
+    "      resource.Dispose(); // ضمان الاستدعاء حتى عند حدوث استثناء",
+    "  }"
   ]
 };
 window.TOC_AR["L7-S040"] = window.TOC_AR["L7"]["L7-S040"];
 
 window.TOC_AR["L7"]["L7-S041"] = {
   "ar": [
-    "تسريبات الذاكرة في لغة C# (Memory Leaks in Managed Code):",
-    "- كيف يحدث تسريب للذاكرة في لغة تدعم الـ GC؟",
-    "- يحدث عندما يبقى مؤشر من جذر نشط (GC Root) يشير إلى كائن لم نعد بحاجة إليه، مما يمنع الـ GC من اعتباره ميتا!",
-    "- أشهر مسببات التسريب:",
-    "  1. نسيان إلغاء الاشتراك في الأحداث (Forgotten Event Subscriptions `-=`).",
-    "  2. المتغيرات الاستاتيكية الثابتة التي تجمع كائنات دون تفريغها (Static Collections).",
-    "  3. عدم إغلاق التيارات والموارد ذات واجهة IDisposable."
+    "تسريب الذاكرة (Memory Leak):",
+    "- يحدث تسريب الذاكرة عندما تصبح الذاكرة غير مفيدة للتطبيق ولكنها تظل قابلة للوصول فلا يمكن استرجاعها بواسطة الـ GC كما هو متوقع (memory is no longer useful but remains reachable or cannot be reclaimed).",
+    "- الأسباب الشائعة لتسريبات الذاكرة (Common causes include):",
+    "  * المجموعات الساكنة التي تنمو وتتضخم بلا حدود (Static collections growing indefinitely).",
+    "  * معالجات الأحداث التي لا يُلغى الاشتراك فيها (Event handlers not unsubscribed).",
+    "  * المراجع طويلة العمر التي تحتجز كائنات قصيرة (Long-lived references).",
+    "  * التخزين المؤقت دون حدود أو سياسات إفراغ (Caching without limits).",
+    "  * المعالجة غير السليمة للموارد غير المدارة (Improper unmanaged resource handling).",
+    "- كود المثال التوضيحي:",
+    "  static List<byte[]> cache = new();",
+    "  while (true) {",
+    "      cache.Add(new byte[1024 * 1024]);",
+    "  }",
+    "- المشكلة: تحتفظ القائمة الساكنة باستمرار بمراجع إلى الكائنات فلا يستطيع الـ GC تحريرها."
   ]
 };
 window.TOC_AR["L7-S041"] = window.TOC_AR["L7"]["L7-S041"];
 
 window.TOC_AR["L7"]["L7-S042"] = {
   "ar": [
-    "فخ تسريب الذاكرة الشهير في تطبيقات ASP.NET Web API:",
-    "- فخ الربط الخاطئ بين دورات حياة الخدمات المحقونة (Service Lifetimes Trap):",
-    "- عند حقن خدمة طويلة العمر كـ Singleton، وجعلها تحتفظ بمرجع لخدمة قصيرة العمر من نوع Scoped أو Transient، أو الاشتراك في حدث منها، فإن الخدمة قصيرة العمر ستظل محبوسة في الذاكرة للأبد ولن يجمعها الـ GC إطلاقا، مما يؤدي لتضخم الذاكرة وانهيار السيرفر."
+    "مثال من الواقع الحقيقي — واجهة Web API (التطبيق السيئ المتسلسل):",
+    "- تخيل نقطة نهاية في واجهة برمجة: GET /dashboard",
+    "- تحتاج هذه الصفحة لجلب البيانات الأربعة التالية:",
+    "  * بيانات المستخدم (User)",
+    "  * قائمة الطلبات (Orders)",
+    "  * سجل المدفوعات (Payments)",
+    "  * الإشعارات (Notifications)",
+    "- التنفيذ السيئ المتتابع (Bad implementation):",
+    "  var user = await GetUserAsync();",
+    "  var orders = await GetOrdersAsync();",
+    "  var payments = await GetPaymentsAsync();",
+    "  var notifications = await GetNotificationsAsync();",
+    "- حساب الزمن: إذا استغرقت كل عملية ثانية واحدة:",
+    "  * 1 + 1 + 1 + 1 = حوالي 4 ثوانٍ (~4 seconds)."
   ]
 };
 window.TOC_AR["L7-S042"] = window.TOC_AR["L7"]["L7-S042"];
 
 window.TOC_AR["L7"]["L7-S043"] = {
   "ar": [
-    "الحل الهندسي السليم لإدارة الحبوب ودورات الحياة:",
-    "- استخدام نمط Dependency Injection بدقة، وفصل نطاقات الخدمات (Scopes) باستخدام `IServiceScopeFactory` عند الحاجة لاستدعاء خدمات مقيدة داخل خدمات عامة.",
-    "- استخدام الإشارات الضعيفة (WeakReference) للأحداث المعقدة والتأكد من إلغاء الاشتراكات في دالة Dispose."
+    "الحل الهندسي الأفضل — استخدام Task.WhenAll:",
+    "- كود التنفيذ المحسن المتزامن:",
+    "  var userTask = GetUserAsync();",
+    "  var ordersTask = GetOrdersAsync();",
+    "  var paymentsTask = GetPaymentsAsync();",
+    "  var notificationsTask = GetNotificationsAsync();",
+    "  await Task.WhenAll(",
+    "      userTask,",
+    "      ordersTask,",
+    "      paymentsTask,",
+    "      notificationsTask",
+    "  );",
+    "- المفهوم الزمني (Conceptually):",
+    "  * تنطلق العمليات الأربع (User, Orders, Payments, Notifications) لتعمل معا بالتزامن في نفس الوقت.",
+    "  * إجمالي الزمن المستغرق: حوالي ثانية واحدة فقط (~1 second) بدلا من 4 ثوانٍ!"
   ]
 };
 window.TOC_AR["L7-S043"] = window.TOC_AR["L7"]["L7-S043"];
 
 window.TOC_AR["L7"]["L7-S044"] = {
   "ar": [
-    "ملخص الأخطاء الكارثية الشائعة الواجب تفاديها:",
-    "1. استخدام `async void` في غير معالجات أحداث الواجهات الرسومية (لأنه يبتلع الاستثناءات ويسقط التطبيق).",
-    "2. استخدام `.Result` أو `.Wait()` وتجميد المسالك.",
-    "3. نسيان التخلص من كائنات IDisposable داخل كتل using.",
-    "4. إهمال إلغاء الاشتراكات في الأحداث والتسبب في تسريب الذاكرة.",
-    "5. القفل على كائنات عامة مثل `this` أو نصوص ثابتة."
+    "الأخطاء البرمجية الشائعة (Common Mistakes):",
+    "- الخطأ 1 (Mistake 1):",
+    "  * استخدام Task.Run(() => DatabaseCall());",
+    "  * هذا لا يجعل الكود أفضل تلقائيا، بل يحجز مسلكا من حوض المسالك بلا داعٍ لاستدعاء قاعدة بيانات يمتلك بالأصل دوال غير متزامنة.",
+    "- الخطأ 2 (Mistake 2):",
+    "  * استخدام .Result أو .Wait()",
+    "  * هذه الخصائص والدوال قد تحجب وتجمد المسالك وتتسبب في حالات تعليق تام (deadlocks).",
+    "  * البديل المفضل: استخدام الكلمة المحجوزة await.",
+    "- الخطأ 3 (Mistake 3):",
+    "  * استخدام المتغيرات المشتركة دون مزامنة، مثل: counter++;",
+    "  * يؤدي مباشرة لحدوث حالات تسابق وتلف البيانات.",
+    "- الخطأ 4 (Mistake 4):",
+    "  * إنشاء مسلك جديد لكل عملية منفردة (new Thread).",
+    "  * البديل المفضل: استخدام Task أو ThreadPool أو النمط غير المتزامن async/await."
   ]
 };
 window.TOC_AR["L7-S044"] = window.TOC_AR["L7"]["L7-S044"];
 
 window.TOC_AR["L7"]["L7-S045"] = {
   "ar": [
-    "أحدث تقنيات تحسين أداء الذاكرة في C# الحديثة:",
-    "- أنواع الذاكرة عالية الكفاءة:",
-    "  * `Span<T>` و `ReadOnlySpan<T>`: تتيح تمثيل أجزاء متجاورة من الذاكرة والتعامل مع النصوص والمصفوفات دون تخصيص أي بايت إضافي في الـ Heap وبأداء يماثل C++.",
-    "  * `Memory<T>`: المكافئ الآمن للـ Span للعمليات غير المتزامنة التي تعبر حدود الـ await.",
-    "  * حوض المصفوفات `ArrayPool<T>`: استعارة المصفوفات المؤقتة وإعادتها لتفادي تخصيص مصفوفات متكررة في الـ Gen 0 والـ LOH.",
-    "  * تجنب التعليب وفك التعليب (Boxing / Unboxing) باستخدام الأنواع المعممة (Generics)."
+    "قياس وتحسين أداء الذاكرة (Memory Performance):",
+    "- القاعدة الذهبية: لا تخمن — بل قس بالأدوات الدقيقة (Don't guess — measure).",
+    "- الأدوات والمفاهيم المفيدة (Useful tools/concepts):",
+    "  * أدوات التشخيص في فيجوال ستوديو (Visual Studio Diagnostic Tools):",
+    "    - المسار: Debug -> Windows -> Diagnostic Tools",
+    "    - قياس: استهلاك المعالج (CPU Usage)، استهلاك الذاكرة (Memory Usage)، والتقاط لقطة للذاكرة (Take Snapshot).",
+    "  * أداة العدادات (dotnet-counters):",
+    "    - مراقبة العمليات: dotnet-counters monitor --process-id 1234",
+    "  * أداة التتبع (dotnet-trace):",
+    "    - جمع بيانات التتبع: dotnet-trace collect --process-id 1234",
+    "  * أداة تحليل مقالب الذاكرة (dotnet-dump):",
+    "    - جمع المقلب: dotnet-dump collect --process-id 1234",
+    "    - تحليل المقلب: dotnet-dump analyze dump.dmp",
+    "  * مقاييس جامع القمامة (GC metrics):",
+    "    - مراقبة مقاييس الـ GC عبر dotnet-counters monitor --process-id 12540",
+    "- توفر مايكروسوفت إرشادات مخصصة لفحص أداء جامع القمامة والذاكرة، بما في ذلك التنميط أثناء التشغيل (runtime profiling) وفحص الركام (heap inspection)."
   ]
 };
 window.TOC_AR["L7-S045"] = window.TOC_AR["L7"]["L7-S045"];
