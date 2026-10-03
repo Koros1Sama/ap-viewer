@@ -118,7 +118,7 @@ public class EmployeeRepository {
       letter: "O",
       name_en: "Open / Closed Principle",
       name_ar: "مبدأ الفتح والإغلاق",
-      short_rule: "مفتوح للتوسيع · مغلق للتعديل",
+      short_rule: "مفتوح للتوسيع مغلق للتعديل",
       slide: "L1-S023",
       badge: "O · الفتح والإغلاق",
       actor: "Bertrand Meyer (1988)",
@@ -138,7 +138,8 @@ public class PaymentProcessor {
             Console.WriteLine("معاملة بلوكتشين: " + amount);
         }
     }
-}`,
+}
+`,
       codeGood: `// كود سليم محقق لـ OCP: معمارية قابلة للتوسع اللانهائي دون لمس الكود القديم
 public interface IPaymentMethod {
     bool Pay(decimal amount);
@@ -162,14 +163,15 @@ public class PaymentProcessor {
     public bool Checkout(IPaymentMethod method, decimal amount) {
         return method.Pay(amount); // تعددية الأشكال
     }
-}`
+}
+`
     },
     {
       id: "lsp",
       letter: "L",
       name_en: "Liskov Substitution Principle",
       name_ar: "مبدأ استبدال لسكوف",
-      short_rule: "الابن يحل محل الأب دون كسر البرنامج",
+      short_rule: "الاستبدال دون كسر السلوك",
       slide: "L1-S027",
       badge: "L · استبدال لسكوف",
       actor: "Barbara Liskov (1987)",
@@ -222,7 +224,7 @@ public class BusinessLicense : License {
       letter: "I",
       name_en: "Interface Segregation Principle",
       name_ar: "مبدأ فصل الواجهات",
-      short_rule: "واجهات صغيرة مركزة · لا دوال غير مستخدمة",
+      short_rule: "واجهات صغيرة متخصصة",
       slide: "L1-S030",
       badge: "I · فصل الواجهات",
       actor: "Role Interfaces (عقود التخصص)",
@@ -243,7 +245,8 @@ public class RobotWorker : IWorker {
     // إجبار على دوال وهمية أو رمي استثناءات تلوث التصميم
     public void Eat() => throw new NotImplementedException("الروبوت لا يأكل!");
     public void Sleep() => throw new NotImplementedException("الروبوت لا ينام!");
-}`,
+}
+`,
       codeGood: `// كود سليم محقق لـ ISP: واجهات تخصصية دقيقة (Role Interfaces)
 public interface IWorkable {
     void Work();
@@ -262,14 +265,15 @@ public class HumanWorker : IWorkable, IFeedable {
 // الروبوت يطبق حصراً ما يحتاجه دون سطر كود زائد أو وهمي!
 public class RobotWorker : IWorkable {
     public void Work() => Console.WriteLine("تشغيل خط الإنتاج الآلي");
-}`
+}
+`
     },
     {
       id: "dip",
       letter: "D",
       name_en: "Dependency Inversion Principle",
       name_ar: "مبدأ قلب الاعتمادية",
-      short_rule: "الاعتماد على التجريد · لا على التفاصيل الملموسة",
+      short_rule: "الاعتماد على التجريد",
       slide: "L1-S034",
       badge: "D · قلب الاعتمادية",
       actor: "Robert C. Martin / Clean Arch",
@@ -432,15 +436,15 @@ public class OrderService {
 
           <!-- Top Principle Letter Badge -->
           <circle cx="${cx + colW / 2}" cy="${startY + 38}" r="22" fill="${badgeBg}" stroke="${isActive ? 'var(--acc-b)' : 'var(--ln)'}" stroke-width="1.4"/>
-          <text x="${cx + colW / 2}" cy="${startY + 46}" text-anchor="middle" fill="${badgeTextCol}"
+          <text x="${cx + colW / 2}" y="${startY + 46}" text-anchor="middle" fill="${badgeTextCol}"
                 font-size="21" font-weight="800" class="mono">${p.letter}</text>
 
           <!-- Acronym -->
-          <text x="${cx + colW / 2}" cy="${startY + 80}" text-anchor="middle" fill="var(--acc-b)"
+          <text x="${cx + colW / 2}" y="${startY + 80}" text-anchor="middle" fill="var(--acc-b)"
                 font-size="11.5" font-weight="700" class="mono">${p.id.toUpperCase()}</text>
 
           <!-- Arabic Principle Name -->
-          <text x="${cx + colW / 2}" cy="${startY + 102}" text-anchor="middle" fill="var(--ink)"
+          <text x="${cx + colW / 2}" y="${startY + 102}" text-anchor="middle" fill="var(--ink)"
                 font-size="11" font-weight="800" class="ar-txt">${p.name_ar}</text>
 
           <line x1="${cx + 14}" y1="${startY + 116}" x2="${cx + colW - 14}" y2="${startY + 116}" stroke="var(--ln)" stroke-width="1"/>
@@ -449,13 +453,13 @@ public class OrderService {
           ${glyph}
 
           <!-- Golden Rule text -->
-          <text x="${cx + colW / 2}" cy="${startY + 218}" text-anchor="middle" fill="var(--ink)"
-                font-size="9.5" font-weight="700" class="ar-txt">${p.short_rule}</text>
+          <text x="${cx + colW / 2}" y="${startY + 218}" text-anchor="middle" fill="var(--ink)"
+                font-size="9" font-weight="700" class="ar-txt">${p.short_rule}</text>
 
           <!-- Slide ref pill -->
           <rect x="${cx + 22}" y="${startY + 238}" width="${colW - 44}" height="22" rx="4"
                 fill="var(--sf)" stroke="${isActive ? 'var(--acc)' : 'var(--ln)'}" stroke-width="1"/>
-          <text x="${cx + colW / 2}" cy="${startY + 253}" text-anchor="middle" fill="${isActive ? 'var(--acc-b)' : 'var(--ink-m)'}"
+          <text x="${cx + colW / 2}" y="${startY + 253}" text-anchor="middle" fill="${isActive ? 'var(--acc-b)' : 'var(--ink-m)'}"
                 font-size="9.5" font-weight="700" class="mono">${p.slide}</text>
         </g>
       `;
