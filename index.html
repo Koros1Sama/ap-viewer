@@ -4120,6 +4120,134 @@
         color: var(--bg);
       }
 
+      /* Trick Badge & Callout Box */
+      .em-trick-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 2px 10px;
+        border-radius: 999px;
+        background: color-mix(in srgb, #f59e0b 16%, transparent);
+        color: #d97706;
+        border: 1px solid color-mix(in srgb, #f59e0b 35%, transparent);
+        font-family: var(--fa);
+        font-size: 0.72rem;
+        font-weight: 800;
+      }
+      .em-q-trick-box {
+        background: color-mix(in srgb, #f59e0b 9%, var(--sf));
+        border-right: 3px solid #f59e0b;
+        padding: 10px 14px;
+        border-radius: var(--r-s);
+        font-size: 0.86rem;
+        line-height: 1.85;
+        color: var(--ink);
+      }
+      .em-q-trick-box strong {
+        color: #d97706;
+        display: block;
+        margin-bottom: 4px;
+        font-size: 0.8rem;
+      }
+
+      /* True / False List */
+      .em-tf-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin: 16px 0;
+      }
+      .em-tf-item {
+        background: var(--sf);
+        border: 1px solid var(--ln-s);
+        border-radius: var(--r-m);
+        padding: 16px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: transform 0.2s var(--ease), border-color 0.2s var(--ease);
+      }
+      .em-tf-item:hover {
+        border-color: var(--acc);
+        transform: translateY(-2px);
+      }
+      .em-tf-item.is-true {
+        border-right: 4px solid var(--ok);
+      }
+      .em-tf-item.is-false {
+        border-right: 4px solid var(--err);
+      }
+      .em-tf-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .em-tf-num {
+        font-family: var(--fm);
+        font-size: 0.76rem;
+        font-weight: 800;
+        color: var(--ink-m);
+      }
+      .em-tf-verdict {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 3px 12px;
+        border-radius: 999px;
+        font-family: var(--fa);
+        font-size: 0.78rem;
+        font-weight: 800;
+      }
+      .em-tf-verdict.true {
+        background: color-mix(in srgb, var(--ok) 18%, transparent);
+        color: var(--ok);
+        border: 1px solid var(--ok);
+      }
+      .em-tf-verdict.false {
+        background: color-mix(in srgb, var(--err) 18%, transparent);
+        color: var(--err);
+        border: 1px solid var(--err);
+      }
+      .em-tf-statement {
+        font-family: var(--fa);
+        font-size: 0.96rem;
+        font-weight: 800;
+        color: var(--ink);
+        line-height: 1.5;
+        direction: rtl;
+        text-align: right;
+      }
+      .em-tf-trap {
+        background: var(--sf2);
+        padding: 8px 12px;
+        border-radius: var(--r-s);
+        font-size: 0.85rem;
+        line-height: 1.8;
+        color: var(--ink-m);
+      }
+      .em-tf-trap strong {
+        color: var(--err);
+        display: block;
+        margin-bottom: 3px;
+        font-size: 0.78rem;
+      }
+      .em-tf-rule {
+        background: color-mix(in srgb, var(--acc) 8%, var(--sf2));
+        padding: 8px 12px;
+        border-radius: var(--r-s);
+        font-size: 0.85rem;
+        line-height: 1.8;
+        color: var(--ink);
+      }
+      .em-tf-rule strong {
+        color: var(--acc-b);
+        display: block;
+        margin-bottom: 3px;
+        font-size: 0.78rem;
+      }
+
       @media (max-width: 900px) {
         .topbar-in {
           padding: 6px 10px;
@@ -4733,11 +4861,11 @@
         </div>
         <div id="emergencyView" hidden>
           <div class="headline">
-            <div class="kicker"><span class="dot"></span>خارطة الإنقاذ السريع · استثمار الوقت الحاسم</div>
+            <div class="kicker"><span class="dot"></span>قناص خيارات النهائي · استراتيجيات الحل الفوري</div>
             <h1 id="emTitle">
-              <svg class="svg-ic" style="width:24px;height:24px;margin-left:8px;vertical-align:-4px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>خارطة الإنقاذ الطارئة (قاعدة 80/20)
+              <svg class="svg-ic" style="width:24px;height:24px;margin-left:8px;vertical-align:-4px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>دليل قناص الخيارات وخدع الامتحان (MCQ &amp; T/F Sniper)
             </h1>
-            <p id="emSub">التركيز الحصري على أهم 20% من مفاهيم المنهج التي تضمن أكثر من 75% إلى 80% من درجات النهائي — خطة دراسة ساعتين إلى ثلاث ساعات لدكتورة بيداء لعلع.</p>
+            <p id="emSub">استراتيجيات الحل الفوري لأسئلة الاختيار من متعدد والصواب والخطأ — كيف تحصد 80% من درجات النهائي بالكلمات المفتاحية واستبعاد الفخاخ التمويهية لدكتورة بيداء لعلع في ساعتين.</p>
           </div>
           <div class="fchips" id="emergencyChips"></div>
           <div id="emergencyParts" class="emergency-parts"></div>
@@ -4810,7 +4938,7 @@
       window.TOC_EMERGENCY = window.TOC_EMERGENCY || { sections: [] };
       document.write(
         window.TOC_CONFIG.files.index
-          .map((f) => '<script src="data/' + f + '.js?v=31"><\/script>')
+          .map((f) => '<script src="data/' + f + '.js?v=32"><\/script>')
           .join(""),
       );
     </script>
@@ -7466,17 +7594,66 @@
               );
             });
             card.appendChild(grid);
+          } else if (sec.type === "tf_list" && sec.items) {
+            const list = el("div", { class: "em-tf-list" });
+            sec.items.forEach((item) => {
+              searchTerms += " " + [item.statement, item.verdict, item.trap, item.rule || "", item.ref || ""].join(" ");
+              const tfItem = el(
+                "div",
+                { class: "em-tf-item " + (item.is_true ? "is-true" : "is-false") },
+                el(
+                  "div",
+                  { class: "em-tf-header" },
+                  el("span", { class: "em-tf-num" }, `فخ امتحاني رقم ${item.n}`),
+                  el("span", { class: "em-tf-verdict " + (item.is_true ? "true" : "false") }, item.verdict),
+                  item.ref
+                    ? el(
+                        "a",
+                        {
+                          class: "em-ref-link",
+                          ...slideRefAttrs(item.ref),
+                        },
+                        iconSvg("target"),
+                        `سلايد ${item.ref}`,
+                      )
+                    : null,
+                ),
+                el("div", { class: "em-tf-statement" }, item.statement),
+                el(
+                  "div",
+                  { class: "em-tf-trap" },
+                  el("strong", null, "فخ السؤال والتمويه:"),
+                  item.trap,
+                ),
+                item.rule
+                  ? el(
+                      "div",
+                      { class: "em-tf-rule" },
+                      el("strong", null, "القاعدة الهندسية الصحيحة:"),
+                      item.rule,
+                    )
+                  : null,
+              );
+              list.appendChild(tfItem);
+            });
+            card.appendChild(list);
           } else if (sec.type === "questions" && sec.items) {
             const list = el("div", { class: "em-questions-list" });
             sec.items.forEach((item) => {
-              searchTerms += " " + [item.q, item.a, item.why || "", item.ref || ""].join(" ");
+              searchTerms += " " + [item.q, item.a, item.trick || "", item.why || "", item.ref || ""].join(" ");
+              const isTF = item.type === "tf";
               const qItem = el(
                 "div",
                 { class: "em-q-item" },
                 el(
                   "div",
                   { class: "em-q-header" },
-                  el("span", { class: "em-q-num" }, `السؤال ${item.n}`),
+                  el(
+                    "span",
+                    { class: "em-q-num" },
+                    isTF ? `صواب / خطأ · فقرة ${item.n}` : `اختيار من متعدد · سؤال ${item.n}`,
+                  ),
+                  item.trick_badge ? el("span", { class: "em-trick-badge" }, item.trick_badge) : null,
                   item.ref
                     ? el(
                         "a",
@@ -7490,10 +7667,18 @@
                     : null,
                 ),
                 el("div", { class: "em-q-text" }, item.q),
+                item.trick
+                  ? el(
+                      "div",
+                      { class: "em-q-trick-box" },
+                      el("strong", null, "الخدعة الامتحانية ومفتاح الحل:"),
+                      item.trick,
+                    )
+                  : null,
                 el(
                   "div",
                   { class: "em-q-ans-box" },
-                  el("strong", null, "الإجابة الصحيحة المعتمدة:"),
+                  el("strong", null, isTF ? "الحكم المعتمد:" : "الإجابة الصحيحة المعتمدة:"),
                   item.a,
                 ),
                 item.why
@@ -9090,6 +9275,6 @@
         }, { passive: true });
       })();
     </script>
-    <script src="app.js?v=31"></script>
+    <script src="app.js?v=32"></script>
   </body>
 </html>
