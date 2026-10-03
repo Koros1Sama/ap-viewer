@@ -10,7 +10,7 @@ window.TOC_MODELS.push({
   "kind": "نظري",
   "title_ar": "بنك أسئلة ونماذج البرمجة المتقدمة النهائي — د. بيداء لعلع",
   "short_label": "بنك النهائي",
-  "origin_ar": "بنك أسئلة معياري شامل مولّد ومطوّر بالذكاء الاصطناعي بدقة تامة وفق السلايدات والمحاضرات الرسمية المعتمدة للدكتورة بيداء لعلع (أنماط التصميم 23، مبادئ SOLID، العمارة النظيفة، التزامن، وإدارة الذاكرة)، مع تدقيق علمي وتفسير لكل خيار ووقفة امتحانية لكل سؤال.",
+  "origin_ar": "بنك أسئلة معياري شامل مولّد ومطوّر بالذكاء الاصطناعي بدقة تامة وفق السلايدات والمحاضرات الرسمية المعتمدة للدكتورة بيداء لعلع (أنماط التصميم المقررة، مبادئ SOLID، العمارة النظيفة، واجهات APIs، التزامن، إدارة الذاكرة، والأنظمة الموزعة)، مع تدقيق علمي وتفسير لكل خيار ووقفة امتحانية لكل سؤال.",
   "questions": [
     {
       "n": 1,
@@ -718,10 +718,10 @@ window.TOC_MODELS.push({
           "en": "Interface Segregation Principle (ISP)."
         },
         {
-          "ar": "مبدأ الاستنساخ الأولي (Prototype).",
+          "ar": "مبدأ انعكاس التبعية (DIP).",
           "ok": false,
-          "why": "هذا نمط تصميم إنشائي وليس مبدأ من مبادئ SOLID.",
-          "en": "Prototype Principle."
+          "why": "مبدأ DIP يختص بالاعتماد على التجريد وليس التماسك الداخلي للمسؤوليات.",
+          "en": "Dependency Inversion Principle (DIP)."
         }
       ],
       "tip": "وقفة امتحانية: علامة انتهاك SRP: وجود دوال أعمال تجارية مع دوال اتصال بقواعد بيانات أو تنسيق إشعارات داخل نفس الفئة."
@@ -1014,7 +1014,7 @@ window.TOC_MODELS.push({
         {
           "ar": "لا ينبغي إجبار أي عميل على الاعتماد على واجهات وطرق لا يحتاج لاستخدامها (Fat/Polluted Interfaces).",
           "ok": true,
-          "why": "الواجهات الضخمة والملوثة تجبر الفئات المنفذة على حمل أعباء ودوال زائدة لا تعنيها، مما يرفع الترابط والهشاشة.",
+          "why": "الواجهات الضخمة والملوثة تجبر الفئات المنفذة على حمل أعباء ودوال زائدة لا تعنيها، مما يرفع الارتباط الوثيق وصعوبة الصيانة.",
           "en": "Clients should not be forced to depend on interfaces or methods they do not use (fat/polluted interfaces)."
         },
         {
@@ -1274,103 +1274,103 @@ window.TOC_MODELS.push({
       "n": 38,
       "type": "mcq",
       "ref": "L2-S003",
-      "q_ar": "أي من الأعراض التالية يُعبر عن 'الصلابة والجمود' (Rigidity) في التصميم البرمجي السيئ؟",
-      "q_en": "Which of the following symptoms represents 'Rigidity' in poor software design?",
+      "q_ar": "وفقاً لمقرر البرمجة المتقدمة، ما هي النتيجة المباشرة لتراكم المشاكل الشائعة في التصميم الرديء (مثل الكود المكرر والارتباط الوثيق وصعوبة الصيانة)؟",
+      "q_en": "According to the curriculum, what is the direct consequence of accumulating common poor design problems (like duplicate code, tight coupling, and difficult maintenance)?",
       "opts": [
         {
-          "ar": "سهولة تعديل الكود ونشره في ثوانٍ معدودة دون أي عوائق.",
+          "ar": "انخفاض تكلفة التطوير وتسريع تسليم التحديثات للمستخدمين.",
+          "en": "Decreasing development costs and speeding up release cycles.",
           "ok": false,
-          "why": "هذه مرونة عالية تعكس تصميماً ممتازاً.",
-          "en": "Ease of modifying and deploying code within seconds without obstacles."
+          "why": "التصميم الرديء يؤدي للعكس تماماً؛ فهو يرفع التكاليف ويعطل التسليم."
         },
         {
-          "ar": "صعوبة إجراء أي تغيير في النظام لأن التعديل البسيط يفرض سلسلة متتالية من التعديلات في وحدات برمجية أخرى مرتبطة به.",
+          "ar": "زيادة تكلفة التطوير وانخفاض جودة البرمجيات (Increase development cost and reduce software quality).",
+          "en": "Increasing development cost and reducing software quality.",
           "ok": true,
-          "why": "الجمود (Rigidity) يعني أن النظام يقاوم التغيير، وكل تعديل صغير يجر وراءه شلالاً من التعديلات الإجبارية.",
-          "en": "Difficulty in modifying the system because a single change cascades into a series of required modifications across coupled modules."
+          "why": "مذكور نصاً في شريحة د. بيداء L2-S003: هذه المشاكل تزيد تكلفة التطوير وتقلل جودة البرمجيات."
         },
         {
-          "ar": "استهلاك البرنامج لكميات ضئيلة جداً من طاقة بطارية الجهاز.",
+          "ar": "تحسين كفاءة استخدام ذاكرة الوصول العشوائي (RAM) والمعالج تلقائياً.",
+          "en": "Automatically improving RAM and CPU utilization efficiency.",
           "ok": false,
-          "why": "هذا تحسين لكفاءة الطاقة وليس عرضاً لتصميم سيئ.",
-          "en": "The software consuming negligible device battery power."
+          "why": "لا علاقة للتصميم الرديء بتحسين العتاد، بل يسبب فوضى برمجية."
         },
         {
-          "ar": "توقف البرنامج عن العمل فجأة بسبب انقطاع التيار الكهربائي.",
+          "ar": "حماية كود النظام من ثغرات الحقن الأمنية وهجمات الشبكة.",
+          "en": "Protecting system code from security injections and network attacks.",
           "ok": false,
-          "why": "هذا عطل فيزيائي خارج عن طبيعة هيكل الكود.",
-          "en": "The program crashing abruptly due to a power outage."
+          "why": "التصميم الرديء يزيد من احتمالية الثغرات الأمنية."
         }
       ],
-      "tip": "وقفة امتحانية: Rigidity (الصلابة) = التعديل الواحد يتطلب سلسلة تعديلات متتالية في أجزاء أخرى من الكود."
+      "tip": "وقفة امتحانية: تركز د. بيداء على أن التصميم الرديء يؤدي حتماً إلى نتيجتين أساسيتين: زيادة تكلفة التطوير (Increase development cost) وانخفاض جودة البرمجيات (Reduce software quality)."
     },
     {
       "n": 39,
       "type": "mcq",
       "ref": "L2-S004",
-      "q_ar": "ما هو التوصيف العلمي الدقيق لعرض 'الهشاشة' (Fragility) في الشفرات البرمجية؟",
-      "q_en": "What is the precise scientific description of 'Fragility' in software code?",
+      "q_ar": "ما هي الفلسفة الهندسية الأساسية التي تميز البرمجيات الجيدة وفق الشريحة الرسمية للمقرر؟",
+      "q_en": "What is the fundamental engineering philosophy that distinguishes good software according to the course slide?",
       "opts": [
         {
-          "ar": "انكسار وانهيار أجزاء برمجية في النظام ليس لها أي علاقة منطقية أو مفاهيمية بالجزء الذي تم تعديله للتو.",
+          "ar": "البرمجيات الجيدة لا تقتصر على جعل الكود يعمل فقط، بل تتعلق بجعله سهل التغيير (Good software is not only about making it work; it is about making it easy to change).",
+          "en": "Good software is not only about making it work; it is about making it easy to change.",
           "ok": true,
-          "why": "الهشاشة (Fragility) تعني أن النظام يفقد اتزانه وتظهر فيه أعطال في أماكن بعيدة وغير متوقعة عند تعديل ميزة ما.",
-          "en": "The tendency of the software to break in areas that have no conceptual or logical relationship to the part just modified."
+          "why": "هذا هو المبدأ الذهبي في شريحة د. بيداء L2-S004؛ فالكود الذي يعمل اليوم سيتغير حتماً غداً."
         },
         {
-          "ar": "عدم قدرة الكود على تخزين الصور عالية الدقة.",
+          "ar": "البرمجيات الجيدة هي التي تُكتب في ملف واحد ضخم لمنع تشتت الدوال.",
+          "en": "Good software is written in a single massive file to prevent function scattering.",
           "ok": false,
-          "why": "لا علاقة لهذا العرض بنوعية البيانات المخزنة.",
-          "en": "Inability of code to store high-resolution images."
+          "why": "هذا يمثل صنفاً متضخماً (Large Class) وانتهاكاً فادحاً للمسؤولية الواحدة."
         },
         {
-          "ar": "حذف ملفات المشروع تلقائياً بمجرد إغلاق المحرر.",
+          "ar": "البرمجيات الجيدة هي التي تعمل لمرة واحدة وتُغلق نهائياً دون الحاجة لأي صيانة.",
+          "en": "Good software only needs to run once without ever requiring maintenance.",
           "ok": false,
-          "why": "هذا خلل في بيئة التطوير وليس مفهوماً معمارياً للهشاشة.",
-          "en": "Automatic deletion of project files upon closing the code editor."
+          "why": "الأنظمة الحقيقية تتطور وتتطلب صيانة وتوسعة مستمرة."
         },
         {
-          "ar": "زيادة سرعة استجابة الخادم مع زيادة عدد المستخدمين.",
+          "ar": "البرمجيات الجيدة هي التي تعتمد على الكود المكرر لتفادي الروابط المشتركة.",
+          "en": "Good software relies on duplicate code to avoid shared dependencies.",
           "ok": false,
-          "why": "هذا قابلية توسع ممتازة.",
-          "en": "Server response speed increasing as the number of users grows."
+          "why": "تكرار الكود هو إحدى المشاكل الرئيسية الست في التصميم الرديء."
         }
       ],
-      "tip": "وقفة امتحانية: Fragility (الهشاشة) = التعديل في ميزة 'أ' يكسر ميزة 'ب' غير المرتبطة بها نهائياً."
+      "tip": "وقفة امتحانية: احفظ مقولة السلايد L2-S004 نصاً: Good software is not only about making it work; it is about making it easy to change."
     },
     {
       "n": 40,
       "type": "mcq",
       "ref": "L2-S005",
-      "q_ar": "ماذا يعني عرض 'عدم القدرة على التنقل' (Immobility) في تقييم جودة بنية البرمجيات؟",
-      "q_en": "What does 'Immobility' mean in assessing software architectural quality?",
+      "q_ar": "في سيناريو المتجر الإلكتروني (Online Shopping System)، ما هو الخطر المعماري الأكبر عند إضافة وسائل دفع جديدة (مثل Apple Pay و Crypto) عن طريق تعديل الكود القائم مباشرة؟",
+      "q_en": "In the Online Shopping System scenario, what is the greatest architectural danger when adding new payment methods (like Apple Pay and Crypto) by modifying existing code directly?",
       "opts": [
         {
-          "ar": "عدم إمكانية تشغيل البرنامج على أجهزة الهواتف الذكية الحديثة.",
+          "ar": "استهلاك مساحة تخزين زائدة في قاعدة البيانات الرئيسية.",
+          "en": "Consuming unnecessary storage space in the database.",
           "ok": false,
-          "why": "Immobility مصطلح معماري يتعلق بإعادة استخدام الكود وليس بدعم منصات الجوال.",
-          "en": "Inability to run the software on modern smartphones."
+          "why": "المشكلة هنا معمارية في كود الدفع وليست في مساحة القرص."
         },
         {
-          "ar": "استحالة أو صعوبة عزل جزء مفيد من الكود لإعادة استخدامه في مشروع آخر بسبب شدة التصاقه وترابطه الوثيق مع بيئته الحالية.",
+          "ar": "احتمال كسر وظائف تعمل بالفعل وحدوث أخطاء إذا كانت مئات الملفات في النظام تعتمد على هذا الكود.",
+          "en": "Risking breaking working features and introducing bugs if hundreds of files depend on that code.",
           "ok": true,
-          "why": "الكود يصبح ثابتاً وغير قابل للنقل لأن استخراجه يتطلب نقل كم هائل من التبعيات غير الضرورية معه.",
-          "en": "Inability or difficulty of isolating useful parts of code for reuse in other projects due to tight coupling and entanglements with its current environment."
+          "why": "مذكور نصاً في شريحة د. بيداء L2-S005: هل سنعدل الكود كل مرة؟ وماذا لو كانت مئات الملفات تعتمد عليه؟"
         },
         {
-          "ar": "بطء حركة مؤشر الفأرة داخل نافذة البرنامج الرئيسية.",
+          "ar": "انخفاض سرعة تصفح الإنترنت لدى العميل أثناء الدفع.",
+          "en": "Reducing customer internet speed during checkout.",
           "ok": false,
-          "why": "هذا عطل في العتاد أو الرسوميات.",
-          "en": "Sluggish mouse pointer movement within the main application window."
+          "why": "سرعة الإنترنت غير مرتبطة ببنية كود السيرفر."
         },
         {
-          "ar": "تشفير الكود المصدري ومنع نسخه احتياطياً.",
+          "ar": "رفض المترجم في C# تجميع الأكواد التي تدعم أكثر من وسيلتي دفع.",
+          "en": "C# compiler rejecting code that supports more than two payment gateways.",
           "ok": false,
-          "why": "هذا إجراء أمني لا علاقة له بـ Immobility.",
-          "en": "Encrypting source code and preventing backups."
+          "why": "المترجم يقبل أي عدد من الدوال، لكن الخطر يكمن في تعقيد الصيانة وكسر التبعيات."
         }
       ],
-      "tip": "وقفة امتحانية: Immobility (عدم التنقل) = صعوبة استخراج وإعادة استخدام الكود المفيد في مشاريع أخرى لشدة ترابطه."
+      "tip": "وقفة امتحانية: يطرح سيناريو L2-S005 الدافع الحقيقي لاستخدام أنماط التصميم: تجنب تعديل الكود القائم عندما تكون مئات الملفات معتمدة عليه."
     },
     {
       "n": 41,
@@ -1568,13 +1568,13 @@ window.TOC_MODELS.push({
           "en": "Factory Method"
         },
         {
-          "ar": "Builder",
+          "ar": "Strategy (نمط سلوكي)",
           "ok": false,
-          "why": "Builder نمط إنشائي (Creational).",
-          "en": "Builder"
+          "why": "نمط Strategy نمط سلوكي (Behavioral) وليس هيكلياً ولا إنشائياً.",
+          "en": "Strategy (Behavioral Pattern)"
         }
       ],
-      "tip": "وقفة امتحانية: احفظ الأنماط الإنشائية الخمسة: Singleton, Factory Method, Abstract Factory, Builder, Prototype."
+      "tip": "وقفة امتحانية: Adapter نمط هيكلي (Structural)، بينما Singleton و Factory Method نمطان إنشائيان (Creational)، و Strategy نمط سلوكي (Behavioral)."
     },
     {
       "n": 47,
@@ -1604,7 +1604,7 @@ window.TOC_MODELS.push({
         {
           "ar": "بأنها تمنع استخدام الوراثة في البرامج تماماً.",
           "ok": false,
-          "why": "بعض الأنماط السلوكية تعتمد على الوراثة مثل Template Method.",
+          "why": "الأنماط السلوكية المقررة (مثل Strategy و State و Command) توظف التجريد والواجهات لتنظيم السلوك.",
           "en": "By completely banning the use of inheritance in programs."
         }
       ],
@@ -2044,10 +2044,10 @@ window.TOC_MODELS.push({
           "en": "When the system needs to restrict an object to a single shared instance."
         },
         {
-          "ar": "عندما نريد ضغط حجم الذاكرة المستخدمة بواسطة كائنات دقيقة مكررة.",
+          "ar": "عندما نريد حصر النظام في كائن تشاركي وحيد ومتاح للجميع.",
           "ok": false,
-          "why": "هذه مهمة نمط Flyweight.",
-          "en": "When compressing memory footprint for thousands of repeated fine-grained objects."
+          "why": "هذه مهمة نمط Singleton المقابل وليس Factory Method.",
+          "en": "When we need to restrict the system to a single shared global instance."
         }
       ],
       "tip": "وقفة امتحانية: نختار Factory Method عندما نتوقع إضافة أنواع جديدة من المنتجات في المستقبل دون مساس بالكود القائم."
@@ -9870,7 +9870,7 @@ window.TOC_MODELS.push({
           "en": "Because WhatsApp prohibits Arabic text."
         }
       ],
-      "tip": "وقفة امتحانية: عيوب الأنظمة القائمة على القواعد (Rule-Based Systems): الهشاشة (Brittleness)، الفشل أمام المترادفات والأخطاء الإملائية، واستحالة التوسع."
+      "tip": "وقفة امتحانية: عيوب الأنظمة القائمة على القواعد (Rule-Based Systems): العجز أمام المترادفات، الفشل أمام المترادفات والأخطاء الإملائية، واستحالة التوسع."
     },
     {
       "n": 291,
