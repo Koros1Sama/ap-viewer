@@ -6,8 +6,8 @@
      بيانات data = قديم فوراً + تحديث بالخلفية (SWR)
      صور الشرائح = الكاش أولاً (كبيرة ومستقرة)
    ═══════════════════════════════════════════════════════ */
-const RUNTIME = "ap-runtime-v25";
-const CORE = "ap-core-v32";
+const RUNTIME = "ap-runtime-v26";
+const CORE = "ap-core-v33";
 const CORE_PREFIX = "ap-core-";
 const RUNTIME_PREFIX = "ap-runtime-";
 const CORE_ASSETS = [
