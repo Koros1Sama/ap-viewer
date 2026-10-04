@@ -4938,7 +4938,7 @@
       window.TOC_EMERGENCY = window.TOC_EMERGENCY || { sections: [] };
       document.write(
         window.TOC_CONFIG.files.index
-          .map((f) => '<script src="data/' + f + '.js?v=33"><\/script>')
+          .map((f) => '<script src="data/' + f + '.js?v=34"><\/script>')
           .join(""),
       );
     </script>
@@ -5119,7 +5119,7 @@
           5,
           Math.max(
             1,
-            parseInt(localStorage.getItem("toc_tbl_min") || "5", 10) || 5,
+            parseInt(localStorage.getItem("toc_tbl_min") || "1", 10) || 1,
           ),
         ),
         modelAns: loadJSON("toc_sv_model_ans", {}),
@@ -9275,6 +9275,6 @@
         }, { passive: true });
       })();
     </script>
-    <script src="app.js?v=33"></script>
+    <script src="app.js?v=34"></script>
   </body>
 </html>

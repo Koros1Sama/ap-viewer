@@ -6,8 +6,8 @@
      بيانات data = قديم فوراً + تحديث بالخلفية (SWR)
      صور الشرائح = الكاش أولاً (كبيرة ومستقرة)
    ═══════════════════════════════════════════════════════ */
-const RUNTIME = "ap-runtime-v26";
-const CORE = "ap-core-v33";
+const RUNTIME = "ap-runtime-v34";
+const CORE = "ap-core-v34";
 const CORE_PREFIX = "ap-core-";
 const RUNTIME_PREFIX = "ap-runtime-";
 const CORE_ASSETS = [
@@ -44,15 +44,18 @@ self.addEventListener("activate", (e) => {
       const keys = await caches.keys();
       const targetRuntime = await caches.open(RUNTIME);
 
-      /* حماية ونقل كافة الشرائح والموارد المحملة من أي كاش رن تايم سابق لمنع ضياع أي ملف تم تحميله */
+      /* حماية ونقل الشرائح والأيقونات المحملة فقط من أي كاش رن تايم سابق لمنع بقاء بيانات برمجية قديمة */
       for (const k of keys) {
         if (k.startsWith(RUNTIME_PREFIX) && k !== RUNTIME) {
           try {
             const oldC = await caches.open(k);
             const oldReqs = await oldC.keys();
             for (const req of oldReqs) {
-              const res = await oldC.match(req);
-              if (res) await targetRuntime.put(req, res);
+              const u = new URL(req.url);
+              if (u.pathname.includes("/slides/") || u.pathname.includes("/icons/")) {
+                const res = await oldC.match(req);
+                if (res) await targetRuntime.put(req, res);
+              }
             }
             await caches.delete(k);
           } catch {}
@@ -149,9 +152,9 @@ self.addEventListener("fetch", (e) => {
     return e.respondWith(cacheFirst(req));
   }
 
-  /* ملفات البيانات: نسخة محفوظة فوراً + تحديث بالخلفية */
+  /* ملفات البيانات: الشبكة أولاً لضمان وصول التعديلات فوراً مع إتاحتها أوفلاين */
   if (p.includes("/data/")) {
-    return e.respondWith(staleWhileRevalidate(req));
+    return e.respondWith(networkFirst(req));
   }
 
   /* أي مورد محلي آخر: الشبكة أولاً */
