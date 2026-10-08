@@ -6,22 +6,22 @@
       if (location.protocol !== "file:") {
         var _ml = document.createElement("link");
         _ml.rel = "manifest";
-        _ml.href = "manifest.json?v=9";
+        _ml.href = "manifest.json?v=41";
         document.head.appendChild(_ml);
       }
     </script>
-    <link rel="icon" type="image/svg+xml" href="icons/icon.svg?v=8" />
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png?v=8" />
-    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=8" />
-    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=8" />
-    <link rel="shortcut icon" href="favicon.ico?v=8" />
+    <link rel="icon" type="image/svg+xml" href="icons/icon.svg?v=41" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png?v=41" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=41" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=41" />
+    <link rel="shortcut icon" href="favicon.ico?v=41" />
         <meta name="theme-color" content="#0b0e17" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="البرمجة المتقدمة · السلايدات والنماذج" />
     <meta property="og:description" content="عارض مراجعة البرمجة المتقدمة — سلايدات وترجمات وشروح وبنك نماذج" />
-    <meta property="og:image" content="icons/icon-512.png?v=8" />
+    <meta property="og:image" content="icons/icon-512.png?v=41" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:image" content="icons/icon-512.png?v=8" />
+    <meta name="twitter:image" content="icons/icon-512.png?v=41" />
 <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
@@ -175,6 +175,149 @@
         --ink: #fbf0f3;
         --ink-m: #bda0ac;
         --acc: #f0a6c8;
+      }
+
+      /* =========================================================
+         LIGHT MODE THEMES (النمط النهاري لجميع الثيمات الـ 11)
+         ========================================================= */
+      html[data-mode="light"] {
+        --acc-b: color-mix(in srgb, var(--acc) 80%, #000);
+        --acc-d: color-mix(in srgb, var(--acc) 18%, #fff);
+        --acc-g: color-mix(in srgb, var(--acc) 14%, transparent);
+        --ink-f: color-mix(in srgb, var(--ink-m) 50%, transparent);
+        --sh: 0 1px 3px rgba(0, 0, 0, 0.06), 0 10px 25px -8px rgba(0, 0, 0, 0.10);
+        --ok: #15803d;
+        --ok-g: color-mix(in srgb, var(--ok) 14%, transparent);
+        --err: #dc2626;
+        --err-g: color-mix(in srgb, var(--err) 12%, transparent);
+      }
+      html[data-mode="light"] .setwrap {
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.14);
+      }
+      html[data-mode="light"] .topbar {
+        background: color-mix(in srgb, var(--bg) 94%, transparent);
+      }
+      html[data-mode="light"][data-theme="amber"],
+      html[data-mode="light"]:not([data-theme]) {
+        --bg: #faf7f2;
+        --bg-s: #f2ece0;
+        --sf: #ffffff;
+        --sf2: #ede5d5;
+        --ln: #ded3be;
+        --ln-s: #eae0ce;
+        --ink: #1e1913;
+        --ink-m: #6b5f4d;
+        --acc: #b47814;
+      }
+      html[data-mode="light"][data-theme="amber-classic"] {
+        --bg: #f9f6ef;
+        --bg-s: #f0e9dc;
+        --sf: #ffffff;
+        --sf2: #eae0cf;
+        --ln: #d8cbb2;
+        --ln-s: #e5dac3;
+        --ink: #221c12;
+        --ink-m: #6e5f48;
+        --acc: #9e6b18;
+      }
+      html[data-mode="light"][data-theme="obsidian"] {
+        --bg: #f5f8fc;
+        --bg-s: #ebf1f8;
+        --sf: #ffffff;
+        --sf2: #e1ebf5;
+        --ln: #cbd9e8;
+        --ln-s: #dce5f0;
+        --ink: #0d1522;
+        --ink-m: #4b5d73;
+        --acc: #0284c7;
+      }
+      html[data-mode="light"][data-theme="emerald"] {
+        --bg: #f3faf6;
+        --bg-s: #e6f5ee;
+        --sf: #ffffff;
+        --sf2: #dcf0e5;
+        --ln: #c1e2d1;
+        --ln-s: #d4ecdf;
+        --ink: #092118;
+        --ink-m: #3e6655;
+        --acc: #059669;
+      }
+      html[data-mode="light"][data-theme="ocean"] {
+        --bg: #f3f7fd;
+        --bg-s: #e7effb;
+        --sf: #ffffff;
+        --sf2: #dce7f7;
+        --ln: #c3d7f2;
+        --ln-s: #d8e5f8;
+        --ink: #0a1728;
+        --ink-m: #415977;
+        --acc: #2563eb;
+      }
+      html[data-mode="light"][data-theme="amethyst"] {
+        --bg: #f9f6fd;
+        --bg-s: #f1eafb;
+        --sf: #ffffff;
+        --sf2: #e9def7;
+        --ln: #d7c4f0;
+        --ln-s: #e6d9f8;
+        --ink: #190f2b;
+        --ink-m: #5a4675;
+        --acc: #7c3aed;
+      }
+      html[data-mode="light"][data-theme="crimson"] {
+        --bg: #fdf5f7;
+        --bg-s: #f9e9ec;
+        --sf: #ffffff;
+        --sf2: #f5dde2;
+        --ln: #eac1c9;
+        --ln-s: #f3d4da;
+        --ink: #260e15;
+        --ink-m: #75414d;
+        --acc: #e11d48;
+      }
+      html[data-mode="light"][data-theme="neon"] {
+        --bg: #f1fbfd;
+        --bg-s: #e1f6fa;
+        --sf: #ffffff;
+        --sf2: #d2f1f7;
+        --ln: #b1e5ee;
+        --ln-s: #caedf3;
+        --ink: #071f25;
+        --ink-m: #335e68;
+        --acc: #0891b2;
+      }
+      html[data-mode="light"][data-theme="mist"] {
+        --bg: #f8fafc;
+        --bg-s: #eff3f7;
+        --sf: #ffffff;
+        --sf2: #e2e8f0;
+        --ln: #cbd5e1;
+        --ln-s: #dce3eb;
+        --ink: #182230;
+        --ink-m: #596779;
+        --acc: #475569;
+      }
+      html[data-mode="light"][data-theme="sage"] {
+        --bg: #f5f8f3;
+        --bg-s: #eaf1e7;
+        --sf: #ffffff;
+        --sf2: #dfebdc;
+        --ln: #c4d7bf;
+        --ln-s: #d7e4d3;
+        --ink: #141f11;
+        --ink-m: #475f42;
+        --acc: #4d7c0f;
+      }
+      html[data-mode="light"][data-theme="rose"] {
+        --bg: #fdf6f9;
+        --bg-s: #faebf2;
+        --sf: #ffffff;
+        --sf2: #f5deea;
+        --ln: #ecc3d5;
+        --ln-s: #f4d6e4;
+        --ink: #260f1c;
+        --ink-m: #75445d;
+        --acc: #db2777;
       }
 
       * {
@@ -806,37 +949,37 @@
           0 0 0 1px rgba(0, 0, 0, 0.25);
       }
       .tdot[data-t="amber"] {
-        background: linear-gradient(135deg, #e5ad45, #a87922);
+        background: linear-gradient(135deg, #f5b13d 50%, #191c24 50%);
       }
       .tdot[data-t="amber-classic"] {
-        background: linear-gradient(135deg, #d4a24c, #8a6a2e);
+        background: linear-gradient(135deg, #d4a24c 50%, #1c1914 50%);
       }
       .tdot[data-t="obsidian"] {
-        background: linear-gradient(135deg, #38bdf8, #0284c7);
+        background: linear-gradient(135deg, #38bdf8 50%, #161924 50%);
       }
       .tdot[data-t="emerald"] {
-        background: linear-gradient(135deg, #10b981, #059669);
+        background: linear-gradient(135deg, #34d399 50%, #131f1f 50%);
       }
       .tdot[data-t="ocean"] {
-        background: linear-gradient(135deg, #5b9bff, #28365c);
+        background: linear-gradient(135deg, #5b9bff 50%, #121e2c 50%);
       }
       .tdot[data-t="amethyst"] {
-        background: linear-gradient(135deg, #a855f7, #7e22ce);
+        background: linear-gradient(135deg, #a78bfa 50%, #19142b 50%);
       }
       .tdot[data-t="crimson"] {
-        background: linear-gradient(135deg, #f43f5e, #be123c);
+        background: linear-gradient(135deg, #fb7185 50%, #211419 50%);
       }
       .tdot[data-t="neon"] {
-        background: linear-gradient(135deg, #00e5d4, #ff4d8d);
+        background: linear-gradient(135deg, #22d3ee 50%, #171722 50%);
       }
       .tdot[data-t="mist"] {
-        background: linear-gradient(135deg, #f5f2ec, #d8d2c5);
+        background: linear-gradient(135deg, #cbd5e1 50%, #1c2026 50%);
       }
       .tdot[data-t="sage"] {
-        background: linear-gradient(135deg, #8fbf7a, #4f7a3c);
+        background: linear-gradient(135deg, #a3b18a 50%, #1a2017 50%);
       }
       .tdot[data-t="rose"] {
-        background: linear-gradient(135deg, #e9a7bd, #b04a68);
+        background: linear-gradient(135deg, #f0a6c8 50%, #20171c 50%);
       }
       .set-opt.on .tdot {
         border-color: color-mix(in srgb, var(--bg) 75%, transparent);
@@ -3406,6 +3549,119 @@
         border-style: solid;
         text-decoration: none;
       }
+      .ref-chip.int-chip {
+        font-family: var(--fa);
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--acc);
+        background: color-mix(in srgb, var(--acc) 10%, var(--sf2));
+        border: 1px solid color-mix(in srgb, var(--acc) 38%, transparent);
+        padding: 3px 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        direction: rtl;
+        transition: all var(--dur) var(--ease);
+      }
+      .ref-chip.int-chip:hover {
+        background: var(--acc);
+        color: var(--bg);
+        border-color: var(--acc);
+        box-shadow: 0 2px 10px var(--acc-g);
+      }
+      .ref-chip.int-chip svg,
+      .ref-chip.int-chip-head svg,
+      .ref-chip.sum-chip svg {
+        width: 12px;
+        height: 12px;
+        stroke: currentColor;
+        stroke-width: 2;
+        fill: none;
+      }
+      .ref-chip.int-chip-head {
+        font-family: var(--fa);
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--acc);
+        background: color-mix(in srgb, var(--acc) 12%, var(--sf2));
+        border: 1px solid color-mix(in srgb, var(--acc) 45%, transparent);
+        padding: 3px 10px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        direction: rtl;
+        margin-inline-start: auto;
+        transition: all var(--dur) var(--ease);
+      }
+      .ref-chip.int-chip-head:hover {
+        background: var(--acc);
+        color: var(--bg);
+        border-color: var(--acc);
+        box-shadow: 0 2px 10px var(--acc-g);
+      }
+      .ref-chip.sum-chip {
+        font-family: var(--fa);
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: var(--ink-m);
+        background: var(--sf2);
+        border: 1px solid var(--ln);
+        padding: 3px 9px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        direction: rtl;
+        transition: all var(--dur) var(--ease);
+      }
+      .ref-chip.sum-chip:hover {
+        border-color: var(--acc);
+        color: var(--acc);
+        background: var(--acc-g);
+      }
+      .int-inline-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        color: var(--acc);
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        cursor: pointer;
+        padding: 0 3px;
+        border-radius: 4px;
+        transition: all var(--dur) var(--ease);
+      }
+      .int-inline-link:hover {
+        background: var(--acc-g);
+        color: var(--acc-b);
+      }
+      .int-inline-link svg {
+        width: 11px;
+        height: 11px;
+        stroke: currentColor;
+        stroke-width: 2;
+        fill: none;
+      }
+      @keyframes intJumpPulse {
+        0% {
+          box-shadow: 0 0 0 0 var(--acc);
+          border-color: var(--acc);
+        }
+        30% {
+          box-shadow: 0 0 0 8px color-mix(in srgb, var(--acc) 40%, transparent);
+          border-color: var(--acc);
+        }
+        100% {
+          box-shadow: 0 0 0 0 transparent;
+        }
+      }
+      .int-jump-highlight,
+      .sum-jump-highlight {
+        animation: intJumpPulse 2.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        border-color: var(--acc) !important;
+      }
 
       /* ===== Interactive Visual Guide & Simulators ===== */
       .interactive-parts {
@@ -4627,6 +4883,12 @@
               <span class="zen-txt">تكبير</span>
             </button>
           </div>
+                    <button class="top-btn" id="btnModeToggle" type="button" title="تبديل النمط (نهاري / مسائي)">
+            <span class="mode-ic" style="display:inline-flex;align-items:center;">
+              <svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </span>
+            <span class="txt">نهاري</span>
+          </button>
           <button class="top-btn" id="btnSet" title="الإعدادات">
             <svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
             <span class="txt">إعدادات</span>
@@ -4634,6 +4896,22 @@
         </div>
       </div>
       <div class="setwrap" id="setPanel" hidden>
+        <div class="setgroup">
+          <div class="setlabel">
+            <svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <span>نمط الإضاءة (مسائي / نهاري)</span>
+          </div>
+          <div class="setopts" id="modeOpts">
+            <button class="set-opt on" data-m="dark" type="button">
+              <svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              <span>مسائي (داكن)</span>
+            </button>
+            <button class="set-opt" data-m="light" type="button">
+              <svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <span>نهاري (فاتح)</span>
+            </button>
+          </div>
+        </div>
         <div class="setgroup">
           <div class="setlabel">
             <svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2z"/></svg>
@@ -4938,7 +5216,7 @@
       window.TOC_EMERGENCY = window.TOC_EMERGENCY || { sections: [] };
       document.write(
         window.TOC_CONFIG.files.index
-          .map((f) => '<script src="data/' + f + '.js?v=35"><\/script>')
+          .map((f) => '<script src="data/' + f + '.js?v=41"><\/script>')
           .join(""),
       );
     </script>
@@ -4987,6 +5265,8 @@
 
       /* Clean SVG Icons Standard — 100% Vector Line-art matching CFG.homeSvg */
       const ICONS = {
+        sun: '<svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>',
+        moon: '<svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
         slides: '<svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17l10 5 10-5M2 12l10 5 10-5M12 2L2 7l10 5 10-5z"/></svg>',
         models: '<svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14h6"/><path d="M9 10h6"/><path d="M9 18h4"/></svg>',
         tables: '<svg class="svg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/></svg>',
@@ -5088,19 +5368,40 @@
       };
       const $ = (s) => document.querySelector(s);
       const pad3 = (n) => String(n).padStart(3, "0");
+            function storageGet(key, fb = null) {
+        try {
+          const v = localStorage.getItem(key);
+          return v !== null ? v : fb;
+        } catch (_) {
+          return fb;
+        }
+      }
+      function storageSet(key, val) {
+        try {
+          localStorage.setItem(key, val);
+        } catch (_) {}
+      }
       function loadJSON(key, fb) {
         try {
-          const v = JSON.parse(localStorage.getItem(key));
+          const raw = storageGet(key);
+          if (raw === null || raw === undefined) return fb;
+          const v = JSON.parse(raw);
           return v ?? fb;
         } catch {
           return fb;
         }
       }
+      if ("scrollRestoration" in history) {
+        try {
+          history.scrollRestoration = "manual";
+        } catch (_) {}
+      }
       const S = {
-        theme: localStorage.getItem("toc_sv_theme") || "amber",
+        theme: storageGet("toc_sv_theme", "amber"),
+        mode: storageGet("toc_sv_mode", "dark"),
         seen: new Set(loadJSON("toc_sv_seen", [])),
-        showAr: localStorage.getItem("toc_sv_show_ar") === "1",
-        showEx: localStorage.getItem("toc_sv_show_ex") === "1",
+        showAr: storageGet("toc_sv_show_ar") === "1",
+        showEx: storageGet("toc_sv_show_ex") === "1",
         lec:
           localStorage.getItem("toc_sv_lec") ||
           (
@@ -5108,18 +5409,18 @@
             META.lectures[0]
           ).id,
         view: CFG.defaultView || "slides",
-        model: localStorage.getItem("toc_sv_model") || MODELS[0]?.id || "",
-        lang: localStorage.getItem("toc_sv_lang") || "both",
+        model: storageGet("toc_sv_model") || (MODELS && MODELS[0] ? MODELS[0].id : "m1"),
+        lang: storageGet("toc_sv_lang") || "both",
         onlyUnseen: false,
         qLec: "all",
         qType: "all",
-        hideExcluded: localStorage.getItem("toc_sv_hide_ex") !== "0",
-        sumScopeOnly: localStorage.getItem("toc_sum_scope") !== "0",
+        hideExcluded: storageGet("toc_sv_hide_ex") !== "0",
+        sumScopeOnly: storageGet("toc_sum_scope") !== "0",
         tblMin: Math.min(
           5,
           Math.max(
             1,
-            parseInt(localStorage.getItem("toc_tbl_min") || "1", 10) || 1,
+            parseInt(storageGet("toc_tbl_min", "1"), 10) || 1,
           ),
         ),
         modelAns: loadJSON("toc_sv_model_ans", {}),
@@ -5140,15 +5441,16 @@
         EXCLUDED_SLIDES.has(q.ref) ||
         (EXCLUDED_LECS.has(lecOf(q.ref)) && !INCLUDED_SLIDES.has(q.ref));
       const save = () => {
-        localStorage.setItem("toc_sv_theme", S.theme);
-        localStorage.setItem("toc_sv_seen", JSON.stringify([...S.seen]));
-        localStorage.setItem("toc_sv_show_ar", S.showAr ? "1" : "0");
-        localStorage.setItem("toc_sv_show_ex", S.showEx ? "1" : "0");
-        localStorage.setItem("toc_sv_lec", S.lec);
-        localStorage.setItem("toc_sv_model", S.model);
-        localStorage.setItem("toc_sv_lang", S.lang);
-        localStorage.setItem("toc_sv_hide_ex", S.hideExcluded ? "1" : "0");
-        localStorage.setItem("toc_sv_model_ans", JSON.stringify(S.modelAns));
+        storageSet("toc_sv_theme", S.theme);
+        storageSet("toc_sv_mode", S.mode);
+        storageSet("toc_sv_seen", JSON.stringify([...S.seen]));
+        storageSet("toc_sv_show_ar", S.showAr ? "1" : "0");
+        storageSet("toc_sv_show_ex", S.showEx ? "1" : "0");
+        storageSet("toc_sv_lec", S.lec);
+        storageSet("toc_sv_model", S.model);
+        storageSet("toc_sv_lang", S.lang);
+        storageSet("toc_sv_hide_ex", S.hideExcluded ? "1" : "0");
+        storageSet("toc_sv_model_ans", JSON.stringify(S.modelAns));
       };
 
       /* ===== deterministic answer-order shuffle =====
@@ -5238,6 +5540,35 @@
         );
       }
 
+            /* ===== Dual Mode (Light / Night) ===== */
+      function applyMode(m) {
+        S.mode = m === "light" ? "light" : "dark";
+        document.documentElement.setAttribute("data-mode", S.mode);
+        save();
+        syncModeUI();
+      }
+      function toggleMode() {
+        applyMode(S.mode === "light" ? "dark" : "light");
+      }
+      function syncModeUI() {
+        const isLight = S.mode === "light";
+        const btn = $("#btnModeToggle");
+        if (btn) {
+          btn.title = isLight ? "التبديل إلى الوضع المسائي" : "التبديل إلى الوضع النهاري";
+          const iconSpan = btn.querySelector(".mode-ic");
+          if (iconSpan) {
+            clear(iconSpan).appendChild(iconSvg(isLight ? "moon" : "sun"));
+          }
+          const txt = btn.querySelector(".txt");
+          if (txt) {
+            txt.textContent = isLight ? "مسائي" : "نهاري";
+          }
+        }
+        document.querySelectorAll("#modeOpts .set-opt").forEach((b) => {
+          b.classList.toggle("on", b.dataset.m === S.mode);
+        });
+      }
+
       /* ===== Progress ===== */
       function lecProgress(lecId) {
         const lec = META.lectures.find((l) => l.id === lecId);
@@ -5264,8 +5595,50 @@
         if (uChip) uChip.textContent = total - done;
       }
 
-      /* ===== View switching ===== */
+      /* ===== View switching & Scroll Restoration ===== */
       const viewScroll = {};
+
+      function restoreScrollTarget(targetY, callback) {
+        if (typeof targetY !== "number" || isNaN(targetY) || targetY < 0) return;
+        const attempts = [0, 25, 75, 180, 400, 750];
+        attempts.forEach((delay, idx) => {
+          setTimeout(() => {
+            window.scrollTo({ top: targetY, behavior: "auto" });
+            if (idx === attempts.length - 1 && callback) callback();
+          }, delay);
+        });
+      }
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (typeof S !== "undefined" && S.view) {
+            viewScroll[S.view] = window.scrollY;
+          }
+        },
+        { passive: true },
+      );
+
+      /* Capture active state on current history entry before any in-page anchor navigation */
+      document.addEventListener("click", (e) => {
+        const a = e.target.closest("a[href^='#']");
+        if (!a) return;
+        const href = a.getAttribute("href");
+        if (!href || href === "#") return;
+        try {
+          history.replaceState(
+            {
+              view: S.view,
+              lec: S.lec,
+              model: S.model,
+              scroll: window.scrollY,
+            },
+            "",
+            location.href,
+          );
+        } catch (_) {}
+      });
+
       function setView(v, opts = {}) {
         viewScroll[S.view] = window.scrollY;
         S.view = v;
@@ -5302,8 +5675,18 @@
         else if (v === "interactive") renderInteractive();
         else if (v === "emergency") renderEmergency();
         else renderSlides();
-        window.scrollTo({ top: 0 });
-        if (!opts.keepHash) history.replaceState(null, "", "#view=" + v);
+        if (!opts.keepScroll) {
+          window.scrollTo({ top: 0 });
+        }
+        if (!opts.keepHash) {
+          try {
+            history.replaceState(
+              { view: v, lec: S.lec, model: S.model, scroll: opts.keepScroll ? window.scrollY : 0 },
+              "",
+              "#view=" + v,
+            );
+          } catch (_) {}
+        }
         if (opts.after) opts.after();
       }
       [
@@ -5452,6 +5835,7 @@
         save();
         setView("slides", {
           keepHash: true,
+          keepScroll: true,
           after: () => {
             requestAnimationFrame(() => {
               if (!scrollToSlideCard(ref, opts)) {
@@ -5466,13 +5850,44 @@
         const lecId = lecOf(ref);
         const lec = META.lectures.find((l) => l.id === lecId);
         if (!lec) return;
-        viewScroll[S.view] = window.scrollY;
+
         const fromView = S.view;
-        history.pushState(
-          { tocJump: true, fromView, fromScroll: window.scrollY },
-          "",
-          "#" + ref,
-        );
+        const fromScroll = window.scrollY;
+        const fromLec = S.lec;
+        const fromModel = S.model;
+        viewScroll[fromView] = fromScroll;
+
+        // 1. تثبيت لقطة الحالة الحالية في مدخلة التاريخ الحالية قبل الانتقال
+        try {
+          history.replaceState(
+            {
+              view: fromView,
+              lec: fromLec,
+              model: fromModel,
+              scroll: fromScroll,
+            },
+            "",
+            location.href,
+          );
+        } catch (_) {}
+
+        // 2. دفع عنوان السلايد الجديد مع بيانات العودة
+        try {
+          history.pushState(
+            {
+              tocJump: true,
+              view: "slides",
+              lec: lecId,
+              slide: ref,
+              fromView,
+              fromScroll,
+              fromLec,
+              fromModel,
+            },
+            "",
+            "#" + ref,
+          );
+        } catch (_) {}
 
         if (S.view === "slides" && S.lec === lecId) {
           scrollToSlideCard(ref, { instant: false });
@@ -5481,6 +5896,7 @@
           save();
           setView("slides", {
             keepHash: true,
+            keepScroll: true,
             after: () => {
               requestAnimationFrame(() => {
                 if (!scrollToSlideCard(ref, { instant: false })) {
@@ -5491,6 +5907,181 @@
           });
         }
         showJumpReturnBar(fromView);
+      }
+
+      function interactiveRefAttrs(studioId, tabId, label) {
+        return {
+          href: `#view=interactive&studio=${encodeURIComponent(studioId || "")}${tabId ? `&tab=${encodeURIComponent(tabId)}` : ""}`,
+          rel: "noopener",
+          title: `انتقل إلى الشرح التفاعلي: ${label || studioId} — زر العودة متاح بالأسفل`,
+          onclick: (e) => {
+            if (e.button === 0 && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) {
+              e.preventDefault();
+              jumpToInteractive(studioId, tabId);
+            }
+          },
+        };
+      }
+
+      function jumpToInteractive(studioId, tabId) {
+        if (!studioId) return;
+        const fromView = S.view;
+        const fromScroll = window.scrollY;
+        const fromLec = S.lec;
+        const fromModel = S.model;
+        viewScroll[fromView] = fromScroll;
+
+        try {
+          history.replaceState(
+            {
+              view: fromView,
+              lec: fromLec,
+              model: fromModel,
+              scroll: fromScroll,
+            },
+            "",
+          );
+          history.pushState(
+            {
+              view: "interactive",
+              studio: studioId,
+              tab: tabId,
+              fromView,
+              fromScroll,
+              fromLec,
+              fromModel,
+            },
+            "",
+            `#view=interactive&studio=${encodeURIComponent(studioId)}${tabId ? `&tab=${encodeURIComponent(tabId)}` : ""}`,
+          );
+        } catch (_) {}
+
+        setView("interactive", {
+          keepHash: true,
+          keepScroll: true,
+          after: () => {
+            const card = document.getElementById(studioId);
+            if (!card) return;
+
+            // Make sure the target card is visible if a category filter was applied
+            const chipsWrap = $("#interactiveChips");
+            if (card.style.display === "none" && chipsWrap) {
+              chipsWrap.querySelectorAll(".fchip").forEach((c) => c.classList.remove("on"));
+              const allChip = chipsWrap.querySelector(".fchip");
+              if (allChip) allChip.classList.add("on");
+              document.querySelectorAll(".int-card").forEach((c) => {
+                c.style.display = "";
+              });
+            }
+
+            // Switch tab if specified
+            if (tabId) {
+              if (typeof card.switchTab === "function") {
+                card.switchTab(tabId);
+              } else {
+                const tabBtn = card.querySelector(`[data-tab-id="${tabId}"]`);
+                if (tabBtn) tabBtn.click();
+              }
+            }
+
+            // Scroll with multiple frame retry
+            const targetTop = Math.max(0, card.getBoundingClientRect().top + window.scrollY - getTopbarHeight() - 16);
+            restoreScrollTarget(targetTop);
+
+            // Highlight card
+            card.classList.remove("int-jump-highlight");
+            void card.offsetWidth;
+            card.classList.add("int-jump-highlight");
+            setTimeout(() => card.classList.remove("int-jump-highlight"), 2500);
+
+            showJumpReturnBar(fromView);
+          },
+        });
+      }
+
+      function jumpToSummaryPart(partId) {
+        const fromView = S.view;
+        const fromScroll = window.scrollY;
+        const fromLec = S.lec;
+        const fromModel = S.model;
+        viewScroll[fromView] = fromScroll;
+
+        try {
+          history.replaceState(
+            {
+              view: fromView,
+              lec: fromLec,
+              model: fromModel,
+              scroll: fromScroll,
+            },
+            "",
+          );
+          history.pushState(
+            {
+              view: "summary",
+              part: partId,
+              fromView,
+              fromScroll,
+            },
+            "",
+            `#view=summary&part=${encodeURIComponent(partId || "")}`,
+          );
+        } catch (_) {}
+
+        setView("summary", {
+          keepHash: true,
+          keepScroll: true,
+          after: () => {
+            const target = partId ? (document.getElementById(partId) || document.querySelector(`[data-part-id="${partId}"]`)) : null;
+            if (target) {
+              const targetTop = Math.max(0, target.getBoundingClientRect().top + window.scrollY - getTopbarHeight() - 16);
+              restoreScrollTarget(targetTop);
+              target.classList.remove("sum-jump-highlight");
+              void target.offsetWidth;
+              target.classList.add("sum-jump-highlight");
+              setTimeout(() => target.classList.remove("sum-jump-highlight"), 2500);
+            }
+            showJumpReturnBar(fromView);
+          },
+        });
+      }
+
+      function parseBodyWithLinks(text) {
+        if (!text || typeof text !== "string") return [text || ""];
+        const regex = /\[([^\]]+)\]\((#[^)]+)\)/g;
+        let match;
+        let lastIdx = 0;
+        const nodes = [];
+        while ((match = regex.exec(text)) !== null) {
+          if (match.index > lastIdx) {
+            nodes.push(text.slice(lastIdx, match.index));
+          }
+          const linkText = match[1];
+          const linkHref = match[2];
+          const intMatch = linkHref.match(/^#(?:view=)?interactive(?:&(?:part|studio)=([^&]+))?(?:&tab=([^&]+))?$/i);
+          if (intMatch && intMatch[1]) {
+            const studioId = decodeURIComponent(intMatch[1]);
+            const tabId = intMatch[2] ? decodeURIComponent(intMatch[2]) : null;
+            nodes.push(
+              el(
+                "a",
+                {
+                  class: "int-inline-link",
+                  ...interactiveRefAttrs(studioId, tabId, linkText),
+                },
+                svgNode(ICONS.interactive),
+                linkText,
+              ),
+            );
+          } else {
+            nodes.push(el("a", { href: linkHref, text: linkText }));
+          }
+          lastIdx = regex.lastIndex;
+        }
+        if (lastIdx < text.length) {
+          nodes.push(text.slice(lastIdx));
+        }
+        return nodes.length ? nodes : [text];
       }
 
       /* ===== Navs ===== */
@@ -7101,8 +7692,19 @@
                 )
               : el("span", { class: "lec-badge", style: "display: inline-flex; align-items: center; gap: 4px;" }, iconSvg("summary"), "ملخص"),
             el("div", { class: "part-title", text: p.title_ar || "" }),
+            p.interactive
+              ? el(
+                  "a",
+                  {
+                    class: "ref-chip int-chip-head",
+                    ...interactiveRefAttrs(p.interactive.id || p.interactive.studio, p.interactive.tab, p.interactive.label),
+                  },
+                  svgNode(ICONS.interactive),
+                  p.interactive.label || "استوديو تفاعلي",
+                )
+              : null,
             readBtn,
-          ];
+          ].filter(Boolean);
 
           const blockNodes = (p.blocks || []).map((b) => summaryBlockNode(b));
 
@@ -7213,7 +7815,7 @@
           (b.body || "")
             .split("\n")
             .filter((p) => p.trim())
-            .forEach((p) => kids.push(el("p", null, p)));
+            .forEach((p) => kids.push(el("p", null, ...parseBodyWithLinks(p))));
         }
 
         // Refs chips linking to slides
@@ -7233,6 +7835,35 @@
             ),
           );
           kids.push(refChips);
+        }
+
+        // Interactive studio chips
+        if (b.interactive || b.int_refs) {
+          const intItems = Array.isArray(b.interactive)
+            ? b.interactive
+            : b.interactive
+              ? [b.interactive]
+              : Array.isArray(b.int_refs)
+                ? b.int_refs
+                : [];
+          if (intItems.length) {
+            const intRow = el(
+              "div",
+              { class: "refs int-refs", style: "margin-top: 6px;" },
+              ...intItems.map((item) =>
+                el(
+                  "a",
+                  {
+                    class: "ref-chip int-chip",
+                    ...interactiveRefAttrs(item.id || item.studio, item.tab, item.label),
+                  },
+                  svgNode(ICONS.interactive),
+                  item.label ? `شرح تفاعلي: ${item.label}` : "شرح تفاعلي",
+                ),
+              ),
+            );
+            kids.push(intRow);
+          }
         }
 
         const out =
@@ -7350,6 +7981,25 @@
                     ...slideRefAttrs(item.ref),
                   },
                   `مرجع السلايد: ${item.ref}`,
+                )
+              : null,
+            item.module
+              ? el(
+                  "a",
+                  {
+                    class: "ref-chip sum-chip",
+                    style: "display: inline-flex; align-items: center; gap: 4px;",
+                    href: `#view=summary&part=${item.module.toLowerCase()}`,
+                    title: `انتقل إلى ملخص الوحدة ${item.module}`,
+                    onclick: (e) => {
+                      if (e.button === 0 && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) {
+                        e.preventDefault();
+                        jumpToSummaryPart(item.module.toLowerCase());
+                      }
+                    },
+                  },
+                  iconSvg("summary"),
+                  `ملخص ${item.module}`,
                 )
               : null,
             item.badge
@@ -7803,10 +8453,7 @@
           e.stopPropagation();
           showTip(t);
           if (tipTimer) clearTimeout(tipTimer);
-          tipTimer = setTimeout(() => {
-            hideTip();
-            tipTimer = null;
-          }, 2600);
+          tipTimer = setTimeout(() => { hideTip(); }, 16000);
         } else if (!e.target.closest("#wtip")) hideTip();
       });
 
@@ -7825,10 +8472,7 @@
         t.style.left = x + "px";
         t.style.top = y + "px";
         if (tipTimer) clearTimeout(tipTimer);
-        tipTimer = setTimeout(() => {
-          hideTip();
-          tipTimer = null;
-        }, 3800);
+        tipTimer = setTimeout(() => { hideTip(); }, 16000);
       }
 
       /* ===== lang helpers ===== */
@@ -8604,7 +9248,18 @@
         const lec = META.lectures.find((l) => l.id === lecId);
         const sl = lec.slides.find((s) => s.n === n);
         $("#lbImg").src = `slides/${lecId}/${id}.png`;
-        lbResetZoom(false);
+        if (zState.s > 1) {
+          lbClampPan();
+          lbApplyZoom(false);
+        } else {
+          lbResetZoom(false);
+        }
+        $("#lbImg").onload = () => {
+          if (zState.s > 1) {
+            lbClampPan();
+            lbApplyZoom(false);
+          }
+        };
         $("#lbRef").textContent = id;
         $("#lbCnt").textContent = `${lbIdx + 1} / ${visibleIds.length}`;
         const ex = slideEx(lecId, n),
@@ -8774,24 +9429,14 @@
         }
       });
 
-      /* ===== hard body lock (kills background scroll/interaction on iOS) ===== */
-      let lbSavedScroll = 0;
+      /* ===== body scroll lock (preserves visual viewport zoom scale) ===== */
       function lbLockBody() {
-        lbSavedScroll = window.scrollY;
-        document.body.style.position = "fixed";
-        document.body.style.top = `-${lbSavedScroll}px`;
-        document.body.style.width = "100%";
+        document.documentElement.style.overflow = "hidden";
         document.body.style.overflow = "hidden";
       }
       function lbUnlockBody() {
-        document.body.style.position = "";
-        document.body.style.top = "";
-        document.body.style.width = "";
+        document.documentElement.style.overflow = "";
         document.body.style.overflow = "";
-        /* behavior:"instant" overrides html{scroll-behavior:smooth} —
-           otherwise restoring the saved position animates a scroll
-           from the top of the page down to the slide on close */
-        window.scrollTo({ top: lbSavedScroll, behavior: "instant" });
       }
 
       /* ===== first-open gesture hint ===== */
@@ -8965,7 +9610,21 @@
         },
         { passive: false },
       );
-      /* ===== 3-Level Expansion Toggle: 0 = Normal, 1 = Focus (Centered / Mobile Status Bar), 2 = Full (Ultra-Wide / Mobile Immersive) ===== */
+      /* Double click/tap toggle: 2.5x <-> 1x */
+      lbCanvas.addEventListener("dblclick", (e) => {
+        if (zState.s > 1) lbResetZoom(true);
+        else lbZoomAt(e.clientX, e.clientY, 2.5, true);
+      });
+      window.addEventListener("resize", () => {
+        if ($("#lb")?.classList.contains("open") && zState.s > 1) {
+          lbClampPan();
+          lbApplyZoom(false);
+        }
+      });
+
+      /* ===== 3-Level Expansion Toggle: 0 = Normal, 1 = Focus (Centered), 2 = Full (Ultra-Wide Stretch) ===== */
+      /* Note: Fullscreen triggers native OS view on laptop/desktop when selecting Level 2,
+         while exiting OS Fullscreen (Esc / F11) NEVER cancels the wide stretched layout (zenLevel=2 persists permanently until clicked Normal). */
       let zenLevel = 0; // 0: normal, 1: focus, 2: full
 
       function updateZenUI() {
@@ -8975,91 +9634,38 @@
         });
       }
 
-      async function setZenLevel(level, notify = true) {
-        const isMob = window.innerWidth <= 900;
+      async function setZenLevel(level, requestFS = true) {
         zenLevel = Math.max(0, Math.min(2, level));
         updateZenUI();
-        localStorage.setItem("study_zen_level", zenLevel);
+        try {
+          localStorage.setItem("study_zen_level", zenLevel);
+        } catch (_) {}
 
-        if (!isMob) {
-          // --- DESKTOP ---
-          if (zenLevel === 0) {
-            if (document.fullscreenElement && document.exitFullscreen) {
-              try {
-                await document.exitFullscreen();
-              } catch (_) {}
-            }
-            document.body.classList.remove("zen-focus", "zen-full", "no-side");
-          } else if (zenLevel === 1) {
-            // Level 1: Focus (Fullscreen F11 + Sidebar hidden + Centered content at 980px)
-            if (
-              !document.fullscreenElement &&
-              document.documentElement.requestFullscreen
-            ) {
-              try {
-                await document.documentElement.requestFullscreen();
-              } catch (_) {}
-            }
-            document.body.classList.remove("zen-full");
-            document.body.classList.add("zen-focus", "no-side");
-          } else if (zenLevel === 2) {
-            // Level 2: Full (Fullscreen F11 + Sidebar hidden + Full width stretched)
-            if (
-              !document.fullscreenElement &&
-              document.documentElement.requestFullscreen
-            ) {
-              try {
-                await document.documentElement.requestFullscreen();
-              } catch (_) {}
-            }
-            document.body.classList.remove("zen-focus");
-            document.body.classList.add("zen-full", "no-side");
+        document.body.classList.remove("zen-focus", "zen-full", "no-side");
+        if (zenLevel === 0) {
+          // Normal mode: exit fullscreen if currently in fullscreen
+          if (document.fullscreenElement && document.exitFullscreen) {
+            try {
+              await document.exitFullscreen();
+            } catch (_) {}
           }
-        } else {
-          // --- MOBILE ---
-          if (zenLevel === 0) {
-            if (document.fullscreenElement && document.exitFullscreen) {
-              try {
-                await document.exitFullscreen();
-              } catch (_) {}
-            }
-            document.body.classList.remove("zen-focus", "zen-full", "no-side");
-          } else if (zenLevel === 1) {
-            // Level 1: Focus mode (keeps phone status/notification bar visible via navigationUI: show)
-            if (
-              !document.fullscreenElement &&
-              document.documentElement.requestFullscreen
-            ) {
-              try {
-                await document.documentElement.requestFullscreen({
-                  navigationUI: "show",
+        } else if (zenLevel === 1) {
+          // Level 1: Focus (sidebar hidden + centered reading width)
+          document.body.classList.add("zen-focus", "no-side");
+        } else if (zenLevel === 2) {
+          // Level 2: Full (sidebar hidden + full screen width stretch + F11 Fullscreen)
+          document.body.classList.add("zen-full", "no-side");
+          if (requestFS && !document.fullscreenElement && document.documentElement.requestFullscreen) {
+            try {
+              const isMob = window.innerWidth <= 900;
+              if (isMob) {
+                await document.documentElement.requestFullscreen({ navigationUI: "hide" }).catch(() => {
+                  return document.documentElement.requestFullscreen();
                 });
-              } catch (_) {
-                try {
-                  await document.documentElement.requestFullscreen();
-                } catch (_) {}
+              } else {
+                await document.documentElement.requestFullscreen();
               }
-            }
-            document.body.classList.remove("zen-full");
-            document.body.classList.add("zen-focus", "no-side");
-          } else if (zenLevel === 2) {
-            // Level 2: Full Immersive Mode (triggers requestFullscreen to hide mobile status/notification bar)
-            if (
-              !document.fullscreenElement &&
-              document.documentElement.requestFullscreen
-            ) {
-              try {
-                await document.documentElement.requestFullscreen({
-                  navigationUI: "hide",
-                });
-              } catch (_) {
-                try {
-                  await document.documentElement.requestFullscreen();
-                } catch (_) {}
-              }
-            }
-            document.body.classList.remove("zen-focus");
-            document.body.classList.add("zen-full", "no-side");
+            } catch (_) {}
           }
         }
       }
@@ -9069,25 +9675,49 @@
       }
 
       document.querySelectorAll(".zen-opt").forEach((btn) => {
-        btn.addEventListener("click", (e) => {
+        btn.addEventListener("click", async (e) => {
           e.stopPropagation();
           const targetZen = parseInt(btn.dataset.zen, 10);
           const isMobile = !matchMedia("(min-width: 981px)").matches;
-          if (isMobile && targetZen === zenLevel) {
-            setZenLevel(zenLevel === 0 ? 2 : 0);
+          if (targetZen === 2) {
+            if (zenLevel === 2 && !document.fullscreenElement && document.documentElement.requestFullscreen) {
+              try {
+                if (isMobile) {
+                  await document.documentElement.requestFullscreen({ navigationUI: "hide" }).catch(() => {
+                    return document.documentElement.requestFullscreen();
+                  });
+                } else {
+                  await document.documentElement.requestFullscreen();
+                }
+              } catch (_) {}
+            } else {
+              setZenLevel(2, true);
+            }
+          } else if (isMobile && targetZen === zenLevel) {
+            setZenLevel(zenLevel === 0 ? 2 : 0, true);
           } else {
-            setZenLevel(targetZen);
+            setZenLevel(targetZen, true);
           }
         });
       });
 
+      /* Exiting fullscreen (Esc, F11, or phone gesture) MUST NOT exit "تكبير" mode */
       document.addEventListener("fullscreenchange", () => {
-        if (!document.fullscreenElement) {
-          if (zenLevel !== 0) {
-            setZenLevel(0, false);
+        // Preserves zenLevel and wide layout permanently across fullscreen exits
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "F11") {
+          if (zenLevel === 0) {
+            setZenLevel(2, false);
           }
         }
       });
+
+      try {
+        const savedZen = parseInt(localStorage.getItem("study_zen_level") || "0", 10);
+        if (savedZen > 0) setZenLevel(savedZen, false);
+      } catch (_) {}
 
       /* ===== desktop shortcuts: Ctrl+B full expansion · ↑/↓ big scroll ===== */
       function typingTarget(t) {
@@ -9138,6 +9768,18 @@
         if (e.key === "Escape") closeLB();
         else if (e.key === "ArrowLeft") lbMove(1);
         else if (e.key === "ArrowRight") lbMove(-1);
+        else if (e.key === "+" || e.key === "=") {
+          e.preventDefault();
+          const r = lbCanvas.getBoundingClientRect();
+          lbZoomAt(r.left + r.width / 2, r.top + r.height / 2, zState.s * 1.3, true);
+        } else if (e.key === "-" || e.key === "_") {
+          e.preventDefault();
+          const r = lbCanvas.getBoundingClientRect();
+          lbZoomAt(r.left + r.width / 2, r.top + r.height / 2, zState.s / 1.3, true);
+        } else if (e.key === "0") {
+          e.preventDefault();
+          lbResetZoom(true);
+        }
       });
 
       /* ===== init ===== */
@@ -9172,6 +9814,11 @@
       }
       buildThemeRow();
       applyTheme(S.theme);
+      applyMode(S.mode);
+      $("#btnModeToggle")?.addEventListener("click", toggleMode);
+      document.querySelectorAll("#modeOpts .set-opt").forEach((b) => {
+        b.addEventListener("click", () => applyMode(b.dataset.m));
+      });
       syncLangPills();
       if (S.showAr) $("#btnArAll").classList.add("on");
       if (S.showEx) $("#btnExAll").classList.add("on");
@@ -9183,15 +9830,18 @@
       /* Initial view and deep link routing */
       const rawHash = (location.hash || "").replace("#", "");
       const slideMatch = rawHash.match(/^(?:view=slides&)?(?:slide=)?(L\d+-S\d{3})$/i);
+      const intMatch = rawHash.match(/^(?:view=)?interactive(?:&(?:part|studio)=([^&]+))?(?:&tab=([^&]+))?$/i);
       const vmMatch = rawHash.match(/^(?:view=)?(slides|models|tables|summary|interactive|emergency)(?:&part=([^&]+))?$/i);
 
       if (slideMatch) {
         navigateToSlide(slideMatch[1].toUpperCase(), { instant: false });
+      } else if (intMatch && intMatch[1]) {
+        jumpToInteractive(decodeURIComponent(intMatch[1]), intMatch[2] ? decodeURIComponent(intMatch[2]) : null);
       } else if (vmMatch) {
         setView(vmMatch[1]);
         if (vmMatch[2]) {
           setTimeout(() => {
-            const target = document.getElementById(decodeURIComponent(vmMatch[2]));
+            const target = document.getElementById(decodeURIComponent(vmMatch[2])) || document.querySelector(`[data-part-id="${decodeURIComponent(vmMatch[2])}"]`);
             if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
           }, 250);
         }
@@ -9208,40 +9858,57 @@
       window.addEventListener("hashchange", () => {
         const h = (location.hash || "").replace("#", "");
         const sm = h.match(/^(?:view=slides&)?(?:slide=)?(L\d+-S\d{3})$/i);
+        const im = h.match(/^(?:view=)?interactive(?:&(?:part|studio)=([^&]+))?(?:&tab=([^&]+))?$/i);
         if (sm) {
           navigateToSlide(sm[1].toUpperCase());
+        } else if (im && im[1]) {
+          jumpToInteractive(decodeURIComponent(im[1]), im[2] ? decodeURIComponent(im[2]) : null);
         }
       });
 
-      /* رجوع المتصفح/التطبيق يعيدك للقسم وموضع التمرير نفسه */
+      /* رجوع المتصفح/التطبيق يعيدك للقسم وموضع التمرير نفسه بدقة مطلقة */
       window.addEventListener("popstate", (e) => {
         const h = (location.hash || "").replace("#", "");
         const sm = h.match(/^(?:view=slides&)?(?:slide=)?(L\d+-S\d{3})$/i);
-        const back = h.match(/^(?:view=)?(slides|models|tables|summary|interactive|emergency)/i);
+        const vmMatch = h.match(/^(?:view=)?(slides|models|tables|summary|interactive|emergency)/i);
 
         if (sm) {
-          navigateToSlide(sm[1].toUpperCase());
+          navigateToSlide(sm[1].toUpperCase(), { instant: false });
           return;
         }
 
         hideJumpReturnBar();
 
-        if (back) {
-          const v = back[1];
-          if (S.view !== v) setView(v);
-          const targetScroll =
-            e.state && typeof e.state.fromScroll === "number"
-              ? e.state.fromScroll
-              : viewScroll[v] || 0;
-          requestAnimationFrame(() => {
-            window.scrollTo({ top: targetScroll, behavior: "auto" });
-          });
-          return;
-        }
+        const st = e.state || {};
+        const targetView = st.view || (vmMatch ? vmMatch[1] : (st.fromView || S.view));
+        const targetLec = st.lec || st.fromLec || S.lec;
+        const targetModel = st.model || st.fromModel || S.model;
+        const targetScroll =
+          typeof st.scroll === "number"
+            ? st.scroll
+            : typeof st.fromScroll === "number"
+              ? st.fromScroll
+              : viewScroll[targetView] || 0;
 
-        if (e.state && e.state.fromView) {
-          setView(e.state.fromView);
-          window.scrollTo({ top: e.state.fromScroll || 0, behavior: "auto" });
+        if (targetView) {
+          const viewChanged = S.view !== targetView;
+          const lecChanged = targetView === "slides" && targetLec && S.lec !== targetLec;
+          const modelChanged = targetView === "models" && targetModel && S.model !== targetModel;
+
+          if (targetView === "slides" && targetLec) S.lec = targetLec;
+          if (targetView === "models" && targetModel) S.model = targetModel;
+
+          if (viewChanged || lecChanged || modelChanged) {
+            setView(targetView, {
+              keepHash: true,
+              keepScroll: true,
+              after: () => {
+                restoreScrollTarget(targetScroll);
+              },
+            });
+          } else {
+            restoreScrollTarget(targetScroll);
+          }
         }
       });
 
@@ -9275,6 +9942,6 @@
         }, { passive: true });
       })();
     </script>
-    <script src="app.js?v=35"></script>
+    <script src="app.js?v=41"></script>
   </body>
 </html>

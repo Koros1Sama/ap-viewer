@@ -12,8 +12,8 @@
 (() => {
   if (!("serviceWorker" in navigator)) return;
 
-  const CORE = "ap-core-v35";
-  const RUNTIME = "ap-runtime-v35";
+  const CORE = "ap-core-v41";
+  const RUNTIME = "ap-runtime-v41";
   const isStandalone =
     matchMedia("(display-mode: standalone)").matches ||
     navigator.standalone === true;
@@ -53,7 +53,7 @@
   }
 
   /* ── تسجيل العامل + التحديث التلقائي ──
-     أول تثبيت: لا إعادة تحميل. تحديث فعلي لمتحكم سابق: reload مرة واحدة. */
+     أول تثبيت: لا إعادة تحميل. تحديث فعلي لمتحكم سابق: reload مرة واحدة بدون مقاطعة التحميل الجاري. */
   const hadController = !!navigator.serviceWorker.controller;
   window.addEventListener("load", () => {
     navigator.serviceWorker
@@ -64,8 +64,13 @@
       .catch(() => null);
   });
   let reloadedOnce = false;
+  let reloadPending = false;
   navigator.serviceWorker.addEventListener("controllerchange", () => {
     if (reloadedOnce || !hadController) return;
+    if (abortDL) {
+      reloadPending = true;
+      return;
+    }
     reloadedOnce = true;
     location.reload();
   });
@@ -89,8 +94,9 @@
       "favicon.ico",
     ].forEach((u) => urls.add(u));
     const cfg = window.TOC_CONFIG || { files: {} };
+    if (cfg.files && cfg.files.roadmap) urls.add("roadmap.html");
     const files = cfg.files || {};
-    ["index", "summary"].forEach((k) =>
+    Object.keys(files).forEach((k) =>
       (files[k] || []).forEach((f) => urls.add("data/" + f + ".js")),
     );
     urls.add("data/config.js");
@@ -181,6 +187,32 @@
     };
   }
 
+  /* ── جلب مرن مدعوم بإعادة المحاولة ومهلة أمان لمقاومة تقلبات شبكات الجوال ── */
+  async function fetchWithRetry(url, signal, maxRetries = 2, timeoutMs = 12000) {
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+      if (signal.aborted) throw new Error("aborted");
+      const ctrl = new AbortController();
+      const tid = setTimeout(() => ctrl.abort(), timeoutMs);
+      const onAbort = () => ctrl.abort();
+      signal.addEventListener("abort", onAbort, { once: true });
+      try {
+        const res = await fetch(url, { signal: ctrl.signal });
+        clearTimeout(tid);
+        signal.removeEventListener("abort", onAbort);
+        if (res && res.ok) return res;
+        if (res && (res.status === 404 || res.status === 403)) return null;
+      } catch (err) {
+        clearTimeout(tid);
+        signal.removeEventListener("abort", onAbort);
+        if (signal.aborted) throw err;
+      }
+      if (attempt < maxRetries && !signal.aborted) {
+        await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
+      }
+    }
+    return null;
+  }
+
   /* ── محرك تحميل ذكي للمجموعات الناقصة فقط مع الحفاظ 100% على ما تم تحميله مسبقاً ── */
   async function runBatchDownload(urls, onProgress) {
     if (abortDL) {
@@ -192,7 +224,7 @@
     const cache = await caches.open(RUNTIME);
     const todo = [];
     for (const u of urls) {
-      /* فحص حتمي: لا يتم طلب أو إعادة تحميل أي ملف موجود مسبقاً في الكاش */
+      /* فحص حتمي: لا يتم طلب أو إعادة تحميل أي ملف موجود مسبقاً في أي كاش (CORE أو RUNTIME) */
       if (!(await caches.match(u, { ignoreSearch: true }))) todo.push(u);
     }
     if (todo.length === 0) {
@@ -200,29 +232,46 @@
       return true;
     }
 
-    let failed = 0,
-      i = 0;
+    let nextIdx = 0;
+    let completed = 0;
+    let failed = 0;
+    const concurrency = Math.min(4, todo.length);
+
     async function worker() {
-      while (i < todo.length && !sig.aborted) {
-        const u = todo[i++];
+      while (!sig.aborted) {
+        if (nextIdx >= todo.length) break;
+        const currentIdx = nextIdx++;
+        const u = todo[currentIdx];
+        if (!u) break;
+
         try {
-          const res = await fetch(u, { signal: sig });
-          if (res && res.ok) await cache.put(u, res);
-          else failed++;
+          const res = await fetchWithRetry(u, sig);
+          if (res && res.ok) {
+            await cache.put(u, res);
+            completed++;
+          } else {
+            failed++;
+          }
         } catch {
           if (sig.aborted) return;
           failed++;
         }
+
         if (onProgress) {
-          const completed = todo.length - (todo.length - i) - failed;
           onProgress(completed, todo.length, failed);
         }
       }
     }
 
-    await Promise.all(Array.from({ length: 6 }, worker));
+    await Promise.all(Array.from({ length: concurrency }, worker));
     const success = !sig.aborted;
     abortDL = null;
+
+    if (reloadPending && !reloadedOnce) {
+      reloadedOnce = true;
+      location.reload();
+    }
+
     return success;
   }
 
@@ -436,20 +485,22 @@
     let done = await countCached(fullList);
 
     function paint(list, count, failed) {
-      const v = Math.round((count / list.length) * 100);
+      const clamped = Math.min(count, list.length);
+      const v = Math.round((clamped / list.length) * 100);
       fill.style.width = v + "%";
-      lbl.textContent = `${count} من ${list.length}${failed ? " — تعثر " + failed : ""}`;
+      lbl.textContent = `${clamped} من ${list.length}${failed ? " — تعثر " + failed : ""}`;
       pct.textContent = v + "%";
       setHTML(
         dlBtn,
-        count >= list.length
+        clamped >= list.length
           ? `${ICONS.check} كل المحتوى محفوظ كاملاً — يعمل دون إنترنت 100%`
-          : `${ICONS.download} تحميل كل المنهج المتبقي للعمل دون إنترنت`,
+          : abortDL
+            ? `${ICONS.pause} إيقاف التحميل مؤقتاً`
+            : `${ICONS.download} تحميل كل المنهج المتبقي للعمل دون إنترنت`,
       );
       dlBtn.className =
         "ap-btn" +
-        (count >= list.length ? " ok" : " pri") +
-        (abortDL ? " off" : "");
+        (clamped >= list.length ? " ok" : abortDL ? " off" : " pri");
     }
 
     paint(fullList, done, 0);
@@ -480,16 +531,24 @@
       const dlNewPanelBtn = diffBox.querySelector("#apDLNewPanel");
       if (dlNewPanelBtn) {
         dlNewPanelBtn.onclick = async () => {
+          if (abortDL) {
+            abortDL.abort();
+            setHTML(dlNewPanelBtn, `${ICONS.download} استئناف تحميل المحاضرات المضافة`);
+            dlNewPanelBtn.className = "ap-btn pri";
+            return;
+          }
           setHTML(
             dlNewPanelBtn,
             `${ICONS.clock} جارٍ تحميل المحاضرات L7 و L8 و L9…`,
           );
           dlNewPanelBtn.className = "ap-btn pri off";
-          await runBatchDownload(analysis.newSlideUrls, (cur, tot) => {
+          const initDone = await countCached(fullList);
+          await runBatchDownload(analysis.newSlideUrls, (cur, tot, failed) => {
             setHTML(
               dlNewPanelBtn,
-              `${ICONS.clock} جاري التحميل (${cur}/${tot})…`,
+              `${ICONS.clock} جاري التحميل (${cur}/${tot})${failed ? " (تعثر " + failed + ")" : ""}…`,
             );
+            paint(fullList, initDone + cur, failed);
           });
           setHTML(
             dlNewPanelBtn,
@@ -503,22 +562,32 @@
       }
     }
 
-    /* زر تحميل كامل المنهج الناقص */
+    /* زر تحميل كامل المنهج الناقص مع استئناف دقيق */
     dlBtn.onclick = async () => {
       if (abortDL) {
         abortDL.abort();
+        setHTML(dlBtn, `${ICONS.download} استئناف التحميل المتبقي`);
+        dlBtn.className = "ap-btn pri";
         return;
       }
       setHTML(dlBtn, `${ICONS.pause} إيقاف التحميل مؤقتاً`);
       dlBtn.className = "ap-btn off";
 
-      await runBatchDownload(fullList, (completed, total, failed) => {
-        paint(fullList, done + completed, failed);
+      const currentDone = await countCached(fullList);
+      done = currentDone;
+
+      await runBatchDownload(fullList, (completedCount, totalTodo, failedCount) => {
+        paint(fullList, currentDone + completedCount, failedCount);
       });
 
       done = await countCached(fullList);
       paint(fullList, done, 0);
       refreshBannerState();
+      try {
+        const est = await navigator.storage?.estimate?.();
+        if (est && est.usage)
+          storeLbl.textContent = `المحفوظ حالياً في ذاكرة الجهاز: ${(est.usage / 1048576).toFixed(1)} ميغابايت`;
+      } catch {}
     };
 
     /* قسم التحديث */
@@ -611,10 +680,14 @@
 
     const dlBtn = b.querySelector("#apDLNewBanner");
     dlBtn.onclick = async () => {
+      if (abortDL) {
+        abortDL.abort();
+        return;
+      }
       setHTML(dlBtn, `${ICONS.clock} جارٍ تحميل المحاضرات 6 و 7 و 8…`);
       dlBtn.className = "ap-btn pri off";
-      await runBatchDownload(analysis.newSlideUrls, (cur, tot) => {
-        setHTML(dlBtn, `${ICONS.clock} جاري التحميل (${cur}/${tot})…`);
+      await runBatchDownload(analysis.newSlideUrls, (cur, tot, failed) => {
+        setHTML(dlBtn, `${ICONS.clock} جاري التحميل (${cur}/${tot})${failed ? " (تعثر " + failed + ")" : ""}…`);
       });
       setHTML(
         dlBtn,

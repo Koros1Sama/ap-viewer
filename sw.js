@@ -6,8 +6,8 @@
      بيانات data = قديم فوراً + تحديث بالخلفية (SWR)
      صور الشرائح = الكاش أولاً (كبيرة ومستقرة)
    ═══════════════════════════════════════════════════════ */
-const RUNTIME = "ap-runtime-v35";
-const CORE = "ap-core-v35";
+const RUNTIME = "ap-runtime-v41";
+const CORE = "ap-core-v41";
 const CORE_PREFIX = "ap-core-";
 const RUNTIME_PREFIX = "ap-runtime-";
 const CORE_ASSETS = [
@@ -50,12 +50,20 @@ self.addEventListener("activate", (e) => {
           try {
             const oldC = await caches.open(k);
             const oldReqs = await oldC.keys();
-            for (const req of oldReqs) {
+            const slideReqs = oldReqs.filter((req) => {
               const u = new URL(req.url);
-              if (u.pathname.includes("/slides/") || u.pathname.includes("/icons/")) {
-                const res = await oldC.match(req);
-                if (res) await targetRuntime.put(req, res);
-              }
+              return u.pathname.includes("/slides/") || u.pathname.includes("/icons/");
+            });
+            for (let b = 0; b < slideReqs.length; b += 10) {
+              const batch = slideReqs.slice(b, b + 10);
+              await Promise.all(
+                batch.map(async (req) => {
+                  try {
+                    const res = await oldC.match(req);
+                    if (res) await targetRuntime.put(req, res);
+                  } catch {}
+                }),
+              );
             }
             await caches.delete(k);
           } catch {}

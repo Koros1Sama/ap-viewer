@@ -11,6 +11,7 @@ window.TOC_SUMMARY = {
       "id": "l1",
       "lec": "L1",
       "title_ar": "الوحدة الأولى: أسس البرمجة المتقدمة ومبادئ SOLID",
+      "interactive": { "id": "solid-architecture-studio", "label": "استوديو مبادئ SOLID المعمارية" },
       "short_ar": "منصة .NET ومكونات CLR، مبادئ كائنية التوجه الأربعة، ومبادئ SOLID الخمسة المعمارية مع تشخيص الانتهاكات والحلول",
       "blocks": [
         {
@@ -91,6 +92,7 @@ window.TOC_SUMMARY = {
         {
           "kind": "list",
           "title": "مبادئ SOLID الخمسة: التحليل المعماري المفصل",
+          "interactive": [{ "id": "solid-architecture-studio", "label": "استوديو مبادئ SOLID وتفكيك الارتباط" }],
           "items": [
             "مبدأ المسؤولية الأحادية (SRP): يجب أن تمتلك الفئة سبباً واحداً فقط للتغيير. الفئة التي تحسب الفاتورة وتحفظها في قاعدة البيانات وترسلها عبر البريد تنتهك SRP. الحل هو فصل كل مسؤولية في فئة مستقلة.",
             "مبدأ المفتوح والمغلق (OCP): الكيانات مفتوحة للتوسعة ومغلقة للتعديل. بدلاً من استخدام جمل switch لفحص أنواع الدفع، ننشئ واجهة IPaymentMethod ونضيف فئات جديدة مثل CreditCardPayment و PayPalPayment دون لمس الكود القديم.",
@@ -712,6 +714,7 @@ window.TOC_SUMMARY = {
     "id": "l7",
     "lec": "L7",
     "title_ar": "الوحدة الثامنة: البرمجة غير المتزامنة وتعدد المسالك وإدارة الذاكرة",
+      "interactive": { "id": "concurrency-memory-studio", "label": "استوديو التزامن ومحاكي القفل الميت وذاكرة GC" },
     "short_ar": "أنماط Async/Await، التزامن مقابل التوازي، سلامة الخيوط ومجمع ThreadPool، وهندسة الذاكرة والـ Garbage Collector في .NET",
     "blocks": [
       {
